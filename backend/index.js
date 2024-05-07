@@ -19,8 +19,6 @@ app.get("/products", async (req, res) => {
   }
 });
 
-
-
 app.listen(3000, () => {
   console.log("Server in ascolto sulla porta 3000");
 });
