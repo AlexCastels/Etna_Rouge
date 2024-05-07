@@ -8,3 +8,9 @@ export interface Card {
     img: string;
 }
 
+
+export interface Product {
+  id: string;
+  title: string;
+  video: string;
+}
