@@ -1,11 +1,12 @@
-import FetchingData from "./FetchingData"
+import { Plp } from './components/Plp'
+
 
 
 function App() {
+    
     return (
         <>
-            <p>Hello World!</p>
-            <FetchingData />
+            <Plp/>
         </>
     )
 }
