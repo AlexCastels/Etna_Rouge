@@ -1,0 +1,402 @@
+[
+    {
+        "id": 1,
+        "name": "Men's Fashion Jacket",
+        "price": 599.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/13939465/pexels-photo-13939465.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "A stylish jacket for men's fashion."
+    },
+    {
+        "id": 2,
+        "name": "Casual Men's Clothing",
+        "price": 589.99,
+        "gender": "men",
+        "category": "pants",
+        "img": "https://images.pexels.com/photos/5145180/pexels-photo-5145180.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Casual clothing for men's everyday wear."
+    },
+    {
+        "id": 3,
+        "name": "Men's Fashion on the Beach",
+        "price": 579.99,
+        "gender": "men",
+        "category": "shoes",
+        "img": "https://images.unsplash.com/photo-1593757147298-e064ed1419e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FtaWNpYSUyMHVvbW98ZW58MHx8MHx8fDA%3D",
+        "quantity": 0,
+        "description": "Men's fashion on the beach."
+    },
+    {
+        "id": 4,
+        "name": "Men's Formal Wear",
+        "price": 584.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://plus.unsplash.com/premium_photo-1674777843130-40233fe45804?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FtaWNpYSUyMHVvbW98ZW58MHx8MHx8fDA%3D",
+        "quantity": 0,
+        "description": "Formal wear for men's special occasions."
+    },
+    {
+        "id": 5,
+        "name": "Men's Casual Wear",
+        "price": 609.99,
+        "gender": "men",
+        "category": "shoes",
+        "img": "https://plus.unsplash.com/premium_photo-1689327920655-52e42cf05219?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmVzdGl0aSUyMHVvbW98ZW58MHx8MHx8fDA%3D",
+        "quantity": 0,
+        "description": "Casual wear for men's everyday activities."
+    },
+    {
+        "id": 6,
+        "name": "Men's Sunglasses",
+        "price": 599.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/19880508/pexels-photo-19880508/free-photo-of-uomo-occhiali-da-sole-parete-muro.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Stylish sunglasses for men."
+    },
+    {
+        "id": 7,
+        "name": "Men's Beachwear",
+        "price": 569.99,
+        "gender": "men",
+        "category": "shoes",
+        "img": "https://images.pexels.com/photos/6311691/pexels-photo-6311691.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Beachwear for men's summer days."
+    },
+    {
+        "id": 8,
+        "name": "Men's Swimwear",
+        "price": 599.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/19119918/pexels-photo-19119918/free-photo-of-mare-uomo-spiaggia-sabbia.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Swimwear for men's beach adventures."
+    },
+    {
+        "id": 9,
+        "name": "Men's Shirt",
+        "price": 589.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/1484807/pexels-photo-1484807.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Shirt for men's fashion."
+    },
+    {
+        "id": 10,
+        "name": "Men's Shorts",
+        "price": 579.99,
+        "gender": "men",
+        "category": "pants",
+        "img": "https://images.pexels.com/photos/5191436/pexels-photo-5191436.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Shorts for men's casual wear."
+    },
+    {
+        "id": 11,
+        "name": "Men's Business Wear",
+        "price": 584.99,
+        "gender": "men",
+        "category": "shoes",
+        "img": "https://images.pexels.com/photos/15623773/pexels-photo-15623773/free-photo-of-moda-uomo-shorts-pantaloncini.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Business wear for men."
+    },
+    {
+        "id": 12,
+        "name": "Men's Formal Shirt",
+        "price": 594.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/19276437/pexels-photo-19276437/free-photo-of-moda-uomo-modello-camicia.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Formal shirt for men's special occasions."
+    },
+    {
+        "id": 13,
+        "name": "Men's Casual Shirt",
+        "price": 574.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/19552345/pexels-photo-19552345/free-photo-of-uomo-modello-camicia-in-piedi.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Casual shirt for men's everyday wear."
+    },
+    {
+        "id": 14,
+        "name": "Men's Formal Suit",
+        "price": 619.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/19838417/pexels-photo-19838417/free-photo-of-uomo-abito-completo-barba.png?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Formal suit for men's special occasions."
+    },
+    {
+        "id": 15,
+        "name": "Men's Fedora Hat",
+        "price": 609.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/19272484/pexels-photo-19272484/free-photo-of-uomo-in-piedi-in-cappello-fedora-rosso.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Fedora hat for men's fashion."
+    },
+    {
+        "id": 16,
+        "name": "Men's Fashion Shorts",
+        "price": 579.99,
+        "gender": "men",
+        "category": "pants",
+        "img": "https://images.pexels.com/photos/2955375/pexels-photo-2955375.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Fashion shorts for men."
+    },
+    {
+        "id": 17,
+        "name": "Businessman Fashion Suit",
+        "price": 589.99,
+        "gender": "men",
+        "category": "pants",
+        "img": "https://images.pexels.com/photos/15654407/pexels-photo-15654407/free-photo-of-businessman-moda-uomo-abito.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Fashion suit for businessmen."
+    },
+    {
+        "id": 18,
+        "name": "Men's Casual Wear",
+        "price": 584.99,
+        "gender": "men",
+        "category": "pants",
+        "img": "https://images.pexels.com/photos/6310924/pexels-photo-6310924.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Casual wear for men."
+    },
+    {
+        "id": 19,
+        "name": "Men's Casual Jacket",
+        "price": 569.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/11434885/pexels-photo-11434885.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Casual jacket for men's fashion."
+    },
+    {
+        "id": 20,
+        "name": "Men's Fashion Hat",
+        "price": 579.99,
+        "gender": "men",
+        "category": "shirt",
+        "img": "https://images.pexels.com/photos/10678803/pexels-photo-10678803.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "quantity": 0,
+        "description": "Fashion hat for men."
+    },
+    {
+        "id": 21,
+        "name": "Wool Sweater",
+        "price": 599.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TWFnbGlvbmV8ZW58MHx8MHx8fDA%3D",
+        "quantity": 0,
+        "description": "A warm and comfortable sweater perfect for winter."
+    },
+    {
+        "id": 22,
+        "name": "Skinny Jeans",
+        "price": 589.99,
+        "gender": "woman",
+        "category": "pants",
+        "img": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8amVhbnN8ZW58MHx8MHx8fDA%3D",
+        "quantity": 0,
+        "description": "Skinny jeans with comfortable fit and modern style."
+    },
+    {
+        "id": 23,
+        "name": "Striped Shirt",
+        "price": 579.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1470097_alternate10?$rl_df_pdp_5_7_a10$",
+        "quantity": 0,
+        "description": "A stylish and versatile shirt with a trendy striped design."
+    },
+    {
+        "id": 24,
+        "name": "Pleated Skirt",
+        "price": 584.99,
+        "gender": "woman",
+        "category": "pants",
+        "img": "https://www.alcott.eu/dw/image/v2/BDJZ_PRD/on/demandware.static/-/Sites-catalog-alcott-master/default/dw3354ed99/hi-res/GO1100DO_LC2_001.jpg?sw=1000&sh=1350&q=90&strip=false",
+        "quantity": 0,
+        "description": "A lightweight and feminine pleated skirt for a refined look."
+    },
+    {
+        "id": 25,
+        "name": "Leather Ankle Boots",
+        "price": 609.99,
+        "gender": "woman",
+        "category": "shoes",
+        "img": "https://data.mecshopping.it/imgprodotto/stivaletti-in-pelle-donna-con-tacco-e-plateau_577708.jpg",
+        "quantity": 0,
+        "description": "Elegant and versatile ankle boots, perfect for completing any outfit."
+    },
+    {
+        "id": 26,
+        "name": "Crossbody Bag",
+        "price": 594.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://data.mecshopping.it/imgprodotto/borsa-a-tracolla-con-stampe_594088.jpg",
+        "quantity": 0,
+        "description": "A practical and stylish crossbody bag to carry your everyday essentials."
+    },
+    {
+        "id": 27,
+        "name": "Drop Earrings",
+        "price": 569.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://www.madigioielli.it/26495-large_default/orecchini-perle-naturali-unoaerre-donna.jpg",
+        "quantity": 0,
+        "description": "Elegant and refined earrings, perfect for completing any look."
+    },
+    {
+        "id": 28,
+        "name": "Hoodie",
+        "price": 599.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://images.unsplash.com/photo-1599265866618-44bf5b03def6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmVscGElMjBjb24lMjBjYXBwdWNjaW8lMjBkb25uYXxlbnwwfHwwfHx8MA%3D%3D",
+        "quantity": 0,
+        "description": "A comfortable and stylish hoodie, perfect for casual days."
+    },
+    {
+        "id": 29,
+        "name": "Culottes Pants",
+        "price": 586.99,
+        "gender": "woman",
+        "category": "pants",
+        "img": "https://static.reserved.com/media/catalog/product/cache/1200/a4e40ebdc3e371adff845072e1c73f37/7/3/737AB-99X-001-1-746471_1.jpg",
+        "quantity": 0,
+        "description": "Elegant and comfortable culottes pants, ideal for a sophisticated look."
+    },
+    {
+        "id": 30,
+        "name": "Floral Summer Dress",
+        "price": 604.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://duntery.it/cdn/shop/files/HW1020133-1_713x.jpg?v=1712913981",
+        "quantity": 0,
+        "description": "A light and floral summer dress, perfect for warm days."
+    },
+    {
+        "id": 31,
+        "name": "Wedge Sandals",
+        "price": 614.99,
+        "gender": "woman",
+        "category": "shoes",
+        "img": "https://img01.ztat.net/article/spp-media-p1/63b8215ab12d4185914b018e56cad39c/01cd0afd6bb64a4b963d11beb54a1391.jpg?imwidth=1800",
+        "quantity": 0,
+        "description": "Elegant and comfortable wedge sandals, ideal for summer."
+    },
+    {
+        "id": 32,
+        "name": "Wool Coat",
+        "price": 639.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://b2c-media.maxandco.com/sys-master/m0/MC/2024/1/6021034302/007/s3master/6021034302007-z-milong_thumbnail.webp#thumbnail",
+        "quantity": 0,
+        "description": "A warm and trendy wool coat to face winter with style."
+    },
+    {
+        "id": 33,
+        "name": "Pendant Necklace",
+        "price": 574.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://www.gioielleriazambon.it/cdn/shop/files/bubbles11575.jpg?v=1688052117&width=1445",
+        "quantity": 0,
+        "description": "An elegant necklace with a delicate pendant, perfect for any occasion."
+    },
+    {
+        "id": 34,
+        "name": "Light Puffer Jacket",
+        "price": 629.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://m.media-amazon.com/images/I/61scs-GRXvL._AC_UY1000_.jpg",
+        "quantity": 0,
+        "description": "A lightweight and comfortable puffer jacket to keep you warm in style."
+    },
+    {
+        "id": 35,
+        "name": "Faux Leather Backpack",
+        "price": 599.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://static.stileo.it/img/800x800bt/346413870-b-cavalli-zainetto-donna-in-ecopelle-zaini-donna-nero.jpg",
+        "quantity": 0,
+        "description": "A trendy faux leather backpack, perfect for everyday life."
+    },
+    {
+        "id": 36,
+        "name": "Bangle Bracelet",
+        "price": 579.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://cdn.0brandcommerce.com/mabina/prd/3361_4_L.jpg",
+        "quantity": 0,
+        "description": "An elegant and minimalist bangle bracelet, ideal for completing your look."
+    },
+    {
+        "id": 37,
+        "name": "Long Sleeve Top",
+        "price": 589.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TWFnbGlvbmV8ZW58MHx8MHx8fDA%3D",
+        "quantity": 0,
+        "description": "A versatile and comfortable long sleeve top for everyday wear."
+    },
+    {
+        "id": 38,
+        "name": "Jogger Pants",
+        "price": 584.99,
+        "gender": "woman",
+        "category": "pants",
+        "img": "https://brogiabbigliamento.it/179648-superlarge_default/pantalone-jogger-donna-guess.jpg",
+        "quantity": 0,
+        "description": "Comfortable and stylish jogger pants, perfect for leisure time."
+    },
+    {
+        "id": 39,
+        "name": "Wool Hat",
+        "price": 569.99,
+        "gender": "woman",
+        "category": "shirt",
+        "img": "https://limanaki.it/cdn/shop/products/BeaniePOLARPink2_1200x1200.jpg?v=1639154837",
+        "quantity": 0,
+        "description": "A warm and trendy wool hat, perfect for completing your winter outfit."
+    },
+    {
+        "id": 40,
+        "name": "High Heel Boots",
+        "price": 604.99,
+        "gender": "woman",
+        "category": "shoes",
+        "img": "https://images.asos-media.com/products/asos-design-excel-stivaletti-con-tacco-alto-neri/200360712-1-black?$n_640w$&wid=513&fit=constrain",
+        "quantity": 0,
+        "description": "Elegant and versatile high heel boots, ideal for special occasions."
+    }
+]
