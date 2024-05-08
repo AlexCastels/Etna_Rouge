@@ -14,3 +14,12 @@ export interface Product {
   title: string;
   video: string;
 }
+
+export interface Entries {
+  sys: { id: string };
+  fields: {
+    id: string;
+    video: { fields: { file: { url: string } } };
+    title: string;
+  };
+}

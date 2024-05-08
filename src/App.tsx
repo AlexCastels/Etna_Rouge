@@ -1,18 +1,15 @@
-import Content from './components/Content';
+import Content from "./components/heroContent/Content";
 
 /* import { Plp } from './components/Plp' */
 
-
-
 function App() {
-    
-    return (
-        <>
-            {/*   <Plp /> */}
-        
-            <Content/>
-        </>
-    )
+  return (
+    <>
+      {/*   <Plp /> */}
+
+      <Content />
+    </>
+  );
 }
 
-export default App
+export default App;

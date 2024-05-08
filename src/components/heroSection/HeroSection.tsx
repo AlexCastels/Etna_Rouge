@@ -1,5 +1,6 @@
-import "../style.scss";
-import { Product } from "../interfaces";
+import "../../style.scss"
+import "./heroSections.scss"
+import { Product } from "../../interfaces"
 
 const HeroSection = (props: Partial<Product>) => {
   return (
