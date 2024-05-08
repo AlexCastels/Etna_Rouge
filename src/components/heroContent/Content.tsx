@@ -1,4 +1,3 @@
-import { Entries } from "../../interfaces"; // Assicurati che Entries sia l'interfaccia corretta
 import useContentfulData from "../../contentful/useContentful";
 import HeroSection from "../heroSection/HeroSection";
 
@@ -8,13 +7,13 @@ const Content = () => {
   if (loading) return <span>Loading...</span>;
   if (error) return <span>Error: {error.message}</span>;
 
-  const content: Entries | null = data;
 
-  if (!content) {
+
+  if (!data) {
     return <span>No content available</span>;
   }
 
-  const { fields } = content;
+  const { fields } = data;
 
   const { id, title } = fields;
 
