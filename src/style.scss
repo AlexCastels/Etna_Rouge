@@ -13,19 +13,19 @@
 }
 
 
-    /* Fonts */
-    $font-family: "Playfair Display", serif;
-    
-    /* Colori */
-    $main-white: #FDF4F4;
-    $secondary-white: #F5EBE0;
-    $main-black: #0E0E0E; 
+/* Fonts */
+$font-family: "Playfair Display", serif;
+
+/* Colori */
+$main-white: #FDF4F4;
+$secondary-white: #F5EBE0;
+$main-black: #0E0E0E; 
 
 
 
 /* ProductCard */
 
-.single-card-container{
+.single-card-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,26 +36,26 @@
     gap: 10px;
 }
 
-.card-title{
+.card-title {
     font-weight: bold;
     letter-spacing: 0.1rem;
     width: 300px;
-    
+
 }
 
-.card-body-container{
+.card-body-container {
     // background-color: grey;
     // padding:10px;
     width: 300px;
 }
 
-.card-body-img img{
+.card-body-img img {
     width: 300px;
     height: 450px;
-    object-fit:cover;
+    object-fit: cover;
 }
 
-.card-foot-btn button{
+.card-foot-btn button {
     padding: 5px;
     width: 300px;
     color: white;
@@ -65,10 +65,10 @@
     letter-spacing: 0.5rem;
 }
 
-.card-foot-btn button:hover{
+.card-foot-btn button:hover {
     opacity: 0.3;
 }
 
-.card-body-text{
+.card-body-text {
     width: 300px;
 }
