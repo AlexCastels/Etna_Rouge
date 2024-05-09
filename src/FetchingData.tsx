@@ -13,7 +13,7 @@ interface Products {
 }
 
 const FetchingData = () => {
-  const [products, setProducts] = useState<Products>();
+  const [products, setProducts] = useState<Products[]>();
 
   const fetchProducts = async () => {
     try {

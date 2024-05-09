@@ -1,4 +1,5 @@
-import Content from "./components/heroContent/Content";
+import FeaturesContent from "./components/featuresSection/FeaturesContent";
+import Content from "./components/heroSection/HeroContent";
 
 /* import { Plp } from './components/Plp' */
 
@@ -8,6 +9,7 @@ function App() {
       {/*   <Plp /> */}
 
       <Content />
+      <FeaturesContent />
     </>
   );
 }

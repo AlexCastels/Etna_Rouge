@@ -1,13 +1,11 @@
 import useContentfulData from "../../contentful/useContentful";
-import HeroSection from "../heroSection/HeroSection";
+import HeroSection from "./HeroSection";
 
 const Content = () => {
   const { loading, data, error } = useContentfulData("6GpawXy0lqHn9ZPzC61Tnq");
 
   if (loading) return <span>Loading...</span>;
   if (error) return <span>Error: {error.message}</span>;
-
-
 
   if (!data) {
     return <span>No content available</span>;
@@ -20,7 +18,8 @@ const Content = () => {
   const videoUrl: string | undefined = fields?.video?.fields?.file?.url;
 
   if (!videoUrl) {
-    return <span>No video available</span>; // Gestisci il caso in cui non ci sia un video
+    return <span>No video available</span>;
+    3;
   }
 
   return (

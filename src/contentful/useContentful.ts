@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { client } from "../contentful/client";
 
+
 interface EntryFields {
   fields: {
+    id: string;
     title: string;
-    video: {
+    video?: {
       fields: {
         file: {
           url: string;
@@ -17,7 +19,7 @@ interface EntryFields {
 
 interface ContentfulData {
   loading: boolean;
-  data: EntryFields | null; 
+  data: EntryFields | null;
   error: Error | null;
 }
 
@@ -30,7 +32,7 @@ const useContentfulData = (entryId: string): ContentfulData => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await client.getEntry(entryId);
+        const response = await client.getEntry<EntryFields>(entryId);
         setData(response);
         setLoading(false);
       } catch (error) {
