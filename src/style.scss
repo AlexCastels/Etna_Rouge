@@ -7,16 +7,21 @@
 }
 
 *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        $main-font: "Playfair Display", serif;
-        $main-white: #FDF4F4;
-        $secondary-white: #F5EBE0;
-        $main-black: #0E0E0E;
-        $secondary-black: #212121;
+
+/* Fonts */
+$font-family: "Playfair Display", serif;
+
+/* Colori */
+$main-white: #FDF4F4;
+$secondary-white: #F5EBE0;
+$main-black: #0E0E0E; 
+
+
 
 /* ProductCard */
 

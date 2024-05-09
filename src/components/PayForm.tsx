@@ -65,7 +65,7 @@ export function PayForm(){
                 </select>
             </div>
             <div className="payform-message">
-                <p>* Il servizio di spedizione ha un implementazione del costo totale pari a 10€</p>
+                <p>*Payment on delivery have supplement of €10 to the order total</p>
             </div>
             <button>SUBMIT</button>
         </form>
