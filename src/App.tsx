@@ -1,12 +1,16 @@
 import { PayForm } from './components/PayForm'
-
+import { SelectPayment } from './components/SelectPayment'
+import { Route, Routes } from 'react-router-dom'
 
 
 function App() {
     
     return (
         <>
-            <PayForm/>
+            <Routes>
+                <Route path='/SelectPayment' element={<SelectPayment/>}/>
+                <Route path='/DeliveryForm' element={<PayForm/>}/>
+            </Routes>
         </>
     )
 }
