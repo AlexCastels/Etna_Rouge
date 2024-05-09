@@ -1,0 +1,50 @@
+// PayForm
+
+
+.payform-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+}
+
+.input-payform{
+    width: 300px;
+    height: 25px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(31, 31, 31);
+    letter-spacing: 1px;
+    padding-left: 0px;
+}
+
+
+.input-payform:focus {
+    outline: none;
+}
+
+.input-payform::placeholder{
+    background: rgb(0, 0, 0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.payform-top , .payform-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.payform-top{
+    margin-bottom: 70px;
+}
+
+.payform-message{
+    width: 300px;
+    font-size: 12px;
+}

@@ -9,6 +9,7 @@ export interface Card {
 }
 
 
+
 export interface Product {
   id: string;
   title: string;
@@ -23,3 +24,15 @@ export interface Entries {
     title: string;
   };
 }
+
+export interface Products {
+    id: number;
+    name: string;
+    price: number;
+    gender: string;
+    category: string;
+    img: string;
+    quantity: number;
+    description: string;
+  }
+
