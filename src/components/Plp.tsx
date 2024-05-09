@@ -1,42 +1,43 @@
+import "../style.scss";
+import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { useEffect } from "react";
-import { useState } from "react";
-import * as contentful from 'contentful'
-import { ProductCard } from "./ProductCard";
-import { Card } from "../interfaces";
+import { fetchData } from "../redux/slices/productSlice";
+import { addToCart } from "../redux/slices/cartSlice";
+import { Link } from "react-router-dom";
 
+export const ProductCard = () => {
+  const dispatch = useAppDispatch();
+  const product = useAppSelector((state) => state.product.products);
 
-export function Plp(){
-    
-    const [data , setData] = useState([])
-    
-    const client = contentful.createClient({
-        space: 'ojcck4r9mycx',
-        environment: 'master',
-        accessToken: 'VnVr3_Dibj4Sn6MzQUrilEEBduvNIaupszhRS-KOti0'
-    })
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
 
-    async function getData(){
-        try {
-            const res:any = await client.getEntry('3aW84Vh8B9S14FM8tqwq2c') 
-            setData(res.fields.productsJson)
-        } catch (error) {
-            console.log(error)   
-        }
-    }
+  return (
+    <>
+      <Link to="/Cart">Cart</Link>
+      {product.map((el) => (
+        <div key={el.id} className="single-card-container">
+          <div className="card-title">
+            <p>{el.name}</p>
+          </div>
+          <div className="card-body-container">
+            <div className="card-body-img">
+              <img src={el.img}></img>
+            </div>
+            <div className="card-foot-btn">
+              <button onClick={() => dispatch(addToCart(el))}>
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+          <div className="card-body-text">
+            <p>{el.price}€</p>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
 
-    useEffect(()=>{
-        getData()
-    },[])
-
-    if(data){
-        console.log(data);
-    }
-    
-    return(
-        <>
-            {data && data.map((item:Card) => {
-                return <ProductCard key={item.id} product={item}/>
-            })}
-        </>
-    )
-}
+export default ProductCard;
