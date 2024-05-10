@@ -1,30 +1,37 @@
-import useContentfulData from "../../contentful/useContentful";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import HeroSection from "./HeroSection";
 
 const Content = () => {
-  const { loading, data, error } = useContentfulData("6GpawXy0lqHn9ZPzC61Tnq");
+  const dispatch = useAppDispatch();
+  const contents = useAppSelector((state) => state.contentful.contents);
+  const error = useAppSelector((state) => state.contentful.error);
+  const loading = useAppSelector((state) => state.contentful.loading);
 
-  if (loading) return <span>Loading...</span>;
-  if (error) return <span>Error: {error.message}</span>;
+  useEffect(() => {
+    dispatch(fetchContentfulData());
+  }, []);
 
-  if (!data) {
-    return <span>No content available</span>;
+  const filteredContentsHero = contents.filter(
+    (items) => items.fields.title === "Hero Section ER"
+  );
+  console.log(contents);
+
+  if (loading) {
+    return <span> loading... </span>;
   }
 
-  const { fields } = data;
-
-  const { id, title } = fields;
-
-  const videoUrl: string | undefined = fields?.video?.fields?.file?.url;
-
-  if (!videoUrl) {
-    return <span>No video available</span>;
-    3;
+  if (error) {
+    return <span> {error.message} </span>;
   }
 
   return (
     <div>
-      <HeroSection id={id} title={title} video={videoUrl} />
+      {filteredContentsHero &&
+        filteredContentsHero.map((item) => (
+          <HeroSection key={item.sys.id} content={item.fields} />
+        ))}
     </div>
   );
 };

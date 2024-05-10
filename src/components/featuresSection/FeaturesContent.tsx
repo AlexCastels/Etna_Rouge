@@ -1,33 +1,40 @@
-import useContentfulData from "../../contentful/useContentful";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import FeaturesSection from "./FeaturesSection";
 
-const FeaturesContent = () => {
-  const { loading, data, error } = useContentfulData("2oV7RHGJMTRbqGEPJTg0cS");
+const FeaturesContent: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector((state) => state.contentful.loading);
+  const error = useAppSelector((state) => state.contentful.error);
+  const contents = useAppSelector((state) => state.contentful.contents);
 
-  if (loading) return <span>Loading...</span>;
-  if (error) return <span>Error: {error.message}</span>;
+  useEffect(() => {
+    dispatch(fetchContentfulData());
+  }, []);
 
-  if (!data) {
-    return <span>No content available</span>;
+  // Controlliamo gli errori
+  if (error) {
+    return <div>Error: {error.message}</div>;
   }
 
-  const { fields } = data;
+  // Controlliamo il caricamento
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    const { id, title } = fields;
-    console.log(data);
-    
+  // Se non ci sono errori e il caricamento è completato, procediamo con il rendering
+  const filterFeaturesContent = contents.filter(
+    (item) => item.fields.title === "Feature Section"
+  );
 
-    const image: string | undefined = fields?.image?.fields?.file?.url; 
-    const paragraph1: string | undefined = fields.description.content[0].content[0].value;
-    const paragraph2: string | undefined = fields.secondParagraph.content[0].content[0].value;
-    const paragraph3: string | undefined = fields.thirdParagraph.content[0].content[0].value;
-
-
-
-    return <div>
-    <FeaturesSection image={image} p1={paragraph1} p2={paragraph2} p3={paragraph3} />
-        
-  </div>;
+  return (
+    <div>
+      {filterFeaturesContent.map((item) => (
+        <FeaturesSection key={item.sys.id} content={item.fields} />
+      ))}
+    </div>
+  );
 };
 
 export default FeaturesContent;

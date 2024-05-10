@@ -1,21 +1,22 @@
 import React from "react";
-import "./featuresSection.scss"
+import "./featuresSection.scss";
 
-interface FeaturesSection {
-  image: string;
-  p1: string;
-  p2: string;
-  p3: string;
-}
 
-const FeaturesSection: React.FC<FeaturesSection> = ({ image, p1, p2, p3 }) => {
+
+const FeaturesSection: React.FC<any> = ({ content }) => {
+
+  const img = content?.image?.fields?.file?.url || "";
+  const p1 = content?.description?.content[0]?.content[0]?.value || "";
+  const p2 = content?.secondParagraph?.content[0]?.content[0]?.value || "";
+  const p3 = content?.thirdParagraph?.content[0]?.content[0]?.value || "";
+
   return (
     <div className="feature-cont">
-      <img src={image} alt="features" />
+      {img && <img src={img} alt="features" />}
       <div className="text-cont">
-        <p> {p1} </p>
-        <p> {p2} </p>
-        <p> {p3} </p>
+        {p1 && <p>{p1}</p>}
+        {p2 && <p>{p2}</p>}
+        {p3 && <p>{p3}</p>}
       </div>
     </div>
   );

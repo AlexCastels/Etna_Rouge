@@ -1,11 +1,15 @@
-import "../../style.scss"
-import "./heroSections.scss"
-import { Product } from "../../interfaces"
+import React from "react";
+import "./heroSections.scss";
 
-const HeroSection = (props: Partial<Product>) => {
+const HeroSection:React.FC<any> = ({ content }) => {
+  
+  const video = content?.video?.fields?.file?.url;
+
+  
+
   return (
     <div className="hero-cont">
-      <video src={props.video} muted autoPlay loop></video>
+      <video src={video} muted autoPlay loop></video>
     </div>
   );
 };
