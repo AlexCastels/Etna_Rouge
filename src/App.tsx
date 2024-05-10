@@ -23,7 +23,7 @@ function App() {
                 <Route path='/DeliveryForm' element={<PayForm/>}/>
             </Routes>
         </BrowserRouter> */}
-        {/* <CreditCardForm/> */}
+        <CreditCardForm/>
         </>
     )
 }
