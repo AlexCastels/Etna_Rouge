@@ -1,0 +1,52 @@
+.selectPayment-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    // width: 300px;
+    height: 650px;
+
+    .selectPayment-title{
+        width: 80%;
+    }
+    
+    .select-payform-line{
+        height: 1px;
+        width: 80%;
+        background-color: black;
+    }
+
+    .selectPayform-creditCard-container{
+        display: flex;
+        justify-content:center;
+        flex-direction: column;
+
+        div{
+            padding-bottom: 10px;
+        }
+
+        .selectPayform-img{
+            width: 300px;
+        }
+    }
+
+    .selectPayform-delivery-container{
+        display: flex;
+        justify-content:center;
+        flex-direction: column;
+        width: 300px;
+        p{
+            font-size: 12px;
+        }
+    }
+    button{
+        padding: 5px;
+        width: 300px;
+        color: white;
+        background-color: black;
+        transition: all ease-in-out 0.5s;
+        cursor: pointer;
+        letter-spacing: 0.5rem;
+    }
+
+}

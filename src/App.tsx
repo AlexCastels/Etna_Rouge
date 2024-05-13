@@ -1,19 +1,28 @@
-import NavBar from './components/Navbar/NavBarTop'
-import NavBarBottom from './components/Navbar/NavbarBottom';
-import { Plp } from './components/Plp'
-import { ProductCard } from './components/ProductCard';
 
-
-
+import Cart from "./components/Cart";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./style.scss";
+import { PayForm } from "./components/PayForm";
+import { SelectPayment } from "./components/SelectPayment";
+import ProductCard from "./components/ProductCard";
+import FeaturesContent from "./components/featuresSection/FeaturesContent";
+import HeroContent from "./components/heroSection/HeroContent";
 function App() {
-    
-    return (
-        <>
-            <NavBar/>
-{/*             <Plp/>*/}
-            <NavBarBottom/>
-        </>
-    )
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ProductCard />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/SelectPayment" element={<SelectPayment />} />
+          <Route path="/DeliveryForm" element={<PayForm />} />
+        </Routes>
+      </BrowserRouter>
+      <HeroContent />
+      <FeaturesContent />
+    </>
+  );
+
 }
 
 export default App;
