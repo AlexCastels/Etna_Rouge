@@ -6,7 +6,7 @@ import useFetch from "../Hooks/useFetch";
 
 //Doppia destrutturazione
 export const Pdp: React.FC<Products> = ({ name, price, img, description }) => {
-
+// const  { name, img, price, description} = obj
 const [data] = useFetch("http://localhost:3000/products")
 const item = data.map((item)=> item.img )
 

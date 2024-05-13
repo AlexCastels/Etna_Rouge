@@ -8,8 +8,13 @@ import "./components/PDP/Pdp.scss"
 // import { PayForm } from "./components/PayForm"
 import { Products } from "./interfaces";
 import { Pdp } from "./components/PDP/Pdp.tsx";
+import ProductCard from "./components/ProductCard.tsx";
+import { SelectPayment } from "./components/SelectPayment.tsx";
+import { PayForm } from "./components/PayForm.tsx";
+import FeaturesContent from "./components/featuresSection/FeaturesContent.tsx";
+import HeroContent from "./components/heroSection/HeroContent.tsx"
 
-const obj:Products = {
+const obj: Products = {
     id: 5,
     name: "Men's Casual Wear",
     price: 609.99,
@@ -22,22 +27,22 @@ const obj:Products = {
 
 
 function App() {
-  return (
-    <>
-            {/* <img src={obj.img}/> */}
-            <Pdp {...obj}/>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<ProductCard />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/SelectPayment" element={<SelectPayment />} />
-          <Route path="/DeliveryForm" element={<PayForm />} />
-        </Routes>
-      </BrowserRouter>
-      <HeroContent />
-      <FeaturesContent />
-    </>
-  );
+    return (
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/plp/productId" element={<Pdp {...obj} />} />
+                    <Route path="/" element={<ProductCard />} />
+                    <Route path="/Cart" element={<Cart />} />
+                    <Route path="/SelectPayment" element={<SelectPayment />} />
+                    <Route path="/DeliveryForm" element={<PayForm
+                    />} />
+                </Routes>
+            </BrowserRouter>
+            <HeroContent />
+            <FeaturesContent />
+        </>
+    );
 
 }
 
