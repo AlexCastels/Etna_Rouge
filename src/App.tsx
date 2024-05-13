@@ -1,3 +1,6 @@
+
+import Cart from "./components/Cart";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.scss";
 import "./components/PDP/Pdp.scss"
 
@@ -19,13 +22,23 @@ const obj:Products = {
 
 
 function App() {
-
-    return (
-        <>
+  return (
+    <>
             {/* <img src={obj.img}/> */}
             <Pdp {...obj}/>
-        </>
-    )
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ProductCard />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/SelectPayment" element={<SelectPayment />} />
+          <Route path="/DeliveryForm" element={<PayForm />} />
+        </Routes>
+      </BrowserRouter>
+      <HeroContent />
+      <FeaturesContent />
+    </>
+  );
+
 }
 
-export default App
+export default App;
