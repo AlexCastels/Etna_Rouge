@@ -1,0 +1,149 @@
+@import "../../style.scss";
+
+.pdp-wrapper {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+
+    .pdp-card {
+        width: 60%;
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .pdp-img {
+            padding: 0.5rem;
+            height: 90%
+        }
+
+        p {
+            padding-left: 2.1rem;
+            padding-right: 2.1rem;
+            color: rgb(84, 82, 82)
+        }
+    }
+
+    .pdp-info {
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        width: 40%;
+        gap: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+
+        .pdp-detail-header {
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 0.5rem;
+
+            .pdp-name-product {
+                font-family: $main-font;
+                font-weight: 500;
+                font-size: 1.15rem;
+            }
+
+            .pdp-price {
+                font-family: $main-font;
+            }
+
+            .pdp-color {
+                font-family: $main-font;
+            }
+        }
+
+        .pdp-container-size {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .pdp-size {
+                font-family: $main-font;
+            }
+
+            .pdp-btn {
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0.2rem;
+                    border: 1px solid black;
+                    padding: 0.5rem;
+                    width: 45%;
+                    height: 1.5rem;
+                    font-family: $main-font;
+                    background-color: white;
+                }
+            }
+        }
+
+        .pdp-btn-cart {
+            margin-bottom: 3rem;
+            width: 100%;
+
+            button {
+                width: 100%;
+                height: 1.8rem;
+                border-radius: 0.5rem;
+                background-color: $secondary-black;
+                color: $main-white;
+                font-family: $main-font;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .pdp-wrapper {
+        display: flex;
+        justify-content: center;
+
+        .pdp-card {
+            width: 45%;
+            height: 25rem;
+
+            .pdp-img {
+                height: 100%;
+            }
+        }
+
+        .pdp-info {
+            width: 30%;
+            align-items: center;
+
+            .pdp-detail-header {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pdp-btn-cart {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .pdp-container-size {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .pdp-size {}
+
+            .pdp-btn {
+                width: 80%;
+            }
+        }
+    }
+}
