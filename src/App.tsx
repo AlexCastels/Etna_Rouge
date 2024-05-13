@@ -4,7 +4,8 @@ import "./style.scss";
 import { PayForm } from "./components/PayForm";
 import { SelectPayment } from "./components/SelectPayment";
 import ProductCard from "./components/ProductCard";
-
+import FeaturesContent from "./components/featuresSection/FeaturesContent";
+import HeroContent from "./components/heroSection/HeroContent";
 function App() {
   return (
     <>
@@ -16,6 +17,8 @@ function App() {
           <Route path="/DeliveryForm" element={<PayForm />} />
         </Routes>
       </BrowserRouter>
+      <HeroContent />
+      <FeaturesContent />
     </>
   );
 }
