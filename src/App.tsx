@@ -1,3 +1,4 @@
+
 import Cart from "./components/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.scss";
@@ -21,6 +22,7 @@ function App() {
       <FeaturesContent />
     </>
   );
+
 }
 
 export default App;

@@ -1,0 +1,17 @@
+
+@media screen and (min-width: 479px) {
+    .hamburger_menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 479px) {
+  .hamburger_menu {
+    display: block;
+    width: 4em;
+    height: 6em;
+    padding-left: 1em;
+    cursor: pointer;
+  }
+
+}
