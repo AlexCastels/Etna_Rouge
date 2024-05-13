@@ -7,7 +7,6 @@ const Pdp : React.FC<any>  = () => {
       const product = useAppSelector((state) => state.product.products);
     const element = product.find((el : any) => el.id == id )
   
-    
   return (
    <>
 
