@@ -3,24 +3,28 @@
 .carousel {
     display: flex;
     align-items: center;
-    width: 70rem;
+    margin: 1rem;
+    gap: 1rem;
     .btn-arrow{
+        background-color: black;
+        color: white;
         font-size: large;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 20px;
+        width: 6rem;
+        height: 1.5rem;
+        border-radius: 3rem;
         border: 0px;
     }
     .carousel-content {
         display: flex;
         flex-wrap: nowrap;
+    //gap per distanziare le immagini tra loro
+        gap: 2rem;
         .carousel-item {
-            width: 100%;
+            width: 50%;
             max-height: 100%;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 10px;
             .carousel-img {
                 width: 100%;
                 height: 100%;
