@@ -6,21 +6,15 @@ import "./style.scss";
 
 import { PayForm } from "./components/PayForm"
 import { SelectPayment } from './components/SelectPayment' */
-import ContentfulSimulation from "./components/ContentfulSimulation";
+import FetchCarouse from "./components/Carousel/FetchCarousel";
 import FeaturesContent from "./components/featuresSection/FeaturesContent";
-import FeaturesSection from "./components/featuresSection/FeaturesSection";
 import HeroContent from "./components/heroSection/HeroContent";
 
 
-
-/* import { Plp } from './components/Plp' */
-
 function App() {
-
-    return (
-        <>
-
-       {/*  <BrowserRouter>
+  return (
+    <>
+      {/*  <BrowserRouter>
         <Routes>
             <Route path="/" element={<ProductCard/>}/>
             <Route path="/Cart" element={<Cart/>}/>
@@ -31,11 +25,11 @@ function App() {
                 <Route path='/SelectPayment' element={<SelectPayment/>}/>
                 <Route path='/DeliveryForm' element={<PayForm/>}/>
             </Routes> */}
-         <HeroContent />
-        <FeaturesContent /> 
-         
-        </>
-    )
+      <HeroContent />
+      <FeaturesContent />
+     <FetchCarouse /> 
+    </>
+  );
 }
 
 export default App;
