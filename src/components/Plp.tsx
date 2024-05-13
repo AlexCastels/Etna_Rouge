@@ -1,22 +1,14 @@
 import "../style.scss";
-import { useAppDispatch, useAppSelector } from "../redux/hook";
-import { useEffect } from "react";
-import { fetchData } from "../redux/slices/productSlice";
 import { addToCart } from "../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
 
-export const ProductCard = () => {
-  const dispatch = useAppDispatch();
-  const product = useAppSelector((state) => state.product.products);
-
-  useEffect(() => {
-    dispatch(fetchData());
-  }, []);
+export const Plp : React.FC <any> = ({product, dispatch}) => {
 
   return (
     <>
       <Link to="/Cart">Cart</Link>
-      {product.map((el) => (
+      <div className="cards-container">
+      {product.map((el : any) => (
         <div key={el.id} className="single-card-container">
           <div className="card-title">
             <p>{el.name}</p>
@@ -36,8 +28,9 @@ export const ProductCard = () => {
           </div>
         </div>
       ))}
+      </div>
     </>
   );
 };
 
-export default ProductCard;
+export default Plp;
