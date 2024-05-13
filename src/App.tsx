@@ -1,34 +1,23 @@
-
-import Cart from "./components/Cart"
-import { ProductCard } from "./components/Plp"
-import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Cart from "./components/Cart";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.scss";
-
-import { PayForm } from "./components/PayForm"
-import { SelectPayment } from './components/SelectPayment'
-
-
-
+import { PayForm } from "./components/PayForm";
+import { SelectPayment } from "./components/SelectPayment";
+import ProductCard from "./components/ProductCard";
 
 function App() {
-
-    return (
-        <>
-
-        <BrowserRouter>
+  return (
+    <>
+      <BrowserRouter>
         <Routes>
-            <Route path="/" element={<ProductCard/>}/>
-            <Route path="/Cart" element={<Cart/>}/>
+          <Route path="/" element={<ProductCard />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/SelectPayment" element={<SelectPayment />} />
+          <Route path="/DeliveryForm" element={<PayForm />} />
         </Routes>
-        </BrowserRouter>
-
-            <Routes>
-                <Route path='/SelectPayment' element={<SelectPayment/>}/>
-                <Route path='/DeliveryForm' element={<PayForm/>}/>
-            </Routes>
-
-        </>
-    )
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;

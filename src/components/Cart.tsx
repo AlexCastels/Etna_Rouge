@@ -11,7 +11,7 @@ const Cart = () => {
     <>
       {total}
       <Link to="/">Products</Link>
-
+    <div className="cards-container">
       {cart.map((el) => (
         <div key={el.id} className="single-card-container">
           <div className="card-title">
@@ -22,8 +22,8 @@ const Cart = () => {
               <img src={el.img}></img>
             </div>
             <div className="card-foot-btn">
-              <button onClick={() => dispatch(remove(el))}>Remove</button>
               <button onClick={() => dispatch(decrement(el))}>-</button>
+              <button onClick={() => dispatch(remove(el))}>Remove</button>
               <button onClick={() => dispatch(increment(el))}>+</button>
             </div>
           </div>
@@ -33,6 +33,8 @@ const Cart = () => {
           </div>
         </div>
       ))}
+    </div>
+      
     </>
   );
 };
