@@ -6,8 +6,8 @@ interface CarouselProps {
   description: string;
 }[]
 
-export const Carousel: React.FC<CarouselProps> = ({ items }) => {
-  const itemsPerPage = 1;
+export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
+  const itemsPerPage = numItems;
   const { currentIndex, goToNext, goToPrev } = useCarousel(
     items.length,
     itemsPerPage
@@ -18,7 +18,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
 
   return (
     <div className="carousel-cont">
-      <span>Etna Rouge world</span>
+      
       <div className="carousel">
         {/* Si disattiva il bottone "prev" se l'indice è zero */}
         <button
