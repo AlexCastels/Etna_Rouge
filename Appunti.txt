@@ -1,0 +1,11 @@
+Proprietà logiche css (uso in TLG)
+
+inline / block
+
+inline = parallelo rispetto al testo
+block = in verticale rispetto al testo
+
+si adatto in base alla proprietà writing-mode:vertical-lr
+decidendo il verso di scrittura, si usa
+per le lingue estere, tipo arabo e cinese
+
