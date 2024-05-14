@@ -5,7 +5,9 @@ import Plp from './Plp';
 
 const ProductCard = () => {
     const dispatch = useAppDispatch();
-    const product = useAppSelector((state) => state.product.products);
+  const product = useAppSelector((state) => state.product.products);
+  
+ /*  const filteredProducts = product.filter((item) => item.category === prop) */
 
     useEffect(() => {
         dispatch(fetchData());

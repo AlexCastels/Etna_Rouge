@@ -21,7 +21,9 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <LandingPage />
+             <LandingPage />
+             
+              
                   {/*  <Routes>
                     <Route path="/" element={<LandingPage />} />
                  <Route path="/plp/productId" element={<Pdp {...obj} />} />
