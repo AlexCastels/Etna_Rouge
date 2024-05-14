@@ -1,0 +1,34 @@
+@import '../../style.scss';
+
+
+.feature-cont{
+    width: 100vi;
+    height: 100%;
+    
+    
+    
+     img {
+        
+        width: 100%;
+        height: 100%;
+     
+    }
+    
+    .text-cont{
+        padding-block:0.2rem 1.5rem;
+        padding-inline: 0.5rem;
+        line-height: 0.3rem;
+        gap: 0.5rem;
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.3rem;
+     
+        @media screen and (min-width: 768px) {
+                line-height: 2.2rem;
+                font-size: 1rem;
+                padding-block: 1rem 6rem;
+                gap: 1.5rem;
+            }
+    }
+
+}

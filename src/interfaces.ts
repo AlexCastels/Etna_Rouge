@@ -8,6 +8,23 @@ export interface Card {
     img: string;
 }
 
+
+
+export interface Product {
+  id: string;
+  title: string;
+  video: string;
+}
+
+export interface Entries {
+  sys: { id: string };
+  fields: {
+    id: string;
+    video: { fields: { file: { url: string } } };
+    title: string;
+  };
+}
+
 export interface Products {
     id: number;
     name: string;
