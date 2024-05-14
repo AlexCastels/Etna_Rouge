@@ -1,45 +1,41 @@
 
-import Cart from "./components/Cart";
+import Cart from "./components/cart/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.scss";
 import "./components/PDP/Pdp.scss"
-// import { Plp } from './components/Plp';
-// import { PayForm } from "./components/PayForm"
-import { Pdp } from "./components/PDP/Pdp.tsx";
 import ProductCard from "./components/ProductCard.tsx";
 import Paypal from "./components/payment/Paypal.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
-
-
-
+import Plp from "./components/plp/Plp.tsx";
+import FeaturesContent from "./components/featuresSection/FeaturesContent.tsx";
+import Pdp from "./components/PDP/Pdp.tsx";
+import HeroContent from "./components/heroSection/HeroContent";
 
 
 function App() {
-    return (
-        <>
-            <BrowserRouter>
-                {/* <LandingPage /> */}
-                {/*  <Routes>
-                    <Route path="/" element={<LandingPage />} />
-                    <Route path="/plp/productId" element={<Pdp {...obj} />} />
-                    <Route path="/pdp" element={<ProductCard />} />
-                    <Route path="/Cart" element={<Cart />} />
-                    <Route path="/SelectPayment" element={<SelectPayment />} />
-                    <Route path="/DeliveryForm" element={<PayForm/>} /> */}
-            
-        
-                <Routes>
-                    <Route path='/SelectPayment' element={<SelectPayment/>}/>
-                    <Route path='/DeliveryForm' element={<PayForm/>}/>
-                    <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
-                </Routes>
-            </BrowserRouter>       
-        </>
-    );
-
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Plp />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/SelectPayment" element={<SelectPayment />} />
+          <Route path="/DeliveryForm" element={<PayForm />} />
+          <Route path="/pdp/:id" element={<Pdp/>}/>
+        </Routes>
+      </BrowserRouter>
+      <FeaturesContent />
+        {/* <Routes>
+          <Route path='/SelectPayment' element={<SelectPayment/>}/>
+          <Route path='/DeliveryForm' element={<PayForm/>}/>
+          <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
+        </Routes> */}
+    </>
+  )
 }
+
 
 export default App;
