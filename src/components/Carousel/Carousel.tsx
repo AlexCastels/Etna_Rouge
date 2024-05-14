@@ -1,16 +1,18 @@
 import { useCarousel } from "../Hooks/useCarousel";
 import "./Carousel.scss";
 
+
 interface CarouselProps {
-  img: string;
-  description: string;
-}[]
+  items: any;
+  numItems: number;
+}
+
 
 export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
   const itemsPerPage = numItems;
   const { currentIndex, goToNext, goToPrev } = useCarousel(
     items.length,
-    itemsPerPage
+    numItems
   );
 
   const startIndex = currentIndex;
