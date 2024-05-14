@@ -1,28 +1,28 @@
+import React from 'react'
+import { useAppSelector } from '../../redux/hook';
+import { useParams } from 'react-router-dom';
+import './pdp.scss'
+import { addToCart } from '../../redux/slices/cartSlice';
+import { Carousel } from '../Carousel/Carousel';
 
-import React from "react";
-import { Products } from "../../interfaces";
-import { addToCart } from "../../redux/slices/cartSlice";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { Carousel } from "../Carousel/Carousel";
-
-//Doppia destrutturazione
-export const Pdp: React.FC<Products> = ({ name, price, img, description }) => {
-// const  { name, img, price, description} = obj
-const [data] = useAppSelector("http://localhost:3000/products")
-const dispatch = useAppDispatch();
-const item = data.map((item)=> item.img )
+const Pdp: React.FC<any> = () => {
+    const { id } = useParams()
+    const product = useAppSelector((state) => state.product.products);
+    const element = product.find((el: any) => el.id == id)
 
     return (
         <>
+
+
             <div className="pdp-wrapper">
                 <div className="pdp-card">
-                    <img className="pdp-img" src={img} alt={name} />
-                    <p>{description}</p>
+                    <img className="pdp-img" src={element?.img} alt={element?.name} />
+                    <p>{element?.description}</p>
                 </div>
                 <div className="pdp-info">
                     <div className="pdp-detail-header">
-                        <h4 className="pdp-name-product">{name}</h4>
-                        <p className="pdp-price">{price}</p>
+                        <h4 className="pdp-name-product">{element?.name}</h4>
+                        <p className="pdp-price">{element?.price}</p>
                         <p className="pdp-color">Color ###</p>
                     </div>
                     <div className="pdp-container-size">
@@ -40,8 +40,8 @@ const item = data.map((item)=> item.img )
                     </div>
                 </div>
             </div>
-            <Carousel items={item} numItems={3}/>
+            <Carousel items={item} numItems={3} />
         </>
-
     )
 }
+export default Pdp
