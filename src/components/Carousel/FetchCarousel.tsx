@@ -3,7 +3,7 @@ import { Carousel } from "./Carousel";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 
-const FetchCarouse = () => {
+const FetchCarousel = () => {
   const dispatch = useAppDispatch();
   const contents = useAppSelector((state) => state.contentful.contents);
   const error = useAppSelector((state) => state.contentful.error);
@@ -42,4 +42,4 @@ const FetchCarouse = () => {
   );
 };
 
-export default FetchCarouse;
+export default FetchCarousel;
