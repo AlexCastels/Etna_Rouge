@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Products } from "../../interfaces";
-import { Carousel } from "../Carousel/Carousel";
+import { Carousel } from "../carousel/Carousel";
 import useFetch from "../Hooks/useFetch";
 
 //Doppia destrutturazione
