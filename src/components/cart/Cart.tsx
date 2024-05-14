@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../redux/hook";
-import { decrement, increment, remove } from "../redux/slices/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { decrement, increment, remove } from "../../redux/slices/cartSlice";
+import '../plp/plp.scss'
 
 const Cart = () => {
   const dispatch = useAppDispatch();
