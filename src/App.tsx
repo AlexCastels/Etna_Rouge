@@ -12,7 +12,7 @@ import { Pdp } from "./components/PDP/Pdp.tsx";
 import ProductCard from "./components/ProductCard.tsx";
 import Paypal from "./components/payment/Paypal.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
-import { Carousel } from "./components/carousel/Carousel.tsx";
+
 
 
 
@@ -21,6 +21,7 @@ function App() {
     return (
         <>
             <BrowserRouter>
+                <LandingPage />
                   {/*  <Routes>
                     <Route path="/" element={<LandingPage />} />
                  <Route path="/plp/productId" element={<Pdp {...obj} />} />
