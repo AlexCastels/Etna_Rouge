@@ -14,7 +14,7 @@ const useFetch = (url: string):[Products[]] => {
                 const data = await response.json();
 
                 setData(data);
-                console.log("Dati ricevuti:", data);
+                console.log("Dati ricevuti da useFetch:", data);
 
             } catch (error) {
                 console.error("Si è verificato un errore:", error);

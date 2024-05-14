@@ -13,6 +13,9 @@
       font-weight: bold;
       letter-spacing: 0.1rem;
       width: 300px;
+      display: flex;
+      justify-content: left;
+      color: black;
     }
     .card-body-img img {
       width: 100%;
@@ -40,6 +43,8 @@
 
     .card-body-text {
       width: 300px;
+      display: flex;
+      justify-content: left;
     }
   }
 }
