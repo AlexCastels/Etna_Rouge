@@ -32,7 +32,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
         </button>
         <div className="carousel-content">
           {/* Utilizziamo slice() per estrarre solo gli elementi desiderati dall'array items.  */}
-          {items.slice(startIndex, endIndex).map((item, index) => (
+          {items.slice(startIndex, endIndex).map((item :any, index: any) => (
             <div key={index} className="carousel-item">
               <img className="carousel-img" src={item.img} alt={item} />
               <p>{item.description}</p>
