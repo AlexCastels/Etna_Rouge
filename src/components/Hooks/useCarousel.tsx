@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-export function useCarousel(totalItems: number) {
+export function useCarousel(totalItems: number, itemsPerPage: number ) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const itemsPerPage = 3;
+    
     const maxIndex = Math.max(totalItems - itemsPerPage, 0);
 
     const goToNext = () => {

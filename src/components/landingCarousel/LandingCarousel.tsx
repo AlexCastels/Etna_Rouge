@@ -1,9 +1,10 @@
 import { useEffect } from "react";
+
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
-import HeroSection from "./HeroSection";
+import { Carousel } from "../carousel/Carousel";
 
-const Content = () => {
+const LandingCarousel = () => {
   const dispatch = useAppDispatch();
   const contents = useAppSelector((state) => state.contentful.contents);
   const error = useAppSelector((state) => state.contentful.error);
@@ -13,13 +14,16 @@ const Content = () => {
     dispatch(fetchContentfulData());
   }, []);
 
-  console.log(contents[0]);
-  
-
   const filteredContentsHero = contents.filter(
-    (items) => items.fields.title === "Hero Section ER"
+    (items) => items.sys.contentType.sys.id === "erLpCarousel"
   );
 
+  const arr = filteredContentsHero.map((item) => {
+    return {
+      img: item.fields.image?.fields?.file?.url,
+      description: item?.fields.description,
+    };
+  });
 
   if (loading) {
     return <span> loading... </span>;
@@ -31,12 +35,10 @@ const Content = () => {
 
   return (
     <div>
-      {filteredContentsHero &&
-        filteredContentsHero.map((item) => (
-          <HeroSection key={item.sys.id} content={item.fields} />
-        ))}
+      <span>Etna Rouge world</span>
+      <Carousel items={arr} numItems="1" />
     </div>
   );
 };
 
-export default Content;
+export default LandingCarousel;

@@ -12,14 +12,12 @@ export function SelectPayment(){
 
     function handleBtn(spia:string){
         if(spia === 'spedizione'){
-            console.log(spia);
-            
+            console.log(spia);            
             navigate('/DeliveryForm')
         }
         if(spia === 'credit-card'){
-            console.log(spia);
-            
-            navigate('/path del componente')
+            console.log(spia);            
+            navigate('/CreditCardForm')
         }
     }
 
@@ -40,7 +38,7 @@ export function SelectPayment(){
                         <input type="radio" name='selezione' value={'credit-card'} onChange={handleRadio}/>    
                         <label htmlFor="credit-card">Credit Card</label>
                     </div>
-                    <img className="selectPayform-img" src="/public/assets/Credit-Card.png" alt="Pagamenti accettati"></img>     
+                    <img className="selectPayform-img" src="/assets/Credit-Card.png" alt="Pagamenti accettati"></img>     
                 </div>
                 <div className="selectPayform-delivery-container">
                     <div>

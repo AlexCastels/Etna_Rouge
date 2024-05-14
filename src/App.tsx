@@ -5,8 +5,12 @@ import { PayForm } from "./components/PayForm";
 import { SelectPayment } from "./components/SelectPayment";
 import FeaturesContent from "./components/featuresSection/FeaturesContent";
 import HeroContent from "./components/heroSection/HeroContent";
-import Pdp from "./components/Pdp/Pdp";
 import Plp from "./components/plp/Plp";
+import Pdp from "./components/Pdp/Pdp";
+/* import ProductCard from "./components/ProductCard.tsx";
+import Paypal from "./components/payment/Paypal.tsx";
+import LandingPage from "./components/landingPage/LandingPage.tsx";
+import { CreditCardForm } from "./components/CreditCardForm"; */
 
 
 function App() {
@@ -29,5 +33,6 @@ function App() {
 
 
 }
+
 
 export default App;
