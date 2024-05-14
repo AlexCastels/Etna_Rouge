@@ -14,6 +14,7 @@ import { PayForm } from "./components/PayForm.tsx";
 
 import Paypal from "./components/payment/Paypal.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
+import { Carousel } from "./components/carousel/Carousel.tsx";
 
 
 
@@ -31,8 +32,7 @@ function App() {
                     <Route path="/DeliveryForm" element={<PayForm/>} /> */}
                 </Routes>
             </BrowserRouter>
-            <Paypal />
-          
+        
         </>
     );
 

@@ -1,18 +1,18 @@
-import FeaturesContent from '../featuresSection/FeaturesContent'
-import FetchCarousel from '../carousel/FetchCarousel'
-import HeroContent from '../heroSection/HeroContent'
-import NavBarTop from '../Navbar/NavBarTop'
-
+import FeaturesContent from "../featuresSection/FeaturesContent";
+import HeroContent from "../heroSection/HeroContent";
+import NavBarTop from "../Navbar/NavBarTop";
+import LandingCarousel from "../landingCarousel/LandingCarousel";
 
 const LandingPage = () => {
   return (
-      <>
-          <NavBarTop />
-          <HeroContent />
-          <FeaturesContent />
-          <FetchCarousel />
-      </>
-  )
-}
+    <>
+      <NavBarTop />
+      <HeroContent />
+      <FeaturesContent />
+      <LandingCarousel />
+      
+    </>
+  );
+};
 
-export default LandingPage
+export default LandingPage;
