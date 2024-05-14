@@ -3,11 +3,14 @@ import React from "react";
 import { Products } from "../../interfaces";
 import { Carousel } from "../Carousel/Carousel";
 import useFetch from "../Hooks/useFetch";
+import { addToCart } from "../../redux/slices/cartSlice";
+import { useAppDispatch } from "../../redux/hook";
 
 //Doppia destrutturazione
 export const Pdp: React.FC<Products> = ({ name, price, img, description }) => {
 // const  { name, img, price, description} = obj
 const [data] = useFetch("http://localhost:3000/products")
+const dispatch = useAppDispatch();
 const item = data.map((item)=> item.img )
 
     return (
@@ -34,7 +37,7 @@ const item = data.map((item)=> item.img )
                         </div>
                     </div>
                     <div className="pdp-btn-cart">
-                        <button>Add to cart</button>
+                        <button onClick={() => dispatch(addToCart(el))}>Add to cart</button>
                     </div>
                 </div>
             </div>
