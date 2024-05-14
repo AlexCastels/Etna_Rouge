@@ -1,6 +1,7 @@
-import './creditCardForm.scss'
+import "./creditCardForm.scss"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
+import Paypal from "./Paypal";
 
 export function CreditCardForm(){
     
@@ -128,7 +129,11 @@ export function CreditCardForm(){
                     </div>
                 <input className='input-creditCard' required type="number" placeholder='CVV *' name='cvv' value={cvv} onChange={handleCvv} />    
             </div>
-            <button disabled={!creditDate || !creditName || !cvv || !creditNumber} onClick={handleBtn}>Checkout</button>
+            <button className="creditForm-btn" disabled={!creditDate || !creditName || !cvv || !creditNumber} onClick={handleBtn}>CHECKOUT</button>
+            <p>Or</p>
+            <div className="paypal-comp">
+                <Paypal/>
+            </div>
         </form>
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import '../components/payForm.scss'
+import './payForm.scss'
 
 interface PayForm {
     name : string;
@@ -67,7 +67,7 @@ export function PayForm(){
             <div className="payform-message">
                 <p>*Payment on delivery have supplement of €10 to the order total</p>
             </div>
-            <button>SUBMIT</button>
+            <button className="payform-btn">SUBMIT</button>
         </form>
     )
 }

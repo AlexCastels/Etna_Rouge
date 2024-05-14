@@ -31,7 +31,7 @@ export function SelectPayment(){
 
     return (
         <form className="selectPayment-container">
-            <h2 className="selectPayment-title">Payment Method</h2>
+            <p className="selectPayment-title">Payment Method</p>
             <div className="select-payform-line"></div>
                 <div className="selectPayform-creditCard-container">
                     <div>

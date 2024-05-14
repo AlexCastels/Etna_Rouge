@@ -1,16 +1,18 @@
 
 import Cart from "./components/cart/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { PayForm } from "./components/PayForm";
-import { SelectPayment } from "./components/SelectPayment";
-import FeaturesContent from "./components/featuresSection/FeaturesContent";
-import HeroContent from "./components/heroSection/HeroContent";
-import Plp from "./components/plp/Plp";
-import Pdp from "./components/Pdp/Pdp";
-/* import ProductCard from "./components/ProductCard.tsx";
+import "./style.scss";
+import "./components/PDP/Pdp.scss"
+import ProductCard from "./components/ProductCard.tsx";
 import Paypal from "./components/payment/Paypal.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
-import { CreditCardForm } from "./components/CreditCardForm"; */
+import { SelectPayment } from "./components/payment/SelectPayment.tsx";
+import { PayForm } from "./components/payment/PayForm.tsx";
+import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
+import Plp from "./components/plp/Plp.tsx";
+import FeaturesContent from "./components/featuresSection/FeaturesContent.tsx";
+import Pdp from "./components/PDP/Pdp.tsx";
+import HeroContent from "./components/heroSection/HeroContent";
 
 
 function App() {
@@ -25,13 +27,14 @@ function App() {
           <Route path="/pdp/:id" element={<Pdp/>}/>
         </Routes>
       </BrowserRouter>
-      <HeroContent />
       <FeaturesContent />
+        {/* <Routes>
+          <Route path='/SelectPayment' element={<SelectPayment/>}/>
+          <Route path='/DeliveryForm' element={<PayForm/>}/>
+          <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
+        </Routes> */}
     </>
-  );
-
-
-
+  )
 }
 
 
