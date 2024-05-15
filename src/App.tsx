@@ -13,26 +13,27 @@ import Pdp from "./components/PDP/Pdp.tsx";
 import HeroContent from "./components/heroSection/HeroContent";
 import PromoContent from "./components/promoBanner/PromoContent.tsx"
 import Cart from "./components/cart/Cart.tsx";
-import DiscoverMore from "./components/landingPage/discoverMore/DiscoverMore.tsx";
+import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
+
+
 
 
 function App() {
   return (
     <div>
+<LandingPage />
 
 
-
-
-   <BrowserRouter>
+  {/*  <BrowserRouter>
         <Routes>
           <Route path="/" element={ <LandingPage />} />
           <Route path="/discover" element={ <DiscoverMore />} />
          {/*  <Route path="/Cart" element={<Cart />} />
           <Route path="/SelectPayment" element={<SelectPayment />} />
           <Route path="/DeliveryForm" element={<PayForm />} />
-          <Route path="/pdp/:id" element={<Pdp />}/>  */}
+          <Route path="/pdp/:id" element={<Pdp />}/>  
         </Routes>
-      </BrowserRouter> 
+      </BrowserRouter>  */}
      
       
         {/* <Routes>
@@ -40,6 +41,7 @@ function App() {
           <Route path='/DeliveryForm' element={<PayForm/>}/>
           <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
         </Routes> */}
+ 
       
       
     </div>

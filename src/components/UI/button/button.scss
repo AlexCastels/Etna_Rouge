@@ -2,10 +2,9 @@
 
 button {
     border: none;
-    margin: 200px;
-    font-size: 15px ;
-    width: 14rem;
-    padding: 0.4rem 0;
+    font-size: 1rem ;
+    width: 6rem;
+    padding: 0.1rem 0;
     color: $main-white;
     background-color: $main-black;  
     font-family: $font-family; 
@@ -15,10 +14,11 @@ button {
     }
 
           @media only screen and (min-width: 768px) {
-              font-size: 18px;
-              padding: 12px 18px;
+              font-size: 1rem;
+              padding: 0.8rem 1.1rem;
               width: 18rem;
           }
    
+                
 }
 

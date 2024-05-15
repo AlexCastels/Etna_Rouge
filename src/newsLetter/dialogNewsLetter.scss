@@ -1,0 +1,21 @@
+dialog{
+    position: absolute;
+    left: 20rem;
+    padding: 10rem;
+    top: 10rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 40;
+
+    span{
+        display: flex;
+        gap: 1rem;
+        h3 {
+                color: white;
+            }
+        
+            img {
+                width: 1rem;
+            }}
+
+
+}

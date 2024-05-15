@@ -64,7 +64,7 @@ const LandingCarousel = () => {
                 alt={arr[currentIndex].description}
               />
               <p>{arr[currentIndex].description}</p>
-              <Link to='/discover'>Discover more</Link>
+             {/*  <Link to='/discover'>Discover more</Link> */}
             </div>
       
           <div className="btn-cont">
