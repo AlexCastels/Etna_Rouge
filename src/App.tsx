@@ -13,12 +13,14 @@ import Plp from "./components/plp/Plp.tsx";
 import FeaturesContent from "./components/featuresSection/FeaturesContent.tsx";
 import Pdp from "./components/PDP/Pdp.tsx";
 import HeroContent from "./components/heroSection/HeroContent";
+import PromoContent from "./components/promoBanner/PromoContent.tsx"
 
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <div>
+      <PromoContent />
+     {/*  <BrowserRouter>
         <Routes>
           <Route path="/" element={<Plp />} />
           <Route path="/Cart" element={<Cart />} />
@@ -27,13 +29,16 @@ function App() {
           <Route path="/pdp/:id" element={<Pdp/>}/>
         </Routes>
       </BrowserRouter>
-      <FeaturesContent />
+      <FeaturesContent /> */}
+      
         {/* <Routes>
           <Route path='/SelectPayment' element={<SelectPayment/>}/>
           <Route path='/DeliveryForm' element={<PayForm/>}/>
           <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
         </Routes> */}
-    </>
+      
+      
+    </div>
   )
 }
 
