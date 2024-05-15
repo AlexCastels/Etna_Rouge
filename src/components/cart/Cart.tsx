@@ -8,7 +8,6 @@ const Cart = () => {
   const cart = useAppSelector((state) => state.cart.cart);
   const total = useAppSelector((state) => state.cart.total);
   const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
-  const totalPriceElement = useAppSelector((state) => state.cart.totalPriceElement)
   return (
     <>
       Total price: {total}
