@@ -1,15 +1,16 @@
-
-@media screen and (min-width: 479px) {
+//Quando la viewport è maggiore di 768 pixel si applicherà questa seguente logica: 
+@media screen and (min-width: 768px) {
     .hamburger_menu{
         display: none;
     }
 }
 
-@media screen and (max-width: 479px) {
+//Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
+@media screen and (max-width: 768px) {
   .hamburger_menu {
     display: block;
-    width: 4em;
-    height: 6em;
+    height: 7em;
+    width: 5em;
     padding-left: 1em;
     cursor: pointer;
   }

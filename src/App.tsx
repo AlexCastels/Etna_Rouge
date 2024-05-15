@@ -11,6 +11,15 @@ import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
 
 import Pdp from "./components/PDP/Pdp.tsx";
 import HeroContent from "./components/heroSection/HeroContent";
+import NavBarTop from "./components/Navbar/NavBarTop";
+import NavBarBottom from "./components/Navbar/NavbarBottom";
+import HamburgerMenu from "./components/Hamburger/HamburgerMenu";
+import Plp from "./components/Plp";
+import Shirts from "./components/Navbar/Shirts";
+import Pants from "./components/Navbar/Pants";
+import Shoes from "./components/Navbar/Shoes";
+import All from "./components/Navbar/All";
+
 import PromoContent from "./components/promoBanner/PromoContent.tsx"
 import Cart from "./components/cart/Cart.tsx";
 import DiscoverMore from "./components/landingPage/discoverMore/DiscoverMore.tsx";
@@ -25,25 +34,18 @@ function App() {
 
    <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <LandingPage />} />
-          <Route path="/discover" element={ <DiscoverMore />} />
-         {/*  <Route path="/Cart" element={<Cart />} />
+          <Route path="/" element={<ProductCard />} />
+          <Route path="/Cart" element={<Cart />} />
           <Route path="/SelectPayment" element={<SelectPayment />} />
           <Route path="/DeliveryForm" element={<PayForm />} />
           <Route path="/pdp/:id" element={<Pdp />}/>  */}
         </Routes>
-      </BrowserRouter> 
-     
-      
-        {/* <Routes>
-          <Route path='/SelectPayment' element={<SelectPayment/>}/>
-          <Route path='/DeliveryForm' element={<PayForm/>}/>
-          <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
-        </Routes> */}
-      
-      
-    </div>
-  )
+      </BrowserRouter>
+      <HeroContent />
+      <FeaturesContent />
+    </>
+  );
+
 }
 
 
