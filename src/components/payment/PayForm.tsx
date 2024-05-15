@@ -1,5 +1,7 @@
 import { useState } from "react"
 import './payForm.scss'
+import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../redux/hook";
 
 interface PayForm {
     name : string;
@@ -13,7 +15,8 @@ interface PayForm {
 }
 
 export function PayForm(){
-
+    const total = useAppSelector(state => state.cart.total)
+    const navigate = useNavigate()
     const [input , setInput] = useState<PayForm>({
         name : '',
         surname : '',
@@ -39,6 +42,14 @@ export function PayForm(){
     function handleForm(e:React.FormEvent){
         e.preventDefault()
         console.log(input);       
+    }
+
+    function handleBtn(){
+        if(input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country){
+            navigate('/SelectPayment')
+            console.log(input);
+            
+        }        
     }
 
     return (
@@ -67,7 +78,8 @@ export function PayForm(){
             <div className="payform-message">
                 <p>*Payment on delivery have supplement of €10 to the order total</p>
             </div>
-            <button className="payform-btn">SUBMIT</button>
+            <button className="payform-btn" onClick={handleBtn}>SUBMIT</button>
+            {/* {input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country ? <p>Compilare campi richiesti</p> : null} */}
         </form>
     )
 }

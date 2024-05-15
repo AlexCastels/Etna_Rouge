@@ -18,6 +18,17 @@
         background-color: black;
     }
 
+    .selectForm-general-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        @media(min-width:768px) {
+            flex-direction: row;
+        }
+    }
+
     .selectPayform-creditCard-container{
         display: flex;
         justify-content:center;

@@ -76,11 +76,11 @@ export function CreditCardForm(){
 
     function handleBtn(){
         console.log(creditObj);
-        navigate('path componente')
+        navigate('/ThankYouCard')
     }
 
     function handleForm(e:React.FormEvent){
-        e.preventDefault()      
+        console.log(creditObj);  
     }
 
     return (
@@ -96,7 +96,7 @@ export function CreditCardForm(){
                     </div>
                     <input className='input-creditCard' required type="text" name="creditName" placeholder='Credit Name *' onChange={handleCreditName}/>
                     <div className='creditCard-select'>
-                        <input className='input-creditCard' disabled required type="text" maxLength={4} placeholder="Credit Date *" name='creditDate'/>
+                        <input className='input-creditCard' disabled required type="text" maxLength={4} placeholder="Expiration Date*" name='creditDate'/>
                         <div>
                             <select name="month" onChange={handleCreditDate} className='creditCard-select-style' required>
                                 <option value="MM">MM</option>
