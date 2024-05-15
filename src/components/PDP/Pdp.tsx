@@ -1,19 +1,31 @@
-import React from 'react'
-import { useAppSelector } from '../../redux/hook';
+import React, { useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { useParams } from 'react-router-dom';
-import './pdp.scss'
+import '../PDP/Pdp.scss'
 import { addToCart } from '../../redux/slices/cartSlice';
 import { Carousel } from '../Carousel/Carousel';
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams()
+    const dispatch = useAppDispatch()
     const product = useAppSelector((state) => state.product.products);
     const element = product.find((el: any) => el.id == id)
 
+    //carosello dinamico
+    const [numItems, setNumItems] = useState(5);
+
+    useEffect(()=>{
+        const handleResize = () => {
+            setNumItems(window.innerWidth <= 768 ? 3 : 5)
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    },[])
     return (
         <>
-
-
             <div className="pdp-wrapper">
                 <div className="pdp-card">
                     <img className="pdp-img" src={element?.img} alt={element?.name} />
@@ -22,7 +34,7 @@ const Pdp: React.FC<any> = () => {
                 <div className="pdp-info">
                     <div className="pdp-detail-header">
                         <h4 className="pdp-name-product">{element?.name}</h4>
-                        <p className="pdp-price">{element?.price}</p>
+                        <p className="pdp-price">{element?.price}€</p>
                         <p className="pdp-color">Color ###</p>
                     </div>
                     <div className="pdp-container-size">
@@ -36,11 +48,13 @@ const Pdp: React.FC<any> = () => {
                         </div>
                     </div>
                     <div className="pdp-btn-cart">
-                        <button onClick={() => dispatch(addToCart(el))}>Add to cart</button>
+                        <button onClick={() => dispatch(addToCart(element))}>
+                            Add to cart
+                        </button>
                     </div>
                 </div>
             </div>
-            <Carousel items={item} numItems={3} />
+            <Carousel items={product} numItems={numItems} />
         </>
     )
 }
