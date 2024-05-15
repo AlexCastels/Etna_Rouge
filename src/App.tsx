@@ -1,5 +1,4 @@
 
-import Cart from "./components/cart/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.scss";
 import "./components/PDP/Pdp.scss"
@@ -9,27 +8,32 @@ import LandingPage from "./components/landingPage/LandingPage.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
-import Plp from "./components/plp/Plp.tsx";
-import FeaturesContent from "./components/featuresSection/FeaturesContent.tsx";
+
 import Pdp from "./components/PDP/Pdp.tsx";
 import HeroContent from "./components/heroSection/HeroContent";
 import PromoContent from "./components/promoBanner/PromoContent.tsx"
+import Cart from "./components/cart/Cart.tsx";
+import DiscoverMore from "./components/landingPage/discoverMore/DiscoverMore.tsx";
 
 
 function App() {
   return (
     <div>
-      <PromoContent />
-     {/*  <BrowserRouter>
+
+
+
+
+   <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Plp />} />
-          <Route path="/Cart" element={<Cart />} />
+          <Route path="/" element={ <LandingPage />} />
+          <Route path="/discover" element={ <DiscoverMore />} />
+         {/*  <Route path="/Cart" element={<Cart />} />
           <Route path="/SelectPayment" element={<SelectPayment />} />
           <Route path="/DeliveryForm" element={<PayForm />} />
-          <Route path="/pdp/:id" element={<Pdp/>}/>
+          <Route path="/pdp/:id" element={<Pdp />}/>  */}
         </Routes>
-      </BrowserRouter>
-      <FeaturesContent /> */}
+      </BrowserRouter> 
+     
       
         {/* <Routes>
           <Route path='/SelectPayment' element={<SelectPayment/>}/>

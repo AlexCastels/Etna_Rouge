@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import './landingCarousel.scss'
+import { Link } from "react-router-dom";
 
 const LandingCarousel = () => {
   const dispatch = useAppDispatch();
@@ -53,6 +54,7 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
+
       <span>Etna Rouge world</span>
       <div className="carousel-subcont">
             <div className="carousel-item">
@@ -62,7 +64,7 @@ const LandingCarousel = () => {
                 alt={arr[currentIndex].description}
               />
               <p>{arr[currentIndex].description}</p>
-              <a href="">Discover more</a>
+              <Link to='/discover'>Discover more</Link>
             </div>
       
           <div className="btn-cont">
@@ -77,7 +79,7 @@ const LandingCarousel = () => {
             {"<"}
           </button>
           <button
-            className="btn-arrow"
+            className='btn-arrow'
             onClick={() =>
               setCurrentIndex((prevIndex) =>
                 prevIndex === arr.length - 1 ? 0 : prevIndex + 1
@@ -88,7 +90,8 @@ const LandingCarousel = () => {
           </button>
           </div>
         
-        </div>
+      </div>
+      
       </div>
 
   );
