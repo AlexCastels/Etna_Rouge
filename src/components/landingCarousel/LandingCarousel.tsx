@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
-import { Carousel } from "../carousel/Carousel";
+import { Carousel } from "../Carousel/Carousel";
+
 
 const LandingCarousel = () => {
   const dispatch = useAppDispatch();
@@ -15,10 +16,10 @@ const LandingCarousel = () => {
   }, []);
 
   const filteredContentsHero = contents.filter(
-    (items) => items.sys.contentType.sys.id === "erLpCarousel"
+    (items : any) => items.sys.contentType.sys.id === "erLpCarousel"
   );
 
-  const arr = filteredContentsHero.map((item) => {
+  const arr = filteredContentsHero.map((item : any) => {
     return {
       img: item.fields.image?.fields?.file?.url,
       description: item?.fields.description,
@@ -30,13 +31,13 @@ const LandingCarousel = () => {
   }
 
   if (error) {
-    return <span> {error.message} </span>;
+    /* return <span> {error.message} </span>; */
   }
 
   return (
     <div>
       <span>Etna Rouge world</span>
-      <Carousel items={arr} numItems="1" />
+      {/* <Carousel items={arr} numItems="1" /> */}
     </div>
   );
 };
