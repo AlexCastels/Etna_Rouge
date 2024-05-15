@@ -1,30 +1,78 @@
 @import "../../style.scss";
 
-.carousel {
+.carousel-cont{
+
     display: flex;
-    align-items: center;
-    width: 70rem;
-    .btn-arrow{
-        font-size: large;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 20px;
-        border: 0px;
+    padding: 4rem;
+    justify-content: center;
+    width: 100vi;
+
     }
+
     .carousel-content {
-        display: flex;
-        flex-wrap: nowrap;
-        .carousel-item {
-            width: 100%;
-            max-height: 100%;
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            padding: 10px;
-            .carousel-img {
-                width: 100%;
-                height: 100%;
+            justify-content: center;
+            width: 100vi;
+    
+            .btn-arrow {
+                display: flex;
+                background-color: rgba(255, 255, 255, 0.116);
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 0.5rem;
+                width: 1rem;
+                padding: 1rem;
+               
+                height: 1rem;
+                border-radius: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+
+                @media only screen and (min-width:768px) {
+                        padding: 1.5rem;
+                        font-size: 1rem;
+                    }
+            }
+    
+            .carousel-content {
+                display: flex;
+                flex-wrap: nowrap;
+    
+                .carousel-item {
+                    width: 100%;
+                    max-height: 100%;
+                    display: flex;
+                    gap: 1rem;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 10px;
+                    @media only screen and (min-width:768px) {
+                            width: 100%;
+                            height: 100%;
+                        }
+    
+                    .carousel-img {
+                        width: 100%;
+                        height: 100%;
+                        
+                        @media only screen and (min-width:768px) {
+                               width: 100%;
+                               height: 100%;
+                            }
+                    }
+    
+                    p {
+                      color: white;
+        
+                        @media only screen and (min-width:768px) {
+                        
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
-    }
-}
+
+

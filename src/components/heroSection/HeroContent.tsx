@@ -13,10 +13,13 @@ const Content = () => {
     dispatch(fetchContentfulData());
   }, []);
 
+  console.log(contents[0]);
+  
+
   const filteredContentsHero = contents.filter(
     (items) => items.fields.title === "Hero Section ER"
   );
-  console.log(contents);
+
 
   if (loading) {
     return <span> loading... </span>;

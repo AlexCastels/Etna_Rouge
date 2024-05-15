@@ -1,0 +1,16 @@
+@import '../../style.scss';
+
+
+.banner-cont{
+    display: flex;
+    justify-content: center;
+    font-family: $font-family;
+    padding-block: 0.5rem;
+    border: 1px solid $main-black;
+    font-size: 0.6rem;
+    
+    @media only screen and (min-width: 768px){
+        font-size: 1rem;
+    }
+}
+

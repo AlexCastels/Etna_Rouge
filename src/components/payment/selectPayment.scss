@@ -4,10 +4,12 @@
     align-items: center;
     justify-content: space-evenly;
     // width: 300px;
-    height: 650px;
+    height: 100vh;
 
     .selectPayment-title{
         width: 80%;
+        font-size: 2rem;
+        font-weight: bold;
     }
     
     .select-payform-line{
@@ -20,9 +22,12 @@
         display: flex;
         justify-content:center;
         flex-direction: column;
-
+        font-size: 18px;
         div{
             padding-bottom: 10px;
+            label{
+                padding-left:5px
+            }
         }
 
         .selectPayform-img{
@@ -35,9 +40,15 @@
         justify-content:center;
         flex-direction: column;
         width: 300px;
+        gap: 10px;
+        font-size: 18px;
         p{
-            font-size: 12px;
+            font-size: 14px;
         }
+        label{
+            padding-left:5px
+        }
+        
     }
     button{
         padding: 5px;
