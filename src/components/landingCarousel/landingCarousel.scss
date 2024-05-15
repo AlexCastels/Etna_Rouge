@@ -1,6 +1,8 @@
 @import '../../style.scss';
 
 
+
+
 .carousel-container {
     background-color: $main-black;
     display: flex;
@@ -8,20 +10,18 @@
     justify-content: center;
     width: 100vi; 
     position: relative;
-    z-index: 10;
- 
-
+  
     span {
-        z-index: 30;
+     
         position: absolute;
         color: $main-white;
         width: 100%;
         font-size: 1rem;
         top: 1rem;
-        left: 0.5rem;
+      
         @media only screen and (min-width: 768px) {
-               font-size: 2rem;
-
+            font-size: 2rem;
+            left: 3rem;
             }
 
     }
@@ -32,13 +32,7 @@
         flex-direction: column;
         justify-content: center;
         max-width: 600px; 
-            @media only screen and (min-width: 768px) {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    max-width: 1000px;
-                }
-        
+           
         .btn-cont{
             display: flex;
             gap: 80%;
@@ -56,9 +50,10 @@
                     border: 1px solid rgba(0, 0, 0, 0.5);
                     border-radius: 50%;
                     background-color: $secondary-black;
+                  
             
                     &:hover {
-                        background-color: rgba(255, 228, 196, 0.051);
+                       
                     }
             
                     @media only screen and (min-width: 768px) {
@@ -67,10 +62,12 @@
                         height: 3rem;
                     }
                 }
+
         }
     
 
                         .carousel-item {
+                          
                             width: 16rem;
                             max-height: 100%;
                             display: flex;
@@ -79,9 +76,10 @@
                             justify-content: center;
                             align-items: center;
                             padding: 0.5rem;
+                            
             
                             @media only screen and (min-width: 768px) {
-                                width: 100vi;
+                                width: 100%;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
@@ -93,12 +91,17 @@
                             .carousel-img {
                                 width: 100%;
                                 height: auto;
-                                align-self: center;
+                                transition: opacity 0.5s ease-in-out;
+                                
+                                    &.active {
+                                        opacity: 1;
+                                    }
+                                object-fit: cover;
             
             
                                 @media only screen and (min-width: 768px) {
-                                    height: 35rem;
-                                    width: 40rem;
+                                    height: 20rem;
+                                    width: 20rem;
                                 }
                             }
             
