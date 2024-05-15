@@ -4,7 +4,7 @@ import "../plp/plp.scss";
 import { useEffect } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import shoppingbag from "../../assets/shoppingbag.png";
+
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ export const Plp: React.FC<any> = () => {
   return (
     <>
     <div className="shoppingBag-container">
-       <Link to="/Cart"><img className ='shoppingBag' src={shoppingbag} alt="" /></Link>
+       <Link to="/Cart"></Link>
     </div>
      
 
