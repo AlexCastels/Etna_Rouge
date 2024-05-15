@@ -23,7 +23,6 @@ const HamburgerMenu: React.FC = () => {
         </g>
       </svg>
     </div>
-      
     </>
   );
 };
