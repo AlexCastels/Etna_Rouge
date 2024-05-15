@@ -1,18 +1,20 @@
 
-import Cart from "./components/cart/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { PayForm } from "./components/PayForm";
-import { SelectPayment } from "./components/SelectPayment";
-import Plp from "./components/plp/Plp";
-import Pdp from "./components/Pdp/Pdp";
+import "./style.scss";
+import "./components/PDP/Pdp.scss"
 import LandingPage from "./components/landingPage/LandingPage.tsx";
-import { CreditCardForm } from "./components/CreditCardForm";
+import { SelectPayment } from "./components/payment/SelectPayment.tsx";
+import { PayForm } from "./components/payment/PayForm.tsx";
+import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
+import Cart from "./components/cart/Cart.tsx";
+import Pdp from "./components/Pdp/Pdp.tsx";
+import Plp from "./components/plp/Plp.tsx";
 
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+
+   <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/plp" element={<Plp/>}/>
@@ -23,10 +25,8 @@ function App() {
          <Route path="/CreditCard" element={<CreditCardForm/>}/>
         </Routes>
       </BrowserRouter>
-    </>
+    
   );
-
-
 
 }
 

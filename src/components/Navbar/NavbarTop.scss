@@ -6,6 +6,59 @@
     box-sizing: border-box;
 }
 
+.navbar_hidden {
+    position: absolute;
+    width: 100vw;
+    margin-top: 17.5em;
+    z-index: 99;
+}
+
+.categories_hidden {
+    width: 100vw;
+    height: 6em;
+    background-color: #F5EBE0;
+
+    z-index: 9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .category_shirt {
+        padding: 1em;
+        cursor: pointer;
+    }
+    .category_pants {
+        padding: 1em;
+        cursor: pointer;
+
+    }
+    .category_shoes {
+        padding: 1em;
+        cursor: pointer;
+
+    }
+    .category_all {
+        padding: 1em;
+        cursor: pointer;
+
+    }
+}
+
+
+.nav_section {
+    width: 100vw;
+    background-color: black;
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 .navbar {
     background-color: #F5EBE0;
     width: 100%;
@@ -26,7 +79,7 @@
 
 .navbar_categories {
     width: 100%;
-
+    padding: 0.3em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -38,13 +91,15 @@
 .navbar_right {
     display: flex;
     flex-direction: row;
-    width: 20em;
+    width: 22em;
     justify-content: end;
     padding-right: 2em;
+    padding-left: 1em;
 }
 
 .navbar_button_item {
     margin: 0.8em;
+    cursor: pointer;
 }
 
 svg {
@@ -65,34 +120,72 @@ svg {
 }
 
 
-//Quando la viewport è maggiore di 479 pixel si applicherà questa seguente logica: 
-  @media screen and (min-width: 479px) {
+//Quando la viewport è maggiore di 768 pixel si applicherà questa seguente logica: 
+  @media screen and (min-width: 768px) {
 
     .logo {
         width: 21rem;
         height: 7rem;
         padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar_hidden2 {
+        display: none;
     }
   }
 
-//Quando la viewport è minore di 479 pixel si applicherà questa seguente logica: 
-  @media screen and (max-width: 479px) {
+//Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
+  @media screen and (max-width: 768px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 
     .navbar_center {
         align-items: center;
         display: none;
     }
 
-    .navbar_logo {
-        width: 22em;
-        padding-left: 4em;
-        padding-right: 4em;
-        display: flex;
-        align-items: center;
+    .logo {
+        width: 21em;
+        height: 7em;
+
     }
 
     .navbar_right {
         display: none;
+    }
+
+    .categories_hidden {
+        display: none;
+    }
+
+    .sidebar_hidden2 {
+        width: 25%;
+        height: calc(100vh - 18%);
+        z-index: 99;
+        padding-left: 6vw;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        background-color: #F5EBE0;
+        font-size: x-large;
+    }
+
+    .navbar_hidden {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     html, body {
