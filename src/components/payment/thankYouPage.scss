@@ -14,9 +14,16 @@
         background-color: black;
     }
     p{
-        width: 70%;
+        width: 50%;
         text-align: center;
+        padding:5px;
     }
+    @media(max-width:768px){
+        p{
+            width: 85%;
+        }
+    }
+    
     .thankyou-btn{
         width: 250px;
         padding: 5px;

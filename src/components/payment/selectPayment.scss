@@ -10,6 +10,7 @@
         width: 80%;
         font-size: 2rem;
         font-weight: bold;
+        letter-spacing: 0.1rem;
     }
     
     .select-payform-line{
@@ -69,6 +70,10 @@
         transition: all ease-in-out 0.5s;
         cursor: pointer;
         letter-spacing: 0.5rem;
+    }
+
+    .selectPayform-notSelect{
+        color:rgb(227, 1, 1)
     }
 
 }

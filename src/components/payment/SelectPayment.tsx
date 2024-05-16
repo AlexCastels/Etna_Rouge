@@ -5,9 +5,11 @@ import './selectPayment.scss'
 export function SelectPayment(){
     const navigate = useNavigate()
     const [spia , setSpia] = useState<string>('')
+    const [notSelect , setNotSelect] = useState<boolean>(false)
 
     function handleRadio(e:React.ChangeEvent<HTMLInputElement>){
         setSpia(e.target.value)
+        setNotSelect(false)
     }
 
     function handleBtn(spia:string){
@@ -19,6 +21,7 @@ export function SelectPayment(){
             console.log(spia);            
             navigate('/CreditCardForm')
         }
+        setNotSelect(true)
     }
 
     function handleSubmint(e:React.FormEvent){
@@ -49,9 +52,9 @@ export function SelectPayment(){
                         <p>*By choosing payment on delivery, a supplement of €10 will apply to the order total</p>
                     </div>    
                 </div>
+            {notSelect && <p className="selectPayform-notSelect">Please choose a method</p>}
             <div className="select-payform-line"></div>
             <button onClick={() => handleBtn(spia)}>CHECKOUT</button>
-            {!spia && <p>Choose a method</p>}
         </form>
     )
 }
