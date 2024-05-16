@@ -4,16 +4,18 @@
     z-index: 10;
     background-color: $main-black;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    width: 100vi;
+    max-width: 100vi;
+    overflow-inline: hidden;
     padding-block: 2rem;
 
 
     h2{
-        font-weight: 500;
-        font-size: 0.8rem;
+        font-weight: 0.8rem;
+        font-size: 0.7rem;
         color: white;
         @media only screen and (min-width:798px) {
             font-size: 1.5rem;
@@ -29,23 +31,57 @@
         @media only screen and (min-width:798px) {
                gap: 2rem;
             }
-
-        label{
+label {
             color: white;
+            font-size: 0.6rem;
+    
+            @media only screen and (min-width:798px) {
+                font-size: 0.8rem;
+            }
+        }
+
+
+.input-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+   
+
+    .submit-btn {
+            box-sizing:content-box;
+            color: $main-white;
             font-size: 0.8rem;
-            @media only screen and (min-width:798px) {
-                  font-size: 1.2rem;
-                }
+            width: 0.5rem;
+            align-self: center;
+        &:hover{
+            background-color: transparent;
+            color: grey;
+        }
+                   @media only screen and (min-width:798px) {
+                 width: 0.5rem;
+                   }
+
         }
 
-        input{
-            border-radius: 0.2rem;
-
+    
+        input {
+         /*    width: 10rem; */
+            width: auto;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-bottom: 1px solid $main-white;
+            outline: none;
+            
+    
             @media only screen and (min-width:798px) {
-                   padding-block: 0.3rem ;
-                }
+                padding-block: 0.3rem;
+                width: 20rem;
+            }
         }
+}
 
+      
         .btn-cont {
                 display: flex;
                 gap: 0.3rem;
@@ -57,21 +93,30 @@
             }
 
             .gender-btn{
-                color: $main-black;
-                background-color: $main-white;
+                width: 5rem;
+                color: $main-white;
+                background-color: $secondary-black;
+                font-size: 0.8rem;
+                &:hover{
+                    background-color:$main-white;
+                    color: $main-black;
+                    border: 1px solid $main-black;
+                }
+                @media only screen and (min-width: 798px) {
+                    width: 8rem;
+                }
 
             }
 
             .active {
                 @extend .gender-btn;
-                background-color: rgba(70, 67, 67, 0.182);
-                color: $main-white
+                background-color: $main-white;
+                    color: $main-black;
+                    border: 1px solid $main-black;
             }
 
-            .submit-btn{
-                @extend .gender-btn;
-                align-self: center;
-            }
+
+         
 
           
 

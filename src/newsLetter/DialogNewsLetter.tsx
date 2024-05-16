@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
-import './dialogNewsLetter.scss';
-import heart from '../../public/assets/heart.png'
+// DialogNewsLetter.tsx
+import React from "react";
+import heart from "../../public/assets/heart.png";
+import "./DialogNewsLetter.scss";
+import Button from "../components/UI/button/Button";
 
-
-const DialogNewsLetter: React.FC = () => {
-
-  const [open, setOpen] = useState<boolean>(true);
-
-  setInterval(() => {
-    setOpen(false)
-   },
-  3000)
-
-
-  return (
-    <dialog open={open}>
-      <span>
-        <h3> Welcome in our family </h3>
-        <img src={heart} alt="img" />
-      </span>
-     
-      
-    </dialog>
-  )
+interface DialogProps {
+  message: string;
+  submitted: boolean;
+  onClose: () => void;
 }
 
-export default DialogNewsLetter
+const DialogNewsLetter: React.FC<DialogProps> = ({
+  message,
+  onClose,
+  submitted,
+}) => {
+  return (
+    <dialog open>
+      <div>
+        <span>
+          <h3>{message}</h3>
+          {submitted && <img src={heart} alt="Heart" />}
+        </span>
+        <Button className="closing-btn" onClick={onClose}>
+          x
+        </Button>
+      </div>
+    </dialog>
+  );
+};
+
+export default DialogNewsLetter;
