@@ -15,10 +15,10 @@ const LandingCarousel = () => {
   }, []);
 
   const filteredContentsHero = contents.filter(
-    (items) => items.sys.contentType.sys.id === "erLpCarousel"
+    (items : any) => items.sys.contentType.sys.id === "erLpCarousel"
   );
 
-  const arr = filteredContentsHero.map((item) => {
+  const arr = filteredContentsHero.map((item : any) => {
     return {
       img: item.fields.image?.fields?.file?.url,
       description: item?.fields.description,
@@ -44,7 +44,7 @@ const LandingCarousel = () => {
   }
 
   if (error) {
-    return <span>{error.message}</span>;
+    return <span>{error}</span>;
   }
 
   // Verifica se arr è vuoto o currentIndex è fuori dai limiti di arr
