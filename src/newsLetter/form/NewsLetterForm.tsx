@@ -1,7 +1,7 @@
-import { SyntheticEvent, useEffect, useState } from "react";
-import { internalMemory } from "../utils/internalMemory.js";
-import Button from "../components/UI/button/Button";
-import DialogNewsLetter from "./DialogNewsLetter.jsx";
+import { useState } from "react";
+import { internalMemory } from "../../utils/internalMemory.ts";
+import Button from "../../components/UI/button/Button.js";
+import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
 import "./NewsLetterForm.scss";
 
 const NewsLetterForm: React.FC = () => {
@@ -76,7 +76,6 @@ const NewsLetterForm: React.FC = () => {
           }
           onClose={handleCloseDialog}
           submitted={submitted}
-      
         />
       )}
       <div className="container">

@@ -1,0 +1,60 @@
+dialog {
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 40;
+    top: 3rem;
+    left: 1rem;
+
+    @media only screen and (min-width:768px) {
+        left: 25rem;
+        padding: 4rem;
+        top: 10rem;
+    }
+
+    div {
+        span {
+            display: flex;
+            gap: 2rem;
+
+            h3 {
+                color: white;
+                font-size: 1rem;
+
+                @media only screen and (min-width:768px) {
+                    font-size: 1rem;
+                }
+            }
+
+            img {
+                width: 1rem;
+            }
+        }
+
+        .closing-btn {
+            font-size: 1rem;
+            background-color: transparent;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 17rem;
+            right: 0rem;
+
+            &:hover {
+                background-color: transparent;
+                padding: 0;
+                color: gray;
+            }
+
+            @media only screen and (min-width:768px) {
+                top: 0;
+                background-color: transparent;
+                right: 0rem;
+                left: 13rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}
