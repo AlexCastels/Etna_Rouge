@@ -1,8 +1,8 @@
 import { useState } from "react"
 import './payForm.scss'
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../redux/hook";
-
+import { useAppDispatch } from "../../redux/hook";
+import { addFormData } from "../../redux/slices/payformSlice";
 interface PayForm {
     name : string;
     surname : string;
@@ -15,7 +15,8 @@ interface PayForm {
 }
 
 export function PayForm(){
-    const total = useAppSelector(state => state.cart.total)
+    // const total = useAppSelector(state => state.cart.total)
+    const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const [input , setInput] = useState<PayForm>({
         name : '',
@@ -48,7 +49,7 @@ export function PayForm(){
         if(input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country){
             navigate('/SelectPayment')
             console.log(input);
-            
+            dispatch(addFormData(input))            
         }        
     }
 
