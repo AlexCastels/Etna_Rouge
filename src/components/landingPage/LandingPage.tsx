@@ -8,11 +8,11 @@ import PromoContent from "../promoBanner/PromoContent";
 const LandingPage = () => {
   return (
     <>
-      {/*     <PromoContent />
+       <PromoContent />
       <NavBarTop />
       <HeroContent />
       <FeaturesContent />
-      <LandingCarousel /> */}
+      <LandingCarousel /> 
       <NewsLetterForm />
     </>
   );
