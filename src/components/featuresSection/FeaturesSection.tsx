@@ -1,5 +1,5 @@
 import React from "react";
-import "./featuresSection.scss";
+import "./FeaturesSection.scss";
 
 
 
