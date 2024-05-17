@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
-import { Carousel } from "../carousel/Carousel";
+import './landingCarousel.scss'
+import { Link } from "react-router-dom";
 
 const LandingCarousel = () => {
   const dispatch = useAppDispatch();
@@ -25,19 +25,75 @@ const LandingCarousel = () => {
     };
   });
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (arr.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === arr.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 5000); // Cambia immagine ogni 5 secondi
+
+      return () => clearInterval(interval);
+    }
+  }, [arr]);
+
   if (loading) {
-    return <span> loading... </span>;
+    return <span>loading...</span>;
   }
 
   if (error) {
-    return <span> {error.message} </span>;
+    return <span>{error.message}</span>;
+  }
+
+  // Verifica se arr è vuoto o currentIndex è fuori dai limiti di arr
+  if (arr.length === 0 || currentIndex >= arr.length || currentIndex < 0) {
+    return <span>No items to display.</span>;
   }
 
   return (
-    <div>
+    <div className="carousel-container">
+
       <span>Etna Rouge world</span>
-      <Carousel items={arr} numItems="1" />
-    </div>
+      <div className="carousel-subcont">
+            <div className="carousel-item">
+              <img
+                className="carousel-img"
+                src={arr[currentIndex].img}
+                alt={arr[currentIndex].description}
+              />
+              <p>{arr[currentIndex].description}</p>
+              <Link to='/discover'>Discover more</Link>
+            </div>
+      
+          <div className="btn-cont">
+                <button
+            className="btn-arrow"
+            onClick={() =>
+              setCurrentIndex((prevIndex) =>
+                prevIndex === 0 ? arr.length - 1 : prevIndex - 1
+              )
+            }
+          >
+            {"<"}
+          </button>
+          <button
+            className='btn-arrow'
+            onClick={() =>
+              setCurrentIndex((prevIndex) =>
+                prevIndex === arr.length - 1 ? 0 : prevIndex + 1
+              )
+            }
+          >
+            {">"}
+          </button>
+          </div>
+        
+      </div>
+      
+      </div>
+
   );
 };
 

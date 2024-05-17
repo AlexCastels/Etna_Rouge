@@ -8,6 +8,9 @@
 
     .selectPayment-title{
         width: 80%;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
     }
     
     .select-payform-line{
@@ -16,13 +19,27 @@
         background-color: black;
     }
 
+    .selectForm-general-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        @media(min-width:768px) {
+            flex-direction: row;
+        }
+    }
+
     .selectPayform-creditCard-container{
         display: flex;
         justify-content:center;
         flex-direction: column;
-
+        font-size: 18px;
         div{
             padding-bottom: 10px;
+            label{
+                padding-left:5px
+            }
         }
 
         .selectPayform-img{
@@ -35,9 +52,15 @@
         justify-content:center;
         flex-direction: column;
         width: 300px;
+        gap: 10px;
+        font-size: 18px;
         p{
-            font-size: 12px;
+            font-size: 14px;
         }
+        label{
+            padding-left:5px
+        }
+        
     }
     button{
         padding: 5px;
@@ -47,6 +70,10 @@
         transition: all ease-in-out 0.5s;
         cursor: pointer;
         letter-spacing: 0.5rem;
+    }
+
+    .selectPayform-notSelect{
+        color:rgb(227, 1, 1)
     }
 
 }

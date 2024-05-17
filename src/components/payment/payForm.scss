@@ -1,6 +1,5 @@
 // PayForm
 
-
 .payform-container{
     display: flex;
     flex-direction: column;
@@ -8,6 +7,11 @@
     justify-content: space-evenly;
     gap:15px;
     height: 100vh;
+    div h2{
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+    }
 }
 
 .input-payform{
@@ -46,5 +50,21 @@
 // }
 
 .payform-message{
-    font-size: 12px;
+    font-size: 14px;
+    // width: 85%;
+    padding: 15px;
+}
+
+.payform-btn{
+    width: 250px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    letter-spacing: 0.5rem;
+
+    &:hover{
+        opacity: 0.3;
+    }
 }

@@ -3,18 +3,19 @@ import { useCarousel } from "../Hooks/useCarousel";
 import "./Carousel.scss";
 
 
+
 interface CarouselProps {
   items: any;
   numItems: number;
 }
 
-
+//added a parameter called numItems, for the reusing of Carousel component, passing the wanted items number;
 export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
   const itemsPerPage = numItems;
   
   const { currentIndex, goToNext, goToPrev } = useCarousel(
     items.length,
-    numItems
+    itemsPerPage
   );
 
   const startIndex = currentIndex;

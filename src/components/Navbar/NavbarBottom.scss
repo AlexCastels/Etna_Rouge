@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 479px) {
+//Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
+@media screen and (max-width: 768px) {
 
     .navbar_bottom {
         width: 100%;
@@ -16,6 +17,7 @@
         background-color: #F5EBE0;
         position: fixed;
         bottom: 0;
+        z-index: 99;
 
     }
 
@@ -28,7 +30,7 @@
     }
 }
 
-@media screen and (min-width: 479px) {
+@media screen and (min-width: 768px) {
 
     .navbar_bottom{
         display: none;

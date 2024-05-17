@@ -1,23 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import { /* Link */ useNavigate } from "react-router-dom";
 
 const NavBarTop: React.FC = () => {
+  const [toggle, setToggle] = useState(true);
+  const [toggle2, setToggle2] = useState(true);
+
+  const navigate = useNavigate();
+
+  function linkHamburger() {
+    navigate("/hamburger", { state: { name: "hamburger" } });
+  }
+  function linkShirts() {
+    navigate("/shirts", { state: { name: "shirts" } });
+  }
+  function linkPants() {
+    navigate("/pants", { state: { name: "pants" } });
+  }
+  function linkShoes() {
+    navigate("/shoes", { state: { name: "shoes" } });
+  }
+  function linkAll() {
+    navigate("/all", { state: { name: "all" } });
+  }
+
   return (
+    <>
     <nav className="navbar">
-      <div>
+      <div
+        onClick={() => {
+          setToggle2(!toggle2);
+        }}
+      >
         <HamburgerMenu />
       </div>
       <div className="navbar_logo">
         <Logo />
       </div>
       <div className="navbar_center">
-        <div className="navbar_categories">Uomo</div>
-        <div className="navbar_categories">Scopri</div>
-        <div className="navbar_categories">Donna</div>
+        <div
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+          className="navbar_categories"
+        >
+          Men
+        </div>
+        <div
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+          className="navbar_categories"
+        >
+          Discover
+        </div>
+        <div
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+          className="navbar_categories"
+        >
+          Women
+        </div>
       </div>
       <div className="navbar_right">
+        {/* icona Search */}
         <div className="navbar_button_item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +89,7 @@ const NavBarTop: React.FC = () => {
             />
           </svg>
         </div>
+        {/* icona Profile */}
         <div className="navbar_button_item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +121,13 @@ const NavBarTop: React.FC = () => {
             </g>
           </svg>
         </div>
-
-        <div className="navbar_button_item">
+        {/* icona Cart */}
+        <div
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+          className="navbar_button_item"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="#000000"
@@ -85,8 +140,45 @@ const NavBarTop: React.FC = () => {
           </svg>
         </div>
       </div>
+      <div className="navbar_hidden">
+        {toggle && (
+          <div className="categories_hidden">
+            <div className="category_shirt" onClick={linkShirts}>
+              Shirt
+            </div>
+            <div className="category_pants" onClick={linkPants}>
+              Pants
+            </div>
+            <div className="category_shoes" onClick={linkShoes}>
+              Shoes
+            </div>
+            <div className="category_all" onClick={linkAll}>
+              All
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        
+      </div>
     </nav>
-  );
+    {toggle2 && (
+          <div className="sidebar_hidden2">
+          <div className="category_shirt" onClick={linkShirts}>
+            Shirt
+          </div>
+          <div className="category_pants" onClick={linkPants}>
+            Pants
+          </div>
+          <div className="category_shoes" onClick={linkShoes}>
+            Shoes
+          </div>
+          <div className="category_all" onClick={linkAll}>
+            All
+          </div>
+        </div>
+        )}
+  </>);
 };
 
 export default NavBarTop;
