@@ -12,6 +12,7 @@ import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.
 import "./style.scss";
 import "./components/PDP/Pdp.scss";
 
+
 function App() {
   return (
     <>
