@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { PayForm } from "./components/PayForm";
 // import { SelectPayment } from "./components/SelectPayment";
