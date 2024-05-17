@@ -24,13 +24,13 @@
   }
 
   .carousel-item {
-    margin-right: 1rem; 
+    margin-right: 1rem;
     flex: 1;
     width: 100vi;
     height: 15rem;
     @media only screen and (min-width: 798px) {
-  height: 38rem;
-  }
+      height: 38rem;
+    }
 
     img {
       width: 100%;
@@ -47,7 +47,7 @@
     margin-block-end: 2rem;
     text-decoration: none;
     color: $main-white;
-    &:hover{
+    &:hover {
       color: gray;
       font-size: 1.2rem;
     }

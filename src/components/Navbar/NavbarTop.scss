@@ -10,41 +10,32 @@
     position: absolute;
     width: 100vw;
     margin-top: 17.5em;
-    z-index: 99;
+
 }
 
 .categories_hidden {
     width: 100vw;
-    height: 6em;
-    background-color: #F5EBE0;
-
-    z-index: 9;
+    height: 3em;
+    bottom: 6.5vh;
+    background-color: white;
+    position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-
-    .category_shirt {
-        padding: 1em;
-        cursor: pointer;
-    }
-    .category_pants {
-        padding: 1em;
-        cursor: pointer;
-
-    }
-    .category_shoes {
-        padding: 1em;
-        cursor: pointer;
-
-    }
-    .category_all {
-        padding: 1em;
-        cursor: pointer;
-
-    }
 }
 
+.single_category {
+    padding: 1em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-small;
+    letter-spacing: 0.2em;
+
+}
 
 .nav_section {
     width: 100vw;
@@ -57,29 +48,30 @@
     align-items: center;
 }
 
-
-
-.navbar {
-    background-color: #F5EBE0;
+.navbar_top {
+    background-color: white;
     width: 100%;
-    height: 100%;
+    height: 8vh;
+    top: 2vh;
+    z-index: 99;
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
+    letter-spacing: 0.2em;
 }
 
 .navbar_center {
     display: flex;
     flex-direction: row;
     width: 100%;
-    font-size: xx-large;
-    font-weight: 600;
+    font-size: small;
+
 
 }
 
 .navbar_categories {
     width: 100%;
-    padding: 0.3em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,10 +83,11 @@
 .navbar_right {
     display: flex;
     flex-direction: row;
-    width: 22em;
-    justify-content: end;
-    padding-right: 2em;
+    width: 15em;
+    align-items: center;
     padding-left: 1em;
+    padding-right: 2em;
+
 }
 
 .navbar_button_item {
@@ -112,51 +105,44 @@ svg {
 }
 
 .logo {
-    width: 12em;
-    height: 4em;
+    width: 15rem;
+    height: 5rem;
+    padding: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.sidebar_hidden2 {
+    display: none;
+}
 
-//Quando la viewport è maggiore di 768 pixel si applicherà questa seguente logica: 
-  @media screen and (min-width: 768px) {
+.category_border {
+    background:  black;
+    width: 1px;
+    height: 1.7em;
+}
 
-    .logo {
-        width: 21rem;
-        height: 7rem;
-        padding: 1em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sidebar_hidden2 {
-        display: none;
-    }
-  }
 
 //Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
   @media screen and (max-width: 768px) {
 
-    .navbar {
+    .navbar_top {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
+        height: 4em;
+    }
+
+    .navbar_bottom {
+        position: static;
     }
 
     .navbar_center {
         align-items: center;
         display: none;
-    }
-
-    .logo {
-        width: 21em;
-        height: 7em;
-
     }
 
     .navbar_right {
@@ -165,19 +151,26 @@ svg {
 
     .categories_hidden {
         display: none;
+        z-index: 99;
+    }
+
+    .category_border {
+        background:  black;
+        width: 15vw;
+        height: 1px;
     }
 
     .sidebar_hidden2 {
         width: 25%;
-        height: calc(100vh - 18%);
-        z-index: 99;
-        padding-left: 6vw;
+        height: calc(100vh - 15%);
+        z-index: 9;
+        top: 8vh;
         position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: start;
-        background-color: #F5EBE0;
+        align-items: center;
+        background-color: white;
         font-size: x-large;
     }
 
@@ -190,5 +183,6 @@ svg {
 
     html, body {
         overflow-x: hidden;
+        overflow-y: hidden;
     }
   }

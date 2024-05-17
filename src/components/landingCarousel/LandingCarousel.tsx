@@ -51,7 +51,7 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <span>Etna Rouge world</span>
+      <span>Etna Rouge World</span>
       <div className="carousel-subcont">
         {currentItems.map((item, index) => (
           <div key={index} className="carousel-item">

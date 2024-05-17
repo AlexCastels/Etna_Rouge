@@ -24,6 +24,13 @@ $secondary-black: #0000009e;
     font-family: $font-family;
 }
 
+select{
+    bottom: 2rem;
+    z-index: 300;
+    right: 1rem;
+    position: absolute;
+}
+
 /* ProductCard */
 .single-card-container{
     display: flex;
