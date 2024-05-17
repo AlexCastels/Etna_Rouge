@@ -10,6 +10,7 @@ import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.
 import "./style.scss";
 import "./components/PDP/Pdp.scss";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
+import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/discover" element={<DiscoverMore />} />
           <Route path="/plp" element={<Plp />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/SelectPayment" element={<SelectPayment />} />

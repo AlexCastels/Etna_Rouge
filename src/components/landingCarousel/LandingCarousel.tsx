@@ -1,99 +1,71 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
-import './LandingCarousel.scss'
+import { useAppSelector } from "../../redux/hook";
+import "./LandingCarousel.scss";
 import { Link } from "react-router-dom";
 
 const LandingCarousel = () => {
-  const dispatch = useAppDispatch();
   const contents = useAppSelector((state) => state.contentful.contents);
   const error = useAppSelector((state) => state.contentful.error);
   const loading = useAppSelector((state) => state.contentful.loading);
 
-  useEffect(() => {
-    dispatch(fetchContentfulData());
-  }, []);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredContentsHero = contents.filter(
     (items) => items.sys.contentType.sys.id === "erLpCarousel"
   );
 
-  const arr = filteredContentsHero.map((item) => {
-    return {
-      img: item.fields.image?.fields?.file?.url,
-      description: item?.fields.description,
-    };
-  });
-
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const arr = filteredContentsHero.map((item) => ({
+    img: item.fields.image?.fields?.file?.url,
+    description: item?.fields.description,
+  }));
 
   useEffect(() => {
     if (arr.length > 0) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) =>
-          prevIndex === arr.length - 1 ? 0 : prevIndex + 1
+          prevIndex >= arr.length - 2 ? 0 : prevIndex + 2
         );
-      }, 5000); // Cambia immagine ogni 5 secondi
+      }, 5000); // Change images every 5 seconds
 
       return () => clearInterval(interval);
     }
   }, [arr]);
 
   if (loading) {
-    return <span>loading...</span>;
+    return <span>Loading...</span>;
   }
 
   if (error) {
-    return <span>{error.message}</span>;
+    return <span>{error}</span>;
   }
 
-  // Verifica se arr è vuoto o currentIndex è fuori dai limiti di arr
-  if (arr.length === 0 || currentIndex >= arr.length || currentIndex < 0) {
+  if (arr.length === 0) {
     return <span>No items to display.</span>;
   }
 
+  // Get the current two items to display
+  const currentItems = [
+    arr[currentIndex],
+    arr[(currentIndex + 1) % arr.length],
+  ];
+
   return (
     <div className="carousel-container">
-
       <span>Etna Rouge world</span>
       <div className="carousel-subcont">
-            <div className="carousel-item">
-              <img
-                className="carousel-img"
-                src={arr[currentIndex].img}
-                alt={arr[currentIndex].description}
-              />
-              <p>{arr[currentIndex].description}</p>
-             {/*  <Link to='/discover'>Discover more</Link> */}
-            </div>
-      
-          <div className="btn-cont">
-                <button
-            className="btn-arrow"
-            onClick={() =>
-              setCurrentIndex((prevIndex) =>
-                prevIndex === 0 ? arr.length - 1 : prevIndex - 1
-              )
-            }
-          >
-            {"<"}
-          </button>
-          <button
-            className='btn-arrow'
-            onClick={() =>
-              setCurrentIndex((prevIndex) =>
-                prevIndex === arr.length - 1 ? 0 : prevIndex + 1
-              )
-            }
-          >
-            {">"}
-          </button>
+        {currentItems.map((item, index) => (
+          <div key={index} className="carousel-item">
+            <img
+              className="carousel-img"
+              src={item.img}
+              alt={item.description}
+            />
+            <p>{item.description}</p>
           </div>
-        
+        ))}
       </div>
-      
-      </div>
-
+      <Link to="/discover">Discover more</Link>
+    </div>
   );
 };
 

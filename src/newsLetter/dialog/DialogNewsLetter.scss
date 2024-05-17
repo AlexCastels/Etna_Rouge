@@ -1,60 +1,67 @@
-dialog {
+div {
+  position: relative;
+
+  dialog {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 3rem;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 40;
-    top: 3rem;
+    top: 1rem;
     left: 1rem;
 
-    @media only screen and (min-width:768px) {
-        left: 25rem;
-        padding: 4rem;
-        top: 10rem;
+    z-index: 1000;
+    /* Aggiunto z-index per assicurare che il dialog appaia sopra altri elementi */
+
+    @media only screen and (min-width: 768px) {
+      left: 30rem;
+      padding: 4rem 3rem;
+      top: 8rem;
+    }
+
+    .closing-btn {
+      align-self: flex-end;
+      display: block;
+      width: min-content;
+      font-size: 1rem;
+      background-color: transparent;
+      padding: 0;
+
+      &:hover {
+        background-color: transparent;
+        padding: 0;
+        color: gray;
+      }
+
+      @media only screen and (min-width: 768px) {
+        top: 0;
+        background-color: transparent;
+        right: 0;
+        left: 5rem;
+        bottom: 40rem;
+        font-size: 1rem;
+      }
     }
 
     div {
-        span {
-            display: flex;
-            gap: 2rem;
+      span {
+        display: flex;
+        gap: 2rem;
 
-            h3 {
-                color: white;
-                font-size: 1rem;
+        h3 {
+          color: white;
+          font-size: 1rem;
 
-                @media only screen and (min-width:768px) {
-                    font-size: 1rem;
-                }
-            }
-
-            img {
-                width: 1rem;
-            }
-        }
-
-        .closing-btn {
+          @media only screen and (min-width: 768px) {
             font-size: 1rem;
-            background-color: transparent;
-            padding: 0;
-            position: absolute;
-            top: 0;
-            left: 17rem;
-            right: 0rem;
-
-            &:hover {
-                background-color: transparent;
-                padding: 0;
-                color: gray;
-            }
-
-            @media only screen and (min-width:768px) {
-                top: 0;
-                background-color: transparent;
-                right: 0rem;
-                left: 13rem;
-                font-size: 1rem;
-            }
+          }
         }
+
+        img {
+          width: 1rem;
+        }
+      }
     }
+  }
 }

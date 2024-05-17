@@ -47,7 +47,8 @@
             align-items: baseline;
 
             .submit-btn {
-                box-sizing: content-box;
+                display: block;
+                block-size: min-content;
                 color: $main-white;
                 font-size: 0.8rem;
                 width: 0.5rem;
