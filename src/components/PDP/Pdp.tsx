@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppSelector } from '../../redux/hook';
 import { useParams } from 'react-router-dom';
-import './pdp.scss'
+import '../PDP/Pdp.scss';
 
 const Pdp : React.FC<any>  = () => {
     const {id} = useParams()

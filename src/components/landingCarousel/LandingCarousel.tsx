@@ -54,8 +54,6 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
-
-      <span>Etna Rouge world</span>
       <div className="carousel-subcont">
             <div className="carousel-item">
               <img

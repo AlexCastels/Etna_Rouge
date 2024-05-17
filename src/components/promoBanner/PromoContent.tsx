@@ -1,7 +1,7 @@
 import  { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
-import PromoBanner from "./PromoBanner";
+import PromoBanner from "./PromoBanner.tsx";
 
 const PromoContent = () => {
   const dispatch = useAppDispatch();
