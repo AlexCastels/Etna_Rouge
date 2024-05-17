@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { client } from "../../contentful/client";
 
-
 interface Contents {
-  contents: any;
+  contents: any[];
   loading: boolean;
   error: string | null;
 }
@@ -16,9 +15,8 @@ const initialState: Contents = {
 
 export const fetchContentfulData = createAsyncThunk("contents/fetchContentfulData", async () => {
   try {
-      const data = await client.getEntries();
-      return data.items;
-
+    const data = await client.getEntries();
+    return data.items;
   } catch (error) {
     throw new Error("Network error");
   }

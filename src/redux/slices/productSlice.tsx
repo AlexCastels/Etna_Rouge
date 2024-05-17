@@ -15,7 +15,7 @@ const initialState: ProductState = {
 
 export const fetchData = createAsyncThunk("product/fetchData", async () => {
   try {
-    const response = await fetch("http://localhost:3000/products");
+    const response = await fetch("http://localhost:3000/products?limit=3");
     if (!response.ok) {
       throw new Error("Errore durante il recupero dei dati");
     }

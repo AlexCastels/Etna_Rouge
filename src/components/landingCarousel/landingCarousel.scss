@@ -1,11 +1,16 @@
-@import '../../style.scss';
-
-
-
+@import "../../style.scss";
 
 .carousel-container {
-    background-color: $main-black;
-    display: flex;
+  background-color: $main-black;
+  color: $main-white;
+  display: flex;
+  width: 100vi;
+  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 0.5rem;
+
+  @media only screen and (min-width: 798px) {
     padding: 3rem;
     justify-content: center;
     width: 100vi; 
@@ -26,110 +31,41 @@
 
     }
 
-    .carousel-subcont {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 600px; 
-           
-        .btn-cont{
-            display: flex;
-            gap: 80%;
+  .carousel-subcont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 1rem;
+  }
 
+  .carousel-item {
+    margin-right: 1rem; 
+    flex: 1;
+    width: 100vi;
+    height: 15rem;
+    @media only screen and (min-width: 798px) {
+  height: 38rem;
+  }
 
-            .btn-arrow {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: $main-white;
-                    font-size: 1rem;
-                    width: 2rem;
-                    height: 2rem;
-                    padding: 1rem;
-                    border: 1px solid rgba(0, 0, 0, 0.5);
-                    border-radius: 50%;
-                    background-color: $secondary-black;
-                  
-            
-                    &:hover {
-                       
-                    }
-            
-                    @media only screen and (min-width: 768px) {
-                        font-size: 1.5rem;
-                        width: 3rem;
-                        height: 3rem;
-                    }
-                }
-
-        }
-    
-
-                        .carousel-item {
-                          
-                            width: 16rem;
-                            max-height: 100%;
-                            display: flex;
-                            gap: 1rem;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            padding: 0.5rem;
-                            
-            
-                            @media only screen and (min-width: 768px) {
-                                width: 100%;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                             
-            
-            
-                            }
-            
-                            .carousel-img {
-                                width: 100%;
-                                height: auto;
-                                transition: opacity 0.5s ease-in-out;
-                                
-                                    &.active {
-                                        opacity: 1;
-                                    }
-                                object-fit: cover;
-            
-            
-                                @media only screen and (min-width: 768px) {
-                                    height: 20rem;
-                                    width: 20rem;
-                                }
-                            }
-            
-                            a {
-                                text-decoration: underline blanchedalmond;
-                                text-transform: capitalize;
-                                color: white;
-                            }
-            
-                            p {
-                                color: white;
-                                font-size: 0.6rem;
-                                width: 100%;
-            
-                                @media only screen and (min-width: 768px) {
-                                    width: 100%;
-                                    font-size: 1.5rem;
-                                }
-            
-            
-                            }
-                        }
+    img {
+      width: 100%;
+      height: 70%;
+      display: block;
     }
 
-  
+    p {
+      margin-block-start: 0.5rem; // Spazio tra l'immagine e il testo, 0.5rem
+    }
+  }
 
-       
-
-        
-        }
-    
+  a {
+    margin-block-end: 2rem;
+    text-decoration: none;
+    color: $main-white;
+    &:hover{
+      color: gray;
+      font-size: 1.2rem;
+    }
+  }
+}
