@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import '../PDP/Pdp.scss'
 import { addToCart } from '../../redux/slices/cartSlice';
 import { Carousel } from '../Carousel/Carousel';
+import Button from '../UI/button/Button';
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams()
@@ -48,9 +49,7 @@ const Pdp: React.FC<any> = () => {
                         </div>
                     </div>
                     <div className="pdp-btn-cart">
-                        <button onClick={() => dispatch(addToCart(element))}>
-                            Add to cart
-                        </button>
+                        <Button className="btn-cart-component" onClick={() => dispatch(addToCart(element))}>Add to Cart</Button>
                     </div>
                 </div>
             </div>
