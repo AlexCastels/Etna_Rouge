@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hook";
-import "./LandingCarousel.scss";
+import "./landingCarousel.scss";
 import { Link } from "react-router-dom";
 
 const LandingCarousel = () => {

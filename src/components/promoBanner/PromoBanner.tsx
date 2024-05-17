@@ -1,4 +1,4 @@
-import './PromoBanner.scss'
+import './promoBanner.scss'
 
 const PromoBanner = ({ text }) => {
   return (

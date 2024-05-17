@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeroSections.scss";
+import "./heroSections.scss";
 
 const HeroSection:React.FC<any> = ({ content }) => {
   
