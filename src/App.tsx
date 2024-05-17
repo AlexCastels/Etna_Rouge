@@ -24,7 +24,6 @@ function App() {
             <Route path='/CreditCardForm' element={<CreditCardForm/>}/>
             <Route path="/ThankYouCard" element={<ThankYouPageCard/>}/>
             <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery/>}/>
-            <Route path="/Cart" element={<Cart />} />
             {/* <Route path="/pdp/:id" element={<Pdp />}/>  */}
           </Routes>
         </BrowserRouter>
