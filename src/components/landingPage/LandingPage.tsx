@@ -3,7 +3,6 @@ import NewsLetterForm from "../../newsLetter/form/NewsLetterForm";
 import FeaturesContent from "../featuresSection/FeaturesContent";
 import HeroContent from "../heroSection/HeroContent";
 import LandingCarousel from "../landingCarousel/LandingCarousel";
-import NavBarTop from "../Navbar/NavBarTop";
 import PromoContent from "../promoBanner/PromoContent";
 import { RootState } from "../../redux/store";
 import { useEffect } from "react";
@@ -21,8 +20,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <PromoContent />
-      <NavBarTop />
+      {/* <PromoContent /> */}
       <HeroContent />
       <FeaturesContent />
       <LandingCarousel />

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { useAppSelector } from "../../redux/hook";
-import PromoBanner from "./PromoBanner";
+import  { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
+import PromoBanner from "./PromoBanner.tsx";
 
 const PromoContent = () => {
   const loading = useAppSelector((state) => state.contentful.loading);

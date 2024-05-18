@@ -12,8 +12,24 @@
 
   @media only screen and (min-width: 798px) {
     padding: 3rem;
-    gap: 1rem;
-  }
+    justify-content: center;
+    width: 100vi; 
+    position: initial;
+  
+    span {
+     
+        position: absolute;
+        color: $main-white;
+        width: 100%;
+        font-size: 1rem;
+        top: 1rem;
+      
+        @media only screen and (min-width: 768px) {
+            font-size: 2rem;
+            left: 3rem;
+            }
+
+    }
 
   .carousel-subcont {
     display: flex;
