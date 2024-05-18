@@ -25,6 +25,10 @@
 
   "payForm.title": "Inserte sus datos",
   "payForm.country": "Seleccione su país",
+  "payForm.Italy": "Italia",
+  "payForm.France": "Francia",
+  "payForm.Spain": "España",
+  "payForm.Germany": "Alemania",
   "payForm.supplement": "*El pago contra reembolso tiene un suplemento de €10 al total del pedido",
   "payForm.button.pay": "Ir a Pagar",
 

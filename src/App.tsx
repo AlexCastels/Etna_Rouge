@@ -63,9 +63,9 @@ function App() {
           </select>
 
           <BrowserRouter>
-          {/*   <NavBarTop /> */}
+             <NavBarTop /> 
             <Routes>
-             {/*  <Route path="/" element={<LandingPage />} /> */}
+              <Route path="/" element={<LandingPage />} />
             {/*   <Route path="/discover" element={<DiscoverMore />} />
               <Route path="/plp" element={<Plp />} /> */}
               <Route path="/Cart" element={<Cart />} />

@@ -1,4 +1,5 @@
-{  "currency": "USD", 
+{
+  "currency": "USD",
 
   "navbarTop.men": "Men",
   "navbarTop.women": "Women",
@@ -25,10 +26,15 @@
   "creditPayment.checkout": "Checkout",
 
   "payForm.title": "Insert your data",
-  "payForm.country": "Select your country",
+  "payForm.country": "Select your country *",
+  "payForm.Italy": "Italy",
+  "payForm.France": "France",
+  "payForm.Spain": "Spain",
+  "payForm.Germany": "Germany",
   "payForm.supplement": "*Payment on delivery have supplement of €10 to the order total",
   "payForm.button.pay": "Go to Pay",
 
+  
   "selectPayment.title": "Payment Methods",
   "selectPayment.label.cash": "Cash on Delivery",
   "selectPayment.advise": " *By choosing payment on delivery, a supplement of €10 will apply to the order total",
@@ -47,10 +53,7 @@
   "plp.button.addToCart": "ADD TO CART",
   "plp.link.cart": "Cart",
 
-  
   "cart.remove": "Remove",
   "cart.quantity": "Quantity",
   "cart.products": "Products"
-
-
 }

@@ -25,6 +25,10 @@
 
   "payForm.title": "Inserisci i Tuoi Dati",
   "payForm.country": "Seleziona il tuo paese",
+  "payForm.Italy": "Italia",
+  "payForm.France": "Francia",
+  "payForm.Spain": "Spagna",
+  "payForm.Germany": "Germania",
   "payForm.supplement": "*Il pagamento alla consegna comporta un supplemento di €10 al totale dell'ordine",
   "payForm.button.pay": "Vai al Pagamento",
 

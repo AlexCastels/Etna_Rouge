@@ -3,6 +3,7 @@ import './payForm.scss'
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hook";
 import { addFormData } from "../../redux/slices/payformSlice";
+import { FormattedMessage } from "react-intl";
 interface PayForm {
     name : string;
     surname : string;
@@ -56,7 +57,7 @@ export function PayForm(){
     return (
         <form className='payform-container' onSubmit={handleForm}>
             <div>
-                <h2>Inserisci Dati</h2>
+                <h2><FormattedMessage id="payForm.title" defaultMessage="Insert your data" /></h2>
             </div>
             <div className="payform-top">
                 <input className='input-payform' required placeholder='Name *' name='name' type="text" onChange={handleInput}/>
@@ -69,17 +70,17 @@ export function PayForm(){
                 <input className='input-payform' required placeholder='Province *' name='province' type="text" onChange={handleInput}/>
                 <input className='input-payform' required placeholder='Zip Code *' name='zipcode' type="number" onChange={handleInput}/>
                 <select className="input-payform" name='country' onChange={handleInput}>
-                    <option value="">Select Country * </option>
-                    <option value="IT">Italian</option>
-                    <option value="FR">French</option>
-                    <option value="SP">Spanish</option>
-                    <option value="DE">German</option>
+                    <option value=""><FormattedMessage id="payForm.country" defaultMessage="Select your country" /> </option>
+                    <option value="IT"><FormattedMessage id="payForm.Italy" defaultMessage="Select your country" /> </option>
+                    <option value="FR"><FormattedMessage id="payForm.France" defaultMessage="Select your country" /> </option>
+                    <option value="SP"><FormattedMessage id="payForm.Spain" defaultMessage="Select your country" /> </option>
+                    <option value="DE"><FormattedMessage id="payForm.Germany" defaultMessage="Select your country" /> </option>
                 </select>
             </div>
             <div className="payform-message">
-                <p>*Payment on delivery have supplement of €10 to the order total</p>
+                <p><FormattedMessage id="payForm.supplement" defaultMessage="*Payment on delivery have supplement of €10 to the order total" /></p>
             </div>
-            <button className="payform-btn" onClick={handleBtn}>SUBMIT</button>
+            <button className="payform-btn" onClick={handleBtn}><FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay" /></button>
             {/* {input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country ? <p>Compilare campi richiesti</p> : null} */}
         </form>
     )

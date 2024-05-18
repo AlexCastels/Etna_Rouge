@@ -52,7 +52,12 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
-     <FormattedMessage id="landing.carousel.title" defaultMessage="Etna Rouge's World " />
+      <span>
+        <FormattedMessage
+          id="landing.carousel.title"
+          defaultMessage="Etna Rouge's World "
+        />
+      </span>
       <div className="carousel-subcont">
         {currentItems.map((item, index) => (
           <div key={index} className="carousel-item">
@@ -65,7 +70,13 @@ const LandingCarousel = () => {
           </div>
         ))}
       </div>
-      <Link to="/discover"> <FormattedMessage id="landing.carousel.discover" defaultMessage="Discover more " /></Link>
+      <Link to="/discover">
+        {" "}
+        <FormattedMessage
+          id="landing.carousel.discover"
+          defaultMessage="Discover more "
+        />
+      </Link>
     </div>
   );
 };
