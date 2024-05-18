@@ -1,4 +1,8 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { IntlProvider } from "react-intl";
+import NavBarTop from "./components/Navbar/NavBarTop.tsx";
+import NavBarBottom from "./components/Navbar/NavbarBottom.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
@@ -9,16 +13,14 @@ import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
+import enText from "./utils/languages/english.json";
+import itText from "./utils/languages/italian.json";
+import esText from "./utils/languages/espanol.json";
+import frText from "./utils/languages/french.json";
 import "./style.scss";
 import "./components/PDP/Pdp.scss";
-import { IntlProvider } from "react-intl";
-import NavBarTop from "./components/Navbar/NavBarTop.tsx";
-import NavBarBottom from "./components/Navbar/NavbarBottom.tsx";
 
-import enText from "./utils/languages/english.json";
-import itText from  "./utils/languages/italian.json";
-import esText from  "./utils/languages/espanol.json";
-import { useState } from "react";
+
 
 function App() {
   const [locale, setLocale] = useState("en");
@@ -29,9 +31,11 @@ function App() {
     it: itText,
 
     es: esText,
+
+    fr: frText,
   };
 
-  const changeLanguage = (e) => {
+  const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocale(e.target.value);
 
     console.log(locale);
@@ -54,16 +58,18 @@ function App() {
             <option value="en">English</option>
 
             <option value="es">Spanish</option>
+            
+            <option value="fr">French</option>
           </select>
 
           <BrowserRouter>
-           <NavBarTop/>
+          {/*   <NavBarTop /> */}
             <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp" element={<Plp />} />
+             {/*  <Route path="/" element={<LandingPage />} /> */}
+            {/*   <Route path="/discover" element={<DiscoverMore />} />
+              <Route path="/plp" element={<Plp />} /> */}
               <Route path="/Cart" element={<Cart />} />
-              <Route path="/SelectPayment" element={<SelectPayment />} />
+              {/*  <Route path="/SelectPayment" element={<SelectPayment />} />
               <Route path="/DeliveryForm" element={<PayForm />} />
               <Route path="/CreditCardForm" element={<CreditCardForm />} />
               <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
@@ -71,9 +77,9 @@ function App() {
                 path="/ThankYouDelivery"
                 element={<ThankYouPageDelivery />}
               />
-              {/* <Route path="/pdp/:id" element={<Pdp />}/>  */}
+            <Route path="/pdp/:id" element={<Pdp />} /> */}
             </Routes>
-         <NavBarBottom/>
+         {/*    <NavBarBottom /> */}
           </BrowserRouter>
         </div>
       </IntlProvider>
@@ -82,25 +88,3 @@ function App() {
 }
 
 export default App;
-
-/*   const onRenderCallback =
-    () =>
-    (
-      id: any, // the "id" prop of the Profiler tree that has just committed
-      phase: any, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
-      actualDuration: any, // time spent rendering the committed update
-      baseDuration: any, // estimated time to render the entire subtree without memoization
-      startTime: any, // when React began rendering this update
-      commitTime: any, // when React committed this update
-      interactions: any // the Set of interactions belonging to this update
-    ) => {
-      console.log({
-        id,
-        phase,
-        actualDuration,
-        baseDuration,
-        startTime,
-        commitTime,
-        interactions,
-      });
-    }; */

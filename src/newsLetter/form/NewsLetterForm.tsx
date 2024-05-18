@@ -3,6 +3,7 @@ import { internalMemory } from "../../utils/internalMemory.ts";
 import Button from "../../components/UI/button/Button.js";
 import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
 import "./NewsLetterForm.scss";
+import { FormattedMessage } from "react-intl";
 
 const NewsLetterForm: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -67,19 +68,19 @@ const NewsLetterForm: React.FC = () => {
         <DialogNewsLetter
           message={
             registeredYet
-              ? "Your e-mail is already registered!"
+              ? <FormattedMessage id="dialog.email.yetRegistered"  defaultMessage="This email is already registered" />
               : invalidEmail
-              ? "Insert a valid email"
+              ? <FormattedMessage id="dialog.invalid.email"  defaultMessage="Please enter a valid email address" />
               : genderNotSelected
-              ? "Select a valid gender"
-              : "Welcome to Etna Rouge family!"
+              ? <FormattedMessage id="dialog.invalid.gender"  defaultMessage="Please select a valid gender" />
+              :  <FormattedMessage id="dialog.success"  defaultMessage="Thank you for subscribing!" />
           }
           onClose={handleCloseDialog}
           submitted={submitted}
         />
       )}
       <div className="container">
-        <h2> Subscribe to our Newsletter to get a 15% discount! </h2>
+        <h2> <FormattedMessage id="news.title" defaultMessage="Subscribe to our Newsletter to get a 15% discount!" />  </h2>
         <form>
           <div className="btn-cont">
             <Button
@@ -87,14 +88,14 @@ const NewsLetterForm: React.FC = () => {
               className={`gender-btn ${gender === "male" ? "active" : ""}`}
               onClick={() => handleGenderClick("male")}
             >
-              Man
+              <FormattedMessage id="news.button.gend.men" defaultMessage="Man"  />
             </Button>
             <Button
               type="button"
               className={`gender-btn ${gender === "female" ? "active" : ""}`}
               onClick={() => handleGenderClick("female")}
             >
-              Woman
+           <FormattedMessage id="news.button.gend.women" defaultMessage="Woman"  />
             </Button>
           </div>
           <label id="email"> E-mail </label>
@@ -109,7 +110,7 @@ const NewsLetterForm: React.FC = () => {
               onClick={handleSubmitClick}
               type="submit"
             >
-              Confirm
+         <FormattedMessage id="news.button.confirm" defaultMessage="Confirm" />
             </Button>
           </span>
         </form>

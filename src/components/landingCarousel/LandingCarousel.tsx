@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hook";
 import "./LandingCarousel.scss";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
@@ -51,7 +52,7 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <span>Etna Rouge World</span>
+     <FormattedMessage id="landing.carousel.title" defaultMessage="Etna Rouge's World " />
       <div className="carousel-subcont">
         {currentItems.map((item, index) => (
           <div key={index} className="carousel-item">
@@ -64,7 +65,7 @@ const LandingCarousel = () => {
           </div>
         ))}
       </div>
-      <Link to="/discover">Discover more</Link>
+      <Link to="/discover"> <FormattedMessage id="landing.carousel.discover" defaultMessage="Discover more " /></Link>
     </div>
   );
 };

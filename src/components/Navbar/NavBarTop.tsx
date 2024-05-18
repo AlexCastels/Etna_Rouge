@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import { /* Link */ useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
 
@@ -13,6 +13,9 @@ const NavBarTop: React.FC = () => {
 
   const navigate = useNavigate();
 
+  function linkHamburger() {
+    navigate("/hamburger", { state: { name: "hamburger" } });
+  }
   function linkShirts() {
     navigate("/shirts", { state: { name: "shirts" } });
   }
@@ -69,7 +72,6 @@ const NavBarTop: React.FC = () => {
           </div>
         </div>
         <div className="navbar_right">
-          {/* icona Search */}
           <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +94,6 @@ const NavBarTop: React.FC = () => {
               />
             </svg>
           </div>
-          {/* icona Profile */}
           <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,9 +106,9 @@ const NavBarTop: React.FC = () => {
               <g
                 id="Page-1"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               >
                 <g
                   id="Dribbble-Light-Preview"
@@ -124,13 +125,7 @@ const NavBarTop: React.FC = () => {
               </g>
             </svg>
           </div>
-          {/* icona Cart */}
-          <div
-            /* onClick={() => {
-            setToggle(!toggle);
-          }} */
-            className="navbar_button_item"
-          >
+          <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
@@ -143,46 +138,39 @@ const NavBarTop: React.FC = () => {
             </svg>
           </div>
         </div>
-        <div className="navbar_hidden">
-          {!toggle && (
-            <div className="categories_hidden">
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkShirts}></div>
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkPants}>
-                <FormattedMessage
-                  id="navHidden.shirts"
-                  defaultMessage="Shirts"
-                />
-              </div>
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkShoes}>
-                <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
-              </div>
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkAll}>
-                <FormattedMessage id="navHidden.all" defaultMessage="All" />
-              </div>
-              <div className="category_border"></div>
-            </div>
-          )}
-        </div>
       </nav>
+      {!toggle && (
+        <div className="navbar_hidden">
+          <div className="categories_hidden">
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkShirts}>
+              <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
+            </div>
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkPants}>
+              <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
+            </div>
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkShoes}>
+              <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
+            </div>
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkAll}>
+              <FormattedMessage id="navHidden.all" defaultMessage="All" />
+            </div>
+            <div className="category_border"></div>
+          </div>
+        </div>
+      )}
       {!toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
-            <FormattedMessage
-                  id="navHidden.shirts"
-                  defaultMessage="Shirts"
-                />
+            <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkPants}>
-             <FormattedMessage
-                  id="navHidden.pants"
-                  defaultMessage="Pants"
-                />
+            <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShoes}>
@@ -190,16 +178,11 @@ const NavBarTop: React.FC = () => {
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
-            <FormattedMessage
-                  id="navHidden.all"
-                  defaultMessage="All"
-                />
+            <FormattedMessage id="navHidden.all" defaultMessage="All" />
           </div>
-          <div className="category_border"></div>
         </div>
       )}
-      {!toggleSidebar && <div className="overlay"></div>}
-      {!toggleOverlay && <div className="overlay"></div>}
+      {(!toggle || !toggleSidebar) && <div className="overlay"></div>}
     </>
   );
 };
