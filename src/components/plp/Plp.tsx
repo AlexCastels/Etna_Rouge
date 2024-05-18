@@ -46,7 +46,7 @@ export const Plp: React.FC<any> = () => {
                         </div>   
                     </div>
                 ))}
-                {next < product.length ? <button className='cards-container-loadmore' onClick={handleMoreImage}>LOAD MORE</button> : <p>Nothing to see</p>}
+                {next < product.length ? <button className='cards-container-loadmore' onClick={handleMoreImage}>LOAD MORE</button> : <p className="cards-continer-nothingToSee">Nothing to see</p>}
             </div>
         </>
     );

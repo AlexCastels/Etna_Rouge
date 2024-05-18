@@ -60,6 +60,12 @@
       opacity: 0.3;
     }
   }
+  .cards-continer-nothingToSee{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
