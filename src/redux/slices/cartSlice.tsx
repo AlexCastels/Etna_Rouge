@@ -5,13 +5,15 @@ interface CartState{
     cart : Card[],
     total : number,
     totalQuantity: number,
-    totalPriceElement: number
+    totalPriceElement: number,
+    toggleCart : boolean
 }
 const initialState : CartState = {
     cart: [],
     total: 0,
     totalQuantity: 0,
-    totalPriceElement: 0
+    totalPriceElement: 0,
+    toggleCart : false
 }
 
 const totalPrice = (cart : Card[]) => {
@@ -21,6 +23,7 @@ const totalPrice = (cart : Card[]) => {
 const totalQuantity = (cart : Card[]) => {
     return cart.reduce((totalQuantity,item) => (totalQuantity + item.quantity),0)
 }
+
 
 
 const cartSlice = createSlice({
@@ -33,6 +36,7 @@ const cartSlice = createSlice({
             element ? element.quantity += 1 : state.cart.push(temp)
            state.total = totalPrice(state.cart)
            state.totalQuantity = totalQuantity(state.cart)
+           
           
         }),
         remove:((state,action) => {
@@ -55,10 +59,18 @@ const cartSlice = createSlice({
             state.total = totalPrice(state.cart)
             state.totalQuantity = totalQuantity(state.cart)
         }),
+        clearCart: ((state) => {
+            state.cart = []
+            state.total = 0
+            state.totalQuantity = 0
+        }),
+        toggleCart: state => {
+            state.toggleCart = !state.toggleCart;
+        }
         
         
     },
 })
 
 export default cartSlice.reducer
-export const {addToCart,remove,decrement,increment} = cartSlice.actions
+export const {addToCart,remove,decrement,increment,clearCart,toggleCart} = cartSlice.actions

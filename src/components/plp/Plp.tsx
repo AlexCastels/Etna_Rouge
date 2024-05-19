@@ -1,37 +1,38 @@
-import { addToCart } from "../../redux/slices/cartSlice";
+import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
 import "../plp/plp.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import Cart from "../cart/Cart";
 
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
+  const toggleCartValue = useAppSelector((state) => state.cart.toggleCart )
 
   useEffect(() => {
     dispatch(fetchData());
   }, []);
+  const handleAddToCart = (el : any) => {
+    dispatch(addToCart(el)); 
+    dispatch(toggleCart()); 
+  };
 
   return (
     <>
-    <div className="shoppingBag-container">
-       <Link to="/Cart"></Link>
-    </div>
-     
-
+    <Cart/>
       <div className="cards-container">
         {product.map((el: any) => (
-          <div className="card-container">
+          <div className="card-container" key={el.id}>
             <Link to={`/pdp/${el.id}`}>
               <div className="card-img">
               <img src={el.img} alt="" />
             </div>
             </Link>
-            
             <div className="card-button">
-              <button onClick={() => dispatch(addToCart(el))}>
+              <button onClick={() => handleAddToCart(el)}>
                 ADD TO CART
               </button>
             </div>
@@ -40,13 +41,14 @@ export const Plp: React.FC<any> = () => {
               {el.name}
             </div>
             </Link>
-            
             <div className="card-price">
               {Math.round(el.price)}
             </div>
           </div>
         ))}
+        
       </div>
+      
     </>
   );
 };

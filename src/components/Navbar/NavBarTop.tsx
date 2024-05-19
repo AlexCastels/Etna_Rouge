@@ -3,12 +3,15 @@ import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hook";
+import { toggleCart } from "../../redux/slices/cartSlice";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
   const [toggle2, setToggle2] = useState(true);
 
   const navigate = useNavigate();
+  const dispatch = useAppDispatch()
 
   function linkHamburger() {
     navigate("/hamburger", { state: { name: "hamburger" } });
@@ -123,8 +126,9 @@ const NavBarTop: React.FC = () => {
         </div>
         {/* icona Cart */}
         <div
+
           onClick={() => {
-            setToggle(!toggle);
+            dispatch(toggleCart())
           }}
           className="navbar_button_item"
         >

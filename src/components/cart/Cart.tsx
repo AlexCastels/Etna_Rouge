@@ -1,46 +1,84 @@
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { decrement, increment, remove } from "../../redux/slices/cartSlice";
-import "../plp/plp.scss";
+import { decrement, increment, remove,toggleCart,} from "../../redux/slices/cartSlice";
+import "../cart/cart.scss";
+import { useEffect } from "react";
+import Close from '../../assets/close.png'
 
 const Cart = () => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
   const total = useAppSelector((state) => state.cart.total);
   const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
+  const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
+
+  useEffect(() => {
+    if (toggleCartValue) {
+      document.body.classList.add("no-scroll");
+      
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [toggleCartValue]);
+
   return (
     <>
-      Total price: {total}
-      Quantity: {totalQuantity}
-      <Link to="/plp">Products</Link>
-      <div className="cards-container">
-        {cart.map((el) => (
-          <div className="card-container">
-            <Link to={`/pdp/${el.id}`}>
-              <div className="card-img">
-                <img src={el.img} alt="" />
-              </div>
-            </Link>
-
-            <div className="card-button">
-              <button onClick={() => dispatch(decrement(el))}>-</button> 
-              <button onClick={() => dispatch(remove(el))}>Remove</button>
-              <button onClick={() => dispatch(increment(el))}>+</button>
-            </div>
-            <Link to={`/pdp/${el.id}`} style={{textDecoration:'none',color: 'black'}}>
-              <div className="card-name">{el.name}</div>
-            </Link>
-
-            <div className="card-price">{el.price}</div>
-            <div>
-                <p>Quantity:{el.quantity}</p>
-                <p> Price:{Math.round(el.quantity * el.price)}</p>
-            </div>
-          
-           
+    
+      <div className="main-cart-container">
+      < div className={`overlay ${toggleCartValue ? 'show' : 'hide'}`} onClick={() => dispatch(toggleCart())}>
+        </div>
+        <div className="cart-container" style={toggleCartValue ? { right: "0" } : { right: "-500px" }}>
+          <div className="close" >
+            <img src={Close} onClick={() => dispatch(toggleCart())}></img>
           </div>
-        ))}
+          <div className="list-product">
+            {cart.length === 0 ? ( <div className="message-cart">
+               <h1>Il carrello è vuoto</h1>
+                </div>) : (cart.map((el) => (
+                <div className="cart-body" key={el.id}>
+                  <div className="container-left">
+                    <Link to={`/pdp/${el.id}`}>
+                      <div className="cart-img">
+                        <img src={el.img} alt="" />
+                      </div>
+                    </Link>
+
+                    <div className="card-button">
+                      <div onClick={() => dispatch(decrement(el))}>-</div>
+                      <div>{el.quantity}</div>                
+                      <div onClick={() => dispatch(increment(el))}>+</div>
+                    </div>
+                  </div>
+
+                  <div className="container-right">
+                    <div className="container-top">
+                      <Link to={`/pdp/${el.id}`} style={{ textDecoration: "none", color: "black" }}>
+                      <div className="card-name">
+                        {el.name}
+                        </div>
+                    </Link>
+                    </div>
+                    <div className="container-bottom">
+                      <p> {Math.round(el.quantity * el.price)} €</p>
+                      <div className="remove" onClick={() => dispatch(remove(el))}>Remove</div> 
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          <div className="totals">
+            <div className="total">Total price: {total}</div>
+            <div className="quantity">Quantity: {totalQuantity}</div>
+          </div>
+         
+        </div>
       </div>
+      
+    
+        
+      
     </>
   );
 };

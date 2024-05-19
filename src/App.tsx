@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style.scss";
-import "./components/PDP/Pdp.scss"
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
