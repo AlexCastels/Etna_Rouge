@@ -20,7 +20,7 @@ const NavBarTop: React.FC = () => {
   }
   
   function linkShirts() {
-    navigate("/plp", { state: { category: "shirts"  , gender : gender} });
+    navigate("/plp", { state: { category: "shirt"  , gender : gender} });
   }
   function linkPants() {
     navigate("/plp", { state: { category: "pants" , gender : gender} });
@@ -130,9 +130,9 @@ const NavBarTop: React.FC = () => {
           </div>
           {/* icona Cart */}
           <div
-            /* onClick={() => {
-            setToggle(!toggle);
-          }} */
+          //   /* onClick={() => {
+          //   setToggle(!toggle);
+          // }} */
             className="navbar_button_item"
           >
             <svg
@@ -151,6 +151,10 @@ const NavBarTop: React.FC = () => {
           {!toggle && (
             <div className="categories_hidden">
               <div className="category_border"></div>
+              <div className="single_category" onClick={linkAll}>
+                All
+              </div>
+              <div className="category_border"></div>
               <div className="single_category" onClick={linkShirts}>
                 Shirt
               </div>
@@ -163,16 +167,16 @@ const NavBarTop: React.FC = () => {
                 Shoes
               </div>
               <div className="category_border"></div>
-              <div className="single_category" onClick={linkAll}>
-                All
-              </div>
-              <div className="category_border"></div>
             </div>
           )}
         </div>
       </nav>
       {!toggleSidebar && (
         <div className="sidebar_hidden2">
+          <div className="category_border"></div>
+          <div className="single_category" onClick={linkAll}>
+            All
+          </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
             Shirt
@@ -184,10 +188,6 @@ const NavBarTop: React.FC = () => {
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShoes}>
             Shoes
-          </div>
-          <div className="category_border"></div>
-          <div className="single_category" onClick={linkAll}>
-            All
           </div>
           <div className="category_border"></div>
         </div>

@@ -12,42 +12,36 @@ export const Plp: React.FC<any> = () => {
 
   const gender = location.state?.gender
   const category = location.state?.category
-  console.log(gender, category);
 
-
+  console.log(gender , category);
+  
   const element = product.filter((el: any) => {
-    if (gender == 'man') {
-      return el.gender === gender;
-    }
-    else if (gender == 'woman'){
-      return el.gender === gender;
-    }
-    
     if (gender == 'men' && category == 'shirt') {
       return el.gender === gender && el.category === category;
     }
-    else if(gender == 'men' && category == 'pants') {
+    if(gender == 'men' && category == 'pants') {
       return el.gender === gender && el.category === category;
     }
-    else if (gender == 'men' && category == 'shoes') {
+    if (gender == 'men' && category == 'shoes') {
       return el.gender === gender && el.category === category;
     }
-    else if (gender == 'woman' && category == 'shirt') {
+    if (gender == 'woman' && category == 'shirt') {
       return el.gender === gender && el.category === category;
     }
-    else if (gender == 'woman' && category == 'pants') {
+    if (gender == 'woman' && category == 'pants') {
       return el.gender === gender && el.category === category;
     }
-    else if (gender == 'woman' && category == 'shoes') {
+    if (gender == 'woman' && category == 'shoes') {
       return el.gender === gender && el.category === category;
+    }
+    if (gender === 'men') {
+      return el.gender === gender;
+    }
+    if (gender === 'woman'){
+      return el.gender === gender;
     }
   })
-
-
-
-
-
-
+  
   //funzione load more
   const imagePerRow = 8
   const [next, setNext] = useState(imagePerRow);
