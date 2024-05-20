@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import NewsLetterForm from "../../newsLetter/form/NewsLetterForm";
-import FeaturesContent from "../featuresSection/FeaturesContent";
-import HeroContent from "../heroSection/HeroContent";
-import LandingCarousel from "../landingCarousel/LandingCarousel";
 import PromoContent from "../promoBanner/PromoContent";
 import { RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
+import FeaturesContent from "./featuresSection/FeaturesContent";
+import HeroContent from "./heroSection/HeroContent";
+import LandingCarousel from "./landingCarousel/LandingCarousel";
+import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
 
 const LandingPage = () => {
   const dispatch = useDispatch();

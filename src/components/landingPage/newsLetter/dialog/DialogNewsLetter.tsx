@@ -1,8 +1,9 @@
 // DialogNewsLetter.tsx
 import React from "react";
-import heart from "../../../public/assets/heart.png";
-import "./DialogNewsLetter.scss";
-import Button from "../../components/UI/button/Button";
+import heart from "../../../../../public/assets/heart.png";
+import "./dialogNewsLetter.scss";
+import Button from "../../../UI/button/Button";
+
 
 interface DialogProps {
   message: string;

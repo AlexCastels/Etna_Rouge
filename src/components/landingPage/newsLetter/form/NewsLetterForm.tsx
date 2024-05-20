@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { internalMemory } from "../../utils/internalMemory.ts";
-import Button from "../../components/UI/button/Button.js";
+
+
 import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
-import "./NewsLetterForm.scss";
+import "./newsLetterForm.scss";
 import { FormattedMessage } from "react-intl";
+import { internalMemory } from "../../../../utils/internalMemory.js";
+import Button from "../../../UI/button/Button.js";
 
 const NewsLetterForm: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);

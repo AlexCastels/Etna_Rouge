@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 import NavBarTop from "./components/Navbar/NavBarTop.tsx";
-import NavBarBottom from "./components/Navbar/NavbarBottom.tsx";
+
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
@@ -18,7 +18,7 @@ import itText from "./utils/languages/italian.json";
 import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
-import "./components/PDP/Pdp.scss";
+/* import "./components/PDP/Pdp.scss"; */
 
 
 

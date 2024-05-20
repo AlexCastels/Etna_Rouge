@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useAppSelector } from "../../redux/hook";
-import "./LandingCarousel.scss";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import { useAppSelector } from "../../../redux/hook";
+import "./landingCarousel.scss";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);

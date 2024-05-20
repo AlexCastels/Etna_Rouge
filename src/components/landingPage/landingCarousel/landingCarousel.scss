@@ -1,8 +1,9 @@
-@import "../../style.scss";
+@import '../../../style.scss';
+
 
 .carousel-container {
-  background-color: $main-black;
-  color: $main-white;
+  background-color: white;
+  color: $main-black;
   display: flex;
   width: 100%;
   gap: 1rem;
@@ -16,7 +17,7 @@
   }
 
   span {
-    color: $main-white;
+    color: $main-black;
     width: 100%;
     font-size: 1rem;
     margin-inline-start: 1rem;
@@ -29,6 +30,7 @@
 
   .carousel-subcont {
     display: flex;
+    
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -39,6 +41,10 @@
   .carousel-item {
     margin-right: 1rem;
     flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
     width: 200px;
     height: 15rem;
 
@@ -49,7 +55,7 @@
 
     .carousel-img {
       width: 100%;
-      height: 35vi;
+      height: 35vb;
       display: block;
 
       @media only screen and (min-width: 798px) {
@@ -66,7 +72,7 @@
   a {
     margin-block-end: 2rem;
     text-decoration: none;
-    color: $main-white;
+    color: $main-black;
 
     &:hover {
       @include hoverButton;

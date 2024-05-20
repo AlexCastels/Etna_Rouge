@@ -4,10 +4,11 @@
 .banner-cont{
     display: flex;
     justify-content: center;
-    font-size: x-small;
+    font-size: 0.1rem;
     font-family: $font-family;
-    border: 1px solid $main-black;
-    background-color: white;
+    color: $main-white;
+    background-color: $main-black;
+
     font-size: 0.6rem;
     z-index: 999;
     top: 0;
