@@ -3,7 +3,7 @@ import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "../navbar/Overlay.scss";
+import "../Navbar/Overlay.scss";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);

@@ -19,33 +19,33 @@ export const Plp: React.FC<any> = () => {
 
       <div className="cards-container">
         {product.map((el: any) => (
-         
-            <div className="single-card-container">
-             
-              
-              <div className="card-body-container">
-                 <Link to={`/pdp/${el.id}`}>
+
+          <div className="single-card-container">
+
+
+            <div className="card-body-container">
+              <Link to={`/pdp/${el.id}`}>
                 <div className="card-body-img">
                   <img src={el.img}></img>
                 </div>
-                </Link>
-                <div className="card-foot-btn">
-                  <button onClick={() => dispatch(addToCart(el))}>
-                    ADD TO CART
-                  </button>
-                </div>
+              </Link>
+              <div className="card-foot-btn">
+                <button onClick={() => dispatch(addToCart(el))}>
+                  ADD TO CART
+                </button>
               </div>
-              <Link to={`/pdp/${el.id}`} style={{textDecoration: 'none'}}>
+            </div>
+            <Link to={`/pdp/${el.id}`} style={{ textDecoration: 'none' }}>
               <div className="card-title">
                 <p>{el.name}</p>
               </div>
-              </Link>
-              <div className="card-body-text">
-                <p>{el.price}€</p>
-              </div>
-               
+            </Link>
+            <div className="card-body-text">
+              <p>{el.price}€</p>
             </div>
-          
+
+          </div>
+
         ))}
       </div>
     </>

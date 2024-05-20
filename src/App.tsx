@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NavBarTop from "./components/navbar/NavBarTop.tsx";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
+import NavBarTop from "./components/Navbar/NavBarTop.tsx";
+import NavBarBottom from "./components/Navbar/NavbarBottom";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
@@ -13,6 +13,7 @@ import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
 import "./style.scss";
 import "./components/PDP/Pdp.scss";
+import AllWomanProducts from "./components/category/all/allWomanProducts.tsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <BrowserRouter>
       <NavBarTop/>
         <Routes>
+          <Route path="/allWomanProducts" element={<AllWomanProducts />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/discover" element={<DiscoverMore />} />
           <Route path="/plp" element={<Plp />} />
@@ -29,7 +31,7 @@ function App() {
           <Route path="/CreditCardForm" element={<CreditCardForm />} />
           <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
           <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
-          {/* <Route path="/pdp/:id" element={<Pdp />}/>  */}
+          <Route path="/pdp/:id" element={<Pdp />}/> 
         </Routes>
         <NavBarBottom/>
       </BrowserRouter>
