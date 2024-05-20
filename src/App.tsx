@@ -13,7 +13,6 @@ import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
 import "./style.scss";
 import "./components/PDP/Pdp.scss";
-import AllWomanProducts from "./components/category/all/allWomanProducts.tsx";
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
       <BrowserRouter>
       <NavBarTop/>
         <Routes>
-          <Route path="/allWomanProducts" element={<AllWomanProducts />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/discover" element={<DiscoverMore />} />
           <Route path="/plp" element={<Plp />} />

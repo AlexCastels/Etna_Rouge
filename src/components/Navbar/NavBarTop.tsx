@@ -11,19 +11,28 @@ const NavBarTop: React.FC = () => {
   const [toggleOverlay, setToggleOverlay] = useState(true);
 
   const navigate = useNavigate();
-
+  const [gender , setGender] = useState('')
+  function GenderMen() {
+    setGender('men')
+  }
+  function GenderWoman() {
+    setGender('woman')
+  }
+  
   function linkShirts() {
-    navigate("/shirts", { state: { name: "shirts" } });
+    navigate("/plp", { state: { category: "shirts"  , gender : gender} });
   }
   function linkPants() {
-    navigate("/pants", { state: { name: "pants" } });
+    navigate("/plp", { state: { category: "pants" , gender : gender} });
   }
   function linkShoes() {
-    navigate("/shoes", { state: { name: "shoes" } });
+    navigate("/plp", { state: { category: "shoes"  , gender : gender} });
   }
+
   function linkAll() {
-    navigate("/all", { state: { name: "all" } });
+    navigate("/plp", { state: {gender : gender} });
   }
+
 
   return (
     <>
@@ -46,16 +55,15 @@ const NavBarTop: React.FC = () => {
         >
           <div
             onClick={() => {
-              setToggle(!toggle);
+              setToggle(!toggle), GenderMen();
             }}
             className="navbar_categories"
           >
             Men
           </div>
           <div
-            onClick={() => {
-              setToggle(!toggle);
-            }}
+            onClick={
+              () => {setToggle(!toggle), GenderWoman()} }
             className="navbar_categories"
           >
             Woman
