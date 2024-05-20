@@ -24,9 +24,10 @@
         font-size: 0.3rem;
      
         @media screen and (min-width: 768px) {
-                line-height: 2.2rem;
-                font-size: 1rem;
-                padding-block: 1rem 6rem;
+                line-height: 2rem;
+                font-size: 0.7rem;
+                padding-block: 1rem 4rem;
+                padding-inline: 2rem;
                 gap: 1.5rem;
             }
     }
