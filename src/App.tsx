@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NavBarTop from "./components/navbar/NavBarTop.tsx";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
+import NavBarTop from "./components/Navbar/NavBarTop.tsx";
+import NavBarBottom from "./components/Navbar/NavbarBottom";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
@@ -29,7 +29,7 @@ function App() {
           <Route path="/CreditCardForm" element={<CreditCardForm />} />
           <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
           <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
-          {/* <Route path="/pdp/:id" element={<Pdp />}/>  */}
+          <Route path="/pdp/:id" element={<Pdp />}/> 
         </Routes>
         <NavBarBottom/>
       </BrowserRouter>
