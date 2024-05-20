@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { decrement, increment, remove,toggleCart,} from "../../redux/slices/cartSlice";
 import "../cart/cart.scss";
@@ -20,6 +20,7 @@ const Cart = () => {
       document.body.classList.remove("no-scroll");
     }
   }, [toggleCartValue]);
+
 
   return (
     <>
@@ -66,6 +67,7 @@ const Cart = () => {
                 </div>
               ))
             )}
+           
           </div>
 
           <div className="totals">
