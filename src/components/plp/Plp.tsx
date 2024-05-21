@@ -62,10 +62,10 @@ export const Plp: React.FC<any> = () => {
 
   return (
     <>
-   
+   <NavBarTop/>
     <Cart/>
       <div className="cards-container">
-        {product.slice(0, next).map((el: any) => (
+        {element.slice(0, next).map((el: any) => (
           <div className="card-container" key={el.id}>
             <Link to={`/pdp/${el.id}`}>
               <div className="card-img">
