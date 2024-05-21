@@ -11,7 +11,7 @@ const LandingCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredContentsHero = contents.filter(
-    (items) => items.sys.contentType.sys.id === "erLpCarousel"
+    (items : any) => items.sys.contentType.sys.id === "erLpCarousel"
   );
 
   const arr = filteredContentsHero.map((item) => ({
@@ -36,11 +36,13 @@ const LandingCarousel = () => {
   }
 
   if (error) {
+
     return <span>{error}</span>;
   }
 
   if (arr.length === 0) {
     return <span>No items to display.</span>;
+
   }
 
   // Get the current two items to display

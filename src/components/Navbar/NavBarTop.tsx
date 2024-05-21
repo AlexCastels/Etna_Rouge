@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Logo from "../logo/Logo";
-import "./NavbarTop.scss";
+import "./navbarTop.scss";
 import HamburgerMenu from "../hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "../navbar/Overlay.scss";
+import "../navbar/overlay.scss";
+import { useDispatch } from "react-redux";
+import { toggleCart } from "../../redux/slices/cartSlice";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
   const [toggleSidebar, setToggleSidebar] = useState(true);
   const [toggleOverlay, setToggleOverlay] = useState(true);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const [gender , setGender] = useState('')
@@ -129,10 +132,11 @@ const NavBarTop: React.FC = () => {
             </svg>
           </div>
           {/* icona Cart */}
-          <div className="navbar_button_item"
-          //   /* onClick={() => {
-          //   setToggle(!toggle);
-          // }} */
+          <div
+            onClick={() => {
+            dispatch(toggleCart());
+          }}
+            className="navbar_button_item"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
