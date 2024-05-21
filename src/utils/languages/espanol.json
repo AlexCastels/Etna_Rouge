@@ -51,7 +51,8 @@
 
   "plp.button.addToCart": "AÑADIR AL CARRITO",
 
+  "cart.empty": "El carrito está vacío",
   "cart.remove": "Eliminar",
   "cart.quantity": "Cantidad",
-  "cart.products": "Productos"
+  "cart.price": "Precio total"
 }
