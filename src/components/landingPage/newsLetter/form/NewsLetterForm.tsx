@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
 import "./newsLetterForm.scss";
 import { FormattedMessage } from "react-intl";
@@ -69,50 +68,78 @@ const NewsLetterForm: React.FC = () => {
       {openDialog && (
         <DialogNewsLetter
           message={
-            registeredYet
-              ? <FormattedMessage id="dialog.email.yetRegistered"  defaultMessage="This email is already registered" />
-              : invalidEmail
-              ? <FormattedMessage id="dialog.invalid.email"  defaultMessage="Please enter a valid email address" />
-              : genderNotSelected
-              ? <FormattedMessage id="dialog.invalid.gender"  defaultMessage="Please select a valid gender" />
-              :  <FormattedMessage id="dialog.success"  defaultMessage="Thank you for subscribing!" />
+            registeredYet ? (
+              <FormattedMessage
+                id="dialog.email.yetRegistered"
+                defaultMessage="This email is already registered"
+              />
+            ) : invalidEmail ? (
+              <FormattedMessage
+                id="dialog.invalid.email"
+                defaultMessage="Please enter a valid email address"
+              />
+            ) : genderNotSelected ? (
+              <FormattedMessage
+                id="dialog.invalid.gender"
+                defaultMessage="Please select a valid gender"
+              />
+            ) : (
+              <FormattedMessage
+                id="dialog.success"
+                defaultMessage="Thank you for subscribing!"
+              />
+            )
           }
           onClose={handleCloseDialog}
           submitted={submitted}
         />
       )}
-      <div className="container">
-        <h2> <FormattedMessage id="news.title" defaultMessage="Subscribe to our Newsletter to get a 15% discount!" />  </h2>
-        <form>
-          <div className="btn-cont">
+      <div className="newsletter-container">
+        <h2 className="newsletter-title">
+          <FormattedMessage
+            id="news.title"
+            defaultMessage="Subscribe to our Newsletter to get a 15% discount!"
+          />
+        </h2>
+        <form className="newsletter-form">
+          <div className="newsletter-btn-cont">
             <Button
               type="button"
               className={`gender-btn ${gender === "male" ? "active" : ""}`}
               onClick={() => handleGenderClick("male")}
             >
-              <FormattedMessage id="news.button.gend.men" defaultMessage="Man"  />
+              <FormattedMessage
+                id="news.button.gend.men"
+                defaultMessage="Man"
+              />
             </Button>
             <Button
               type="button"
               className={`gender-btn ${gender === "female" ? "active" : ""}`}
               onClick={() => handleGenderClick("female")}
             >
-           <FormattedMessage id="news.button.gend.women" defaultMessage="Woman"  />
+              <FormattedMessage
+                id="news.button.gend.women"
+                defaultMessage="Woman"
+              />
             </Button>
           </div>
-          <label id="email"> E-mail </label>
-          <span className="input-cont">
-            <input
+          <label id="newsletter-email"> E-mail </label>
+          <span className="newsletter-input-cont">
+            <input className="newsletter-email-input"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button
-              className={`submit-btn ${submitted ? "active-submit" : ""} `}
+              className={`newsletter-submit-button ${submitted ? "active-submit" : ""} `}
               onClick={handleSubmitClick}
               type="submit"
             >
-         <FormattedMessage id="news.button.confirm" defaultMessage="Confirm" />
+              <FormattedMessage
+                id="news.button.confirm"
+                defaultMessage="Confirm"
+              />
             </Button>
           </span>
         </form>

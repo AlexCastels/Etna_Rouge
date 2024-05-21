@@ -4,7 +4,6 @@ import heart from "../../../../../public/assets/heart.png";
 import "./dialogNewsLetter.scss";
 import Button from "../../../UI/button/Button";
 
-
 interface DialogProps {
   message: string;
   submitted: boolean;
@@ -18,16 +17,14 @@ const DialogNewsLetter: React.FC<DialogProps> = ({
 }) => {
   return (
     <div>
-    
-      <dialog open>
-           <Button className="closing-btn" onClick={onClose}>
-            x
-          </Button>
-        <div>
-         
-          <span>
-            <h3>{message}</h3>
-            {submitted && <img src={heart} alt="Heart" />}
+      <dialog className="dialog-cont" open>
+        <Button className="dialog-closing-btn" onClick={onClose}>
+          x
+        </Button>
+        <div className="dialog-message-cont">
+          <span className="dialog-message-subcont">
+            <h3 className="dialog-message-title">{message}</h3>
+            {submitted && <img className="dialog-message-img" src={heart} alt="Heart" />}
           </span>
         </div>
       </dialog>

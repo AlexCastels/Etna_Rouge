@@ -1,6 +1,6 @@
 @import "../../../../style.scss";
 
-.container {
+.newsletter-container {
   width: 100vi;
   z-index: 10;
   background-color: white;
@@ -13,7 +13,7 @@
   overflow-inline: hidden;
   padding-block: 2rem;
 
-  h2 {
+  .newsletter-title {
     font-weight: 0.8rem;
     font-size: 0.7rem;
     color: $main-black;
@@ -23,7 +23,7 @@
     }
   }
 
-  form {
+  .newsletter-form {
     display: flex;
     flex-direction: column;
     padding-block: 2rem;
@@ -33,7 +33,7 @@
       gap: 2rem;
     }
 
-    label {
+    #newsletter-email {
       color: $main-black;
       font-size: 0.6rem;
 
@@ -42,12 +42,12 @@
       }
     }
 
-    .input-cont {
+    .newsletter-input-cont {
       display: flex;
       flex-direction: row;
       align-items: baseline;
    
-      .submit-btn {
+      .newsletter-submit-button {
         background-color: transparent;
         display: block;
         block-size: min-content;
@@ -65,7 +65,7 @@
         }
       }
 
-      input {
+      .newsletter-email-input {
         width: auto;
         background-color: transparent;
         color: $main-black;
@@ -79,7 +79,7 @@
       }
     }
 
-    .btn-cont {
+    .newsletter-btn-cont {
       display: flex;
       gap: 0.3rem;
       position: relative;

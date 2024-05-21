@@ -52,26 +52,26 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <span>
+      <span className="landing-carousel-title">
         <FormattedMessage
           id="landing.carousel.title"
           defaultMessage="Etna Rouge's World "
         />
       </span>
-      <div className="carousel-subcont">
+      <div className="lp-carousel-subcont">
         {currentItems.map((item, index) => (
-          <div key={index} className="carousel-item">
+          <div key={index} className="lp-carousel-item">
             <img
-              className="carousel-img"
+              className="lp-carousel-img"
               src={item.img}
               alt={item.description}
             />
-            <p>{item.description}</p>
+            <p className="lp-carousel-description">{item.description}</p>
           </div>
         ))}
       </div>
-      <Link to="/discover">
-        {" "}
+      <Link className="lp-carousel-link" to="/discover">
+
         <FormattedMessage
           id="landing.carousel.discover"
           defaultMessage="Discover more "

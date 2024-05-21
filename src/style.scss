@@ -30,9 +30,14 @@ $secondary-black: #0000009e;
   font-family: $font-family;
 }
 
+// positioning body relative for put the select at the bottom
+body{
+  position: relative;
+}
+
 
 select {
-  bottom: 2rem;
+  bottom: 1rem;
   z-index: 300;
   right: 1rem;
   padding: 0.5rem;
