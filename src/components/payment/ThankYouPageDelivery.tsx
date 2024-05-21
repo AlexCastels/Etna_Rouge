@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../redux/hook"
 import "./thankYouPage.scss"
 import { removeFormData } from "../../redux/slices/payformSlice"
+import { clearCart } from "../../redux/slices/cartSlice"
 
 export function ThankYouPageDelivery(){
 
@@ -28,6 +29,7 @@ export function ThankYouPageDelivery(){
     function handleBtn(){
         navigate('/')
         dispatch(removeFormData())
+        dispatch(clearCart())
     }
 
     return (

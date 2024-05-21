@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import Logo from "../Logo/Logo";
-import "./NavbarTop.scss";
+import Logo from "../logo/Logo";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "../Navbar/Overlay.scss";
+import "../navbar/overlay.scss";
+import { useAppDispatch } from "../../redux/hook";
+import { toggleCart } from "../../redux/slices/cartSlice";
+import "../navbar/navBarTop.scss"
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
@@ -11,6 +13,8 @@ const NavBarTop: React.FC = () => {
   const [toggleOverlay, setToggleOverlay] = useState(true);
 
   const navigate = useNavigate();
+  const dispatch = useAppDispatch()
+
   const [gender , setGender] = useState('')
   function GenderMen() {
     setGender('men')
@@ -109,9 +113,9 @@ const NavBarTop: React.FC = () => {
               <g
                 id="Page-1"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               >
                 <g
                   id="Dribbble-Light-Preview"
@@ -130,9 +134,10 @@ const NavBarTop: React.FC = () => {
           </div>
           {/* icona Cart */}
           <div
-          //   /* onClick={() => {
-          //   setToggle(!toggle);
-          // }} */
+            onClick={() => {
+              dispatch(toggleCart())
+            }}
+
             className="navbar_button_item"
           >
             <svg
@@ -171,6 +176,47 @@ const NavBarTop: React.FC = () => {
           )}
         </div>
       </nav>
+      <div className="navbar_hidden">
+        {toggle && (
+          <div className="categories_hidden">
+            <div className="category_shirt" onClick={linkShirts}>
+              Shirt
+            </div>
+            <div className="category_pants" onClick={linkPants}>
+              Pants
+            </div>
+            <div className="category_shoes" onClick={linkShoes}>
+              Shoes
+            </div>
+            <div className="category_all" onClick={linkAll}>
+              All
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="navbar_hidden">
+        {!toggle && (
+          <div className="categories_hidden">
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkShirts}>
+              Shirt
+            </div>
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkPants}>
+              Pants
+            </div>
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkShoes}>
+              Shoes
+            </div>
+            <div className="category_border"></div>
+            <div className="single_category" onClick={linkAll}>
+              All
+            </div>
+            <div className="category_border"></div>
+          </div>
+        )}
+      </div>
       {!toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>

@@ -3,11 +3,15 @@ import { Card } from "../../interfaces";
 
 interface CartState{
     cart : Card[],
-    total : number
+    total : number,
+    totalQuantity: number,
+    toggleCart : boolean
 }
 const initialState : CartState = {
     cart: [],
-    total: 0
+    total: 0,
+    totalQuantity: 0,
+    toggleCart : false
 }
 
 const total = (cart : Card[]) => {
@@ -24,7 +28,7 @@ const total = (cart : Card[]) => {
     //estrapolo il valore globali delle quantità che avrò dentro il carrello (per la condizione)  
     const quantity = cart.map((elemento) => elemento.quantity).reduce((a ,b) => a + b , 0)
     //estrapolo il totale che avrò nel carrello (per la condizione)
-    let total = cart.reduce((total,item) => total + item.price * item.quantity ,0)
+    let total = Math.round(cart.reduce((total,item) => total + item.price * item.quantity ,0))
 
     // console.log('quantità totali in cart ' + quantity)
     // console.log('totale globale cart ' + total);
@@ -32,11 +36,17 @@ const total = (cart : Card[]) => {
 
     //imposto la condizione per poter accedere alla promo
     if(total > 1000 && quantity >= 3){
-        return generalArray.sort((a , b) => a - b).slice(2).reduce((a , b) => a + b ,0)
+        return Math.round(generalArray.sort((a , b) => a - b).slice(2).reduce((a , b) => a + b ,0))
     } else {
         return total
     }
 }
+
+const totalQuantity = (cart : Card[]) => {
+    return cart.reduce((totalQuantity,item) => (totalQuantity + item.quantity),0)
+}
+
+
 
 const cartSlice = createSlice({
     name:'cart',
@@ -46,27 +56,44 @@ const cartSlice = createSlice({
             const element = state.cart.find((el) => el.id == action.payload.id )
             const temp = {...action.payload, quantity : 1}
             element ? element.quantity += 1 : state.cart.push(temp)
+           state.total = total(state.cart)
+           state.totalQuantity = totalQuantity(state.cart)
+           
+          
             state.total = total(state.cart)
         }),
         remove:((state,action) => {
             state.cart = state.cart.filter((el) => el.id !== action.payload.id);
             state.total = total(state.cart)
+            state.totalQuantity = totalQuantity(state.cart)
+        
         }),
         
         decrement: ((state, action) => {
             const element = state.cart.find((el) => el.id == action.payload.id )
             element && element?.quantity > 1 ? element.quantity -= 1 : state.cart = state.cart.filter((el) => el.id !== action.payload.id)
             state.total = total(state.cart)
+            state.totalQuantity = totalQuantity(state.cart)
+           
         }),
         increment : ((state,action) => {
             const element = state.cart.find((el) => el.id == action.payload.id )
             element && element?.quantity >= 1 ? element.quantity += 1 : state.cart
             state.total = total(state.cart)
+            state.totalQuantity = totalQuantity(state.cart)
         }),
+        clearCart: ((state) => {
+            state.cart = []
+            state.total = 0
+            state.totalQuantity = 0
+        }),
+        toggleCart: state => {
+            state.toggleCart = !state.toggleCart;
+        }
         
         
     },
 })
 
 export default cartSlice.reducer
-export const {addToCart,remove,decrement,increment} = cartSlice.actions
+export const {addToCart,remove,decrement,increment,clearCart,toggleCart} = cartSlice.actions

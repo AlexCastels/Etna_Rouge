@@ -1,4 +1,4 @@
-import "../Hamburger/Hamburger.scss"
+import '../Hamburger/hamburger.scss'
 
 const HamburgerMenu: React.FC = () => {
   return (

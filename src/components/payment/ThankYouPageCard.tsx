@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../redux/hook"
 import "./thankYouPage.scss"
 import { removeFormData } from "../../redux/slices/payformSlice";
+import { clearCart } from "../../redux/slices/cartSlice";
 
 export function ThankYouPageCard(){
     const total = useAppSelector((state) => state.cart.total)
@@ -24,6 +25,7 @@ export function ThankYouPageCard(){
     function handleBtn(){
         navigate('/')
         dispatch(removeFormData())
+        dispatch(clearCart())
     }
 
     return (

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { useParams } from 'react-router-dom';
-import '../PDP/Pdp.scss'
+import '../pdp/pdp.scss'
 import { addToCart } from '../../redux/slices/cartSlice';
-import { Carousel } from '../Carousel/Carousel';
+import { Carousel } from '../carousel/Carousel';
 import Button from '../UI/button/Button';
 
 const Pdp: React.FC<any> = () => {
