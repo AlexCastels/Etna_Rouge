@@ -11,6 +11,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   position: relative;
+  padding: 20px;
   
   .card-container {
     margin-block-end: 30px; 
@@ -27,21 +28,70 @@ body {
     object-fit: cover;
   }
 
+
   .card-button {
     display: flex;
     button {
       inline-size: 100%; 
+      background-color: blacky;
+    }
+    .card-title {
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      inline-size: 300px;
+      display: flex;
+      justify-content: left;
+      color: black;
+    }
+    .card-body-img img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+    }
+
+    .card-foot-btn button{
+
       padding: 5px;
       color: white;
       background-color: black;
       @include transition-effect(all, 0.3s, ease-in-out);
       cursor: pointer;
       letter-spacing: 0.5rem;
+      &:hover{
+        opacity: 0.3;
+      }
     }
+
     :hover {
       opacity: 0.7;
+
+    
+    .card-body-text {
+      inline-size: 300px;
+      display: flex;
+      justify-content: left;
+
     }
   }
+  .cards-container-loadmore{
+   
+  width: 200px;
+  background-color: red;
+    
+    
+  }
+  .cards-continer-nothingToSee{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+}.container-butto{
+  display: flex;
+  width: 100vw;
+  justify-content: center;
 }
 
 

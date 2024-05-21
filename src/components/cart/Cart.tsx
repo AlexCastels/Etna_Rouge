@@ -30,9 +30,10 @@ const Cart = () => {
         </div>
         <div className="cart-container" style={toggleCartValue ? { right: "0" } : { right: "-500px" }}>
           <div className="close" >
-            <img src={Close} onClick={() => dispatch(toggleCart())}></img>
+            <img src={Close} onClick={() => dispatch(toggleCart())} className="pointer"></img>
           </div>
           <div className="list-product">
+          
             {cart.length === 0 ? ( <div className="message-cart">
                <h1>Il carrello è vuoto</h1>
                 </div>) : (cart.map((el) => (
@@ -45,9 +46,9 @@ const Cart = () => {
                     </Link>
 
                     <div className="card-button">
-                      <div onClick={() => dispatch(decrement(el))}>-</div>
+                      <div onClick={() => dispatch(decrement(el))}className="pointer">-</div>
                       <div>{el.quantity}</div>                
-                      <div onClick={() => dispatch(increment(el))}>+</div>
+                      <div onClick={() => dispatch(increment(el))} className="pointer">+</div>
                     </div>
                   </div>
 
@@ -63,11 +64,16 @@ const Cart = () => {
                       <p> {Math.round(el.quantity * el.price)} €</p>
                       <div className="remove" onClick={() => dispatch(remove(el))}>Remove</div> 
                     </div>
+                   
                   </div>
+                  
                 </div>
+                
               ))
+               
+
             )}
-           
+           <div className="checkout"><Link to='/DeliveryForm' style={{textDecoration:'none',color:'black'}}>Checkout</Link></div>
           </div>
 
           <div className="totals">

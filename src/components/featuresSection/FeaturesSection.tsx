@@ -1,10 +1,7 @@
 import React from "react";
 import "./featuresSection.scss";
 
-
-
 const FeaturesSection: React.FC<any> = ({ content }) => {
-
   const img = content?.image?.fields?.file?.url || "";
   const p1 = content?.description?.content[0]?.content[0]?.value || "";
   const p2 = content?.secondParagraph?.content[0]?.content[0]?.value || "";

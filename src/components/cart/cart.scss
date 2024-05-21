@@ -7,6 +7,9 @@
 .no-scroll {
   overflow-y: hidden;
 }
+.pointer{
+  cursor: pointer;
+}
 .main-cart-container{
   .overlay {
     position: fixed;
@@ -38,11 +41,16 @@
   .close {
     display: flex;
     justify-content: right;
-    margin-inline-end: 30px;
-    margin-block-start: 10px;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.2);
+    
     
     img {
+      margin-inline-end: 20px;
       width: 20px;
+      height: 20px;
+      
     }
   }
   
@@ -83,6 +91,12 @@
         block-size: 300px;
       }
     }
+    .checkout{
+      display: flex;
+      justify-content: center;
+      height: 50px;
+   
+    }
   }
   
   
@@ -101,7 +115,7 @@
       color: black;
       margin: 10px;
       transition: all ease-in-out 0.3s;
-      cursor: pointer;
+      
     }
     
   }
@@ -109,9 +123,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-    gap: 20px;
-    
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.2);
+    block-size: 40px;
   }
 
 }
