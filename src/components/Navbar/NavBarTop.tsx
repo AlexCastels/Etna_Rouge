@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import { /* Link */ useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Navbar/Overlay.scss";
 
 const NavBarTop: React.FC = () => {
@@ -11,26 +11,26 @@ const NavBarTop: React.FC = () => {
   const [toggleOverlay, setToggleOverlay] = useState(true);
 
   const navigate = useNavigate();
-  const [gender , setGender] = useState('')
+  const [gender, setGender] = useState('')
   function GenderMen() {
     setGender('men')
   }
   function GenderWoman() {
     setGender('woman')
   }
-  
+
   function linkShirts() {
-    navigate("/plp", { state: { category: "shirt"  , gender : gender} });
+    navigate("/plp", { state: { category: "shirt", gender: gender } });
   }
   function linkPants() {
-    navigate("/plp", { state: { category: "pants" , gender : gender} });
+    navigate("/plp", { state: { category: "pants", gender: gender } });
   }
   function linkShoes() {
-    navigate("/plp", { state: { category: "shoes"  , gender : gender} });
+    navigate("/plp", { state: { category: "shoes", gender: gender } });
   }
 
   function linkAll() {
-    navigate("/plp", { state: {gender : gender} });
+    navigate("/plp", { state: { gender: gender } });
   }
 
 
@@ -63,13 +63,14 @@ const NavBarTop: React.FC = () => {
           </div>
           <div
             onClick={
-              () => {setToggle(!toggle), GenderWoman()} }
+              () => { setToggle(!toggle), GenderWoman() }}
             className="navbar_categories"
           >
             Woman
           </div>
-          <div className="navbar_categories">
-            About Us
+          <div
+            className="navbar_categories">
+            <Link to='/aboutUs' >About Us</Link>
           </div>
         </div>
         <div className="navbar_right">
@@ -130,9 +131,9 @@ const NavBarTop: React.FC = () => {
           </div>
           {/* icona Cart */}
           <div
-          //   /* onClick={() => {
-          //   setToggle(!toggle);
-          // }} */
+            //   /* onClick={() => {
+            //   setToggle(!toggle);
+            // }} */
             className="navbar_button_item"
           >
             <svg
