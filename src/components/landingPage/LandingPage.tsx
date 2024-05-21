@@ -8,6 +8,7 @@ import FeaturesContent from "./featuresSection/FeaturesContent";
 import HeroContent from "./heroSection/HeroContent";
 import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
+import Footer from "../footer/Footer";
 import NavBarTop from "../Navbar/NavBarTop";
 import NavBarBottom from "../Navbar/NavbarBottom";
 
@@ -31,6 +32,7 @@ const LandingPage = () => {
       <LandingCarousel />
       <NewsLetterForm />
       <NavBarBottom />
+      <Footer/>
     </>
   );
 };
