@@ -9,7 +9,7 @@ const HeroSection:React.FC<any> = ({ content }) => {
 
   return (
     <div className="hero-cont">
-      <video src={video} muted autoPlay loop></video>
+      <video className="hero-cont-video" src={video} muted autoPlay loop></video>
     </div>
   );
 };

@@ -49,7 +49,8 @@
    
       .newsletter-submit-button {
         background-color: transparent;
-        display: block;
+        border: none;
+        display: inline-block;
         block-size: min-content;
         color: $main-black;
         font-size: 0.8rem;

@@ -1,4 +1,3 @@
-// DialogNewsLetter.tsx
 import React from "react";
 import heart from "../../../../../public/assets/heart.png";
 import "./dialogNewsLetter.scss";
@@ -19,7 +18,7 @@ const DialogNewsLetter: React.FC<DialogProps> = ({
     <div>
       <dialog className="dialog-cont" open>
         <Button className="dialog-closing-btn" onClick={onClose}>
-          x
+          &times;
         </Button>
         <div className="dialog-message-cont">
           <span className="dialog-message-subcont">
