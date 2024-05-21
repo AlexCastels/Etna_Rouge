@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Logo from "../logo/Logo";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
+import "../navbar/overlay.scss";
+import "../navbar/navBarTop.scss"
 import { useAppDispatch } from "../../redux/hook";
 import { toggleCart } from "../../redux/slices/cartSlice";
-import "../navbar/navbarTop.scss"
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
@@ -14,18 +15,28 @@ const NavBarTop: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch()
 
+  const [gender , setGender] = useState('')
+  function GenderMen() {
+    setGender('men')
+  }
+  function GenderWoman() {
+    setGender('woman')
+  }
+  
   function linkShirts() {
-    navigate("/shirts", { state: { name: "shirts" } });
+    navigate("/plp", { state: { category: "shirt"  , gender : gender} });
   }
   function linkPants() {
-    navigate("/pants", { state: { name: "pants" } });
+    navigate("/plp", { state: { category: "pants" , gender : gender} });
   }
   function linkShoes() {
-    navigate("/shoes", { state: { name: "shoes" } });
+    navigate("/plp", { state: { category: "shoes"  , gender : gender} });
   }
+
   function linkAll() {
-    navigate("/all", { state: { name: "all" } });
+    navigate("/plp", { state: {gender : gender} });
   }
+
 
   return (
     <>
@@ -48,16 +59,15 @@ const NavBarTop: React.FC = () => {
         >
           <div
             onClick={() => {
-              setToggle(!toggle);
+              setToggle(!toggle), GenderMen();
             }}
             className="navbar_categories"
           >
             Men
           </div>
           <div
-            onClick={() => {
-              setToggle(!toggle);
-            }}
+            onClick={
+              () => {setToggle(!toggle), GenderWoman()} }
             className="navbar_categories"
           >
             Woman
@@ -127,6 +137,7 @@ const NavBarTop: React.FC = () => {
             onClick={() => {
               dispatch(toggleCart())
             }}
+
             className="navbar_button_item"
           >
             <svg
@@ -140,6 +151,29 @@ const NavBarTop: React.FC = () => {
               <path d="M27 4.96h-5.975v-1.918c0-1.655-1.346-3-3-3h-3.989c-1.655 0-3 1.345-3 3v1.918h-6.037c-1.104 0-2 0.896-2 2v22.999c0 1.105 0.896 2 2 2h22c1.105 0 2-0.895 2-2v-22.999c0-1.104-0.895-2-2-2h0zM13.037 3.042c0-0.552 0.448-1 1-1h3.989c0.552 0 1 0.448 1 1v1.918h-5.989v-1.918zM27 29.959h-22v-22.999h6.037v2.058s-0.027 0.999 0.994 0.999c1.125 0 1.006-0.999 1.006-0.999v-2.058h5.989v2.058s-0.067 1.004 0.996 1.004c1 0 1.004-1.004 1.004-1.004v-2.058h5.974v22.999z" />
             </svg>
           </div>
+        </div>
+        <div className="navbar_hidden">
+          {!toggle && (
+            <div className="categories_hidden">
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkAll}>
+                All
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShirts}>
+                Shirt
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkPants}>
+                Pants
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShoes}>
+                Shoes
+              </div>
+              <div className="category_border"></div>
+            </div>
+          )}
         </div>
       </nav>
       <div className="navbar_hidden">
@@ -186,6 +220,10 @@ const NavBarTop: React.FC = () => {
       {!toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
+          <div className="single_category" onClick={linkAll}>
+            All
+          </div>
+          <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
             Shirt
           </div>
@@ -196,10 +234,6 @@ const NavBarTop: React.FC = () => {
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShoes}>
             Shoes
-          </div>
-          <div className="category_border"></div>
-          <div className="single_category" onClick={linkAll}>
-            All
           </div>
           <div className="category_border"></div>
         </div>
