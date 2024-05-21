@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import Cart from "../cart/Cart";
-import NavBarTop from "../navbar/NavBarTop";
-import NavBarBottom from "../navbar/NavbarBottom";
+import NavBarTop from "../Navbar/NavBarTop";
+import NavBarBottom from "../Navbar/NavbarBottom";
 import Button from "../UI/button/Button";
 
 

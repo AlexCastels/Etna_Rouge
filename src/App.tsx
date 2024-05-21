@@ -4,13 +4,13 @@ import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
-import Pdp from "./components/pdp/Pdp.tsx";
+import Pdp from "./components/PDP/Pdp.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
 import { Plp } from "./components/plp/Plp.tsx";
-import NavBarTop from "./components/navbar/NavBarTop.tsx";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
+import NavBarTop from "./components/Navbar/NavBarTop.tsx";
+import NavBarBottom from "./components/Navbar/NavbarBottom.tsx";
 
 
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Logo from "../logo/Logo";
-import "./navbarTop.scss";
-import HamburgerMenu from "../hamburger/HamburgerMenu";
+import Logo from "../Logo/Logo";
+import "./NavbarTop.scss";
+import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "../navbar/overlay.scss";
+import "../Navbar/Overlay.scss";
 import { useDispatch } from "react-redux";
 import { toggleCart } from "../../redux/slices/cartSlice";
 

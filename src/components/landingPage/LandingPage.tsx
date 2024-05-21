@@ -9,8 +9,8 @@ import { RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import Footer from "../footer/Footer";
-import NavBarTop from "../navbar/NavBarTop";
-import NavBarBottom from "../navbar/NavbarBottom";
+import NavBarTop from "../Navbar/NavBarTop";
+import NavBarBottom from "../Navbar/NavbarBottom";
 
 const LandingPage = () => {
   const dispatch = useDispatch();

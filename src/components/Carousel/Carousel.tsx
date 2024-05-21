@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useCarousel } from "../hooks/useCarousel";
-import "./carousel.scss";
+import { useCarousel } from "../Hooks/useCarousel";
+import "./Carousel.scss";
 
 
 
