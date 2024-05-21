@@ -32,7 +32,7 @@ function App() {
     es: esText,
 
     fr: frText,
-  };
+  }[locale]
 
   const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocale(e.target.value);
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <IntlProvider locale={locale} messages={messages[locale]}>
+      <IntlProvider locale={locale} messages={messages}>
         <div className="select-container">
           <select
             id="languageSelect"
