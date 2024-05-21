@@ -4,7 +4,7 @@ import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hook";
 import { toggleCart } from "../../redux/slices/cartSlice";
-import "../navbar/navbarTop.scss"
+import "../navbar/navBarTop.scss"
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
