@@ -3,8 +3,9 @@ import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
+import "../Navbar/NavbarBottom.scss";
+import "./Overlay.scss";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
@@ -51,7 +52,7 @@ const NavBarTop: React.FC = () => {
             }}
             className="navbar_categories"
           >
-          <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
+            <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
           </div>
           <div
             onClick={() => {
@@ -59,10 +60,13 @@ const NavBarTop: React.FC = () => {
             }}
             className="navbar_categories"
           >
-           <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
+            <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div className="navbar_categories">
-            <FormattedMessage id="navbarTop.aboutUs" defaultMessage="About Us" />
+            <FormattedMessage
+              id="navbarTop.aboutUs"
+              defaultMessage="About Us"
+            />
           </div>
         </div>
         <div className="navbar_right">
@@ -145,19 +149,22 @@ const NavBarTop: React.FC = () => {
             <div className="categories_hidden">
               <div className="category_border"></div>
               <div className="single_category" onClick={linkShirts}>
-                <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
+                <FormattedMessage
+                  id="navHidden.shirts"
+                  defaultMessage="Shirts"
+                />
               </div>
               <div className="category_border"></div>
               <div className="single_category" onClick={linkPants}>
-              <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
+                <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
               </div>
               <div className="category_border"></div>
               <div className="single_category" onClick={linkShoes}>
-               <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
+                <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
               </div>
               <div className="category_border"></div>
               <div className="single_category" onClick={linkAll}>
-               <FormattedMessage id="navHidden.all" defaultMessage="All" />
+                <FormattedMessage id="navHidden.all" defaultMessage="All" />
               </div>
               <div className="category_border"></div>
             </div>
@@ -172,15 +179,15 @@ const NavBarTop: React.FC = () => {
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkPants}>
-           <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
+            <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShoes}>
-           <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
+            <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
-             <FormattedMessage id="navHidden.all" defaultMessage="All" />
+            <FormattedMessage id="navHidden.all" defaultMessage="All" />
           </div>
           <div className="category_border"></div>
         </div>

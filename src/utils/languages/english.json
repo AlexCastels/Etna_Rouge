@@ -53,7 +53,8 @@
   "plp.button.addToCart": "ADD TO CART",
   "plp.link.cart": "Cart",
 
+  "cart.empty": "The cart is empty",
   "cart.remove": "Remove",
   "cart.quantity": "Quantity",
-  "cart.products": "Products"
+  "cart.price": "Total price"
 }

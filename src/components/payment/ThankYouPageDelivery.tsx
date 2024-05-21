@@ -1,8 +1,12 @@
+
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import "./thankYouPage.scss";
+
 import { removeFormData } from "../../redux/slices/payformSlice";
 import { FormattedMessage, FormattedNumber } from "react-intl";
+import { clearCart } from "../../redux/slices/cartSlice";
+import "./thankYouPage.scss";
+
 
 export function ThankYouPageDelivery() {
   const total = useAppSelector((state) => state.cart.total);
@@ -22,11 +26,12 @@ export function ThankYouPageDelivery() {
   //     setDeliverytotal((p) => p + location.state.total)
   // }
 
-  const navigate = useNavigate();
-  function handleBtn() {
-    navigate("/");
-    dispatch(removeFormData());
-  }
+    const navigate = useNavigate()
+    function handleBtn(){
+        navigate('/')
+        dispatch(removeFormData())
+        dispatch(clearCart())
+    }
 
   return (
     <div className="thankyou-container">

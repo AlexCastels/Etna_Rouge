@@ -13,7 +13,7 @@ const initialState: Contents = {
   error: null,
 };
 
-export const fetchContentfulData = createAsyncThunk("contents/fetchContentfulData", async () => {
+export const fetchContentfulData  = createAsyncThunk("contents/fetchContentfulData", async () => {
   try {
     const data = await client.getEntries();
     return data.items;

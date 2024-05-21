@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Logo from "../Logo/Logo";
-import "./NavbarTop.scss";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import { useNavigate } from "react-router-dom";
-import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
+import { /* Link */ useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hook";
+import { toggleCart } from "../../redux/slices/cartSlice";
+import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import "./NavbarTop.scss";
+import "./Overlay.scss";
+
+
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
@@ -12,6 +16,8 @@ const NavBarTop: React.FC = () => {
   const [toggleOverlay, setToggleOverlay] = useState(true);
 
   const navigate = useNavigate();
+  const dispatch = useAppDispatch()
+
   const [gender , setGender] = useState('')
   function GenderMen() {
     setGender('men')
@@ -132,9 +138,10 @@ const NavBarTop: React.FC = () => {
           </div>
           {/* icona Cart */}
           <div
-          //   /* onClick={() => {
-          //   setToggle(!toggle);
-          // }} */
+            onClick={() => {
+              dispatch(toggleCart())
+            }}
+
             className="navbar_button_item"
           >
             <svg
@@ -177,7 +184,7 @@ const NavBarTop: React.FC = () => {
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
-            All
+            <FormattedMessage id="navHidden.all" defaultMessage='All' />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
