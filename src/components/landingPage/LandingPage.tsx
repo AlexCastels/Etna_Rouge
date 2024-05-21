@@ -7,6 +7,7 @@ import PromoContent from "../promoBanner/PromoContent";
 import { RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
+import Footer from "../footer/Footer";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const LandingPage = () => {
       <HeroContent />
       <FeaturesContent />
       <LandingCarousel />
-      <NewsLetterForm />
+      <Footer/>
     </>
   );
 };
