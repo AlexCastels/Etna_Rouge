@@ -51,7 +51,8 @@
 
   "plp.button.addToCart": "AJOUTER AU PANIER",
 
-  "cart.remove": "Supprimer",
+  "cart.empty": "Le panier est vide",
+  "cart.remove": "Retirer",
   "cart.quantity": "Quantité",
-  "cart.products": "Produits"
+  "cart.price": "Prix total"
 }
