@@ -7,7 +7,7 @@ import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
- import Pdp from "./components/pdp/Pdp.tsx"; 
+ import Pdp from "./components/PDP/Pdp.tsx"; 
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx"; 
@@ -17,7 +17,7 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
-/* import "./components/PDP/Pdp.scss"; */
+import "./components/PDP/Pdp.scss";
 
 
 
