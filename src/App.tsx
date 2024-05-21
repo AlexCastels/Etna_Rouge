@@ -4,12 +4,12 @@ import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
-/* import Pdp from "./components/pdp/Pdp.tsx"; */
+import Pdp from "./components/pdp/Pdp.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
 import { Plp } from "./components/plp/Plp.tsx";
-import Pdp from "./components/pdp/Pdp.tsx";
+
 
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/SelectPayment" element={<SelectPayment />} />
           <Route path="/DeliveryForm" element={<PayForm />} />
-          {/* <Route path="/pdp/:id" element={<Pdp/>} /> */}
           <Route path="/CreditCardForm" element={<CreditCardForm />} />
           <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
           <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />

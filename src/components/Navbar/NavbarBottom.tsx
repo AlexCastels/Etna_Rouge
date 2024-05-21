@@ -1,5 +1,5 @@
 import React from "react";
-import "../navbar/navbarBottom.scss";
+import "./navbarBottom.scss";
 
 const NavBarBottom: React.FC = () => {
   return (

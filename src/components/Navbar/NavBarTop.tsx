@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import Logo from "../logo/Logo";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import "./NavbarTop.scss";
+import HamburgerMenu from "../hamburger/HamburgerMenu";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "../navbar/overlay.scss";
-import { useAppDispatch } from "../../redux/hook";
+import "../navbar/Overlay.scss";
+import { useDispatch } from "react-redux";
 import { toggleCart } from "../../redux/slices/cartSlice";
-import "../navbar/navBarTop.scss"
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
   const [toggleSidebar, setToggleSidebar] = useState(true);
   const [toggleOverlay, setToggleOverlay] = useState(true);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const dispatch = useAppDispatch()
-
   const [gender , setGender] = useState('')
   function GenderMen() {
     setGender('men')
@@ -48,7 +47,7 @@ const NavBarTop: React.FC = () => {
         >
           <HamburgerMenu />
         </div>
-        <div className="navbar_logo">
+        <div>
           <Logo />
         </div>
         <div
@@ -113,9 +112,9 @@ const NavBarTop: React.FC = () => {
               <g
                 id="Page-1"
                 stroke="none"
-                strokeWidth="1"
+                stroke-width="1"
                 fill="none"
-                fillRule="evenodd"
+                fill-rule="evenodd"
               >
                 <g
                   id="Dribbble-Light-Preview"
@@ -134,12 +133,10 @@ const NavBarTop: React.FC = () => {
           </div>
           {/* icona Cart */}
           <div
-            onClick={() => {
-              dispatch(toggleCart())
-            }}
-
-            className="navbar_button_item"
-          >
+          onClick={() => {
+            dispatch(toggleCart())
+          }}
+          className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
@@ -176,47 +173,6 @@ const NavBarTop: React.FC = () => {
           )}
         </div>
       </nav>
-      <div className="navbar_hidden">
-        {toggle && (
-          <div className="categories_hidden">
-            <div className="category_shirt" onClick={linkShirts}>
-              Shirt
-            </div>
-            <div className="category_pants" onClick={linkPants}>
-              Pants
-            </div>
-            <div className="category_shoes" onClick={linkShoes}>
-              Shoes
-            </div>
-            <div className="category_all" onClick={linkAll}>
-              All
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="navbar_hidden">
-        {!toggle && (
-          <div className="categories_hidden">
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkShirts}>
-              Shirt
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkPants}>
-              Pants
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkShoes}>
-              Shoes
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkAll}>
-              All
-            </div>
-            <div className="category_border"></div>
-          </div>
-        )}
-      </div>
       {!toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
