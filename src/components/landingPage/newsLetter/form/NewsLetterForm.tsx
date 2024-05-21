@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { internalMemory } from "../../utils/internalMemory.ts";
-import Button from "../../components/UI/button/Button.js";
+
 import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
-import "./NewsLetterForm.scss";
+import "./newsLetterForm.scss";
+import { FormattedMessage } from "react-intl";
+import { internalMemory } from "../../../../utils/internalMemory.js";
+import Button from "../../../UI/button/Button.js";
 
 const NewsLetterForm: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -66,50 +68,78 @@ const NewsLetterForm: React.FC = () => {
       {openDialog && (
         <DialogNewsLetter
           message={
-            registeredYet
-              ? "Your e-mail is already registered!"
-              : invalidEmail
-              ? "Insert a valid email"
-              : genderNotSelected
-              ? "Select a valid gender"
-              : "Welcome to Etna Rouge family!"
+            registeredYet ? (
+              <FormattedMessage
+                id="dialog.email.yetRegistered"
+                defaultMessage="This email is already registered"
+              />
+            ) : invalidEmail ? (
+              <FormattedMessage
+                id="dialog.invalid.email"
+                defaultMessage="Please enter a valid email address"
+              />
+            ) : genderNotSelected ? (
+              <FormattedMessage
+                id="dialog.invalid.gender"
+                defaultMessage="Please select a valid gender"
+              />
+            ) : (
+              <FormattedMessage
+                id="dialog.success"
+                defaultMessage="Thank you for subscribing!"
+              />
+            )
           }
           onClose={handleCloseDialog}
           submitted={submitted}
         />
       )}
-      <div className="container">
-        <h2> Subscribe to our Newsletter to get a 15% discount! </h2>
-        <form>
-          <div className="btn-cont">
+      <div className="newsletter-container">
+        <h2 className="newsletter-title">
+          <FormattedMessage
+            id="news.title"
+            defaultMessage="Subscribe to our Newsletter to get a 15% discount!"
+          />
+        </h2>
+        <form className="newsletter-form">
+          <div className="newsletter-btn-cont">
             <Button
               type="button"
               className={`gender-btn ${gender === "male" ? "active" : ""}`}
               onClick={() => handleGenderClick("male")}
             >
-              Man
+              <FormattedMessage
+                id="news.button.gend.men"
+                defaultMessage="Man"
+              />
             </Button>
             <Button
               type="button"
               className={`gender-btn ${gender === "female" ? "active" : ""}`}
               onClick={() => handleGenderClick("female")}
             >
-              Woman
+              <FormattedMessage
+                id="news.button.gend.women"
+                defaultMessage="Woman"
+              />
             </Button>
           </div>
-          <label id="email"> E-mail </label>
-          <span className="input-cont">
-            <input
+          <label id="newsletter-email"> E-mail </label>
+          <span className="newsletter-input-cont">
+            <input className="newsletter-email-input"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button
-              className={`submit-btn ${submitted ? "active-submit" : ""} `}
+              className={`newsletter-submit-button ${submitted ? "active-submit" : ""} `}
               onClick={handleSubmitClick}
               type="submit"
             >
-              Confirm
+              <FormattedMessage
+                id="news.button.confirm"
+                defaultMessage="Confirm"
+              />
             </Button>
           </span>
         </form>

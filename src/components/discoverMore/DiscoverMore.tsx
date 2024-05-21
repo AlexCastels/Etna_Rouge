@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom'
-import NavBarTop from '../navbar/NavBarTop';
-import NavBarBottom from '../navbar/NavbarBottom';
+import NavBarTop from '../Navbar/NavBarTop';
+import NavBarBottom from '../Navbar/NavbarBottom';
 
 const DiscoverMore = () => {
   const navigate = useNavigate();

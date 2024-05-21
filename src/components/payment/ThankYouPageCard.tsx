@@ -2,7 +2,11 @@ import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../redux/hook"
 import "./thankYouPage.scss"
 import { removeFormData } from "../../redux/slices/payformSlice";
+
+import { FormattedMessage, FormattedNumber } from "react-intl";
+
 import { clearCart } from "../../redux/slices/cartSlice";
+
 
 export function ThankYouPageCard(){
     const total = useAppSelector((state) => state.cart.total)
@@ -28,14 +32,31 @@ export function ThankYouPageCard(){
         dispatch(clearCart())
     }
 
-    return (
-        <div className="thankyou-container">
-            <div className="thankyou-line"></div>
-            <h2>Thank you!</h2>
-            <p>Gentile {formData.name}, grazie per l'acquisto. Non appena l'ordine sarà spedito, ti invieremo un e-mail all'indirizzo <span className="spanForm">{formData.email}</span> con le informazioni di tracciamento.</p>
-            <p>Your order: {total} €</p>
-            <div className="thankyou-line"></div>
-            <button className='thankyou-btn' onClick={handleBtn}>HOME</button>
-        </div>
-    )
+     return (
+  <div className="thankyou-container">
+    <div className="thankyou-line"></div>
+    <h2>
+      <FormattedMessage id="thankYou.title" defaultMessage="Thank you!" />
+    </h2>
+    <p>
+      <FormattedMessage
+        id="thankYou.message"
+        defaultMessage={`Gentile {name}, grazie per l'acquisto. Non appena l'ordine sarà spedito, ti invieremo un'email all'indirizzo {email} con le informazioni di tracciamento.`}
+        values={{ name: formData.name, email: <span className="spanForm">{formData.email}</span> }}
+      />
+    </p>
+    <p>
+      <FormattedMessage
+        id="thankYou.orderTotal"
+        defaultMessage="Your order: {total} {currency}"
+        values={{ total: <FormattedNumber value={total} style="currency" currency="USD" />, currency: <FormattedMessage id="currency" defaultMessage="USD" /> }}
+      />
+    </p>
+    <div className="thankyou-line"></div>
+    <button className='thankyou-btn' onClick={handleBtn}>
+      <FormattedMessage id="thankYou.button.home" defaultMessage="HOME" />
+    </button>
+  </div>
+);
+    
 }

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import Logo from "../logo/Logo";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import Logo from "../Logo/Logo";
+import { FormattedMessage } from "react-intl";
 import { /* Link */ useNavigate } from "react-router-dom";
-import "../navbar/overlay.scss";
 import { useAppDispatch } from "../../redux/hook";
 import { toggleCart } from "../../redux/slices/cartSlice";
-import "../navbar/navBarTop.scss"
+import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import "./NavbarTop.scss";
+import "./Overlay.scss";
+
+
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
@@ -63,21 +66,23 @@ const NavBarTop: React.FC = () => {
             }}
             className="navbar_categories"
           >
-            Men
+            <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
           </div>
           <div
             onClick={
               () => {setToggle(!toggle), GenderWoman()} }
             className="navbar_categories"
           >
-            Woman
+            <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div className="navbar_categories">
-            About Us
+            <FormattedMessage
+              id="navbarTop.aboutUs"
+              defaultMessage="About Us"
+            />
           </div>
         </div>
         <div className="navbar_right">
-          {/* icona Search */}
           <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +105,6 @@ const NavBarTop: React.FC = () => {
               />
             </svg>
           </div>
-          {/* icona Profile */}
           <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -152,94 +156,55 @@ const NavBarTop: React.FC = () => {
             </svg>
           </div>
         </div>
-        <div className="navbar_hidden">
-          {!toggle && (
-            <div className="categories_hidden">
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkAll}>
-                All
-              </div>
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkShirts}>
-                Shirt
-              </div>
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkPants}>
-                Pants
-              </div>
-              <div className="category_border"></div>
-              <div className="single_category" onClick={linkShoes}>
-                Shoes
-              </div>
-              <div className="category_border"></div>
-            </div>
-          )}
-        </div>
       </nav>
-      <div className="navbar_hidden">
-        {toggle && (
-          <div className="categories_hidden">
-            <div className="category_shirt" onClick={linkShirts}>
-              Shirt
-            </div>
-            <div className="category_pants" onClick={linkPants}>
-              Pants
-            </div>
-            <div className="category_shoes" onClick={linkShoes}>
-              Shoes
-            </div>
-            <div className="category_all" onClick={linkAll}>
-              All
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="navbar_hidden">
-        {!toggle && (
+      {!toggle && (
+        <div className="navbar_hidden">
           <div className="categories_hidden">
             <div className="category_border"></div>
             <div className="single_category" onClick={linkShirts}>
-              Shirt
+              <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
             </div>
             <div className="category_border"></div>
             <div className="single_category" onClick={linkPants}>
-              Pants
+              <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
             </div>
             <div className="category_border"></div>
             <div className="single_category" onClick={linkShoes}>
-              Shoes
+              <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
             </div>
             <div className="category_border"></div>
             <div className="single_category" onClick={linkAll}>
-              All
+              <FormattedMessage id="navHidden.all" defaultMessage="All" />
             </div>
             <div className="category_border"></div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
       {!toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
-            All
+            <FormattedMessage id="navHidden.all" defaultMessage='All' />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
-            Shirt
+            <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkPants}>
-            Pants
+            <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShoes}>
-            Shoes
+            <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
           </div>
           <div className="category_border"></div>
+          <div className="single_category" onClick={linkAll}>
+            <FormattedMessage id="navHidden.all" defaultMessage="All" />
+          </div>
         </div>
       )}
-      {!toggleSidebar && <div className="overlay"></div>}
-      {!toggleOverlay && <div className="overlay"></div>}
+      {(!toggle || !toggleSidebar) && <div className="overlay"></div>}
     </>
   );
 };
