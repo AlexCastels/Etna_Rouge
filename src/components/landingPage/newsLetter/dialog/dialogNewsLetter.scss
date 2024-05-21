@@ -1,13 +1,15 @@
-div {
+@import "../../../../style.scss";
+
+.dialog-cont {
   position: relative;
 
-  dialog {
+  .dialog-closing-btn {
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: white;
     top: 1rem;
     left: 1rem;
 
@@ -20,8 +22,9 @@ div {
       top: 8rem;
     }
 
-    .closing-btn {
+    .news-closing-btn {
       align-self: flex-end;
+      color: $main-black;
       display: block;
       width: min-content;
       font-size: 1rem;
@@ -44,13 +47,13 @@ div {
       }
     }
 
-    div {
-      span {
+    .dialog-message-cont {
+      .dialog-message-subcont {
         display: flex;
         gap: 2rem;
 
-        h3 {
-          color: white;
+        .dialog-message-title {
+          color: $main-black;
           font-size: 1rem;
 
           @media only screen and (min-width: 768px) {
@@ -58,7 +61,7 @@ div {
           }
         }
 
-        img {
+        .dialog-message-img {
           width: 1rem;
         }
       }

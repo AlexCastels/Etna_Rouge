@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useAppSelector } from "../../redux/hook";
-import "./landingCarousel.scss";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import { useAppSelector } from "../../../redux/hook";
+import "./landingCarousel.scss";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
@@ -11,7 +12,7 @@ const LandingCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredContentsHero = contents.filter(
-    (items) => items.sys.contentType.sys.id === "erLpCarousel"
+    (items : any) => items.sys.contentType.sys.id === "erLpCarousel"
   );
 
   const arr = filteredContentsHero.map((item) => ({
@@ -36,11 +37,13 @@ const LandingCarousel = () => {
   }
 
   if (error) {
+
     return <span>{error}</span>;
   }
 
   if (arr.length === 0) {
     return <span>No items to display.</span>;
+
   }
 
   // Get the current two items to display
@@ -51,19 +54,31 @@ const LandingCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <div className="carousel-subcont">
+      <span className="landing-carousel-title">
+        <FormattedMessage
+          id="landing.carousel.title"
+          defaultMessage="Etna Rouge's World "
+        />
+      </span>
+      <div className="lp-carousel-subcont">
         {currentItems.map((item, index) => (
-          <div key={index} className="carousel-item">
+          <div key={index} className="lp-carousel-item">
             <img
-              className="carousel-img"
+              className="lp-carousel-img"
               src={item.img}
               alt={item.description}
             />
-            <p>{item.description}</p>
+            <p className="lp-carousel-description">{item.description}</p>
           </div>
         ))}
       </div>
-      <Link to="/discover">Discover more</Link>
+      <Link className="lp-carousel-link" to="/discover">
+
+        <FormattedMessage
+          id="landing.carousel.discover"
+          defaultMessage="Discover more "
+        />
+      </Link>
     </div>
   );
 };

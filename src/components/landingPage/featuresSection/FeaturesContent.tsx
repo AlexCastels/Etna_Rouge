@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppSelector } from "../../redux/hook";
+import { useAppSelector } from "../../../redux/hook";
 import FeaturesSection from "./FeaturesSection";
 
 const FeaturesContent: React.FC = () => {
@@ -7,23 +7,20 @@ const FeaturesContent: React.FC = () => {
   const error = useAppSelector((state) => state.contentful.error);
   const contents = useAppSelector((state) => state.contentful.contents);
 
-  
   if (error) {
     return <div>Error: {error}</div>;
   }
 
-  
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  
   const filterFeaturesContent = contents.filter(
     (item) => item.fields.title === "Feature Section"
   );
 
   return (
-    <div>
+    <div className="dark">
       {filterFeaturesContent.map((item) => (
         <FeaturesSection key={item.sys.id} content={item.fields} />
       ))}

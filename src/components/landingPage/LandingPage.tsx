@@ -1,12 +1,15 @@
+import Cart from "../cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
-import NewsLetterForm from "../../newsLetter/form/NewsLetterForm";
-import FeaturesContent from "../featuresSection/FeaturesContent";
-import HeroContent from "../heroSection/HeroContent";
-import LandingCarousel from "../landingCarousel/LandingCarousel";
 import PromoContent from "../promoBanner/PromoContent";
 import { RootState } from "../../redux/store";
 import { useEffect } from "react";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
+import FeaturesContent from "./featuresSection/FeaturesContent";
+import HeroContent from "./heroSection/HeroContent";
+import LandingCarousel from "./landingCarousel/LandingCarousel";
+import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
+import NavBarTop from "../Navbar/NavBarTop";
+import NavBarBottom from "../Navbar/NavbarBottom";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -20,11 +23,14 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* <PromoContent /> */}
+      <PromoContent />
+      <NavBarTop />
+      <Cart />
       <HeroContent />
       <FeaturesContent />
       <LandingCarousel />
       <NewsLetterForm />
+      <NavBarBottom />
     </>
   );
 };

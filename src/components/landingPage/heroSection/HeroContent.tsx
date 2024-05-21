@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import HeroSection from "./HeroSection";
+import { useAppDispatch, useAppSelector } from "../../../redux/hook";
+import { fetchContentfulData } from "../../../redux/slices/contentfulSlice";
 
 const Content = () => {
   const dispatch = useAppDispatch();
@@ -14,12 +14,10 @@ const Content = () => {
   }, []);
 
   console.log(contents[0]);
-  
 
   const filteredContentsHero = contents.filter(
     (items) => items.fields.title === "Hero Section ER"
   );
-
 
   if (loading) {
     return <span> loading... </span>;

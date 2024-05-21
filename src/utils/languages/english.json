@@ -1,0 +1,60 @@
+{
+  "currency": "USD",
+
+  "navbarTop.men": "Men",
+  "navbarTop.women": "Women",
+  "navbarTop.aboutUs": "About Us",
+  "navHidden.shirts": "Shirts",
+  "navHidden.pants": "Pants",
+  "navHidden.shoes": "Shoes",
+  "navHidden.all": "All",
+
+  "news.title": "Subscribe to our Newsletter to get a 15% discount!",
+  "news.button.gend.men": "Man",
+  "news.button.gend.women": "Woman",
+  "news.button.confirm": "Confirm",
+  "dialog.invalid.email": "Please enter a valid email address",
+  "dialog.invalid.gender": "Please select a gender",
+  "dialog.email.yetRegistered": "This email is already registered",
+  "dialog.success": "Thank you for subscribing!",
+
+  "landing.carousel.title": "Etna Rouge's World",
+  "landing.carousel.discover": "Discover more",
+
+  "creditPayment.title": "Enter Your Payment Credential",
+  "creditPayment.or": "or",
+  "creditPayment.checkout": "Checkout",
+
+  "payForm.title": "Insert your data",
+  "payForm.country": "Select your country *",
+  "payForm.Italy": "Italy",
+  "payForm.France": "France",
+  "payForm.Spain": "Spain",
+  "payForm.Germany": "Germany",
+  "payForm.supplement": "*Payment on delivery have supplement of €10 to the order total",
+  "payForm.button.pay": "Go to Pay",
+
+  
+  "selectPayment.title": "Payment Methods",
+  "selectPayment.label.cash": "Cash on Delivery",
+  "selectPayment.advise": " *By choosing payment on delivery, a supplement of €10 will apply to the order total",
+  "selectPayment.noSelected": "Please select a payment method",
+  "selectPayment.button.checkout": "CHECKOUT",
+
+  "thankYou.title": "Thank you!",
+  "thankYou.message": "Gentile {name}, grazie per l'acquisto. Non appena l'ordine sarà spedito, ti invieremo un'e-mail all'indirizzo {email} con le informazioni di tracciamento.",
+  "thankYou.orderTotal": "Your order: {total}",
+  "thankYou.button.home": "HOME",
+
+  "pdp.color": "Color:",
+  "pdp.selectSize": "Select your size",
+  "pdp.addToCart": "Add to cart",
+
+  "plp.button.addToCart": "ADD TO CART",
+  "plp.link.cart": "Cart",
+
+  "cart.empty": "The cart is empty",
+  "cart.remove": "Remove",
+  "cart.quantity": "Quantity",
+  "cart.price": "Total price"
+}
