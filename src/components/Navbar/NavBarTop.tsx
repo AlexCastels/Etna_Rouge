@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../Logo/Logo";
 import { FormattedMessage } from "react-intl";
-import { /* Link */ useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hook";
 import { toggleCart } from "../../redux/slices/cartSlice";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
@@ -18,26 +18,26 @@ const NavBarTop: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch()
 
-  const [gender , setGender] = useState('')
+  const [gender, setGender] = useState('')
   function GenderMen() {
     setGender('men')
   }
   function GenderWoman() {
     setGender('woman')
   }
-  
+
   function linkShirts() {
-    navigate("/plp", { state: { category: "shirt"  , gender : gender} });
+    navigate("/plp", { state: { category: "shirt", gender: gender } });
   }
   function linkPants() {
-    navigate("/plp", { state: { category: "pants" , gender : gender} });
+    navigate("/plp", { state: { category: "pants", gender: gender } });
   }
   function linkShoes() {
-    navigate("/plp", { state: { category: "shoes"  , gender : gender} });
+    navigate("/plp", { state: { category: "shoes", gender: gender } });
   }
 
   function linkAll() {
-    navigate("/plp", { state: {gender : gender} });
+    navigate("/plp", { state: { gender: gender } });
   }
 
 
@@ -70,16 +70,17 @@ const NavBarTop: React.FC = () => {
           </div>
           <div
             onClick={
-              () => {setToggle(!toggle), GenderWoman()} }
+              () => { setToggle(!toggle), GenderWoman() }}
             className="navbar_categories"
           >
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
-          <div className="navbar_categories">
-            <FormattedMessage
+          <div
+            className="navbar_categories">
+            <Link to='/aboutUs' ><FormattedMessage
               id="navbarTop.aboutUs"
-              defaultMessage="About Us"
-            />
+              defaultMessage="About Us"/></Link>
+            
           </div>
         </div>
         <div className="navbar_right">

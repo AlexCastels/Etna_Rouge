@@ -7,24 +7,28 @@ import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
- import Pdp from "./components/pdp/Pdp.tsx"; 
+// import Pdp from "./components/pdp/Pdp.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
-import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx"; 
+import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
 import enText from "./utils/languages/english.json";
 import itText from "./utils/languages/italian.json";
 import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
+import AboutUs from "./components/aboutUs/aboutUs.tsx";
+import Pdp from "./components/PDP/Pdp.tsx";
 /* import "./components/PDP/Pdp.scss"; */
 
-
+interface Messages {
+  [key: string]: any;
+}
 
 function App() {
   const [locale, setLocale] = useState("en");
 
-  const messages = {
+  const messages:Messages = {
     en: enText,
 
     it: itText,
@@ -57,25 +61,27 @@ function App() {
             <option value="en">English</option>
 
             <option value="es">Spanish</option>
-            
+
             <option value="fr">French</option>
           </select>
 
           <BrowserRouter>
             <NavBarTop /> 
             <Routes>
+              
               <Route path="/" element={<LandingPage />} />
+              <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp" element={<Plp />} /> 
-              <Route path="/Cart" element={<Cart />} /> 
-                <Route path="/SelectPayment" element={<SelectPayment />} />
+              <Route path="/plp" element={<Plp />} />
+              <Route path="/Cart" element={<Cart />} />
+              <Route path="/SelectPayment" element={<SelectPayment />} />
               <Route path="/DeliveryForm" element={<PayForm />} />
               <Route path="/CreditCardForm" element={<CreditCardForm />} />
               <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
-              <Route path="/ThankYouDelivery"  element={<ThankYouPageDelivery />} />
-            {/* <Route path="/pdp/:id" element={<Pdp />} />  */}
+              <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
+              <Route path="/pdp/:id" element={<Pdp />} />
             </Routes>
-         {/*    <NavBarBottom /> */}
+            {/*    <NavBarBottom /> */}
           </BrowserRouter>
         </div>
       </IntlProvider>
