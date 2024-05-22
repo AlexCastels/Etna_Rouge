@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { useParams } from 'react-router-dom';
 import '../pdp/pdp.scss'
-import { addToCart } from '../../redux/slices/cartSlice';
+import { addToCart, toggleCart } from '../../redux/slices/cartSlice';
 import { Carousel } from '../carousel/Carousel';
 import Button from '../UI/button/Button';
+import Cart from '../cart/Cart';
+import NavBarTop from '../navbar/NavBarTop';
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams()
@@ -25,8 +27,14 @@ const Pdp: React.FC<any> = () => {
             window.removeEventListener('resize', handleResize);
         };
     },[])
+    const handleAddToCart = (el : any) => {
+        dispatch(addToCart(el)); 
+        dispatch(toggleCart()); 
+      };
     return (
         <>
+        <NavBarTop/>
+        <Cart/>
             <div className="pdp-wrapper">
                 <div className="pdp-card">
                     <img className="pdp-img" src={element?.img} alt={element?.name} />
@@ -49,7 +57,7 @@ const Pdp: React.FC<any> = () => {
                         </div>
                     </div>
                     <div className="pdp-btn-cart">
-                        <Button className="btn-cart-component" onClick={() => dispatch(addToCart(element))}>Add to Cart</Button>
+                        <Button className="btn-cart-component" onClick={() => handleAddToCart(element)}>Add to Cart</Button>
                     </div>
                 </div>
             </div>

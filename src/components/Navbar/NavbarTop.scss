@@ -7,22 +7,21 @@
 }
 
 .navbar_hidden {
-    position: absolute;
     width: 100vw;
-    margin-top: 17.5em;
+  position: fixed;
+    top: 102px;
 
 }
 
 .categories_hidden {
     width: 100vw;
-    height: 3em;
-    bottom: 6.5vh;
-    background-color: white;
-    position: absolute;
+    height: 70px;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+   background-color: white;
 }
 
 .single_category {
@@ -34,7 +33,7 @@
     align-items: center;
     font-size: xx-small;
     letter-spacing: 0.2em;
-
+    
 }
 
 .nav_section {
@@ -49,55 +48,66 @@
 }
 
 .navbar_top {
-    background-color: white;
-    width: 100%;
-    height: 8vh;
-    top: 2vh;
-    z-index: 99;
-    position: absolute;
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+   z-index: 100;
     letter-spacing: 0.2em;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 .navbar_center {
     display: flex;
-    flex-direction: row;
     width: 100%;
     font-size: small;
-
+   
 
 }
 
 .navbar_categories {
     width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
+    
 }
 
 .navbar_right {
     display: flex;
-    flex-direction: row;
     width: 15em;
     align-items: center;
     padding-left: 1em;
     padding-right: 2em;
-
+    
 }
 
 .navbar_button_item {
     margin: 0.8em;
     cursor: pointer;
+    position: relative;
+    .quantity-number{
+        position: absolute;
+        inline-size: 20px;
+        block-size: 20px;
+        background-color: black;
+        inset-block-start: 10px;
+        inset-inline-start: 10px ;
+        border-radius: 10px;
+        color: white;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        
+
+    }
 }
 
 svg {
-    width: 100%;
-    height: 100%;
+    width: 20px;
+
     display: flex;
     flex-direction: row;
     justify-content: center;

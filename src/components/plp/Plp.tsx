@@ -72,18 +72,18 @@ export const Plp: React.FC<any> = () => {
               <img src={el.img} alt="" />
             </div>
             </Link>
-            <div className="card-button">
+            {/* <div className="card-button">
               <Button onClick={() => handleAddToCart(el)}>
                 ADD TO CART
               </Button>
-            </div>
+            </div> */}
             <Link to={`/pdp/${el.id}`} style={{textDecoration:'none',color:'black'}}>
               <div className="card-name">
               {el.name}
             </div>
             </Link>
             <div className="card-price">
-              {Math.round(el.price)}
+              € {Math.round(el.price)}
             </div>
           </div>
         ))}
