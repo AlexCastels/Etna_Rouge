@@ -5,7 +5,6 @@ import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { Link, useNavigate } from "react-router-dom";
 import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
-import Switcher from "../darkmode/Switcher";
 import { useDarkMode } from "../darkmode/DarkModeContext";
 
 const NavBarTop: React.FC = () => {
