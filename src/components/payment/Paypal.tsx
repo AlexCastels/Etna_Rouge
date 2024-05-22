@@ -39,7 +39,7 @@ export default function Paypal() {
                 description: "Cool looking table",
                 amount: {
                   currency_code: "EUR",
-                  value: 89,
+                  value: totalPrice,
                 },
               },
             ],
