@@ -46,6 +46,8 @@
   "thankYou.orderTotal": "Your order: {total}",
   "thankYou.button.home": "HOME",
 
+  "paypalRedirect" : "Thanks for the order!",
+
   "pdp.color": "Color:",
   "pdp.selectSize": "Select your size",
   "pdp.addToCart": "Add to cart",
