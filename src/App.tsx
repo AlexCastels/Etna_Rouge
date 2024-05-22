@@ -62,7 +62,7 @@ function App() {
           </select>
 
           <BrowserRouter>
-             <NavBarTop /> 
+            <NavBarTop /> 
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/discover" element={<DiscoverMore />} />
@@ -73,7 +73,7 @@ function App() {
               <Route path="/CreditCardForm" element={<CreditCardForm />} />
               <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
               <Route path="/ThankYouDelivery"  element={<ThankYouPageDelivery />} />
-            <Route path="/pdp/:id" element={<Pdp />} /> 
+            {/* <Route path="/pdp/:id" element={<Pdp />} />  */}
             </Routes>
          {/*    <NavBarBottom /> */}
           </BrowserRouter>

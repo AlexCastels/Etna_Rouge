@@ -1,9 +1,10 @@
+import { FormattedMessage } from "react-intl";
 import { useState } from "react"
-import './payForm.scss'
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hook";
 import { addFormData } from "../../redux/slices/payformSlice";
-import { FormattedMessage } from "react-intl";
+import './payForm.scss'
+import Button from "../UI/button/Button";
 interface PayForm {
     name : string;
     surname : string;
@@ -67,7 +68,7 @@ export function PayForm(){
             <div className="payform-bottom">
                 <input className='input-payform' required placeholder='Phone Number *' name='phone' type="number" onChange={handleInput}/>
                 <input className='input-payform' required placeholder='Address *' name='address' type="text" onChange={handleInput}/>
-                <input className='input-payform' required placeholder='Province *' name='province' type="text" onChange={handleInput}/>
+                <input className='input-payform' required placeholder='Province *' name='province' type="text" maxLength={2} onChange={handleInput}/>
                 <input className='input-payform' required placeholder='Zip Code *' name='zipcode' type="number" onChange={handleInput}/>
                 <select className="input-payform" name='country' onChange={handleInput}>
                     <option value=""><FormattedMessage id="payForm.country" defaultMessage="Select your country" /> </option>
@@ -80,7 +81,9 @@ export function PayForm(){
             <div className="payform-message">
                 <p><FormattedMessage id="payForm.supplement" defaultMessage="*Payment on delivery have supplement of €10 to the order total" /></p>
             </div>
-            <button className="payform-btn" onClick={handleBtn}><FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay" /></button>
+            <Button className="payform-btn" onClick={handleBtn}>
+                <FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay"/>
+            </Button>
             {/* {input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country ? <p>Compilare campi richiesti</p> : null} */}
         </form>
     )
