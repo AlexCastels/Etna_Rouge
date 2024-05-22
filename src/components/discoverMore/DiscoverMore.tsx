@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom'
-import NavBarTop from '../Navbar/NavBarTop';
-import NavBarBottom from '../Navbar/NavbarBottom';
+import NavBarTop from '../navbar/NabarTop';
+import NavBarBottom from '../navbar/NavbarBottom';
 
 const DiscoverMore = () => {
   const navigate = useNavigate();
@@ -11,12 +11,12 @@ const DiscoverMore = () => {
 
     return (
       <>
-      <NavBarTop/>
+      {/* <NavBarTop/> */}
        <div>
             <h1>Etna Rouge blog</h1>
              <button onClick={handleClick}>Home</button>
       </div>
-      <NavBarBottom/>
+      {/* <NavBarBottom/> */}
       </>
        
    

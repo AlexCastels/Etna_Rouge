@@ -11,7 +11,7 @@ const Footer = () => {
             <img src="../src/assets/EtnaRougeLogo.webp" alt="Logo" />
         </div>
         <div className="footer-newsletter">
-            <NewsLetterForm/>     
+            <NewsLetterForm/>
         </div>
     </div>
     <div className="footer-bottom">
@@ -51,7 +51,7 @@ const Footer = () => {
                 <li><a href="#">Sconto Studenti</a></li>
             </ul>
         </div>
-        <div className="footer-section">
+        {/* <div className="footer-section">
             <h3>Legal Area:</h3>
             <ul>
                 <li><a href="#">About Us</a></li>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <li><a href="#">Terms and Conditions</a></li>
                 <li><a href="#">Credits</a></li>
             </ul>
-        </div>
+        </div> */}
     </div>
 </footer>
         </>

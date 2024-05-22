@@ -64,7 +64,6 @@ const NewsLetterForm: React.FC = () => {
 
   return (
     <>
-      <hr />
       {openDialog && (
         <DialogNewsLetter
           message={

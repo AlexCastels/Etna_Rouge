@@ -6,8 +6,8 @@ import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
-import NavBarTop from "../Navbar/NavBarTop";
-import NavBarBottom from "../Navbar/NavbarBottom";
+import NavBarTop from "../navbar/NabarTop";
+import NavBarBottom from "../navbar/NavbarBottom";
 import Button from "../UI/button/Button";
 import "../plp/plp.scss";
 
@@ -64,7 +64,7 @@ export const Plp: React.FC<any> = () => {
       <Link to="/Cart">
         <FormattedMessage id="plp.link.cart" defaultMessage="Cart" />
       </Link>
-      <NavBarTop />
+{/*       <NavBarTop /> */}
       <Cart />
       <div className="cards-container">
         {element.slice(0, next).map((el: any) => (
@@ -99,7 +99,7 @@ export const Plp: React.FC<any> = () => {
           <p className="cards-continer-nothingToSee">Nothing to see</p>
         )}
       </div>
-      <NavBarBottom />
+{/*       <NavBarBottom /> */}
     </>
   );
 };
