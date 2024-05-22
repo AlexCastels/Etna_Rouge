@@ -18,40 +18,37 @@ $secondary-black: #0000009e;
 
 //Mixin to reuse only for the hover of Buttons without any background
 @mixin hoverButton {
-  color: gray;
-  font-size: 1.1rem;
-  background-color: transparent;
+    color: gray;
+    font-size: 1.1rem;
+    background-color: transparent;
 }
 
-
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
 }
 
 // positioning body relative for put the select at the bottom
-body{
-  position: relative;
+body {
+    position: relative;
 }
 
+// select {
+//   bottom: 1rem;
+//   z-index: 300;
+//   right: 1rem;
+//   padding: 0.5rem;
+//   position: absolute;
+//   background-color: $main-black;
+//   color: $main-white;
+//   border: none;
 
-select {
-  bottom: 1rem;
-  z-index: 300;
-  right: 1rem;
-  padding: 0.5rem;
-  position: absolute;
-  background-color: $main-black;
-  color: $main-white;
-  border: none;
-
-  option{
-    background-color: #0e0e0e;
-  }
-}
+//   option{
+//     background-color: #0e0e0e;
+//   }
+// }
 
 /* ProductCard */
 .single-card-container {
@@ -67,12 +64,11 @@ select {
 
 /* ProductCard */
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    text-align: center;
 }
-
 
 /* ProductCard */
 .cards-container {
@@ -82,7 +78,7 @@ select {
     text-align: center;
 }
 
-    .single-card-container {
+.single-card-container {
     /*    display: flex;
         flex-direction: column;
         justify-content: center;
@@ -95,9 +91,7 @@ select {
     font-weight: bold;
     letter-spacing: 0.1rem;
     width: 300px;
-
 }
-
 
 .card-body-img img {
     width: 300px;
@@ -127,6 +121,3 @@ select {
 .card-body-text {
     width: 300px;
 }
-
-
-

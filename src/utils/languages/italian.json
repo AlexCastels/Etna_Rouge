@@ -45,6 +45,8 @@
   "currency": "EUR",
   "thankYou.button.home": "HOME",
 
+  "paypalRedirect" : "Grazie per l'ordine!",
+
   "pdp.color": "Colore:",
   "pdp.selectSize": "Seleziona la tua taglia",
   "pdp.addToCart": "Aggiungi al carrello",

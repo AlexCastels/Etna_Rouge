@@ -1,7 +1,9 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useAppSelector } from "../../redux/hook";
+import { useNavigate } from "react-router-dom";
+import { PaypalRedirect } from "./PaypalRedirect"
 
 interface PayPalOrderData {
   intent: "CAPTURE";
@@ -17,7 +19,7 @@ interface PayPalPurchaseUnit {
 }
 export default function Paypal() {
   const paypal = useRef<HTMLDivElement>(null);
-
+  const navigate = useNavigate()
   const totalPrice = useAppSelector((state: RootState)=> state.cart.total);
 
   useEffect(() => {
@@ -45,8 +47,11 @@ export default function Paypal() {
           return actions.order.create(orderData);
         },
         onApprove: async (data, actions) => {
-          const order = await actions.order.capture();
-          console.log(order);
+          // const order = await actions.order.capture();
+          <PaypalRedirect/>
+          setTimeout(()=>{
+            navigate('/')
+          },2500)
         },
         onError: (err) => {
           console.log(err);

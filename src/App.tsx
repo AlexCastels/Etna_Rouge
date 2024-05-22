@@ -66,7 +66,7 @@ function App() {
           </select>
 
           <BrowserRouter>
-            <NavBarTop />
+            <NavBarTop /> 
             <Routes>
               
               <Route path="/" element={<LandingPage />} />
