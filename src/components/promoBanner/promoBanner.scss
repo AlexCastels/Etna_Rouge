@@ -1,21 +1,27 @@
-@import '../../style.scss';
+@import "../../style.scss";
 
+.banner-cont {
+  display: flex;
 
-.banner-cont{
-    display: flex;
-    justify-content: center;
-    font-size: 0.1rem;
-    font-family: $font-family;
+  justify-content: center;
+  font-size: 0.1rem;
+  font-family: $font-family;
+  color: $main-white;
+  background-color: $main-black;
+  font-size: 0.6rem;
+  padding: 0.1rem;
+  width: 100vw;
+
+  &.dark {
+    color: $main-black;
+    background-color: $main-white;
+  }
+  &.light {
     color: $main-white;
     background-color: $main-black;
-    font-size: 0.6rem;
-    z-index: 999;
-    top: 0;
-    width: 100vw;
-    position: absolute;
-    
-    @media only screen and (min-width: 768px){
-        font-size: 1rem;
-    }
-}
+  }
 
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}

@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { FormattedMessage } from "react-intl";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
   const location = useLocation()
+  const { mode } = useDarkMode();
 
   const gender = location.state?.gender
   const category = location.state?.category
@@ -59,7 +61,7 @@ export const Plp: React.FC<any> = () => {
         <FormattedMessage id="plp.link.cart" defaultMessage="Cart" /> 
       </Link>
 
-      <div className="cards-container">
+      <div className={`cards-container ${mode}`}>
         {product.map((el: any) => (
           <div className="single-card-container">
             <div className="card-body-container">

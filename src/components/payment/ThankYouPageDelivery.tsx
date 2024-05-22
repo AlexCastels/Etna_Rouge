@@ -3,11 +3,13 @@ import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import "./thankYouPage.scss";
 import { removeFormData } from "../../redux/slices/payformSlice";
 import { FormattedMessage, FormattedNumber } from "react-intl";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 
 export function ThankYouPageDelivery() {
   const total = useAppSelector((state) => state.cart.total);
   const formData = useAppSelector((state) => state.payformData);
   const dispatch = useAppDispatch();
+  const { mode } = useDarkMode();
   console.log(formData);
 
   // const location = useLocation()
@@ -29,7 +31,7 @@ export function ThankYouPageDelivery() {
   }
 
   return (
-    <div className="thankyou-container">
+    <div className={`thankyou-container ${mode}`}>
       <div className="thankyou-line"></div>
       <h2>
         <FormattedMessage id="thankYou.title" defaultMessage="Thank you!" />

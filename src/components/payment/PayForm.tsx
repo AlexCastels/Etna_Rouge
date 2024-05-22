@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hook";
 import { addFormData } from "../../redux/slices/payformSlice";
 import { FormattedMessage } from "react-intl";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 interface PayForm {
     name : string;
     surname : string;
@@ -19,6 +20,7 @@ export function PayForm(){
     // const total = useAppSelector(state => state.cart.total)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
+    const { mode } = useDarkMode();
     const [input , setInput] = useState<PayForm>({
         name : '',
         surname : '',
@@ -55,9 +57,9 @@ export function PayForm(){
     }
 
     return (
-        <form className='payform-container' onSubmit={handleForm}>
+        <form className={`payform-container ${mode}`} onSubmit={handleForm}>
             <div>
-                <h2><FormattedMessage id="payForm.title" defaultMessage="Insert your data" /></h2>
+                <h2 className={`payform-title ${mode}`} ><FormattedMessage id="payForm.title" defaultMessage="Insert your data" /></h2>
             </div>
             <div className="payform-top">
                 <input className='input-payform' required placeholder='Name *' name='name' type="text" onChange={handleInput}/>
@@ -77,7 +79,7 @@ export function PayForm(){
                     <option value="DE"><FormattedMessage id="payForm.Germany" defaultMessage="Select your country" /> </option>
                 </select>
             </div>
-            <div className="payform-message">
+            <div className={`payform-message ${mode}`}>
                 <p><FormattedMessage id="payForm.supplement" defaultMessage="*Payment on delivery have supplement of €10 to the order total" /></p>
             </div>
             <button className="payform-btn" onClick={handleBtn}><FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay" /></button>

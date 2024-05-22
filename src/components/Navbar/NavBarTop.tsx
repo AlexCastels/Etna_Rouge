@@ -5,39 +5,42 @@ import HamburgerMenu from "../Hamburger/HamburgerMenu";
 import { Link, useNavigate } from "react-router-dom";
 import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
+import Switcher from "../darkmode/Switcher";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(true);
   const [toggleSidebar, setToggleSidebar] = useState(true);
   const [toggleOverlay, setToggleOverlay] = useState(true);
 
+  const { mode } = useDarkMode();
+
   const navigate = useNavigate();
-  const [gender , setGender] = useState('')
+  const [gender, setGender] = useState("");
   function GenderMen() {
-    setGender('men')
+    setGender("men");
   }
   function GenderWoman() {
-    setGender('woman')
+    setGender("woman");
   }
-  
+
   function linkShirts() {
-    navigate("/plp", { state: { category: "shirt"  , gender : gender} });
+    navigate("/plp", { state: { category: "shirt", gender: gender } });
   }
   function linkPants() {
-    navigate("/plp", { state: { category: "pants" , gender : gender} });
+    navigate("/plp", { state: { category: "pants", gender: gender } });
   }
   function linkShoes() {
-    navigate("/plp", { state: { category: "shoes"  , gender : gender} });
+    navigate("/plp", { state: { category: "shoes", gender: gender } });
   }
 
   function linkAll() {
-    navigate("/plp", { state: {gender : gender} });
+    navigate("/plp", { state: { gender: gender } });
   }
-
 
   return (
     <>
-      <nav className="navbar_top">
+      <nav className={`navbar_top ${mode}`}>
         <div
           onClick={() => {
             setToggleSidebar(!toggleSidebar);
@@ -48,6 +51,11 @@ const NavBarTop: React.FC = () => {
         <div className="navbar_logo">
           <Logo />
         </div>
+        <div>
+          {" "}
+          <Switcher />
+        </div>
+
         <div
           className="navbar_center"
           onClick={() => {
@@ -63,14 +71,15 @@ const NavBarTop: React.FC = () => {
             <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
           </div>
           <div
-            onClick={
-              () => {setToggle(!toggle), GenderWoman()} }
+            onClick={() => {
+              setToggle(!toggle), GenderWoman();
+            }}
             className="navbar_categories"
           >
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div className="navbar_categories">
-          <FormattedMessage
+            <FormattedMessage
               id="navbarTop.aboutUs"
               defaultMessage="About Us"
             />
@@ -132,9 +141,9 @@ const NavBarTop: React.FC = () => {
           </div>
           {/* icona Cart */}
           <div
-          //   /* onClick={() => {
-          //   setToggle(!toggle);
-          // }} */
+            //   /* onClick={() => {
+            //   setToggle(!toggle);
+            // }} */
             className="navbar_button_item"
           >
             <svg
@@ -151,9 +160,9 @@ const NavBarTop: React.FC = () => {
         </div>
       </nav>
       {!toggle && (
-        <div className="navbar_hidden">
-          <div className="categories_hidden">
-            <div className="category_border"></div>
+        <div className="navbar_hidden ">
+          <div className={`categories_hidden ${mode}`}>
+            <div className={`category_border ${mode}`}></div>
             <div className="single_category" onClick={linkShirts}>
               <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
             </div>

@@ -9,20 +9,10 @@
 
 /* Fonts */
 $font-family: "Roboto", serif;
-
-
 $main-white: #fbfbfb;
 $secondary-white: #f5ebe0;
 $main-black: #0e0e0e;
 $secondary-black: #0000009e;
-
-
-.switch{
-  z-index: 300;
-  display: block;
- padding: 3rem;
-}
-
 
 
 
@@ -40,22 +30,21 @@ $secondary-black: #0000009e;
   font-family: $font-family;
 }
 
-.main-cont{
-/*    &.dark {
-    background: $main-black;
-    color: $main-white;
-    // Add more dark mode styles here
-  }
-  &.light {
-    background: $main-white;
-    color: $main-black;
-    // Add more light mode styles here
-  } */
-}
+
+
 
 body {
   position: relative;
   height: 100%;
+  
+   &.dark {
+    background: $main-black;
+ 
+  }
+  &.light {
+    background: $main-white;
+    color: $main-black;
+  } 
 
 }
 

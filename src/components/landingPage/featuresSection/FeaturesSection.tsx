@@ -3,7 +3,8 @@ import "./featuresSection.scss";
 import { useDarkMode } from "../../darkmode/DarkModeContext.jsx";
 
 const FeaturesSection: React.FC<any> = ({ content }) => {
-   const { mode } = useDarkMode();
+  const { mode } = useDarkMode();
+
 
   const img = content?.image?.fields?.file?.url || "";
   const p1 = content?.description?.content[0]?.content[0]?.value || "";

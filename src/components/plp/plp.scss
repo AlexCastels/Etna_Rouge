@@ -1,9 +1,14 @@
 /* ProductCard */
+@import '../../style.scss';
+
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   text-align: center;
+  background-color: black;
+
 
   .single-card-container {
     height: 400px;

@@ -7,6 +7,8 @@ import FeaturesContent from "./featuresSection/FeaturesContent";
 import HeroContent from "./heroSection/HeroContent";
 import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
+import NavBarTop from "../Navbar/NavBarTop";
+
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -21,9 +23,10 @@ const LandingPage = () => {
   return (
     <>
       <PromoContent />
+      <NavBarTop/>
       <HeroContent />
+     <LandingCarousel />
       <FeaturesContent />
-      <LandingCarousel />
       <NewsLetterForm />
     </>
   );

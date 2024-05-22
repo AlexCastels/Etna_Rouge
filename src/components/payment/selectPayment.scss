@@ -1,79 +1,87 @@
-.selectPayment-container{
+@import "../../style.scss";
+
+.selectPayment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  // width: 300px;
+  height: 100vh;
+  &.light {
+    background-color: $main-white;
+    color: $main-black;
+  }
+  &.dark {
+    background-color: $main-black;
+    color: $main-white;
+  }
+
+  .selectPayment-title {
+    width: 80%;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+  }
+
+  .select-payform-line {
+    height: 1px;
+    width: 80%;
+    background-color: black;
+  }
+
+  .selectForm-general-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    // width: 300px;
-    height: 100vh;
-
-    .selectPayment-title{
-        width: 80%;
-        font-size: 2rem;
-        font-weight: bold;
-        letter-spacing: 0.1rem;
+    gap: 50px;
+    @media (min-width: 768px) {
+      flex-direction: row;
     }
-    
-    .select-payform-line{
-        height: 1px;
-        width: 80%;
-        background-color: black;
-    }
+  }
 
-    .selectForm-general-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        @media(min-width:768px) {
-            flex-direction: row;
-        }
+  .selectPayform-creditCard-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+    div {
+      padding-bottom: 10px;
+      label {
+        padding-left: 5px;
+      }
     }
 
-    .selectPayform-creditCard-container{
-        display: flex;
-        justify-content:center;
-        flex-direction: column;
-        font-size: 18px;
-        div{
-            padding-bottom: 10px;
-            label{
-                padding-left:5px
-            }
-        }
-
-        .selectPayform-img{
-            width: 300px;
-        }
+    .selectPayform-img {
+      width: 300px;
     }
+  }
 
-    .selectPayform-delivery-container{
-        display: flex;
-        justify-content:center;
-        flex-direction: column;
-        width: 300px;
-        gap: 10px;
-        font-size: 18px;
-        p{
-            font-size: 14px;
-        }
-        label{
-            padding-left:5px
-        }
-        
+  .selectPayform-delivery-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    font-size: 18px;
+    p {
+      font-size: 14px;
     }
-    button{
-        padding: 5px;
-        width: 300px;
-        color: white;
-        background-color: black;
-        transition: all ease-in-out 0.5s;
-        cursor: pointer;
-        letter-spacing: 0.5rem;
+    label {
+      padding-left: 5px;
     }
+  }
+  button {
+    padding: 5px;
+    width: 300px;
+    color: white;
+    background-color: black;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    letter-spacing: 0.5rem;
+  }
 
-    .selectPayform-notSelect{
-        color:rgb(227, 1, 1)
-    }
-
+  .selectPayform-notSelect {
+    color: rgb(227, 1, 1);
+  }
 }

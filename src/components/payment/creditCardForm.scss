@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 *{
     padding: 0px;
     margin: 0px;
@@ -11,6 +13,14 @@
     justify-content: space-around;
     height: 100vh;
     width: 100vw;
+    &.dark{
+        background-color: $main-black;
+        color: $main-white;
+    }
+    &.light{
+        background-color: $main-white;
+        color: $main-black;
+    }
 
     .creditForm-title{
         // width: 80%;

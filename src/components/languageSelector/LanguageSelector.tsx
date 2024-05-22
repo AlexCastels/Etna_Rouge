@@ -15,7 +15,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ locale, changeLangu
         onChange={changeLanguage}
         value={locale}
       >
-        <option value="en">Chose language</option>
+        <option value="en">Chose language </option>
         <option value="it">Italian</option>
         <option value="en">English</option>
         <option value="es">Spanish</option>

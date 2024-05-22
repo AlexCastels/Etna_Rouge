@@ -9,6 +9,7 @@ const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined
 
 export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [mode, setMode] = useState<string>("dark");
+  
   return (
     <DarkModeContext.Provider value={{ mode, setMode }}>
       {children}

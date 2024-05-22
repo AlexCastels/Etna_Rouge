@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
-import { useDarkMode } from "./components/darkmode/DarkModeContext";
+import { ChangeEvent, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 import NavBarTop from "./components/Navbar/NavBarTop";
@@ -23,9 +22,6 @@ import LanguageSelector from "./components/languageSelector/LanguageSelector";
 
 function App() {
   const [locale, setLocale] = useState("en");
-  const { mode, setMode } = useDarkMode();
-
-  console.log(mode);
 
   interface Messages {
     [key: string]: any;
@@ -43,12 +39,10 @@ function App() {
   };
 
   return (
-    <div className={`main-cont ${mode}`}>
+    <>
       <IntlProvider locale={locale} messages={messages[locale]}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
         <BrowserRouter>
-          <NavBarTop />
-
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/discover" element={<DiscoverMore />} />
@@ -65,13 +59,8 @@ function App() {
             />
           </Routes>
         </BrowserRouter>
-        <div className="switch">
-          <button onClick={() => setMode(mode === "dark" ? "light" : "dark")}>
-            Switch Mode
-          </button>
-        </div>
       </IntlProvider>
-    </div>
+    </>
   );
 }
 

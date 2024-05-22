@@ -13,10 +13,22 @@
   overflow-inline: hidden;
   padding-block: 2rem;
 
+  &.dark {
+    background: $main-black;
+  }
+  &.light {
+    background: $main-white;
+  }
+
   .newsletter-title {
     font-weight: 0.8rem;
     font-size: 0.7rem;
-    color: $main-black;
+    &.dark {
+      color: $main-white;
+    }
+    &.light {
+      color: $main-black;
+    }
 
     @media only screen and (min-width: 798px) {
       font-size: 1.5rem;
@@ -46,13 +58,18 @@
       display: flex;
       flex-direction: row;
       align-items: baseline;
-   
+
       .newsletter-submit-button {
-        background-color: transparent;
+        background: none;
         border: none;
         display: inline-block;
         block-size: min-content;
-        color: $main-black;
+        &.dark {
+          color: $main-white;
+        }
+        &.light {
+          color: $main-black;
+        }
         font-size: 0.8rem;
         width: 0.5rem;
         align-self: center;
@@ -71,7 +88,12 @@
         background-color: transparent;
         color: $main-black;
         border: none;
-        border-bottom: 0.1rem solid $main-black;
+          &.dark {
+          border-bottom: 1px solid $main-white;
+        }
+        &.light {
+            border-bottom: 1px solid $main-black;
+        }
 
         @media only screen and (min-width: 798px) {
           padding-block: 0.3rem;

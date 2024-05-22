@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Paypal from "./Paypal";
 import { FormattedMessage } from "react-intl";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 
 export function CreditCardForm() {
   interface CreditDate {
@@ -24,6 +25,7 @@ export function CreditCardForm() {
     year: 0,
   });
   const [cvv, setCvv] = useState<number | null>(null);
+  const { mode } = useDarkMode();
 
   const creditObj: CreditCard = {
     creditName: creditName,
@@ -86,7 +88,7 @@ export function CreditCardForm() {
   }
 
   return (
-    <form onSubmit={handleForm} className="creditform-container">
+    <form onSubmit={handleForm} className={`creditform-container ${mode}`}>
       <div className="creditForm-title">
         <p>
           <FormattedMessage
