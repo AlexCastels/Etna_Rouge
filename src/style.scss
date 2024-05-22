@@ -10,11 +10,18 @@
 /* Fonts */
 $font-family: "Roboto", serif;
 
-/* Colori */
-$main-white: #fdf4f4;
+
+$main-white: #fbfbfb;
 $secondary-white: #f5ebe0;
 $main-black: #0e0e0e;
 $secondary-black: #0000009e;
+
+
+.switch{
+  z-index: 300;
+  display: block;
+ padding: 3rem;
+}
 
 
 
@@ -33,7 +40,18 @@ $secondary-black: #0000009e;
   font-family: $font-family;
 }
 
-
+.main-cont{
+/*    &.dark {
+    background: $main-black;
+    color: $main-white;
+    // Add more dark mode styles here
+  }
+  &.light {
+    background: $main-white;
+    color: $main-black;
+    // Add more light mode styles here
+  } */
+}
 
 body {
   position: relative;
@@ -41,41 +59,7 @@ body {
 
 }
 
-//PROVA DARKMODE
-.app-container {
-  position: absolute;
-  top: 20rem;
-  padding: 20px;
-    z-index: 9000;
-  transition: background-color 0.3s, color 0.3s;
-  .suca {
-  padding: 10px 20px;
 
-  margin-bottom: 20px;
-  &:hover{
-    background-color: red;
-  }
-}
-}
-
-
-
-
-select {
-  position: fixed;
-  bottom: 1rem;
-  z-index: 300;
-  right: 1rem;
-  padding: 0.5rem;
-  position: absolute;
-  background-color: $main-black;
-  color: $main-white;
-  border: none;
-
-  option {
-    background-color: #0e0e0e;
-  }
-}
 
 /* ProductCard */
 .single-card-container {

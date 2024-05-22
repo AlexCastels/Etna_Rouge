@@ -1,9 +1,19 @@
 @import '../../../style.scss';
 
 
+
 .feature-cont{
     width: 100%;
     height: 100%;
+
+    &.light {
+      background-color: $main-white;
+      color: $main-black;
+    }
+    &.dark {
+         background-color: $main-black;
+      color: $main-white;
+    }
     
 
     

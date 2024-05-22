@@ -1,98 +1,77 @@
-import { useState } from "react";
-import { useDarkMode, } from "./components/darkmode/DarkModeContext.tsx";
+import React, { ChangeEvent, useState } from "react";
+import { useDarkMode } from "./components/darkmode/DarkModeContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-
-import NavBarTop from "./components/Navbar/NavBarTop.tsx";
-
-import LandingPage from "./components/landingPage/LandingPage.tsx";
-import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
-import Cart from "./components/cart/Cart.tsx";
-import Plp from "./components/plp/Plp.tsx";
-import Pdp from "./components/pdp/Pdp.tsx";
-import { PayForm } from "./components/payment/PayForm.tsx";
-import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
-import { SelectPayment } from "./components/payment/SelectPayment.tsx";
-import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
-import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
+import NavBarTop from "./components/Navbar/NavBarTop";
+import LandingPage from "./components/landingPage/LandingPage";
+import DiscoverMore from "./components/discoverMore/DiscoverMore";
+import Cart from "./components/cart/Cart";
+import Plp from "./components/plp/Plp";
+import Pdp from "./components/pdp/Pdp";
+import { PayForm } from "./components/payment/PayForm";
+import { CreditCardForm } from "./components/payment/CreditCardForm";
+import { SelectPayment } from "./components/payment/SelectPayment";
+import { ThankYouPageCard } from "./components/payment/ThankYouPageCard";
+import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery";
 import enText from "./utils/languages/english.json";
 import itText from "./utils/languages/italian.json";
 import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
-
 import "./style.scss";
 import "./components/pdp/Pdp.scss";
+import LanguageSelector from "./components/languageSelector/LanguageSelector";
 
 function App() {
   const [locale, setLocale] = useState("en");
-  const { darkMode, toggleDarkMode } = useDarkMode();
+  const { mode, setMode } = useDarkMode();
 
-  const messages = {
+  console.log(mode);
+
+  interface Messages {
+    [key: string]: any;
+  }
+
+  const messages: Messages = {
     en: enText,
-
     it: itText,
-
     es: esText,
-
     fr: frText,
   };
 
-  const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const changeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
     setLocale(e.target.value);
-
-    console.log(locale);
   };
 
   return (
-    <>
-      <div className="app-container">
-        <button className="suca" onClick={toggleDarkMode}>
-         switch
-        </button>
-        <p>PROVA</p>
-      </div>
-
+    <div className={`main-cont ${mode}`}>
       <IntlProvider locale={locale} messages={messages[locale]}>
-        <div className="select-container">
-          <select
-            id="languageSelect"
-            className="select-lang"
-            onChange={changeLanguage}
-            value={locale}
-          >
-            <option value="en">Chose language</option>
+        <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
+        <BrowserRouter>
+          <NavBarTop />
 
-            <option value="it">Italian</option>
-
-            <option value="en">English</option>
-
-            <option value="es">Spanish</option>
-
-            <option value="fr">French</option>
-          </select>
-
-          <BrowserRouter>
-            <NavBarTop />
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp" element={<Plp />} />
-              <Route path="/Cart" element={<Cart />} />
-              <Route path="/SelectPayment" element={<SelectPayment />} />
-              <Route path="/DeliveryForm" element={<PayForm />} />
-              <Route path="/CreditCardForm" element={<CreditCardForm />} />
-              <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
-              <Route
-                path="/ThankYouDelivery"
-                element={<ThankYouPageDelivery />}
-              />
-              <Route path="/pdp/:id" element={<Pdp />} />
-            </Routes>
-            {/*   <NavBarBottom />  */}
-          </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/discover" element={<DiscoverMore />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/plp" element={<Plp />} />
+            <Route path="/pdp/:id" element={<Pdp />} />
+            <Route path="/pay" element={<PayForm />} />
+            <Route path="/credit-card" element={<CreditCardForm />} />
+            <Route path="/select-payment" element={<SelectPayment />} />
+            <Route path="/thank-you-card" element={<ThankYouPageCard />} />
+            <Route
+              path="/thank-you-delivery"
+              element={<ThankYouPageDelivery />}
+            />
+          </Routes>
+        </BrowserRouter>
+        <div className="switch">
+          <button onClick={() => setMode(mode === "dark" ? "light" : "dark")}>
+            Switch Mode
+          </button>
         </div>
       </IntlProvider>
-    </>
+    </div>
   );
 }
 

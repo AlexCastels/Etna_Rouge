@@ -19,6 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "../Pants.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

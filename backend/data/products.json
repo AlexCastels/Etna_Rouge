@@ -1,203 +1,205 @@
 [
     {
         "id": 1,
-        "name": "Men's Fashion Jacket",
-        "price": 599.99,
+        "name": "Pink Shirt",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/13939465/pexels-photo-13939465.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/ritratto-dell-uomo-bello-felice-sorridente-in-casuals-isolato-sulla-parete-bianca_186202-8115.jpg?t=st=1716371356~exp=1716374956~hmac=a8f4074860ff76839ef2e51d56da31a3a73baef825ca7af33d7aa0673b3dd4e9&w=740",
         "quantity": 0,
-        "description": "A stylish jacket for men's fashion."
+        "description": "Pink men's sweater"
     },
     {
         "id": 2,
-        "name": "Casual Men's Clothing",
-        "price": 589.99,
+        "name": "Clear blue shirt",
+        "price": 579.99,
         "gender": "men",
-        "category": "pants",
-        "img": "https://images.pexels.com/photos/5145180/pexels-photo-5145180.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/ritratto-dell-uomo-bello-felice-sorridente-in-camicia-casual-blu-isolato-sulla-parete-bianca_186202-8113.jpg?t=st=1716371380~exp=1716374980~hmac=7c0a1e2f33592509d3d10d5c90572b448ba9b8534c2c0c789483be88e697ed99&w=360",
         "quantity": 0,
-        "description": "Casual clothing for men's everyday wear."
+        "description": "Clear blue shirt"
     },
     {
         "id": 3,
-        "name": "Men's Fashion on the Beach",
+        "name": "Denim Jacket",
         "price": 579.99,
         "gender": "men",
-        "category": "shoes",
-        "img": "https://images.unsplash.com/photo-1593757147298-e064ed1419e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FtaWNpYSUyMHVvbW98ZW58MHx8MHx8fDA%3D",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/il-ritratto-di-giovane-uomo-di-modello-bello-si-e-vestito-nella-posa-dei-vestiti-dei-jeans-isolato_158538-9094.jpg?t=st=1716196787~exp=1716200387~hmac=1d1e649ce3e5408524e8554f7b4e99faa4c752a366ebc54e2e19c8a4a6f2166d&w=900",
         "quantity": 0,
-        "description": "Men's fashion on the beach."
+        "description": "Denim jacket"
     },
     {
         "id": 4,
-        "name": "Men's Formal Wear",
-        "price": 584.99,
+        "name": "Black Jacket",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://plus.unsplash.com/premium_photo-1674777843130-40233fe45804?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FtaWNpYSUyMHVvbW98ZW58MHx8MHx8fDA%3D",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/guarda-la-testa-fredda-del-modello-ispanico_1368-2399.jpg?t=st=1716371520~exp=1716375120~hmac=9f087c19bcc2c7d2cc9303ec547647fd1b3a78e9ec5956b6906f43b6324bd37c&w=360",
         "quantity": 0,
-        "description": "Formal wear for men's special occasions."
+        "description": "Black spring jacket"
     },
     {
         "id": 5,
-        "name": "Men's Casual Wear",
-        "price": 609.99,
+        "name": "White classic shirt",
+        "price": 579.99,
         "gender": "men",
-        "category": "shoes",
-        "img": "https://plus.unsplash.com/premium_photo-1689327920655-52e42cf05219?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmVzdGl0aSUyMHVvbW98ZW58MHx8MHx8fDA%3D",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/ritratto-di-un-bel-giovane_158595-242.jpg?t=st=1716371618~exp=1716375218~hmac=78fa12badc240694275dbfee388cc039fbcf236192fb586688c60c0f7525c2d1&w=360",
         "quantity": 0,
-        "description": "Casual wear for men's everyday activities."
+        "description": "White 100% cotton classic shirt"
     },
     {
         "id": 6,
-        "name": "Men's Sunglasses",
-        "price": 599.99,
+        "name": "White Basic T-shirt",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/19880508/pexels-photo-19880508/free-photo-of-uomo-occhiali-da-sole-parete-muro.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/ritratto-di-bel-modello-fiducioso-uomo-alla-moda-sexy-moda-maschio-hipster-in-posa-vicino-al-muro-in-studio_158538-23755.jpg?t=st=1716196951~exp=1716200551~hmac=c4a75bba2a1f3ea8528069efc6a75ecc533b384a184217cabf705a24af6f3af4&w=900",
         "quantity": 0,
-        "description": "Stylish sunglasses for men."
+        "description": "White basic t-shirt"
     },
     {
         "id": 7,
-        "name": "Men's Beachwear",
-        "price": 569.99,
+        "name": "Brown cargo T-shirt",
+        "price": 579.99,
         "gender": "men",
-        "category": "shoes",
-        "img": "https://images.pexels.com/photos/6311691/pexels-photo-6311691.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shirts",
+        "img": "https://img.freepik.com/foto-gratuito/uomo-che-indossa-una-maglietta-bianca-sotto-una-maglietta-grigia_53876-128789.jpg?t=st=1716371716~exp=1716375316~hmac=00ef4f31682a79d8ab99ac5061d63367c64a636b8ee7b2d5de525891cea6d0ee&w=360",
         "quantity": 0,
-        "description": "Beachwear for men's summer days."
+        "description": "Brown cotton cargo T-shirt"
     },
     {
         "id": 8,
-        "name": "Men's Swimwear",
-        "price": 599.99,
+        "name": "White Pants",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/19119918/pexels-photo-19119918/free-photo-of-mare-uomo-spiaggia-sabbia.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/immagine-ritagliata-verticale-dell-uomo-africano_171337-9826.jpg?t=st=1716197065~exp=1716200665~hmac=88dd668d1c1b6fc750219505a3fd8010f0d05046941b33c95c8215961f91414e&w=360",
         "quantity": 0,
-        "description": "Swimwear for men's beach adventures."
+        "description": "White pants"
     },
     {
         "id": 9,
-        "name": "Men's Shirt",
-        "price": 589.99,
+        "name": "Beige Pants",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/1484807/pexels-photo-1484807.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/uomo-in-camicia-beige-e-pantaloni-abbigliamento-casual-moda-corpo-completo_53876-129940.jpg?t=st=1716197110~exp=1716200710~hmac=a1f3f75c6320d515c77ae6bbf6880071971ea9d6114a08791b6292ae2e7a2866&w=360",
         "quantity": 0,
-        "description": "Shirt for men's fashion."
+        "description": "Beige pants"
     },
     {
         "id": 10,
-        "name": "Men's Shorts",
+        "name": "Grey Jogger Pants",
         "price": 579.99,
         "gender": "men",
-        "category": "pants",
-        "img": "https://images.pexels.com/photos/5191436/pexels-photo-5191436.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/comodi-pantaloni-jogger-in-abbigliamento-da-studio-grigio_53876-102269.jpg?t=st=1716197140~exp=1716200740~hmac=9719289bb2db19092175a52ac8dcb3af517c6e36e4353572385e1dcd3b9a42c4&w=360",
         "quantity": 0,
-        "description": "Shorts for men's casual wear."
+        "description": "Grey jogger pants"
     },
     {
         "id": 11,
-        "name": "Men's Business Wear",
-        "price": 584.99,
+        "name": "Black Jeans",
+        "price": 579.99,
         "gender": "men",
-        "category": "shoes",
-        "img": "https://images.pexels.com/photos/15623773/pexels-photo-15623773/free-photo-of-moda-uomo-shorts-pantaloncini.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/immagine-integrale-dell-uomo-d-affari-castana-in-rivestimento-che-posa-con-confidenza-con-le-mani-in-tasche-e-che-osserva-da-parte-isolato-sopra-la-parete-bianca_171337-1269.jpg?t=st=1716197185~exp=1716200785~hmac=d031d57630a065b99b3bbde8cf181d95c3293641f5554be18243964b95cb9a4e&w=360",
         "quantity": 0,
-        "description": "Business wear for men."
+        "description": "Black jeans"
     },
-    {
+   
+
+ {
         "id": 12,
-        "name": "Men's Formal Shirt",
-        "price": 594.99,
+        "name": "Beige Shorts",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/19276437/pexels-photo-19276437/free-photo-of-moda-uomo-modello-camicia.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/uomo-in-giacca-beige-e-pantaloncini-streetwear-full-body_53876-125232.jpg?t=st=1716197226~exp=1716200826~hmac=f1f2a96a6d87f361b72e5054520f0e4112476c781c604457f8bd93e641a74dfe&w=360",
         "quantity": 0,
-        "description": "Formal shirt for men's special occasions."
+        "description": "Beige shorts"
     },
     {
         "id": 13,
-        "name": "Men's Casual Shirt",
-        "price": 574.99,
+        "name": "Black Street Jeans",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/19552345/pexels-photo-19552345/free-photo-of-uomo-modello-camicia-in-piedi.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/giovane-sorridente-che-sta-con-le-mani-in-tasche_171337-17917.jpg?t=st=1716197259~exp=1716200859~hmac=b6d3698f8b61ca35df38690455659e3caf192297df2d11446f9232ccbe4ade4b&w=360",
         "quantity": 0,
-        "description": "Casual shirt for men's everyday wear."
+        "description": "Black street jeans"
     },
     {
         "id": 14,
-        "name": "Men's Formal Suit",
-        "price": 619.99,
+        "name": "White Shorts",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/19838417/pexels-photo-19838417/free-photo-of-uomo-abito-completo-barba.png?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/uomo-in-pantaloncini-bianchi-servizio-fotografico-di-moda-estiva-da-vicino_53876-104997.jpg?t=st=1716197290~exp=1716200890~hmac=5572316c9d91dbce51832c85cab3f7e1211067c59a083b6a209a70f66b1097cc&w=360",
         "quantity": 0,
-        "description": "Formal suit for men's special occasions."
+        "description": "White shorts"
     },
     {
         "id": 15,
-        "name": "Men's Fedora Hat",
-        "price": 609.99,
+        "name": "Blue Jeans",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/19272484/pexels-photo-19272484/free-photo-of-uomo-in-piedi-in-cappello-fedora-rosso.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Pants",
+        "img": "https://img.freepik.com/foto-gratuito/uomo-in-giacca-blu-e-jeans-streetwear_53876-108579.jpg?t=st=1716197331~exp=1716200931~hmac=d7e609e3ea68f599b7bc60f8114551234a6c49477f1d7e5ef1829a3ff313dfe5&w=360",
         "quantity": 0,
-        "description": "Fedora hat for men's fashion."
+        "description": "Blue jeans"
     },
     {
         "id": 16,
-        "name": "Men's Fashion Shorts",
+        "name": "Later Loafers",
         "price": 579.99,
         "gender": "men",
-        "category": "pants",
-        "img": "https://images.pexels.com/photos/2955375/pexels-photo-2955375.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shoes",
+        "img": "https://img.freepik.com/foto-gratuito/i-bei-pattini-di-lusso-e-di-cuoio-casuali_1203-7704.jpg?t=st=1716371794~exp=1716375394~hmac=0e833bb184eba6b62b58fa554fc0c9c816ce0f41894eca550f9f5fc57da22df3&w=360",
         "quantity": 0,
-        "description": "Fashion shorts for men."
+        "description": "Later men loafers"
     },
     {
         "id": 17,
-        "name": "Businessman Fashion Suit",
-        "price": 589.99,
+        "name": "Suede shoes",
+        "price": 579.99,
         "gender": "men",
-        "category": "pants",
-        "img": "https://images.pexels.com/photos/15654407/pexels-photo-15654407/free-photo-of-businessman-moda-uomo-abito.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shoes",
+        "img": "https://img.freepik.com/foto-gratuito/classico-pizzo-bianco-moda-vicino_1203-6449.jpg?t=st=1716371856~exp=1716375456~hmac=ed514afa1fdc258aa5d2e57335f787aa5170023d7e4fe408e0fa597a7e8b0a66&w=360",
         "quantity": 0,
-        "description": "Fashion suit for businessmen."
+        "description": "Suede brown shoes"
     },
     {
         "id": 18,
-        "name": "Men's Casual Wear",
-        "price": 584.99,
+        "name": "Later boots",
+        "price": 579.99,
         "gender": "men",
-        "category": "pants",
-        "img": "https://images.pexels.com/photos/6310924/pexels-photo-6310924.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shoes",
+        "img": "https://img.freepik.com/foto-gratuito/stivali-di-pelle_1203-8132.jpg?t=st=1716371899~exp=1716375499~hmac=337001bfe93218da1796873e14afec4f3a1fed9c5c06bfc60d0be2bf7bda95e2&w=360",
         "quantity": 0,
-        "description": "Casual wear for men."
+        "description": "Black and grey later boots"
     },
     {
         "id": 19,
-        "name": "Men's Casual Jacket",
-        "price": 569.99,
+        "name": "Brown sandals",
+        "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/11434885/pexels-photo-11434885.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shoes",
+        "img": "https://img.freepik.com/foto-gratuito/scarpe-in-pelle-e-sandali-in-cuoio_1203-7698.jpg?t=st=1716371963~exp=1716375563~hmac=1c6d8f4e5cefb412d4a23d3ce9d44ea88f38d2cab34773144059ae92d0e5f0e4&w=360",
         "quantity": 0,
-        "description": "Casual jacket for men's fashion."
+        "description": "Brown summer sandals"
     },
     {
         "id": 20,
-        "name": "Men's Fashion Hat",
+        "name": "Brown Classic Shoes",
         "price": 579.99,
         "gender": "men",
-        "category": "shirt",
-        "img": "https://images.pexels.com/photos/10678803/pexels-photo-10678803.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "Shoes",
+        "img": "https://img.freepik.com/foto-gratuito/scarpe-da-uomo_1203-7419.jpg?t=st=1716197564~exp=1716201164~hmac=a2ffad900c8cf6d8617c53a54f4a575c4f9b2740fced10c82f8689ed039dcbff&w=360",
         "quantity": 0,
-        "description": "Fashion hat for men."
+        "description": "Brown classic shoes"
     },
     {
         "id": 21,

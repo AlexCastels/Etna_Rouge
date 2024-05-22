@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { useAppSelector } from "../../../redux/hook";
 import "./landingCarousel.scss";
+import { useDarkMode } from "../../darkmode/DarkModeContext";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
@@ -10,6 +11,8 @@ const LandingCarousel = () => {
   const loading = useAppSelector((state) => state.contentful.loading);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const { mode } = useDarkMode();
 
   const filteredContentsHero = contents.filter(
     (items) => items.sys.contentType.sys.id === "erLpCarousel"
@@ -51,8 +54,8 @@ const LandingCarousel = () => {
   ];
 
   return (
-    <div className="carousel-container">
-      <span className="landing-carousel-title">
+    <div className={`carousel-container ${mode}`}>
+      <span className={`landing-carousel-title  ${mode}`}>
         <FormattedMessage
           id="landing.carousel.title"
           defaultMessage="Etna Rouge's World "
@@ -70,7 +73,7 @@ const LandingCarousel = () => {
           </div>
         ))}
       </div>
-      <Link className="lp-carousel-link" to="/discover">
+      <Link className={`lp-carousel-link ${mode}`} to="/discover">
 
         <FormattedMessage
           id="landing.carousel.discover"

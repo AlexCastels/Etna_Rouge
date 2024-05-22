@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
 
@@ -70,7 +70,7 @@ const NavBarTop: React.FC = () => {
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div className="navbar_categories">
-            <FormattedMessage
+          <FormattedMessage
               id="navbarTop.aboutUs"
               defaultMessage="About Us"
             />

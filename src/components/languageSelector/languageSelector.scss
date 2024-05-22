@@ -1,0 +1,17 @@
+@import '../../style.scss';
+
+.lang-select-container {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 600;
+  right: 1rem;
+  padding: 0.5rem;
+  position: absolute;
+  background-color: $main-black;
+  color: $main-white;
+  border: none;
+
+  option {
+    background-color: white;
+  }
+}

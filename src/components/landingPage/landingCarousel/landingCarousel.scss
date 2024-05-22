@@ -1,9 +1,18 @@
-@import '../../../style.scss';
-
+@import "../../../style.scss";
 
 .carousel-container {
-  background-color: white;
-  color: $main-black;
+  /*   background-color: white;
+  color: $main-black; */
+  &.dark {
+    background: $main-black;
+    color: $main-white;
+    // Add more dark mode styles here
+  }
+  &.light {
+    background: $main-white;
+    color: $main-black;
+    // Add more light mode styles here
+  }
   display: flex;
   width: 100%;
   gap: 1rem;
@@ -17,11 +26,16 @@
   }
 
   .landing-carousel-title {
-    color: $main-black;
     width: 100%;
     font-size: 1rem;
     margin-inline-start: 1rem;
-    
+
+    &.light {
+      color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
+    }
 
     @media only screen and (min-width: 768px) {
       font-size: 1.5rem;
@@ -30,7 +44,7 @@
 
   .lp-carousel-subcont {
     display: flex;
-    
+
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -69,10 +83,17 @@
     }
   }
 
-  .lp-carousel-link{
+  .lp-carousel-link {
     margin-block-end: 2rem;
     text-decoration: none;
-    color: $main-black;
+
+    &.light {
+      color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
+      
+    }
 
     &:hover {
       @include hoverButton;
