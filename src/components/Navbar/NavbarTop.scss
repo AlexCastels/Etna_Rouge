@@ -7,22 +7,24 @@
 }
 
 .navbar_hidden {
-    position: absolute;
     width: 100vw;
-    margin-top: 17.5em;
+  position: absolute;
+    top: 102px;
 
 }
 
 .categories_hidden {
     width: 100vw;
-    height: 3em;
-    bottom: 6.5vh;
+    height: 70px;
+    z-index: 99;
+    top: -20px;
     background-color: white;
     position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 .single_category {
@@ -34,7 +36,6 @@
     align-items: center;
     font-size: xx-small;
     letter-spacing: 0.2em;
-
 }
 
 .nav_section {
@@ -49,68 +50,74 @@
 }
 
 .navbar_top {
-    background-color: white;
-    width: 100%;
-    height: 8vh;
-    top: 2vh;
-    z-index: 99;
-    position: absolute;
+    width: 100vw;
+    height: 84px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    
+    top: 0;
+    z-index: 999;
     letter-spacing: 0.2em;
+    
 }
 
 .navbar_center {
     display: flex;
-    flex-direction: row;
     width: 100%;
     font-size: small;
-
+   
 
 }
 
 .navbar_categories {
     width: 100%;
     display: flex;
-    flex-direction: row;
+  
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
+    
 }
 
 .navbar_right {
     display: flex;
-    flex-direction: row;
     width: 15em;
     align-items: center;
     padding-left: 1em;
     padding-right: 2em;
-
+    
 }
 
 .navbar_button_item {
     margin: 0.8em;
     cursor: pointer;
+    position: relative;
+    .quantity-number{
+        position: absolute;
+        inline-size: 20px;
+        block-size: 20px;
+        background-color: black;
+        inset-block-start: 10px;
+        inset-inline-start: 10px ;
+        border-radius: 10px;
+        color: white;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        
+
+    }
 }
 
 svg {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
 }
 
 .logo {
     width: 15rem;
     height: 5rem;
     padding: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .sidebar_hidden2 {
@@ -133,7 +140,7 @@ svg {
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        height: 4em;
+        height: auto;
     }
 
     .navbar_bottom {
@@ -161,10 +168,9 @@ svg {
     }
 
     .sidebar_hidden2 {
-        width: 25%;
-        height: calc(100vh - 15%);
+        width: 30%;
+        height: 100vh;
         z-index: 9;
-        top: 8vh;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -172,6 +178,7 @@ svg {
         align-items: center;
         background-color: white;
         font-size: x-large;
+        scroll-behavior: none;
     }
 
     .navbar_hidden {
