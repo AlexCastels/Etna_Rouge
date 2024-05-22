@@ -7,10 +7,10 @@ import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import FeaturesContent from "./featuresSection/FeaturesContent";
 import HeroContent from "./heroSection/HeroContent";
 import LandingCarousel from "./landingCarousel/LandingCarousel";
-import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
 import Footer from "../footer/Footer";
 import NavBarTop from "../navbar/NabarTop";
-import NavBarBottom from "../navbar/NavbarBottom";
+/* import NavBarBottom from "../navbar/NavbarBottom";
+import NewsLetterForm from "./newsLetter/form/NewsLetterForm"; */
 
 const LandingPage = () => {
   const dispatch = useDispatch();

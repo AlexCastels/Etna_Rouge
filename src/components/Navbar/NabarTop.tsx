@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Logo from "../Logo/Logo";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import { /* Link */ useNavigate } from "react-router-dom";
-/* import "../Navbar/Overlay.scss"; */
-import "./navbarTop.scss";
+import { FormattedMessage } from "react-intl";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { toggleCart } from "../../redux/slices/cartSlice";
+import HamburgerMenu from "../Hamburger/HamburgerMenu";
+/* import "../Navbar/Overlay.scss"; */
+import "./navbarTop.scss";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
@@ -66,12 +67,18 @@ const NavBarTop: React.FC = () => {
             Men
           </div>
           <div
-            onClick={() => {
-              setToggle(!toggle), GenderWoman();
-            }}
+            onClick={
+              () => { setToggle(!toggle), GenderWoman() }}
             className="navbar_categories"
           >
-            Woman
+            <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
+          </div>
+          <div
+            className="navbar_categories">
+            <Link to='/aboutUs' ><FormattedMessage
+              id="navbarTop.aboutUs"
+              defaultMessage="About Us"/></Link>
+            
           </div>
           <div className="navbar_categories">About Us</div>
         </div>
