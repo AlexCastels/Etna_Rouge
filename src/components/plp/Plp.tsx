@@ -1,5 +1,4 @@
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
-
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
@@ -14,6 +13,7 @@ import "../plp/plp.scss";
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
+  
   const imagePerRow = 8;
   const [next, setNext] = useState(imagePerRow);
   const location = useLocation();

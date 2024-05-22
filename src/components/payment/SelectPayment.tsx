@@ -97,7 +97,7 @@ export function SelectPayment() {
                 </p>
             )}
             <div className="select-payform-line"></div>
-            <Button onClick={() => handleBtn(spia)}>
+            <Button onClick={() => handleBtn(spia)} disabled>
                 <FormattedMessage
                     id="selectPayment.button.checkout"
                     defaultMessage="CHECKOUT"
