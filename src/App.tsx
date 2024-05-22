@@ -17,7 +17,7 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
-import AboutUs from "./components/aboutUs/AboutUs.tsx";
+import AboutUs from "./components/aboutUs/aboutUs.tsx";
 import Pdp from "./components/PDP/Pdp.tsx";
 /* import "./components/PDP/Pdp.scss"; */
 
