@@ -79,8 +79,8 @@ const NavBarTop: React.FC = () => {
             className="navbar_categories">
             <Link to='/aboutUs' ><FormattedMessage
               id="navbarTop.aboutUs"
-              defaultMessage="About Us</Link>"
-            />
+              defaultMessage="About Us"/></Link>
+            
           </div>
         </div>
         <div className="navbar_right">
