@@ -2,11 +2,11 @@ import React from 'react'
 
 import './Loading.scss'
 
-import loading from '../../../assets/E.mp4'
+import loading from '../../../assets/loading.png'
 
 const Loading = () => {
     return (
-      <div>  <video src={loading} autoPlay loop muted> </video></div>
+      <div>  <img src={loading}> </img></div>
   
   )
 }

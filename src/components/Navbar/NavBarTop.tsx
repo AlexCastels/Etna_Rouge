@@ -52,8 +52,6 @@ const NavBarTop: React.FC = () => {
           <Logo />
         </div>
         <div>
-          {" "}
-          <Switcher />
         </div>
 
         <div

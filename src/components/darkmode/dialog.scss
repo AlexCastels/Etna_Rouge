@@ -1,4 +1,4 @@
-.dialog-darkmode {
+.light-mode-cont {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -10,18 +10,48 @@
   border: 1px solid black;
   border-radius: 5px;
   z-index: 500;
-  transition: opacity 0.3s ease, height 0.3s ease; 
+  transition: opacity 0.3s ease, height 0.3s ease;
 
   &.closing {
     opacity: 0;
     height: 0;
   }
 
-  h3 {
+  .light-mode-title {
     margin-top: 0;
   }
 
-  button {
+  .light-mode-img {
+    width: 40px;
+    &:hover {
+    }
+  }
+
+  .darkmode-btn {
+    font-size: 0.8rem;
     margin-right: 10px;
+    border: none;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 10rem;
+    background-image: url("../../assets/moon.png");
+
+    &:hover {
+      border: 1px solid black;
+      background-color: rgba(139, 134, 134, 0);
+      color: rgba(139, 134, 134, 0.181);
+    }
+  }
+
+  .lightmode-btn {
+    @extend .darkmode-btn;
+  }
+
+  .light-mode-close-btn{
+    background-color: transparent;
+    border: none;
+    &:hover{
+      font-size: 1rem;
+    }
   }
 }

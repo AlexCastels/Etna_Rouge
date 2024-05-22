@@ -1,16 +1,19 @@
-.switch{
+.switcher-cont {
   z-index: 900;
-  display: block;
- padding: 3rem;
+  position: fixed;
+  left: 2vw;
+  bottom: 7vh; // One third from the bottom of the viewport
+  padding: 3rem;
 
- button{
-  background-color: transparent;
-  border: none;
-   img{
-  width: 30px;
- }
- }
+  .switcher-btn {
+    background-color: transparent;
+    border: none;
 
-
-
+    .access-img {
+      width: 30px;
+      &:hover {
+        width: 50px;
+      }
+    }
+  }
 }

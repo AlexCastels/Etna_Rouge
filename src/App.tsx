@@ -19,6 +19,7 @@ import frText from "./utils/languages/french.json";
 import "./style.scss";
 import "./components/pdp/Pdp.scss";
 import LanguageSelector from "./components/languageSelector/LanguageSelector";
+import Switcher from "./components/darkmode/Switcher";
 
 function App() {
   const [locale, setLocale] = useState("en");
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <>
+      <Switcher />
       <IntlProvider locale={locale} messages={messages[locale]}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
         <BrowserRouter>

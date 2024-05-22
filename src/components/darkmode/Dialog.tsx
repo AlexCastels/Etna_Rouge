@@ -1,53 +1,70 @@
 import React, { useEffect, useState } from "react";
 import { useDarkMode } from "./DarkModeContext";
-import "./dialog.scss"
+import moon from "../../assets/moon.png";
+import sun from "../../assets/sun.png";
+import "./dialog.scss";
 
-const Dialog:React.FC<boolean> = ({active}) => {
-    const { mode, setMode } = useDarkMode();
-    const [closing, setClosing] = useState(false);
-    const [closed, setClosed] = useState(true);
+interface DialogProps {
+  active: boolean;
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-    const handleDarkClick = () => {
-        setMode(`${mode === "light" ? "dark" : "light"}`);
+const Dialog: React.FC<DialogProps> = ({ active, setActive }) => {
+  const { mode, setMode } = useDarkMode();
+  const [closing, setClosing] = useState(false);
+
+  const handleDarkClick = () => {
+    setMode("dark");
+  };
+
+  const handleLightClick = () => {
+    setMode("light");
+  };
+
+  const handleCloseClick = () => {
+    setClosing(true);
+  };
+
+  useEffect(() => {
+    if (closing) {
+      setTimeout(() => {
+        setClosing(false);
+        setActive(false);
+      }, 300); // Time in milliseconds, adjust as needed
+    }
+  }, [closing, setActive]);
+
+  useEffect(() => {
+    document.body.classList.add(mode);
+    return () => {
+      document.body.classList.remove(mode === "light" ? "dark" : "light");
     };
+  }, [mode]);
 
-    const handleCloseClick = () => {
-        setClosing(true);
-    }
+  if (!active && !closing) {
+    return null;
+  }
 
-    useEffect(() => {
-        if (closing) {
-            setTimeout(() => {
-                setClosing(false);
-                setClosed(true);
-            }, 300); // Tempo in millisecondi, puoi regolarlo in base alle tue esigenze
-        } else {
-            setClosed(false);
-        }
-    }, [closing]);
+  return (
+    <dialog
+      className={`light-mode-cont ${closing ? "closing" : ""}`}
+      open={!closing}
+    >
+      <h3 className="light-mode-title">Mode: </h3>
+      <span>
+        <button className="darkmode-btn" onClick={handleDarkClick}>
+          <img className="light-mode-img" src={moon} alt="dark mode" />
+        </button>
+      </span>
 
-    useEffect(() => {
-        if (active && closed) {
-            setClosing(false);
-            setClosed(false);
-        }
-    }, [active, closed]);
-
-    useEffect(() => {
-        document.body.classList.add(mode);
-    }, [mode]);
-
-    if (!active && closed) {
-        return null; 
-    }
-
-    return (
-        <dialog className={`dialog-darkmode ${closing ? 'closing' : ''}`} open={!closing && active}>
-            <h3>Dark mode/Light mode</h3>
-            <button onClick={handleDarkClick}>Switch</button>
-            <button onClick={handleCloseClick}> X </button>
-        </dialog>
-    );
+      <button className="lightmode-btn" onClick={handleLightClick}>
+        <img className="light-mode-img" src={sun} alt="light mode" />
+      </button>
+      <button className="light-mode-close-btn" onClick={handleCloseClick}>
+        X
+      </button>
+    </dialog>
+  );
 };
 
 export default Dialog;
