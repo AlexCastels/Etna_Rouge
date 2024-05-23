@@ -6,7 +6,7 @@ import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
-import NavBarTop from "../navbar/NabarTop";
+import NavBarTop from "../navbar/NavbarTop";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Button from "../UI/button/Button";
 import "../plp/plp.scss";

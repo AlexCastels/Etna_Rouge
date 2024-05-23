@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom"
-import NavBarTop from "./NabarTop";
+import NavBarTop from "./NavbarTop";
 import "./NavbarTop.scss"
 
 const Shirts = () => {

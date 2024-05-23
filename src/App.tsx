@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import NavBarTop from "./components/navbar/NabarTop.tsx";
+import NavBarTop from "./components/navbar/NavbarTop.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
@@ -17,6 +17,8 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
+import AboutUs from "./components/aboutUs/aboutUs.tsx";
+import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 
 
 interface Messages {
@@ -79,7 +81,7 @@ function App() {
               <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
               <Route path="/pdp/:id" element={<Pdp />} />
             </Routes>
-            {/*    <NavBarBottom /> */}
+               <NavBarBottom />
           </BrowserRouter>
         </div>
       </IntlProvider>
