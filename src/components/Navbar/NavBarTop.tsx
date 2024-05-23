@@ -27,17 +27,17 @@ const NavBarTop: React.FC = () => {
   }
 
   function linkShirts() {
-    navigate("/plp", { state: { category: "shirt", gender: gender } });
+    navigate(`/plp/${gender}/shirt`, { state: { category: "shirt", gender: gender } });
   }
   function linkPants() {
-    navigate("/plp", { state: { category: "pants", gender: gender } });
+    navigate(`/plp/${gender}/pants`, { state: { category: "pants", gender: gender } });
   }
   function linkShoes() {
-    navigate("/plp", { state: { category: "shoes", gender: gender } });
+    navigate(`/plp/${gender}/shoes`, { state: { category: "shoes", gender: gender } });
   }
 
   function linkAll() {
-    navigate("/plp", { state: { gender: gender } });
+    navigate(`/plp/${gender}`, { state: { gender: gender } });
   }
 
 

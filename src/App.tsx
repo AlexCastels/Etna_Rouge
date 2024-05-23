@@ -68,11 +68,17 @@ function App() {
           <BrowserRouter>
             <NavBarTop /> 
             <Routes>
-              
               <Route path="/" element={<LandingPage />} />
               <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp" element={<Plp />} />
+              <Route path="/plp/men" element={<Plp />} />
+              <Route path="/plp/woman" element={<Plp/>}/>
+              <Route path="/plp/woman/shirt" element={<Plp/>}/>
+              <Route path="/plp/woman/pants" element={<Plp/>}/>
+              <Route path="/plp/woman/shoes" element={<Plp/>}/>
+              <Route path="/plp/men/shirt" element={<Plp/>}/>
+              <Route path="/plp/men/pants" element={<Plp/>}/>
+              <Route path="/plp/men/shoes" element={<Plp/>}/>
               <Route path="/Cart" element={<Cart />} />
               <Route path="/SelectPayment" element={<SelectPayment />} />
               <Route path="/DeliveryForm" element={<PayForm />} />

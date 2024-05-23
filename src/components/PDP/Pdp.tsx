@@ -95,9 +95,9 @@ const Pdp: React.FC<any> = () => {
                     </div>
                     {!elementSize && <p>Selezionare una taglia per favore</p>}
                     <div className="pdp-btn-cart">
-                        <Button className="btn-cart-component" onClick={handleBtn}>
+                        <button className="btn-cart-component" onClick={handleBtn}>
                             <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart"/>
-                        </Button>
+                        </button>
                     </div>
                 </div>
             </div>
