@@ -46,7 +46,7 @@ function App() {
     <>
       <IntlProvider locale={locale} messages={messages}>
         <div className="select-container">
-          <select
+          {/* <select
             id="languageSelect"
             className="select-lang"
             onChange={changeLanguage}
@@ -61,14 +61,14 @@ function App() {
             <option value="es">Spanish</option>
 
             <option value="fr">French</option>
-          </select>
+          </select> */}
 
           <BrowserRouter>
              {/* <NavBarTop /> */} 
             <Routes>
               
               <Route path="/" element={<LandingPage />} />
-              <Route path="/aboutUs" element={<AboutUs />} />
+              {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
               <Route path="/discover" element={<DiscoverMore />} />
               <Route path="/plp" element={<Plp />} />
               <Route path="/Cart" element={<Cart />} />

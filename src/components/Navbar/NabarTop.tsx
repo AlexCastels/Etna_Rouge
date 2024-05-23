@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import Logo from "../Logo/Logo";
-import { FormattedMessage } from "react-intl";
-import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 import { toggleCart } from "../../redux/slices/cartSlice";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
-/* import "../Navbar/Overlay.scss"; */
-import "./navbarTop.scss";
+import Logo from "../logo/Logo";
+import "../navbar/NavbarTop.scss";
+import "../navbar/Overlay.scss";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleSidebar, setToggleSidebar] = useState(false);
-/*   const [toggleOverlay, setToggleOverlay] = useState(true); */
 
+const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const quantity = useAppSelector((state) => state.cart.totalQuantity);
@@ -41,7 +41,7 @@ const NavBarTop: React.FC = () => {
 
   return (
     <>
-      <nav className="navbar_top">
+      <nav className="navbar_top" >
         <div
           onClick={() => {
             setToggleSidebar(!toggleSidebar);
@@ -64,27 +64,27 @@ const NavBarTop: React.FC = () => {
             }}
             className="navbar_categories"
           >
-            Men
+              <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
           </div>
           <div
-            onClick={
-              () => { setToggle(!toggle), GenderWoman() }}
+            onClick={() => {
+              setToggle(!toggle), GenderWoman();
+            }}
             className="navbar_categories"
           >
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div
             className="navbar_categories">
-            <Link to='/aboutUs' ><FormattedMessage
+            <Link to='/aboutUs' style={{textDecoration:'none',color:'black'}} ><FormattedMessage
               id="navbarTop.aboutUs"
-              defaultMessage="About Us"/></Link>
-            
+              defaultMessage="About Us"/></Link>            
           </div>
-          <div className="navbar_categories">About Us</div>
+          
         </div>
         <div className="navbar_right">
           {/* icona Search */}
-          <div className="navbar_button_item">
+          {/* <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="75%"
@@ -105,9 +105,9 @@ const NavBarTop: React.FC = () => {
                 strokeWidth="2"
               />
             </svg>
-          </div>
+          </div> */}
           {/* icona Profile */}
-          <div className="navbar_button_item">
+          {/* <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -137,7 +137,7 @@ const NavBarTop: React.FC = () => {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
           {/* icona Cart */}
           <div
             onClick={() => {
@@ -210,8 +210,10 @@ const NavBarTop: React.FC = () => {
           </div>
         </div>
       )}
+
       {/* {toggleSidebar && <div className="overlay"></div>}
       {toggleOverlay && <div className="overlay"></div>} */}
+
     </>
   );
 };

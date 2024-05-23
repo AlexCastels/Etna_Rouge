@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { useParams } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
-import { addToCart } from "../../redux/slices/cartSlice";
-import Button from "../UI/button/Button";
-import "../PDP/Pdp.scss";
-import { Carousel } from "../Carousel/Carousel";
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { useAppDispatch, useAppSelector } from '../../redux/hook';
+import { addToCart, toggleCart } from '../../redux/slices/cartSlice';
+import { Carousel } from '../carousel/Carousel';
+import Button from '../UI/button/Button';
+import Cart from '../cart/Cart';
+
+import '../pdp/Pdp.scss'
+import NavBarTop from '../navbar/NabarTop';
+import { ButtonComponent } from '../atomic/ButtonComponent';
 
 const Pdp: React.FC<any> = () => {
   const { id } = useParams();
@@ -13,6 +17,10 @@ const Pdp: React.FC<any> = () => {
   const product = useAppSelector((state) => state.product.products);
   const element = product.find((el: any) => el.id == id);
 
+  const handleAddToCart = (element: any) => {
+    dispatch(addToCart(element));
+    dispatch(toggleCart());
+  };
   //carosello dinamico
   const [numItems, setNumItems] = useState(5);
 
@@ -29,6 +37,8 @@ const Pdp: React.FC<any> = () => {
 
   return (
     <>
+      <Cart/>
+       <NavBarTop/> 
       <div className="pdp-wrapper">
         <div className="pdp-card">
           <img className="pdp-img" src={element?.img} alt={element?.name} />
@@ -64,15 +74,12 @@ const Pdp: React.FC<any> = () => {
             </div>
           </div>
           <div className="pdp-btn-cart">
-            <Button
+            <ButtonComponent
               className="btn-cart-component"
-              onClick={() => dispatch(addToCart(element))}
+              onClick={() => handleAddToCart(element)}
+              text="ADD TO CART"
             >
-              <FormattedMessage
-                id="pdp.addToCart"
-                defaultMessage="Add to Cart"
-              />
-            </Button>
+            </ButtonComponent>
           </div>
         </div>
       </div>
