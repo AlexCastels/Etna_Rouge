@@ -1,0 +1,60 @@
+{
+  "navbarTop.men": "Uomo",
+  "navbarTop.women": "Donna",
+  "navbarTop.aboutUs": "Chi siamo",
+  "navHidden.shirts": "Camicie",
+  "navHidden.pants": "Pantaloni",
+  "navHidden.shoes": "Scarpe",
+  "navHidden.all": "Tutto",
+
+  "news.title": "Iscriviti alla nostra Newsletter e ottieni uno sconto del 15%!",
+  "news.button.gend.men": "Uomo",
+  "news.button.gend.women": "Donna",
+  "news.button.confirm": "Conferma",
+  "dialog.invalid.email": "Inserisci un indirizzo email valido",
+  "dialog.invalid.gender": "Seleziona un genere",
+  "dialog.email.yetRegistered": "Questa email è già registrata",
+  "dialog.success": "Grazie per esserti iscritto!",
+
+  "landing.carousel.title": "Il Mondo di Etna Rouge",
+  "landing.carousel.discover": "Scopri di più",
+
+  "creditPayment.title": "Inserisci i Tuoi Dati di Pagamento",
+  "creditPayment.or": "oppure",
+  "creditPayment.checkout": "Vai al Checkout",
+
+  "payForm.title": "Inserisci i Tuoi Dati",
+  "payForm.country": "Seleziona il tuo paese",
+  "payForm.Italy": "Italia",
+  "payForm.France": "Francia",
+  "payForm.Spain": "Spagna",
+  "payForm.Germany": "Germania",
+  "payForm.supplement": "*Il pagamento alla consegna comporta un supplemento di €10 al totale dell'ordine",
+  "payForm.button.pay": "Vai al Pagamento",
+
+  "selectPayment.title": "Metodi di Pagamento",
+  "selectPayment.label.cash": "Pagamento alla Consegna",
+  "selectPayment.advise": "*Scegliendo il pagamento alla consegna, verrà applicato un supplemento di €10 al totale dell'ordine",
+  "selectPayment.noSelected": "Seleziona un metodo di pagamento",
+  "selectPayment.button.checkout": "Vai al Checkout",
+
+  "thankYou.title": "Grazie!",
+  "thankYou.message1": "Gentile {name}, grazie per l'acquisto. Non appena l'ordine sarà spedito, ti invieremo un'email all'indirizzo",
+  "thankYou.message2": "con le informazioni di tracciamento.",
+  "thankYou.orderTotal": "Il tuo ordine: {total}",
+  "currency": "EUR",
+  "thankYou.button.home": "HOME",
+
+  "paypalRedirect" : "Grazie per l'ordine!",
+
+  "pdp.color": "Colore:",
+  "pdp.selectSize": "Seleziona la tua taglia",
+  "pdp.addToCart": "Aggiungi al carrello",
+
+  "plp.button.addToCart": "AGGIUNGI AL CARRELLO",
+
+  "cart.empty": "Il carrello è vuoto",
+  "cart.remove": "Rimuovi",
+  "cart.quantity": "Quantità",
+  "cart.price": "Prezzo totale"
+}

@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom'
-import NavBarTop from '../navbar/NavBarTop';
+import NavBarTop from '../navbar/NabarTop';
 import NavBarBottom from '../navbar/NavbarBottom';
 
 const DiscoverMore = () => {
@@ -11,12 +11,12 @@ const DiscoverMore = () => {
 
     return (
       <>
-      <NavBarTop/>
+      {/* <NavBarTop/> */}
        <div>
             <h1>Etna Rouge blog</h1>
              <button onClick={handleClick}>Home</button>
       </div>
-      <NavBarBottom/>
+      {/* <NavBarBottom/> */}
       </>
        
    

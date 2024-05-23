@@ -1,10 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import {decrement,increment,remove,toggleCart} from "../../redux/slices/cartSlice";
 import "../cart/cart.scss";
 import { useEffect } from "react";
 import Button from "../UI/button/Button";
 import { ButtonComponent } from "../atomic/ButtonComponent";
+import { FormattedMessage } from "react-intl";
+
 
 const Cart = () => {
   const dispatch = useAppDispatch();
@@ -16,6 +18,7 @@ const Cart = () => {
   const navigate = useNavigate()
   const handleCheckout = () => {
   navigate('/DeliveryForm')
+  dispatch(toggleCart())
   }
   useEffect(() => {
     if (toggleCartValue) {
@@ -29,7 +32,7 @@ const Cart = () => {
     <>
       <div className="main-cart-container">
         <div
-          className={`overlay ${toggleCartValue ? "show" : "hide"}`}
+          className={`overlay ${toggleCartValue ? "show" : "hide"} pointer` }
           onClick={() => dispatch(toggleCart())}
         ></div>
         <div
@@ -46,7 +49,7 @@ const Cart = () => {
           <div className="list-product">
             {cart.length === 0 ? (
               <div className="message-cart">
-                <h1>Il carrello è vuoto</h1>
+                <h2><FormattedMessage id="cart.empty" defaultMessage="The cart is empty" /></h2>
               </div>
             ) : (
               cart.map((el) => (
@@ -91,7 +94,7 @@ const Cart = () => {
                           className="remove"
                           onClick={() => dispatch(remove(el))}
                         >
-                          Remove
+                          <FormattedMessage id="cart.remove" defaultMessage="Remove" />
                         </Button>
                       </div>
                     </div>
@@ -101,20 +104,17 @@ const Cart = () => {
             )}
           </div>
 
-          <div className="totals">
+          <div className="totals" style={totalQuantity === 0 ? {display:'none'} : {display:'flex'}}>
             <div className="total">
               <div>TOTAL</div> € {total}
             </div>
             <div className="quantity">
-              {" "}
-              <div>Quantity</div> {totalQuantity}
-            </div>
-           
-              {/* <button className="checkout"disabled={totalQuantity === 0} onClick={handleCheckout}>
-              Checkout
-            </button> */}
-            <ButtonComponent text='Checkout' onClick={handleCheckout} disabled={totalQuantity === 0}/>           
+              <div><FormattedMessage id="cart.quantity" defaultMessage="Quantity" /></div> {totalQuantity}
+              
+              </div>
+            <ButtonComponent text='Checkout' onClick={handleCheckout}/>           
           </div>
+              {/* <FormattedMessage id="cart.empty" defaultMessage="Total price:" />: {total} */}
         </div>
       </div>
     </>

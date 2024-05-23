@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { useCarousel } from "../hooks/useCarousel";
+
 import "./Carousel.scss";
+import { useCarousel } from "../hooks/useCarousel";
 
 
 
@@ -23,7 +24,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
 
 
   return (
-    <div className="carousel-cont">
       
       <div className="carousel">
         {/* Si disattiva il bottone "prev" se l'indice è zero */}
@@ -55,7 +55,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
           {">"}
         </button>
       </div>
-    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom"
-import NavBarTop from "./NavBarTop";
+import NavBarTop from "./NabarTop";
 
 const All = () => {
 
