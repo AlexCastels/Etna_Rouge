@@ -84,6 +84,7 @@
                     font-family: $font-family;
                     background-color: white;
                     transition: 0.5s ease-in-out;
+                    cursor: pointer;
                     &:hover{
                         background-color: black;
                         color: white;

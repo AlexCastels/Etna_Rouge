@@ -17,7 +17,7 @@ const Pdp: React.FC<any> = () => {
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize , setElementSize] = useState<any>('')
+    const [elementSize , setElementSize] = useState<any>({})
 
     //usato per aggiungere size in element
     function handleSize(e:any) {
