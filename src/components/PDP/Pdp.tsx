@@ -17,7 +17,7 @@ const Pdp: React.FC<any> = () => {
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize , setElementSize] = useState<any>({})
+    const [elementSize , setElementSize] = useState<any | null>(null)
 
     //usato per aggiungere size in element
     function handleSize(e:any) {
@@ -93,6 +93,7 @@ const Pdp: React.FC<any> = () => {
                             <button onClick={handleSize} value='XL'>XL</button>
                         </div>
                     </div>
+                    {!elementSize && <p>Selezionare una taglia per favore</p>}
                     <div className="pdp-btn-cart">
                         <Button className="btn-cart-component" onClick={handleBtn}>
                             <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart"/>
