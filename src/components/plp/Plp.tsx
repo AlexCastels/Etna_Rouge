@@ -49,7 +49,7 @@ export const Plp: React.FC<any> = () => {
   const [next, setNext] = useState(imagePerRow);
   function handleMoreImage() {
     setNext(next + imagePerRow);
-  };
+  }
 
   useEffect(() => {
     dispatch(fetchData());
@@ -89,7 +89,9 @@ export const Plp: React.FC<any> = () => {
             </div>
           </div>
         ))}
-        {next < product.length ? <button className='cards-container-loadmore' onClick={handleMoreImage}>LOAD MORE</button> : <p className="cards-continer-nothingToSee">Nothing to see</p>}
+        {next < product.length ? <button className='cards-container-loadmore' onClick={handleMoreImage}>
+          <FormattedMessage id="plp.loadMore" defaultMessage='LOAD MORE' />
+        </button> : <p className="cards-continer-nothingToSee"><FormattedMessage id="plp.nothingToSee" defaultMessage=' Nothing to see' /> </p>}
       </div>
     </>
   );

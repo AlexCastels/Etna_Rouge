@@ -36,9 +36,7 @@ const Dialog: React.FC<DialogProps> = ({ active, setActive }) => {
 
   useEffect(() => {
     document.body.classList.add(mode);
-    return () => {
-      document.body.classList.remove(mode === "light" ? "dark" : "light");
-    };
+
   }, [mode]);
 
   if (!active && !closing) {

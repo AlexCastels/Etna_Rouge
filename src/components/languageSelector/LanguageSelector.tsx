@@ -1,26 +1,51 @@
-import React, { ChangeEvent } from 'react';
-import './languageSelector.scss'
+import React, { useState, MouseEvent } from "react";
+import language from "../../assets/languages.png";
+import "./languageSelector.scss";
 
 interface LanguageSelectorProps {
   locale: string;
-  changeLanguage: (e: ChangeEvent<HTMLSelectElement>) => void;
+  changeLanguage: (language: string) => void;
 }
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ locale, changeLanguage }) => {
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({
+  changeLanguage,
+}) => {
+  const [openSelect, setOpenSelect] = useState<boolean>(false);
+
+  const handleButtonClick = () => {
+    setOpenSelect(!openSelect);
+  };
+
+  const handleLanguageClick = (e: MouseEvent<HTMLLIElement>) => {
+    const selectedLanguage = e.currentTarget.getAttribute("value");
+    if (selectedLanguage) {
+      changeLanguage(selectedLanguage);
+      setOpenSelect(false);
+    }
+  };
+
   return (
     <div className="lang-select-container">
-      <select
-        id="languageSelect"
-        className="select-lang"
-        onChange={changeLanguage}
-        value={locale}
-      >
-        <option value="en">Chose language </option>
-        <option value="it">Italian</option>
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
-        <option value="fr">French</option>
-      </select>
+      <button onClick={handleButtonClick}>
+        <img src={language} alt="language image" />
+      </button>
+
+      {openSelect && (
+        <ul className="lang-options">
+          <li value="it" onClick={handleLanguageClick}>
+            Italian
+          </li>
+          <li value="en" onClick={handleLanguageClick}>
+            English
+          </li>
+          <li value="fr" onClick={handleLanguageClick}>
+            French
+          </li>
+          <li value="es" onClick={handleLanguageClick}>
+            Spanish
+          </li>
+        </ul>
+      )}
     </div>
   );
 };

@@ -50,8 +50,7 @@ const NavBarTop: React.FC = () => {
         <div className="navbar_logo">
           <Logo />
         </div>
-        <div>
-        </div>
+        <div></div>
 
         <div
           className="navbar_center"
@@ -136,14 +135,15 @@ const NavBarTop: React.FC = () => {
               </g>
             </svg>
           </div>
-          {/* icona Cart */}
+          icona Cart
           <div
-            //   /* onClick={() => {
+            //    onClick={() => {
             //   setToggle(!toggle);
-            // }} */
-            className="navbar_button_item"
+            // }}
+            className={`navbar_button_item`}
           >
             <svg
+              className={`${mode}`}
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
               width="75%"

@@ -88,11 +88,16 @@
         background-color: transparent;
         color: $main-black;
         border: none;
-          &.dark {
+        &:active{
+          border: none;
+        }
+        &.dark {
+          color: $main-white;
           border-bottom: 1px solid $main-white;
         }
         &.light {
-            border-bottom: 1px solid $main-black;
+          color: $main-black;
+          border-bottom: 1px solid $main-black;
         }
 
         @media only screen and (min-width: 798px) {

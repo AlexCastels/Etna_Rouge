@@ -1,5 +1,4 @@
 import { useRef, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useAppSelector } from "../../redux/hook";
 
@@ -18,7 +17,7 @@ interface PayPalPurchaseUnit {
 export default function Paypal() {
   const paypal = useRef<HTMLDivElement>(null);
 
-  const totalPrice = useAppSelector((state: RootState)=> state.cart.total);
+  const totalPrice = useAppSelector((state: RootState) => state.cart.total);
 
   useEffect(() => {
     window.paypal
@@ -37,7 +36,7 @@ export default function Paypal() {
                 description: "Cool looking table",
                 amount: {
                   currency_code: "EUR",
-                  value: totalPrice,
+                  value: 50,
                 },
               },
             ],

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDarkMode } from "./DarkModeContext";
-import "./switcher.scss";
 import accessibilityLight from "../../assets/accessibilityLight.png";
 import accessibilityDark from "../../assets/accessibilityDark.png";
 import Dialog from "./Dialog";
+import "./switcher.scss";
 
 const Switcher = () => {
   const [active, setActive] = useState<boolean>(false);
