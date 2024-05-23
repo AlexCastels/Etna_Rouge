@@ -22,6 +22,7 @@ export const Plp: React.FC<any> = () => {
   const category = location.state?.category;
   function handleMoreImage() {
     setNext(next + imagePerRow);
+    console.log(next)
   }
 
   const element = product.filter((el: any) => {
@@ -61,10 +62,7 @@ export const Plp: React.FC<any> = () => {
 
   return (
     <>
-      <Link to="/Cart">
-        <FormattedMessage id="plp.link.cart" defaultMessage="Cart" />
-      </Link>
-{/*       <NavBarTop /> */}
+      <NavBarTop />
       <Cart />
       <div className="cards-container">
         {element.slice(0, next).map((el: any) => (
@@ -74,21 +72,22 @@ export const Plp: React.FC<any> = () => {
                 <img src={el.img} alt="" />
               </div>
             </Link>
-            <div className="card-button">
+            {/* <div className="card-button">
               <Button onClick={() => handleAddToCart(el)}>
                 <FormattedMessage
                   id="plp.button.addToCart"
                   defaultMessage="ADD TO CART"
                 />
               </Button>
+            </div> */}
+            <Link to={`/pdp/${el.id}`} style={{textDecoration:'none',color:'black'}}>
+              <div className="card-name">
+              {el.name}
             </div>
-            <Link
-              to={`/pdp/${el.id}`}
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <div className="card-name">{el.name}</div>
             </Link>
-            <div className="card-price">{Math.round(el.price)}</div>
+            <div className="card-price">
+              € {Math.round(el.price)}
+            </div>
           </div>
         ))}
       </div>
@@ -99,7 +98,7 @@ export const Plp: React.FC<any> = () => {
           <p className="cards-continer-nothingToSee">Nothing to see</p>
         )}
       </div>
-{/*       <NavBarBottom /> */}
+      <NavBarBottom />
     </>
   );
 };

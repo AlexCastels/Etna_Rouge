@@ -70,7 +70,7 @@ function App() {
             <Routes>
               
               <Route path="/" element={<LandingPage />} />
-              <Route path="/aboutUs" element={<AboutUs />} />
+              {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
               <Route path="/discover" element={<DiscoverMore />} />
               <Route path="/plp" element={<Plp />} />
               <Route path="/Cart" element={<Cart />} />

@@ -49,7 +49,7 @@ export function ThankYouPageCard(){
       <FormattedMessage
         id="thankYou.orderTotal"
         defaultMessage="Your order: {total} {currency}"
-        values={{ total: <FormattedNumber value={total} style="currency" currency="USD" />, currency: <FormattedMessage id="currency" defaultMessage="USD" /> }}
+        values={{ total: <FormattedNumber value={total} style="currency" currency="EUR" />, currency: <FormattedMessage id="currency" defaultMessage="USD" /> }}
       />
     </p>
     <div className="thankyou-line"></div>
