@@ -1,29 +1,28 @@
-import React, { useState } from "react";
-import Logo from "../Logo/Logo";
-import { FormattedMessage } from "react-intl";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../redux/hook";
+import { FormattedMessage } from "react-intl";
 import { toggleCart } from "../../redux/slices/cartSlice";
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import Logo from "../Logo/Logo";
 import "./NavbarTop.scss";
 import "./Overlay.scss";
 
-
-
 const NavBarTop: React.FC = () => {
-  const [toggle, setToggle] = useState(true);
-  const [toggleSidebar, setToggleSidebar] = useState(true);
-  const [toggleOverlay, setToggleOverlay] = useState(true);
+  const [toggle, setToggle] = useState(false);
+  const [toggleSidebar, setToggleSidebar] = useState(false);
 
+const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
   const navigate = useNavigate();
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
+  const quantity = useAppSelector((state) => state.cart.totalQuantity);
 
-  const [gender, setGender] = useState('')
+  const [gender, setGender] = useState("");
   function GenderMen() {
-    setGender('men')
+    setGender("men");
   }
   function GenderWoman() {
-    setGender('woman')
+    setGender("woman");
   }
 
   function linkShirts() {
@@ -40,10 +39,9 @@ const NavBarTop: React.FC = () => {
     navigate(`/plp/${gender}`, { state: { gender: gender } });
   }
 
-
   return (
     <>
-      <nav className="navbar_top">
+      <nav className="navbar_top" >
         <div
           onClick={() => {
             setToggleSidebar(!toggleSidebar);
@@ -56,9 +54,9 @@ const NavBarTop: React.FC = () => {
         </div>
         <div
           className="navbar_center"
-          onClick={() => {
+         /*  onClick={() => {
             setToggleOverlay(!toggleOverlay);
-          }}
+          }} */
         >
           <div
             onClick={() => {
@@ -66,25 +64,27 @@ const NavBarTop: React.FC = () => {
             }}
             className="navbar_categories"
           >
-            <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
+              <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
           </div>
           <div
-            onClick={
-              () => { setToggle(!toggle), GenderWoman() }}
+            onClick={() => {
+              setToggle(!toggle), GenderWoman();
+            }}
             className="navbar_categories"
           >
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div
             className="navbar_categories">
-            <Link to='/aboutUs' ><FormattedMessage
+            <Link to='/aboutUs' style={{textDecoration:'none',color:'black'}} ><FormattedMessage
               id="navbarTop.aboutUs"
-              defaultMessage="About Us"/></Link>
-            
+              defaultMessage="About Us"/></Link>            
           </div>
+          
         </div>
         <div className="navbar_right">
-          <div className="navbar_button_item">
+          {/* icona Search */}
+          {/* <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="75%"
@@ -105,8 +105,9 @@ const NavBarTop: React.FC = () => {
                 strokeWidth="2"
               />
             </svg>
-          </div>
-          <div className="navbar_button_item">
+          </div> */}
+          {/* icona Profile */}
+          {/* <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -136,13 +137,12 @@ const NavBarTop: React.FC = () => {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
           {/* icona Cart */}
           <div
             onClick={() => {
-              dispatch(toggleCart())
+              dispatch(toggleCart());
             }}
-
             className="navbar_button_item"
           >
             <svg
@@ -155,57 +155,65 @@ const NavBarTop: React.FC = () => {
             >
               <path d="M27 4.96h-5.975v-1.918c0-1.655-1.346-3-3-3h-3.989c-1.655 0-3 1.345-3 3v1.918h-6.037c-1.104 0-2 0.896-2 2v22.999c0 1.105 0.896 2 2 2h22c1.105 0 2-0.895 2-2v-22.999c0-1.104-0.895-2-2-2h0zM13.037 3.042c0-0.552 0.448-1 1-1h3.989c0.552 0 1 0.448 1 1v1.918h-5.989v-1.918zM27 29.959h-22v-22.999h6.037v2.058s-0.027 0.999 0.994 0.999c1.125 0 1.006-0.999 1.006-0.999v-2.058h5.989v2.058s-0.067 1.004 0.996 1.004c1 0 1.004-1.004 1.004-1.004v-2.058h5.974v22.999z" />
             </svg>
+            <div
+              className="quantity-number"
+              style={quantity <= 0 ? { display: "none" } : { display: "flex" }}
+            >
+              {quantity}
+            </div>
           </div>
         </div>
-      </nav>
-      {!toggle && (
         <div className="navbar_hidden">
-          <div className="categories_hidden">
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkShirts}>
-              <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
+          {toggle && (
+            <div className="categories_hidden">
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkAll}>
+                All
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShirts}>
+                Shirt
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkPants}>
+                Pants
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShoes}>
+                Shoes
+              </div>
+              <div className="category_border"></div>
             </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkPants}>
-              <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkShoes}>
-              <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkAll}>
-              <FormattedMessage id="navHidden.all" defaultMessage="All" />
-            </div>
-            <div className="category_border"></div>
-          </div>
-        </div>
-      )}
-      {!toggleSidebar && (
+          )}
+        </div>  
+      </nav>
+      {toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
-            <FormattedMessage id="navHidden.all" defaultMessage='All' />
+            All
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
-            <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
+            Shirt
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkPants}>
-            <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
+            Pants
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShoes}>
-            <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
+            Shoes
           </div>
           <div className="category_border"></div>
-          <div className="single_category" onClick={linkAll}>
-            <FormattedMessage id="navHidden.all" defaultMessage="All" />
+          <div className="single_category" onClick={linkShoes}>
           </div>
         </div>
       )}
-      {(!toggle || !toggleSidebar) && <div className="overlay"></div>}
+
+      {/* {toggleSidebar && <div className="overlay"></div>}
+      {toggleOverlay && <div className="overlay"></div>} */}
+
     </>
   );
 };

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { useParams } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
-import { addToCart } from "../../redux/slices/cartSlice";
-import Button from "../UI/button/Button";
-import { Carousel } from "../Carousel/Carousel";
-import "../PDP/Pdp.scss";
+
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { useAppDispatch, useAppSelector } from '../../redux/hook';
+import { addToCart, toggleCart } from '../../redux/slices/cartSlice';
+import { Carousel } from '../Carousel/Carousel';
+import Cart from '../cart/Cart';
+import '../PDP/Pdp.scss'
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();
@@ -34,8 +35,9 @@ const Pdp: React.FC<any> = () => {
     function handleBtn(){
         if('size' in elementSize){
             dispatch(addToCart(elementSize))
-            console.log('condizione ok');
-            console.log(elementSize);           
+            dispatch(toggleCart());
+            // console.log('condizione ok');
+            // console.log(elementSize);           
         }
     }
 
@@ -52,6 +54,8 @@ const Pdp: React.FC<any> = () => {
 
     return (
         <>
+            <Cart/>
+
             <div className="pdp-wrapper">
                 <div className="pdp-card">
                     <img

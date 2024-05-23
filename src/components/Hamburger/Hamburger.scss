@@ -9,10 +9,9 @@
 @media screen and (max-width: 768px) {
   .hamburger_menu {
     display: block;
-    height: 2em;
-    width: 3em;
-    padding-left: em;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
   }
 
 }

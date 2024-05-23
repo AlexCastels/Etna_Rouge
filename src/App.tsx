@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import NavBarTop from "./components/Navbar/NavBarTop.tsx";
+import NavBarTop from "./components/navbar/NabarTop.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
-// import Pdp from "./components/pdp/Pdp.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
@@ -17,9 +16,8 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
-import AboutUs from "./components/aboutUs/aboutUs.tsx";
 import Pdp from "./components/PDP/Pdp.tsx";
-/* import "./components/PDP/Pdp.scss"; */
+
 
 interface Messages {
   [key: string]: any;
@@ -36,7 +34,7 @@ function App() {
     es: esText,
 
     fr: frText,
-  };
+  }[locale]
 
   const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocale(e.target.value);
@@ -46,9 +44,9 @@ function App() {
 
   return (
     <>
-      <IntlProvider locale={locale} messages={messages[locale]}>
+      <IntlProvider locale={locale} messages={messages}>
         <div className="select-container">
-          <select
+          {/* <select
             id="languageSelect"
             className="select-lang"
             onChange={changeLanguage}
@@ -63,13 +61,13 @@ function App() {
             <option value="es">Spanish</option>
 
             <option value="fr">French</option>
-          </select>
+          </select> */}
 
           <BrowserRouter>
-            <NavBarTop /> 
+             {/* <NavBarTop /> */} 
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/aboutUs" element={<AboutUs />} />
+              {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
               <Route path="/discover" element={<DiscoverMore />} />
               <Route path="/plp/men" element={<Plp />} />
               <Route path="/plp/woman" element={<Plp/>}/>
@@ -85,7 +83,7 @@ function App() {
               <Route path="/CreditCardForm" element={<CreditCardForm />} />
               <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
               <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
-              <Route path="/pdp/:id" element={<Pdp />} />
+              <Route path="/pdp/:id" element={<Pdp/>} />
             </Routes>
             {/*    <NavBarBottom /> */}
           </BrowserRouter>
@@ -97,3 +95,4 @@ function App() {
 }
 
 export default App;
+

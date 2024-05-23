@@ -5,14 +5,15 @@ interface CartState{
     cart : Card[],
     total : number,
     totalQuantity: number,
-    toggleCart : boolean
+    toggleCart : boolean,
 }
 const initialState : CartState = {
     cart: [],
     total: 0,
     totalQuantity: 0,
-    toggleCart : false
+    toggleCart : false,
 }
+
 
 const total = (cart : Card[]) => {
     //creo un array generale dove verranno contenuti i prezzi
@@ -36,6 +37,7 @@ const total = (cart : Card[]) => {
 
     //imposto la condizione per poter accedere alla promo
     if(total > 1000 && quantity >= 3){
+        
         return Math.round(generalArray.sort((a , b) => a - b).slice(2).reduce((a , b) => a + b ,0))
     } else {
         return total
@@ -45,7 +47,6 @@ const total = (cart : Card[]) => {
 const totalQuantity = (cart : Card[]) => {
     return cart.reduce((totalQuantity,item) => (totalQuantity + item.quantity),0)
 }
-
 
 
 const cartSlice = createSlice({
@@ -86,8 +87,6 @@ const cartSlice = createSlice({
         toggleCart: state => {
             state.toggleCart = !state.toggleCart;
         }
-        
-        
     },
 })
 

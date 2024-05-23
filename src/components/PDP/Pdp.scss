@@ -1,7 +1,7 @@
 @import "../../style.scss";
 
 .pdp-wrapper {
-    margin-top: 6rem;
+    padding-block-start: 80px;
     margin-bottom: 6rem;
     display: flex;
     justify-content: center;
@@ -100,7 +100,6 @@
         .pdp-btn-cart {
             margin-bottom: 3rem;
             width: 100%;
-
             .btn-cart-component {
                 display: flex;
                 align-items: center;
