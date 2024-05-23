@@ -10,8 +10,9 @@ import "./navbarTop.scss";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
-  const [toggleSidebar, setToggleSidebar] = useState(false);
-/*   const [toggleOverlay, setToggleOverlay] = useState(true); */
+  const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
+
+
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -25,8 +26,21 @@ const NavBarTop: React.FC = () => {
     setGender("woman");
   }
 
+
+  const [showMenSubItems, setShowMenSubItems] = useState(false);
+
+  const toggleMenSubItems = () => {
+    setShowMenSubItems(!showMenSubItems);
+  };
+  const [showWomenSubItems, setShowWomenSubItems] = useState(false);
+
+  const toggleWomenSubItems = () => {
+    setShowWomenSubItems(!showWomenSubItems);
+  };
+
+
   function linkShirts() {
-    navigate("/plp", { state: { category: "shirt", gender: gender } });
+    navigate("/plp", { state: { category: "/shirt", gender: gender } });
   }
   function linkPants() {
     navigate("/plp", { state: { category: "pants", gender: gender } });
@@ -44,7 +58,7 @@ const NavBarTop: React.FC = () => {
       <nav className="navbar_top">
         <div
           onClick={() => {
-            setToggleSidebar(!toggleSidebar);
+            setToggleSidebarGender(!toggleSidebarGender);
           }}
         >
           <HamburgerMenu />
@@ -54,9 +68,6 @@ const NavBarTop: React.FC = () => {
         </div>
         <div
           className="navbar_center"
-         /*  onClick={() => {
-            setToggleOverlay(!toggleOverlay);
-          }} */
         >
           <div
             onClick={() => {
@@ -80,7 +91,6 @@ const NavBarTop: React.FC = () => {
               defaultMessage="About Us"/></Link>
             
           </div>
-          <div className="navbar_categories">About Us</div>
         </div>
         <div className="navbar_right">
           {/* icona Search */}
@@ -164,6 +174,7 @@ const NavBarTop: React.FC = () => {
           </div>
         </div>
         <div className="navbar_hidden">
+          {/*  Al click della sezione centrale navbar si aprirà la sezione categoria(maglietta,scarpe,pantaloni,tutto) della navbar */}
           {toggle && (
             <div className="categories_hidden">
               <div className="category_border"></div>
@@ -187,7 +198,8 @@ const NavBarTop: React.FC = () => {
           )}
         </div>  
       </nav>
-      {toggleSidebar && (
+     {/*  Al click dell'HamburgerMenu si aprirà la sezione gender(maschio,femmina) della sidebar_hidden2 */}
+      {/* {toggleSidebarGender && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
@@ -209,9 +221,56 @@ const NavBarTop: React.FC = () => {
           <div className="single_category" onClick={linkShoes}>
           </div>
         </div>
+      )} */}
+
+      {toggleSidebarGender && (
+        <div className="sidebar_hidden2">
+          <div className="category_border"></div>
+
+          
+          {/* Categoria Uomo */}
+          {/* {!showMenSubItems && (<div className="single_category" onClick={toggleMenSubItems}>
+            Men
+          </div>
+          )}
+          {showMenSubItems && (
+            <>
+            <div className="single_category">All</div>
+            <div className="single_category">Shirt</div>
+            <div className="single_category">Pants</div>
+            <div className="single_category">Shoes</div>
+            </>
+          )} */}
+
+          {/* Categoria Uomo 2 */}
+          <div className="single_category" onClick={toggleMenSubItems}>
+            Men
+          </div>
+          {showMenSubItems && (
+            <>
+            <div className="single_category">All</div>
+            <div className="single_category">Shirt</div>
+            <div className="single_category">Pants</div>
+            <div className="single_category">Shoes</div>
+            </>
+          )}
+
+
+          {/* Categoria Donna */}
+          <div className="category_border"></div>
+          <div className="single_category" onClick={toggleWomenSubItems}>
+            Women
+          </div>
+          <div className="category_border"></div>
+          <div className="single_category" onClick={linkPants}>
+            About Us
+          </div>
+          <div className="category_border"></div>
+          <div className="single_category">
+          </div>
+
+        </div>
       )}
-      {/* {toggleSidebar && <div className="overlay"></div>}
-      {toggleOverlay && <div className="overlay"></div>} */}
     </>
   );
 };

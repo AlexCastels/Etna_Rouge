@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { addToCart } from "../../redux/slices/cartSlice";
 import Button from "../UI/button/Button";
-import "../PDP/Pdp.scss";
+import "../pdp/pdp.scss";
 import { Carousel } from "../Carousel/Carousel";
 
 const Pdp: React.FC<any> = () => {

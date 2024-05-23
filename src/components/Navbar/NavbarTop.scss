@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .navbar_hidden {
@@ -17,7 +18,7 @@
     width: 100vw;
     height: 70px;
     z-index: 99;
-    top: -20px;
+    top: 2px;
     background-color: white;
     position: absolute;
     display: flex;
@@ -72,7 +73,7 @@
 .navbar_categories {
     width: 100%;
     display: flex;
-  
+    text-decoration: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -81,11 +82,9 @@
 
 .navbar_right {
     display: flex;
-    width: 15em;
+    width: 18em;
     align-items: center;
-    padding-left: 1em;
-    padding-right: 2em;
-    
+
 }
 
 .navbar_button_item {
