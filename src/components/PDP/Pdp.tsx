@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { useParams } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
-import { addToCart } from "../../redux/slices/cartSlice";
 import { Carousel } from "../carousel/Carousel";
 import Button from "../UI/button/Button";
+import { addToCart } from "../../redux/slices/cartSlice";
 import "../pdp/Pdp.scss";
+import Cart from "../cart/Cart";
+import NavBarTop from "../Navbar/NabarTop";
+
+
 
 const Pdp: React.FC<any> = () => {
   const { id } = useParams();
@@ -29,6 +33,9 @@ const Pdp: React.FC<any> = () => {
 
   return (
     <>
+      <Cart />
+      <NavBarTop/>
+
       <div className="pdp-wrapper">
         <div className="pdp-card">
           <img className="pdp-img" src={element?.img} alt={element?.name} />

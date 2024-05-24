@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import Logo from "../Logo/Logo";
-import "./NavbarTop.scss";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import { Link, useNavigate } from "react-router-dom";
-import "./Overlay.scss";
 import { FormattedMessage } from "react-intl";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { toggleCart } from "../../redux/slices/cartSlice";
+import HamburgerMenu from "../Hamburger/HamburgerMenu";
+/* import "../Navbar/Overlay.scss"; */
+import "./NavbarTop.scss";
 import { useDarkMode } from "../darkmode/DarkModeContext";
 
 const NavBarTop: React.FC = () => {
-  const [toggle, setToggle] = useState(true);
-  const [toggleSidebar, setToggleSidebar] = useState(true);
-  const [toggleOverlay, setToggleOverlay] = useState(true);
-
-  const { mode } = useDarkMode();
+  const [toggle, setToggle] = useState(false);
+  const [toggleSidebar, setToggleSidebar] = useState(false);
+  /*   const [toggleOverlay, setToggleOverlay] = useState(true); */
 
   const navigate = useNavigate();
+  const { mode } = useDarkMode();
+  const dispatch = useAppDispatch();
+  const quantity = useAppSelector((state) => state.cart.totalQuantity);
+
   const [gender, setGender] = useState("");
   function GenderMen() {
     setGender("men");
@@ -50,13 +54,11 @@ const NavBarTop: React.FC = () => {
         <div className="navbar_logo">
           <Logo />
         </div>
-        <div></div>
-
         <div
           className="navbar_center"
-          onClick={() => {
+          /*  onClick={() => {
             setToggleOverlay(!toggleOverlay);
-          }}
+          }} */
         >
           <div
             onClick={() => {
@@ -75,13 +77,17 @@ const NavBarTop: React.FC = () => {
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div className="navbar_categories">
-            <FormattedMessage
-              id="navbarTop.aboutUs"
-              defaultMessage="About Us"
-            />
+            <Link className={mode} to="/aboutUs">
+              <FormattedMessage
+                id="navbarTop.aboutUs"
+                defaultMessage="About Us"
+              />
+            </Link>
           </div>
+          {/*  <div className="navbar_categories">About Us</div> */}
         </div>
         <div className="navbar_right">
+          {/* icona Search */}
           <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +110,7 @@ const NavBarTop: React.FC = () => {
               />
             </svg>
           </div>
+          {/* icona Profile */}
           <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -135,15 +142,14 @@ const NavBarTop: React.FC = () => {
               </g>
             </svg>
           </div>
-          icona Cart
+          {/* icona Cart */}
           <div
-            //    onClick={() => {
-            //   setToggle(!toggle);
-            // }}
-            className={`navbar_button_item`}
+            onClick={() => {
+              dispatch(toggleCart());
+            }}
+            className="navbar_button_item"
           >
             <svg
-              className={`${mode}`}
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
               width="75%"
@@ -153,37 +159,46 @@ const NavBarTop: React.FC = () => {
             >
               <path d="M27 4.96h-5.975v-1.918c0-1.655-1.346-3-3-3h-3.989c-1.655 0-3 1.345-3 3v1.918h-6.037c-1.104 0-2 0.896-2 2v22.999c0 1.105 0.896 2 2 2h22c1.105 0 2-0.895 2-2v-22.999c0-1.104-0.895-2-2-2h0zM13.037 3.042c0-0.552 0.448-1 1-1h3.989c0.552 0 1 0.448 1 1v1.918h-5.989v-1.918zM27 29.959h-22v-22.999h6.037v2.058s-0.027 0.999 0.994 0.999c1.125 0 1.006-0.999 1.006-0.999v-2.058h5.989v2.058s-0.067 1.004 0.996 1.004c1 0 1.004-1.004 1.004-1.004v-2.058h5.974v22.999z" />
             </svg>
+            <div
+              className="quantity-number"
+              style={quantity <= 0 ? { display: "none" } : { display: "flex" }}
+            >
+              {quantity}
+            </div>
           </div>
+        </div>
+        <div className={`navbar_hidden ${mode}`}>
+          {toggle && (
+            <div className={`categories_hidden ${mode}`}>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkAll}>
+                <FormattedMessage id="navHidden.all" defaultMessage="All" />
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShirts}>
+                <FormattedMessage
+                  id="navHidden.shirts"
+                  defaultMessage="Shirts"
+                />
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkPants}>
+                <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShoes}>
+                <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
+              </div>
+              <div className="category_border"></div>
+            </div>
+          )}
         </div>
       </nav>
-      {!toggle && (
-        <div className="navbar_hidden ">
-          <div className={`categories_hidden ${mode}`}>
-            <div className={`category_border ${mode}`}></div>
-            <div className="single_category" onClick={linkShirts}>
-              <FormattedMessage id="navHidden.shirts" defaultMessage="Shirts" />
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkPants}>
-              <FormattedMessage id="navHidden.pants" defaultMessage="Pants" />
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkShoes}>
-              <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
-            </div>
-            <div className="category_border"></div>
-            <div className="single_category" onClick={linkAll}>
-              <FormattedMessage id="navHidden.all" defaultMessage="All" />
-            </div>
-            <div className="category_border"></div>
-          </div>
-        </div>
-      )}
-      {!toggleSidebar && (
+      {toggleSidebar && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
-            All
+            <FormattedMessage id="navHidden.all" defaultMessage="All" />
           </div>
           <div className="category_border"></div>
           <div className="single_category" onClick={linkShirts}>
@@ -198,12 +213,11 @@ const NavBarTop: React.FC = () => {
             <FormattedMessage id="navHidden.shoes" defaultMessage="Shoes" />
           </div>
           <div className="category_border"></div>
-          <div className="single_category" onClick={linkAll}>
-            <FormattedMessage id="navHidden.all" defaultMessage="All" />
-          </div>
+          <div className="single_category" onClick={linkShoes}></div>
         </div>
       )}
-      {(!toggle || !toggleSidebar) && <div className="overlay"></div>}
+      {/* {toggleSidebar && <div className="overlay"></div>}
+      {toggleOverlay && <div className="overlay"></div>} */}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
-import logoLight from "../../assets/logoLight.png"
-import logoDark from "../../assets/logoDark.png"
+import logoDark from "../../assets/logo-Light.png"
+import logoLight from "../../assets/logo-Dark.png"
 import { useDarkMode } from "../darkmode/DarkModeContext";
 
 const Logo: React.FC = () => {

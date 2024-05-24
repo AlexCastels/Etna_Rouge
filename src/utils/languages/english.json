@@ -46,6 +46,8 @@
   "thankYou.orderTotal": "Your order: {total}",
   "thankYou.button.home": "HOME",
 
+  "paypalRedirect" : "Thanks for the order!",
+
   "pdp.color": "Color:",
   "pdp.selectSize": "Select your size",
   "pdp.addToCart": "Add to cart",
@@ -55,7 +57,8 @@
   "plp.nothingToSee": "Nothing to see",
   "plp.link.cart": "Cart",
 
+  "cart.empty": "The cart is empty",
   "cart.remove": "Remove",
   "cart.quantity": "Quantity",
-  "cart.products": "Products"
+  "cart.price": "Total price"
 }

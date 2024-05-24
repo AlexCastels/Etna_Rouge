@@ -4,36 +4,37 @@ import "./selectPayment.scss";
 import { FormattedMessage } from "react-intl";
 import { useDarkMode } from "../darkmode/DarkModeContext";
 
+
 export function SelectPayment() {
-  const navigate = useNavigate();
-  const [spia, setSpia] = useState<string>("");
+    const navigate = useNavigate();
+    const [spia, setSpia] = useState<string>("");
   const [notSelect, setNotSelect] = useState<boolean>(false);
   const { mode } = useDarkMode();
 
-  function handleRadio(e: React.ChangeEvent<HTMLInputElement>) {
-    setSpia(e.target.value);
-    setNotSelect(false);
-  }
-
-  function handleBtn(spia: string) {
-    if (spia === "spedizione") {
-      console.log(spia);
-      navigate("/ThankYouDelivery");
+    function handleRadio(e: React.ChangeEvent<HTMLInputElement>) {
+        setSpia(e.target.value);
+        setNotSelect(false);
     }
-    if (spia === "credit-card") {
-      console.log(spia);
-      navigate("/CreditCardForm");
+
+    function handleBtn(spia: string) {
+        if (spia === "spedizione") {
+            console.log(spia);
+            navigate("/ThankYouDelivery");
+        }
+        if (spia === "credit-card") {
+            console.log(spia);
+            navigate("/CreditCardForm");
+        }
+        setNotSelect(true);
     }
-    setNotSelect(true);
-  }
 
-  function handleSubmint(e: React.FormEvent) {
-    e.preventDefault();
-  }
+    function handleSubmint(e: React.FormEvent) {
+        e.preventDefault();
+    }
 
-  if (spia) {
-    console.log(spia);
-  }
+    if (spia) {
+        console.log(spia);
+    }
 
   return (
     <form onSubmit={handleSubmint} className={`selectPayment-container ${mode}`}>

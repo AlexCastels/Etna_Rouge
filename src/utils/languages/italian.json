@@ -45,13 +45,16 @@
   "currency": "EUR",
   "thankYou.button.home": "HOME",
 
+  "paypalRedirect" : "Grazie per l'ordine!",
+
   "pdp.color": "Colore:",
   "pdp.selectSize": "Seleziona la tua taglia",
   "pdp.addToCart": "Aggiungi al carrello",
 
   "plp.button.addToCart": "AGGIUNGI AL CARRELLO",
 
+  "cart.empty": "Il carrello è vuoto",
   "cart.remove": "Rimuovi",
   "cart.quantity": "Quantità",
-  "cart.products": "Prodotti"
+  "cart.price": "Prezzo totale"
 }

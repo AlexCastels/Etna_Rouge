@@ -18,16 +18,16 @@ $secondary-black: #0000009e;
 
 //Mixin to reuse only for the hover of Buttons without any background
 @mixin hoverButton {
-  color: gray;
-  font-size: 1.1rem;
-  background-color: transparent;
+    color: gray;
+    font-size: 1.1rem;
+    background-color: transparent;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
 }
 
 
@@ -64,10 +64,10 @@ body {
 
 /* ProductCard */
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    text-align: center;
 }
 
 /* ProductCard */
@@ -79,7 +79,7 @@ body {
 }
 
 .single-card-container {
-  /*    display: flex;
+    /*    display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center; */
@@ -88,9 +88,9 @@ body {
 }
 
 .card-title {
-  font-weight: bold;
-  letter-spacing: 0.1rem;
-  width: 300px;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    width: 300px;
 }
 
 .card-body-img img {

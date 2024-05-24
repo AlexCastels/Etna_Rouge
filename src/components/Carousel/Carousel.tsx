@@ -23,7 +23,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
 
 
   return (
-    <div className="carousel-cont">
       
       <div className="carousel">
         {/* Si disattiva il bottone "prev" se l'indice è zero */}
@@ -55,7 +54,6 @@ export const Carousel: React.FC<CarouselProps> = ({ items, numItems }) => {
           {">"}
         </button>
       </div>
-    </div>
   );
 };
 

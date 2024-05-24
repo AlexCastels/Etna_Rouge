@@ -1,3 +1,4 @@
+import Cart from "../cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
 import PromoContent from "../promoBanner/PromoContent";
 import { RootState } from "../../redux/store";
@@ -7,8 +8,9 @@ import FeaturesContent from "./featuresSection/FeaturesContent";
 import HeroContent from "./heroSection/HeroContent";
 import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
-import NavBarTop from "../Navbar/NavBarTop";
 
+import Footer from "../footer/Footer";
+import NavBarTop from "../Navbar/NabarTop";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -23,11 +25,12 @@ const LandingPage = () => {
   return (
     <>
       <PromoContent />
-      <NavBarTop/>
+      <NavBarTop />
+      <Cart />
       <HeroContent />
-     <LandingCarousel />
+      <LandingCarousel />
       <FeaturesContent />
-      <NewsLetterForm />
+      <Footer />
     </>
   );
 };

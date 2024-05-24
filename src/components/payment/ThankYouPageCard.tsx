@@ -2,28 +2,43 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import "./thankYouPage.scss";
 import { removeFormData } from "../../redux/slices/payformSlice";
+
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { useDarkMode } from "../darkmode/DarkModeContext";
 
-export function ThankYouPageCard() {
-  const total = useAppSelector((state) => state.cart.total);
-  const formData = useAppSelector((state) => state.payformData);
-  const dispatch = useAppDispatch();
-  const { mode } = useDarkMode();
-  console.log(formData);
-  // const location = useLocation()
-  // let deliveryTotal = 0
-  // if(location){
-  //     deliveryTotal = location.state.total
-  // }
-  // console.log(deliveryTotal);
+import { clearCart } from "../../redux/slices/cartSlice";
+
+
+export function ThankYouPageCard(){
+    const total = useAppSelector((state) => state.cart.total)
+    const formData = useAppSelector(state => state.payformData)
+    const dispatch = useAppDispatch()
+    const { mode } = useDarkMode();
+    console.log(formData);
+    // const location = useLocation()
+    // let deliveryTotal = 0
+    // if(location){
+    //     deliveryTotal = location.state.total
+    // }
+    // console.log(deliveryTotal);
+    
+    // const [deliveryTotal , setDeliverytotal] = useState(10)
+    // if(location.state.total){
+    //     setDeliverytotal((p) => p + location.state.total)
+    // }
+    
+    const navigate = useNavigate()
+    function handleBtn(){
+        navigate('/')
+        dispatch(removeFormData())
+        dispatch(clearCart())
+    }
 
   // const [deliveryTotal , setDeliverytotal] = useState(10)
   // if(location.state.total){
   //     setDeliverytotal((p) => p + location.state.total)
   // }
 
-  const navigate = useNavigate();
   function handleBtn() {
     navigate("/");
     dispatch(removeFormData());
