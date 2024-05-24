@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { toggleCart } from "../../redux/slices/cartSlice";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
+import HamburgerMenu from "../hamburger/HamburgerMenu";
 import Logo from "../logo/Logo";
-import "../navbar/NavbarTop.scss";
-import "../navbar/Overlay.scss";
+import "./NavbarTop.scss";
+import "./Overlay.scss";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
@@ -39,17 +39,17 @@ const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
 
 
   function linkShirts() {
-    navigate("/plp", { state: { category: "/shirt", gender: gender } });
+    navigate(`/plp/${gender}/shirt`, { state: { category: "shirt", gender: gender } });
   }
   function linkPants() {
-    navigate("/plp", { state: { category: "pants", gender: gender } });
+    navigate(`/plp/${gender}/pants`, { state: { category: "pants", gender: gender } });
   }
   function linkShoes() {
-    navigate("/plp", { state: { category: "shoes", gender: gender } });
+    navigate(`/plp/${gender}/shoes`, { state: { category: "shoes", gender: gender } });
   }
 
   function linkAll() {
-    navigate("/plp", { state: { gender: gender } });
+    navigate(`/plp/${gender}`, { state: { gender: gender } });
   }
 
   return (

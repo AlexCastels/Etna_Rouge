@@ -64,16 +64,14 @@ const cartSlice = createSlice({
         remove:((state,action) => {
             state.cart = state.cart.filter((el) => el.id !== action.payload.id);
             state.total = total(state.cart)
-            state.totalQuantity = totalQuantity(state.cart)
-        
+            state.totalQuantity = totalQuantity(state.cart)       
         }),
         
         decrement: ((state, action) => {
             const element = state.cart.find((el) => el.id == action.payload.id )
             element && element?.quantity > 1 ? element.quantity -= 1 : state.cart = state.cart.filter((el) => el.id !== action.payload.id)
             state.total = total(state.cart)
-            state.totalQuantity = totalQuantity(state.cart)
-           
+            state.totalQuantity = totalQuantity(state.cart)           
         }),
         increment : ((state,action) => {
             const element = state.cart.find((el) => el.id == action.payload.id )

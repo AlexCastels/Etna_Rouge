@@ -81,9 +81,9 @@ export function PayForm(){
             <div className="payform-message">
                 <p><FormattedMessage id="payForm.supplement" defaultMessage="*Payment on delivery have supplement of €10 to the order total" /></p>
             </div>
-            <Button className="payform-btn" onClick={handleBtn}>
+            <button className="payform-btn" onClick={handleBtn}>
                 <FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay"/>
-            </Button>
+            </button>
             {/* {input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country ? <p>Compilare campi richiesti</p> : null} */}
         </form>
     )

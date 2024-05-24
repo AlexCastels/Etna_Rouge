@@ -7,7 +7,6 @@ import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
- import Pdp from "./components/pdp/Pdp.tsx"; 
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
 import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
@@ -17,6 +16,7 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
+import Pdp from "./components/pdp/Pdp.tsx";
 import AboutUs from "./components/aboutUs/aboutUs.tsx";
 import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 
@@ -40,7 +40,6 @@ function App() {
 
   const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocale(e.target.value);
-
     console.log(locale);
   };
 
@@ -55,33 +54,34 @@ function App() {
             value={locale}
           >
             <option value="en">Chose language</option>
-
             <option value="it">Italian</option>
-
             <option value="en">English</option>
-
             <option value="es">Spanish</option>
-
             <option value="fr">French</option>
           </select> */}
-
           <BrowserRouter>
              {/* <NavBarTop /> */} 
             <Routes>
-              
               <Route path="/" element={<LandingPage />} />
               {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
               <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp" element={<Plp />} />
+              <Route path="/plp/men" element={<Plp />} />
+              <Route path="/plp/woman" element={<Plp/>}/>
+              <Route path="/plp/woman/shirt" element={<Plp/>}/>
+              <Route path="/plp/woman/pants" element={<Plp/>}/>
+              <Route path="/plp/woman/shoes" element={<Plp/>}/>
+              <Route path="/plp/men/shirt" element={<Plp/>}/>
+              <Route path="/plp/men/pants" element={<Plp/>}/>
+              <Route path="/plp/men/shoes" element={<Plp/>}/>
               <Route path="/Cart" element={<Cart />} />
               <Route path="/SelectPayment" element={<SelectPayment />} />
               <Route path="/DeliveryForm" element={<PayForm />} />
               <Route path="/CreditCardForm" element={<CreditCardForm />} />
               <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
               <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
-              <Route path="/pdp/:id" element={<Pdp />} />
+              <Route path="/pdp/:id" element={<Pdp/>} />
             </Routes>
-               <NavBarBottom />
+              <NavBarBottom />
           </BrowserRouter>
         </div>
       </IntlProvider>
