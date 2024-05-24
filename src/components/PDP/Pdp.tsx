@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { useEffect, useState } from "react";
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
@@ -6,6 +6,7 @@ import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NavbarTop";
 import { Carousel } from "../carousel/Carousel";
+// import { useHistory } from "react-router-dom";
 import "./Pdp.scss"
 
 
@@ -14,6 +15,8 @@ const Pdp: React.FC<any> = () => {
     const dispatch = useAppDispatch();
     const product = useAppSelector((state) => state.product.products);
     const element = product.find((el: any) => el.id == id);
+    const navigate = useNavigate()
+    // const history = useHistory()
 
     //logica go back
     // const location = useLocation()
@@ -55,15 +58,20 @@ const Pdp: React.FC<any> = () => {
         };
     }, []);
 
+    //funzione go back
+    function handleBack(){
+        navigate(-1)
+    }
+
     return (
         <>
             <Cart/>
             <NavBarTop/>
             <div className="pdp-wrapper">
-                {/* <Link to={`/plp/${gender}/${category}`} className="pdp-icon-back">
+                <div onClick={handleBack} className="pdp-icon-back">
                     <img src="\public\assets\back.png" alt="arrow back" />
                     <p>Go back</p>
-                </Link> */}
+                </div>
                 <div className="pdp-card">
                     <img
                         className="pdp-img"
