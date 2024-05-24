@@ -12,12 +12,14 @@ import NavBarTop from "../navbar/NavbarTop";
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
+  // const [params , setParams] = useState<any>({})
   
   //logica categorie
   const location = useLocation();
   const gender = location.state?.gender;
   const category = location.state?.category;
-
+  // console.log(gender , category);
+  
   //logica load more
   const imagePerRow = 8;
   const [next, setNext] = useState(imagePerRow);
@@ -54,19 +56,22 @@ export const Plp: React.FC<any> = () => {
     }
   });
 
-  //logica per passare dati in pdp per go back
-  // function handleNavigate(id:any){
-  //   navigate(`/pdp/${id}` , {state : params})
-  // }
-
   useEffect(() => {
     dispatch(fetchData());
-    //logica per go back
     // setParams({
     //   gender : gender ,
     //   category : category
     // })  
   }, []);
+
+  //logica per passare dati in pdp per go back
+  // function handleNavigate(id:any){
+  //   navigate(`/pdp/${id}` , {state : { gender : params.gender , category : params.category}})
+  // }
+
+  // if(params){
+  //   console.log(params);  
+  // }
 
   const handleAddToCart = (el: any) => {
     dispatch(addToCart(el));
