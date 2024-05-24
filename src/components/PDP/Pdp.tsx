@@ -1,12 +1,13 @@
+import { useParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { useEffect, useState } from "react";
+import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
+import { FormattedMessage } from "react-intl";
+import Cart from "../cart/Cart";
+import NavBarTop from "../navbar/NavbarTop";
+import { Carousel } from "../carousel/Carousel";
+import "../pdp/Pdp.scss"
 
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-import { useAppDispatch, useAppSelector } from '../../redux/hook';
-import { addToCart, toggleCart } from '../../redux/slices/cartSlice';
-import { Carousel } from '../carousel/Carousel';
-import Cart from '../cart/Cart';
-import './Pdp.scss'
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();
@@ -55,7 +56,7 @@ const Pdp: React.FC<any> = () => {
     return (
         <>
             <Cart/>
-
+            <NavBarTop/>
             <div className="pdp-wrapper">
                 <div className="pdp-card">
                     <img
