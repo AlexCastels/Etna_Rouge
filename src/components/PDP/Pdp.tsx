@@ -6,7 +6,7 @@ import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NavbarTop";
 import { Carousel } from "../carousel/Carousel";
-import "../pdp/Pdp.scss"
+import "./Pdp.scss"
 
 
 const Pdp: React.FC<any> = () => {
