@@ -187,9 +187,9 @@ export function CreditCardForm() {
                     onChange={handleCvv}
                 />
             </div>
-            <Button className="creditForm-btn" disabled={!creditDate || !creditName || !cvv || !creditNumber} onClick={handleBtn}>
+            <button className="creditForm-btn" disabled={!creditDate || !creditName || !cvv || !creditNumber} onClick={handleBtn}>
                 <FormattedMessage id="creditPayment.checkout" defaultMessage="Checkout"/>
-            </Button>
+            </button>
             <p>
                 <FormattedMessage id="creditPayment.or" defaultMessage="or" />
             </p>

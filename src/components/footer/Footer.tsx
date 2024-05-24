@@ -1,8 +1,7 @@
-import Logo from "../Logo/Logo";
+import Logo from "../logo/Logo";
 import { useDarkMode } from "../darkmode/DarkModeContext";
-import "../footer/Footer.scss";
 import NewsLetterForm from "../landingPage/newsLetter/form/NewsLetterForm";
-
+import "../footer/footer.scss";
 
 const Footer = () => {
   const { mode } = useDarkMode();
@@ -19,8 +18,7 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-section">
-          
-                      <h3 className={mode}>Follow Us:</h3>
+            <h3 className={mode}>Follow Us:</h3>
             <ul>
               <li>
                 <a className={mode} href="#">

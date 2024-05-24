@@ -51,7 +51,8 @@
   "pdp.selectSize": "Sélectionnez votre taille",
   "pdp.addToCart": "Ajouter au panier",
 
-  "plp.button.addToCart": "AJOUTER AU PANIER",
+  "plp.nothingToSee": "Rien à voir",
+  "plp.loadMore":"CHARGER PLUS",
 
   "cart.empty": "Le panier est vide",
   "cart.remove": "Retirer",

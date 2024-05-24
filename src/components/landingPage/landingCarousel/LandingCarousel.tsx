@@ -75,13 +75,13 @@ const LandingCarousel = () => {
           </div>
         ))}
       </div>
-      <Link className={`lp-carousel-link ${mode}`} to="/discover">
+     {/*  <Link className="lp-carousel-link" to="/discover">
 
         <FormattedMessage
           id="landing.carousel.discover"
           defaultMessage="Discover more "
         />
-      </Link>
+      </Link> */}
     </div>
   );
 };

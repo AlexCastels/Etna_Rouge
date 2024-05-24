@@ -15,6 +15,7 @@ body {
   justify-items: center;
   position: relative;
   padding: 20px;
+  padding-block-start: 80px;
 
   &.light {
     background-color: $main-white;

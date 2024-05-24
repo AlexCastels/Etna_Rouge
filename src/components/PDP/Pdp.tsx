@@ -1,24 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { useParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { useEffect, useState } from "react";
+import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
 import { FormattedMessage } from "react-intl";
-import { Carousel } from "../carousel/Carousel";
-import Button from "../UI/button/Button";
-import { addToCart } from "../../redux/slices/cartSlice";
-import "../pdp/Pdp.scss";
 import Cart from "../cart/Cart";
-import NavBarTop from "../Navbar/NabarTop";
-
-
+import NavBarTop from "../navbar/NavbarTop";
+import { Carousel } from "../carousel/Carousel";
+import "../pdp/Pdp.scss";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 
 const Pdp: React.FC<any> = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
   const element = product.find((el: any) => el.id == id);
+  const { mode } = useDarkMode();
 
   //carosello dinamico
   const [numItems, setNumItems] = useState(5);
+
+  //handleSize
+  const [elementSize, setElementSize] = useState<any | null>(null);
+
+  //usato per aggiungere size in element
+  function handleSize(e: any) {
+    // console.log(e.target.value);
+    const elementSize = {
+      ...element,
+      size: e.target.value,
+    };
+    // return elementSize
+    setElementSize(elementSize);
+  }
+
+  //per pushare nello slice il nuovo obj con la size
+  function handleBtn() {
+    if ("size" in elementSize) {
+      dispatch(addToCart(elementSize));
+      dispatch(toggleCart());
+      // console.log('condizione ok');
+      // console.log(elementSize);
+    }
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,9 +57,8 @@ const Pdp: React.FC<any> = () => {
   return (
     <>
       <Cart />
-      <NavBarTop/>
-
-      <div className="pdp-wrapper">
+      <NavBarTop />
+      <div className={`pdp-wrapper ${mode}`}>
         <div className="pdp-card">
           <img className="pdp-img" src={element?.img} alt={element?.name} />
           <p>{element?.description}</p>
@@ -63,23 +85,31 @@ const Pdp: React.FC<any> = () => {
               />
             </p>
             <div className="pdp-btn">
-              <button>XS</button>
-              <button>S</button>
-              <button>M</button>
-              <button>L</button>
-              <button>XL</button>
+              <button onClick={handleSize} value="XS">
+                XS
+              </button>
+              <button onClick={handleSize} value="S">
+                S
+              </button>
+              <button onClick={handleSize} value="M">
+                M
+              </button>
+              <button onClick={handleSize} value="L">
+                L
+              </button>
+              <button onClick={handleSize} value="XL">
+                XL
+              </button>
             </div>
           </div>
+          {!elementSize && <p>Selezionare una taglia per favore</p>}
           <div className="pdp-btn-cart">
-            <Button
-              className="btn-cart-component"
-              onClick={() => dispatch(addToCart(element))}
-            >
+            <button className="btn-cart-component" onClick={handleBtn}>
               <FormattedMessage
                 id="pdp.addToCart"
                 defaultMessage="Add to Cart"
               />
-            </Button>
+            </button>
           </div>
         </div>
       </div>

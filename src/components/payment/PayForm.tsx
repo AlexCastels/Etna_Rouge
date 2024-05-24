@@ -70,10 +70,10 @@ export function PayForm(){
                 <input className='input-payform' required placeholder='E-mail *' name='email' type="email" onChange={handleInput}/>    
             </div>
             <div className="payform-bottom">
-                <input className='input-payform' required placeholder='Phone Number *' name='phone' type="number" onChange={handleInput}/>
+                <input className='input-payform' required placeholder='Phone Number *' name='phone' type="text" onChange={handleInput}/>
                 <input className='input-payform' required placeholder='Address *' name='address' type="text" onChange={handleInput}/>
                 <input className='input-payform' required placeholder='Province *' name='province' type="text" maxLength={2} onChange={handleInput}/>
-                <input className='input-payform' required placeholder='Zip Code *' name='zipcode' type="number" onChange={handleInput}/>
+                <input className='input-payform' required placeholder='Zip Code *' name='zipcode' type="text" onChange={handleInput}/>
                 <select className="input-payform" name='country' onChange={handleInput}>
                     <option value=""><FormattedMessage id="payForm.country" defaultMessage="Select your country" /> </option>
                     <option value="IT"><FormattedMessage id="payForm.Italy" defaultMessage="Select your country" /> </option>
@@ -85,9 +85,9 @@ export function PayForm(){
             <div className={`payform-message ${mode}`}>
                 <p><FormattedMessage id="payForm.supplement" defaultMessage="*Payment on delivery have supplement of €10 to the order total" /></p>
             </div>
-            <Button className="payform-btn" onClick={handleBtn}>
+            <button className="payform-btn" onClick={handleBtn}>
                 <FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay"/>
-            </Button>
+            </button>
             {/* {input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country ? <p>Compilare campi richiesti</p> : null} */}
         </form>
     )

@@ -51,7 +51,8 @@
   "pdp.selectSize": "Seleccione su talla",
   "pdp.addToCart": "Añadir al carrito",
 
-  "plp.button.addToCart": "AÑADIR AL CARRITO",
+    "plp.loadMore": "CARGAR MÁS",
+  "plp.nothingToSee": "Nada que ver",
 
   "cart.empty": "El carrito está vacío",
   "cart.remove": "Eliminar",
