@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { useEffect, useState } from "react";
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
@@ -15,6 +15,12 @@ const Pdp: React.FC<any> = () => {
     const product = useAppSelector((state) => state.product.products);
     const element = product.find((el: any) => el.id == id);
 
+    //logica go back
+    // const location = useLocation()
+    // const gender = location.state?.gender;
+    // const category = location.state?.category;
+    // console.log(gender , category);
+    
     //carosello dinamico
     const [numItems, setNumItems] = useState(5);
 
@@ -23,12 +29,10 @@ const Pdp: React.FC<any> = () => {
 
     //usato per aggiungere size in element
     function handleSize(e:any) {
-        // console.log(e.target.value);
         const elementSize = { 
             ...element ,
             size : e.target.value
-        }
-        // return elementSize 
+        } 
         setElementSize(elementSize)   
     }
 
@@ -36,9 +40,7 @@ const Pdp: React.FC<any> = () => {
     function handleBtn(){
         if('size' in elementSize){
             dispatch(addToCart(elementSize))
-            dispatch(toggleCart());
-            // console.log('condizione ok');
-            // console.log(elementSize);           
+            dispatch(toggleCart());          
         }
     }
 
@@ -58,6 +60,10 @@ const Pdp: React.FC<any> = () => {
             <Cart/>
             <NavBarTop/>
             <div className="pdp-wrapper">
+                {/* <Link to={`/plp/${gender}/${category}`} className="pdp-icon-back">
+                    <img src="\public\assets\back.png" alt="arrow back" />
+                    <p>Go back</p>
+                </Link> */}
                 <div className="pdp-card">
                     <img
                         className="pdp-img"
@@ -82,6 +88,11 @@ const Pdp: React.FC<any> = () => {
                                 defaultMessage="Color ###"
                             />
                         </p>
+                        <div className="pdp-color-container">
+                            <div className="div1"></div>
+                            <div className="div2"></div>
+                            <div className="div3"></div>
+                        </div>
                     </div>
                     <div className="pdp-container-size">
                         <p className="pdp-size">
@@ -98,11 +109,11 @@ const Pdp: React.FC<any> = () => {
                             <button onClick={handleSize} value='XL'>XL</button>
                         </div>
                     </div>
-                    {!elementSize && <p>Selezionare una taglia per favore</p>}
                     <div className="pdp-btn-cart">
                         <button className="btn-cart-component" onClick={handleBtn}>
                             <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart"/>
                         </button>
+                        {!elementSize && <p>Selezionare una taglia per favore</p>}
                     </div>
                 </div>
             </div>

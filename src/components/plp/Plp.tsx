@@ -1,5 +1,5 @@
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
@@ -12,12 +12,12 @@ import NavBarTop from "../navbar/NavbarTop";
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
-
+  
   //logica categorie
   const location = useLocation();
   const gender = location.state?.gender;
   const category = location.state?.category;
-  
+
   //logica load more
   const imagePerRow = 8;
   const [next, setNext] = useState(imagePerRow);
@@ -25,7 +25,7 @@ export const Plp: React.FC<any> = () => {
     setNext(next + imagePerRow);
     console.log(next)
   }
-
+  const navigate = useNavigate()
   //filtro delle categorie
   const element = product.filter((el: any) => {
     if (gender == "men" && category == "shirt") {
@@ -54,9 +54,20 @@ export const Plp: React.FC<any> = () => {
     }
   });
 
+  //logica per passare dati in pdp per go back
+  // function handleNavigate(id:any){
+  //   navigate(`/pdp/${id}` , {state : params})
+  // }
+
   useEffect(() => {
     dispatch(fetchData());
+    //logica per go back
+    // setParams({
+    //   gender : gender ,
+    //   category : category
+    // })  
   }, []);
+
   const handleAddToCart = (el: any) => {
     dispatch(addToCart(el));
     dispatch(toggleCart());
@@ -87,6 +98,11 @@ export const Plp: React.FC<any> = () => {
               {el.name}
             </div>
             </Link>
+            {/* <div onClick={() => handleNavigate(el.id)} style={{textDecoration:'none',color:'black'}}>
+              <div className="card-name">
+              {el.name}
+            </div>
+            </div> */}
             <div className="card-price">
               € {Math.round(el.price)}
             </div>
@@ -94,7 +110,7 @@ export const Plp: React.FC<any> = () => {
         ))}
       </div>
       <div className="container-butto">
-        {next < product.length ? (
+        {next < element.length ? (
           <Button onClick={handleMoreImage}>LOAD MORE</Button>
         ) : (
           <p className="cards-continer-nothingToSee">Nothing to see</p>

@@ -65,21 +65,15 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
               <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp/men" element={<Plp />} />
-              <Route path="/plp/woman" element={<Plp/>}/>
-              <Route path="/plp/woman/shirt" element={<Plp/>}/>
-              <Route path="/plp/woman/pants" element={<Plp/>}/>
-              <Route path="/plp/woman/shoes" element={<Plp/>}/>
-              <Route path="/plp/men/shirt" element={<Plp/>}/>
-              <Route path="/plp/men/pants" element={<Plp/>}/>
-              <Route path="/plp/men/shoes" element={<Plp/>}/>
+              <Route path="/plp/:gender" element={<Plp />} />
+              <Route path="/plp/:gender/:category" element={<Plp />} />
+              <Route path="/pdp/:id" element={<Pdp/>} />
               <Route path="/Cart" element={<Cart />} />
-              <Route path="/SelectPayment" element={<SelectPayment />} />
               <Route path="/DeliveryForm" element={<PayForm />} />
+              <Route path="/SelectPayment" element={<SelectPayment />} />
               <Route path="/CreditCardForm" element={<CreditCardForm />} />
               <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
               <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
-              <Route path="/pdp/:id" element={<Pdp/>} />
             </Routes>
               <NavBarBottom />
           </BrowserRouter>
