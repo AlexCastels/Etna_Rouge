@@ -45,7 +45,7 @@
   "currency": "EUR",
   "thankYou.button.home": "INICIO",
 
-  "paypalRedirect" : "¡Gracias por el pedido!",
+  "paypalRedirect": "¡Gracias por el pedido!",
 
   "pdp.color": "Color:",
   "pdp.selectSize": "Seleccione su talla",
@@ -56,5 +56,8 @@
   "cart.empty": "El carrito está vacío",
   "cart.remove": "Eliminar",
   "cart.quantity": "Cantidad",
-  "cart.price": "Precio total"
+  "cart.price": "Precio total",
+
+  "centralProductSecTitle": "El futuro pertenece a las mujeres con estilo.",
+  "centralProductSecSubTitle": "Descubre la nueva colección de mujer"
 }

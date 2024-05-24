@@ -7,10 +7,12 @@ import HamburgerMenu from "../hamburger/HamburgerMenu";
 import Logo from "../logo/Logo";
 import "./NavbarTop.scss";
 import "./Overlay.scss";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
 
 const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
+  const { mode } = useDarkMode();
 
 const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
   const navigate = useNavigate();
@@ -54,7 +56,7 @@ const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
 
   return (
     <>
-      <nav className="navbar_top" >
+      <nav className={`navbar_top ${mode}`} >
         <div
           onClick={() => {
             setToggleSidebarGender(!toggleSidebarGender);
@@ -63,7 +65,8 @@ const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
           <HamburgerMenu />
         </div>
         <div className="navbar_logo">
-          <Logo />
+          <Link to="/"><Logo /></Link>
+          
         </div>
         <div
           className="navbar_center"
@@ -72,7 +75,7 @@ const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
             onClick={() => {
               setToggle(!toggle), GenderMen();
             }}
-            className="navbar_categories"
+            className={`navbar_categories ${mode}`}
           >
               <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
           </div>
@@ -80,13 +83,12 @@ const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
             onClick={() => {
               setToggle(!toggle), GenderWoman();
             }}
-            className="navbar_categories"
-          >
+            className="navbar_categories">
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
           <div
             className="navbar_categories">
-            <Link to='/aboutUs' style={{textDecoration:'none',color:'black'}} ><FormattedMessage
+            <Link className={mode} to='/aboutUs' style={{textDecoration:'none',color:'black'}} ><FormattedMessage
               id="navbarTop.aboutUs"
               defaultMessage="About Us"/></Link>            
           </div>
@@ -154,7 +156,7 @@ const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
             }}
             className="navbar_button_item"
           >
-            <svg
+            <svg className={mode}
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
               width="75%"

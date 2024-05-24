@@ -19,7 +19,8 @@ import { Plp } from "./components/plp/Plp.tsx";
 import Pdp from "./components/pdp/Pdp.tsx";
 import AboutUs from "./components/aboutUs/aboutUs.tsx";
 import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
-
+import Switcher from "./components/darkmode/Switcher.tsx";
+import LanguageSelector from "./components/languageSelector/LanguageSelector.tsx";
 
 interface Messages {
   [key: string]: any;
@@ -28,7 +29,7 @@ interface Messages {
 function App() {
   const [locale, setLocale] = useState("en");
 
-  const messages:Messages = {
+  const messages: Messages = {
     en: enText,
 
     it: itText,
@@ -36,59 +37,48 @@ function App() {
     es: esText,
 
     fr: frText,
-  }[locale]
+  }[locale];
 
-  const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setLocale(e.target.value);
-    console.log(locale);
+  const changeLanguage = (language: string) => {
+    setLocale(language);
   };
 
   return (
     <>
+      <Switcher />
       <IntlProvider locale={locale} messages={messages}>
-        <div className="select-container">
-          {/* <select
-            id="languageSelect"
-            className="select-lang"
-            onChange={changeLanguage}
-            value={locale}
-          >
-            <option value="en">Chose language</option>
-            <option value="it">Italian</option>
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
-          </select> */}
-          <BrowserRouter>
-             {/* <NavBarTop /> */} 
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
-              <Route path="/discover" element={<DiscoverMore />} />
-              <Route path="/plp/men" element={<Plp />} />
-              <Route path="/plp/woman" element={<Plp/>}/>
-              <Route path="/plp/woman/shirt" element={<Plp/>}/>
-              <Route path="/plp/woman/pants" element={<Plp/>}/>
-              <Route path="/plp/woman/shoes" element={<Plp/>}/>
-              <Route path="/plp/men/shirt" element={<Plp/>}/>
-              <Route path="/plp/men/pants" element={<Plp/>}/>
-              <Route path="/plp/men/shoes" element={<Plp/>}/>
-              <Route path="/Cart" element={<Cart />} />
-              <Route path="/SelectPayment" element={<SelectPayment />} />
-              <Route path="/DeliveryForm" element={<PayForm />} />
-              <Route path="/CreditCardForm" element={<CreditCardForm />} />
-              <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
-              <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />} />
-              <Route path="/pdp/:id" element={<Pdp/>} />
-            </Routes>
-              <NavBarBottom />
-          </BrowserRouter>
-        </div>
+        <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
+
+        <BrowserRouter>
+          {/* <NavBarTop /> */}
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
+            <Route path="/discover" element={<DiscoverMore />} />
+            <Route path="/plp/men" element={<Plp />} />
+            <Route path="/plp/woman" element={<Plp />} />
+            <Route path="/plp/woman/shirt" element={<Plp />} />
+            <Route path="/plp/woman/pants" element={<Plp />} />
+            <Route path="/plp/woman/shoes" element={<Plp />} />
+            <Route path="/plp/men/shirt" element={<Plp />} />
+            <Route path="/plp/men/pants" element={<Plp />} />
+            <Route path="/plp/men/shoes" element={<Plp />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/SelectPayment" element={<SelectPayment />} />
+            <Route path="/DeliveryForm" element={<PayForm />} />
+            <Route path="/CreditCardForm" element={<CreditCardForm />} />
+            <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
+            <Route
+              path="/ThankYouDelivery"
+              element={<ThankYouPageDelivery />}
+            />
+            <Route path="/pdp/:id" element={<Pdp />} />
+          </Routes>
+          <NavBarBottom />
+        </BrowserRouter>
       </IntlProvider>
     </>
-
   );
 }
 
 export default App;
-

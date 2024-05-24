@@ -5,6 +5,7 @@ import "./newsLetterForm.scss";
 import { FormattedMessage } from "react-intl";
 import { internalMemory } from "../../../../utils/internalMemory.js";
 import Button from "../../../UI/button/Button.js";
+import { useDarkMode } from "../../../darkmode/DarkmodeContext.js";
 
 const NewsLetterForm: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -14,6 +15,7 @@ const NewsLetterForm: React.FC = () => {
   const [registeredYet, setRegisteredYet] = useState<boolean>(false);
   const [genderNotSelected, setGenderNotSelected] = useState<boolean>(false);
   const [gender, setGender] = useState<string | null>(null);
+  const { mode } = useDarkMode();
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
@@ -93,8 +95,8 @@ const NewsLetterForm: React.FC = () => {
           submitted={submitted}
         />
       )}
-      <div className="newsletter-container">
-        <h2 className="newsletter-title">
+      <div className={`newsletter-container ${mode}`}>
+        <h2 className={`newsletter-title ${mode}`}>
           <FormattedMessage
             id="news.title"
             defaultMessage="Subscribe to our Newsletter to get a 15% discount!"
@@ -123,15 +125,15 @@ const NewsLetterForm: React.FC = () => {
               />
             </Button>
           </div>
-          <label id="newsletter-email"> E-mail </label>
+          <label className={`newsletter-email ${mode}`} > E-mail </label>
           <span className="newsletter-input-cont">
-            <input className="newsletter-email-input"
+            <input className={`newsletter-email-input ${mode}`}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button
-              className={`newsletter-submit-button ${submitted ? "active-submit" : ""} `}
+              className={`newsletter-submit-button ${mode}`}
               onClick={handleSubmitClick}
               type="submit"
             >
