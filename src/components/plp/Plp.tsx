@@ -6,25 +6,28 @@ import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NabarTop";
-import NavBarBottom from "../navbar/NavbarBottom";
+import NavBarBottom from "../navbar/NavbarBottom"
 import Button from "../UI/button/Button";
 import "../plp/plp.scss";
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
-  
-  const imagePerRow = 8;
-  const [next, setNext] = useState(imagePerRow);
-  const location = useLocation();
 
+  //logica categorie
+  const location = useLocation();
   const gender = location.state?.gender;
   const category = location.state?.category;
+  
+  //logica load more
+  const imagePerRow = 8;
+  const [next, setNext] = useState(imagePerRow);
   function handleMoreImage() {
     setNext(next + imagePerRow);
     console.log(next)
   }
 
+  //filtro delle categorie
   const element = product.filter((el: any) => {
     if (gender == "men" && category == "shirt") {
       return el.gender === gender && el.category === category;

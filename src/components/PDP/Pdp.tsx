@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { addToCart, toggleCart } from '../../redux/slices/cartSlice';
-import { Carousel } from '../Carousel/Carousel';
+import { Carousel } from '../carousel/Carousel';
 import Cart from '../cart/Cart';
-import '../PDP/Pdp.scss'
+import './Pdp.scss'
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();

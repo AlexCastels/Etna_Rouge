@@ -16,7 +16,7 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
 import { Plp } from "./components/plp/Plp.tsx";
-import Pdp from "./components/PDP/Pdp.tsx";
+import Pdp from "./components/pdp/Pdp.tsx";
 
 
 interface Messages {

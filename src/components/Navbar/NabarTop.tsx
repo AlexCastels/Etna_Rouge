@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { toggleCart } from "../../redux/slices/cartSlice";
-import HamburgerMenu from "../Hamburger/HamburgerMenu";
-import Logo from "../Logo/Logo";
+import HamburgerMenu from "../hamburger/HamburgerMenu";
+import Logo from "../logo/Logo";
 import "./NavbarTop.scss";
 import "./Overlay.scss";
 
