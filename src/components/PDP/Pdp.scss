@@ -5,7 +5,20 @@
     margin-bottom: 6rem;
     display: flex;
     justify-content: center;
+    gap:10rem;
 
+    .pdp-icon-back {
+        position:absolute;
+        left: 10rem;
+        height: 5rem;
+        width: 5rem;
+        letter-spacing: 0.1rem;
+        font-weight: 400;
+        cursor: pointer;
+        img{
+            rotate: 180deg;
+        }
+    }
     .pdp-card {
         // width: 60%;
         height: 25rem;
@@ -162,7 +175,7 @@
         justify-content: center;
         
         .pdp-card {
-            width: 45%;
+            // width: 45%;
             height: 25rem;
 
             .pdp-img {
