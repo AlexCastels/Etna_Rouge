@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom"
-import NavBarTop from "./NavbarTop";
+// import NavBarTop from "./NavbarTop";
 
 const Shoes = () => {
 
@@ -7,7 +7,7 @@ const Shoes = () => {
 
     return (
         <>
-        <NavBarTop/>
+        {/* <NavBarTop/> */}
         <div className="nav_section">
             <p>- Shoes -
                 {location.state.shoes}
