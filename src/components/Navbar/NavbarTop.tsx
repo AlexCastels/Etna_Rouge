@@ -10,87 +10,103 @@ import "./Overlay.scss";
 import { useDarkMode } from "../darkmode/DarkmodeContext";
 
 const NavBarTop: React.FC = () => {
-
   const { mode } = useDarkMode();
 
-    const [toggle, setToggle] = useState(false);
-    const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
+  const [toggle, setToggle] = useState(false);
+  const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
 
+  const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const quantity = useAppSelector((state) => state.cart.totalQuantity);
 
-    const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
-    const navigate = useNavigate();
-    const dispatch = useAppDispatch();
-    const quantity = useAppSelector((state) => state.cart.totalQuantity);
+  const [gender, setGender] = useState("");
+  function genderMen() {
+    setGender("men");
+  }
+  function genderWoman() {
+    setGender("woman");
+  }
 
-    const [gender, setGender] = useState("");
-    function genderMen() {
-        setGender("men");
-    }
-    function genderWoman() {
-        setGender("woman");
-    }
+  //sottomenù per aside mobile
+  const [showMenSubItems, setShowMenSubItems] = useState(false);
+  const [showWomenSubItems, setShowWomenSubItems] = useState(false);
 
-    //sottomenù per aside mobile
-    const [showMenSubItems, setShowMenSubItems] = useState(false);
-    const [showWomenSubItems, setShowWomenSubItems] = useState(false);
+  const toggleMenSubItems = () => {
+    setShowMenSubItems(!showMenSubItems);
+  };
 
-    const toggleMenSubItems = () => {
-        setShowMenSubItems(!showMenSubItems);
-    };
+  const toggleWomenSubItems = () => {
+    setShowWomenSubItems(!showWomenSubItems);
+  };
 
-    const toggleWomenSubItems = () => {
-        setShowWomenSubItems(!showWomenSubItems);
-    };
+  function linkShirts() {
+    navigate(`/plp/${gender}/shirt`, {
+      state: { category: "shirt", gender: gender },
+    });
+  }
+  function linkPants() {
+    navigate(`/plp/${gender}/pants`, {
+      state: { category: "pants", gender: gender },
+    });
+  }
+  function linkShoes() {
+    navigate(`/plp/${gender}/shoes`, {
+      state: { category: "shoes", gender: gender },
+    });
+  }
 
-    function linkShirts() {
-        navigate(`/plp/${gender}/shirt`, {
-            state: { category: "shirt", gender: gender },
-        });
-    }
-    function linkPants() {
-        navigate(`/plp/${gender}/pants`, {
-            state: { category: "pants", gender: gender },
-        });
-    }
-    function linkShoes() {
-        navigate(`/plp/${gender}/shoes`, {
-            state: { category: "shoes", gender: gender },
-        });
-    }
+  function linkAll() {
+    navigate(`/plp/${gender}`, { state: { gender: gender } });
+  }
 
-    function linkAll() {
-        navigate(`/plp/${gender}`, { state: { gender: gender } });
-    }
-
-    return (
-        <>
-                <nav className={`navbar_top ${mode}`} >
-                <div
-                    onClick={() => {
-                        setToggleSidebarGender(!toggleSidebarGender);
-                    }}
-                >
-                    <HamburgerMenu />
-                </div>
-                <div className="navbar_logo">
-                    <Logo />
-                </div>
-                <div className="navbar_center">
-                    <div onClick={() => {setToggle(!toggle), genderMen()}}className="navbar_categories">
-                        <FormattedMessage id="navbarTop.men" defaultMessage="Men"/>
-                    </div>
-                    <div onClick={() => {setToggle(!toggle), genderWoman()}}className="navbar_categories">
-                        <FormattedMessage id="navbarTop.women" defaultMessage="Women"/>
-                    </div>
-                    <div className={`navbar_categories ${mode}`}>
-                        <Link to="/aboutUs" style={{ textDecoration: "none", color: "black" }}>
-                            <FormattedMessage id="navbarTop.aboutUs" defaultMessage="About Us"/>
-                        </Link>
-                    </div>
-                </div>
-                <div className="navbar_right">
-                    {/* icona Search */}
-                    {/* <div className="navbar_button_item">
+  return (
+    <>
+      <nav className={`navbar_top ${mode}`}>
+        <div
+          onClick={() => {
+            setToggleSidebarGender(!toggleSidebarGender);
+          }}
+        >
+          <HamburgerMenu />
+        </div>
+        <div className="navbar_logo">
+          <Link to="/">
+            <Logo />
+          </Link>
+        </div>
+        <div className="navbar_center">
+          <div
+            onClick={() => {
+              setToggle(!toggle), genderMen();
+            }}
+            className="navbar_categories"
+          >
+            <FormattedMessage id="navbarTop.men" defaultMessage="Men" />
+          </div>
+          <div
+            onClick={() => {
+              setToggle(!toggle), genderWoman();
+            }}
+            className="navbar_categories"
+          >
+            <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
+          </div>
+          <div className={`navbar_categories ${mode}`}>
+            <Link
+              to="/aboutUs"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <FormattedMessage
+                id="navbarTop.aboutUs"
+                defaultMessage="About Us"
+              />
+            </Link>
+          </div>
+        </div>
+        <div className="navbar_right">
+          {/* icona Search */}
+          {/* <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="75%"
@@ -112,8 +128,8 @@ const NavBarTop: React.FC = () => {
               />
             </svg>
           </div> */}
-                    {/* icona Profile */}
-                    {/* <div className="navbar_button_item">
+          {/* icona Profile */}
+          {/* <div className="navbar_button_item">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -144,62 +160,59 @@ const NavBarTop: React.FC = () => {
               </g>
             </svg>
           </div> */}
-                    {/* icona Cart */}
-                    <div
-                        onClick={() => {
-                            dispatch(toggleCart());
-                        }}
-                        className="navbar_button_item"
-                    >
-                        <svg className={mode}
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="#000000"
-                            width="75%"
-                            height="75%"
-                            viewBox="0 0 32 32"
-                            version="1.1"
-                        >
-                            <path d="M27 4.96h-5.975v-1.918c0-1.655-1.346-3-3-3h-3.989c-1.655 0-3 1.345-3 3v1.918h-6.037c-1.104 0-2 0.896-2 2v22.999c0 1.105 0.896 2 2 2h22c1.105 0 2-0.895 2-2v-22.999c0-1.104-0.895-2-2-2h0zM13.037 3.042c0-0.552 0.448-1 1-1h3.989c0.552 0 1 0.448 1 1v1.918h-5.989v-1.918zM27 29.959h-22v-22.999h6.037v2.058s-0.027 0.999 0.994 0.999c1.125 0 1.006-0.999 1.006-0.999v-2.058h5.989v2.058s-0.067 1.004 0.996 1.004c1 0 1.004-1.004 1.004-1.004v-2.058h5.974v22.999z" />
-                        </svg>
-                        <div
-                            className="quantity-number"
-                            style={
-                                quantity <= 0
-                                    ? { display: "none" }
-                                    : { display: "flex" }
-                            }
-                        >
-                            {quantity}
-                        </div>
-                    </div>
-                </div>
-                <div className="navbar_hidden">
-                    {/*  Al click della sezione centrale navbar si aprirà la sezione categoria(maglietta,scarpe,pantaloni,tutto) della navbar */}
-                    {toggle && (
-                        <div className="categories_hidden">
-                            <div className="category_border"></div>
-                            <div className="single_category" onClick={linkAll}>
-                                All
-                            </div>
-                            <div className="category_border"></div>
-                            <div className="single_category" onClick={linkShirts}>
-                                Shirt
-                            </div>
-                            <div className="category_border"></div>
-                            <div className="single_category" onClick={linkPants}>
-                                Pants
-                            </div>
-                            <div className="category_border"></div>
-                            <div className="single_category" onClick={linkShoes}>
-                                Shoes
-                            </div>
-                            <div className="category_border"></div>
-                        </div>
-                    )}
-                </div>
-            </nav>
-            {/*  Al click dell'HamburgerMenu si aprirà la sezione gender(maschio,femmina) della sidebar_hidden2 */}
-            {/* {toggleSidebarGender && (
+          {/* icona Cart */}
+          <div
+            onClick={() => {
+              dispatch(toggleCart());
+            }}
+            className="navbar_button_item"
+          >
+            <svg
+              className={mode}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#000000"
+              width="75%"
+              height="75%"
+              viewBox="0 0 32 32"
+              version="1.1"
+            >
+              <path d="M27 4.96h-5.975v-1.918c0-1.655-1.346-3-3-3h-3.989c-1.655 0-3 1.345-3 3v1.918h-6.037c-1.104 0-2 0.896-2 2v22.999c0 1.105 0.896 2 2 2h22c1.105 0 2-0.895 2-2v-22.999c0-1.104-0.895-2-2-2h0zM13.037 3.042c0-0.552 0.448-1 1-1h3.989c0.552 0 1 0.448 1 1v1.918h-5.989v-1.918zM27 29.959h-22v-22.999h6.037v2.058s-0.027 0.999 0.994 0.999c1.125 0 1.006-0.999 1.006-0.999v-2.058h5.989v2.058s-0.067 1.004 0.996 1.004c1 0 1.004-1.004 1.004-1.004v-2.058h5.974v22.999z" />
+            </svg>
+            <div
+              className="quantity-number"
+              style={quantity <= 0 ? { display: "none" } : { display: "flex" }}
+            >
+              {quantity}
+            </div>
+          </div>
+        </div>
+        <div className="navbar_hidden">
+          {/*  Al click della sezione centrale navbar si aprirà la sezione categoria(maglietta,scarpe,pantaloni,tutto) della navbar */}
+          {toggle && (
+            <div className="categories_hidden">
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkAll}>
+                All
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShirts}>
+                Shirt
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkPants}>
+                Pants
+              </div>
+              <div className="category_border"></div>
+              <div className="single_category" onClick={linkShoes}>
+                Shoes
+              </div>
+              <div className="category_border"></div>
+            </div>
+          )}
+        </div>
+      </nav>
+      {/*  Al click dell'HamburgerMenu si aprirà la sezione gender(maschio,femmina) della sidebar_hidden2 */}
+      {/* {toggleSidebarGender && (
         <div className="sidebar_hidden2">
           <div className="category_border"></div>
           <div className="single_category" onClick={linkAll}>
@@ -223,12 +236,12 @@ const NavBarTop: React.FC = () => {
         </div>
       )} */}
 
-            {toggleSidebarGender && (
-                <div className="sidebar_hidden2">
-                    <div className="category_border"></div>
+      {toggleSidebarGender && (
+        <div className="sidebar_hidden2">
+          <div className="category_border"></div>
 
-                    {/* Categoria Uomo */}
-                    {/* {!showMenSubItems && (<div className="single_category" onClick={toggleMenSubItems}>
+          {/* Categoria Uomo */}
+          {/* {!showMenSubItems && (<div className="single_category" onClick={toggleMenSubItems}>
             Men
           </div>
           )}
@@ -241,40 +254,34 @@ const NavBarTop: React.FC = () => {
             </>
           )} */}
 
-                    {/* Categoria Uomo 2 */}
-                    <div
-                        className="single_category"
-                        onClick={toggleMenSubItems}
-                    >
-                        Men
-                    </div>
-                    {showMenSubItems && (
-                        <>
-                            <div className="single_category">All</div>
-                            <div className="single_category">Shirt</div>
-                            <div className="single_category">Pants</div>
-                            <div className="single_category">Shoes</div>
-                        </>
-                    )}
+          {/* Categoria Uomo 2 */}
+          <div className="single_category" onClick={toggleMenSubItems}>
+            Men
+          </div>
+          {showMenSubItems && (
+            <>
+              <div className="single_category">All</div>
+              <div className="single_category">Shirt</div>
+              <div className="single_category">Pants</div>
+              <div className="single_category">Shoes</div>
+            </>
+          )}
 
-                    {/* Categoria Donna */}
-                    <div className="category_border"></div>
-                    <div
-                        className="single_category"
-                        onClick={toggleWomenSubItems}
-                    >
-                        Women
-                    </div>
-                    <div className="category_border"></div>
-                    <div className="single_category" onClick={linkPants}>
-                        About Us
-                    </div>
-                    <div className="category_border"></div>
-                    <div className="single_category"></div>
-                </div>
-            )}
-        </>
-    );
+          {/* Categoria Donna */}
+          <div className="category_border"></div>
+          <div className="single_category" onClick={toggleWomenSubItems}>
+            Women
+          </div>
+          <div className="category_border"></div>
+          <div className="single_category" onClick={linkPants}>
+            About Us
+          </div>
+          <div className="category_border"></div>
+          <div className="single_category"></div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default NavBarTop;

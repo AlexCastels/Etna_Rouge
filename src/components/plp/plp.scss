@@ -33,11 +33,13 @@ body {
     block-size: 400px;
   }
 
-  img {
+//il tag interferisce con altre immagini
+
+/*   img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-  }
+  } */
 
   .card-button {
     display: flex;
