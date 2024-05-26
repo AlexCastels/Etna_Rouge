@@ -1,23 +1,15 @@
-import { useEffect } from "react";
+import { useMemo } from "react";
 import HeroSection from "./HeroSection";
-import { useAppDispatch, useAppSelector } from "../../../redux/hook";
-import { fetchContentfulData } from "../../../redux/slices/contentfulSlice";
+import { useAppSelector } from "../../../redux/hook";
 
 const Content = () => {
-  const dispatch = useAppDispatch();
   const contents = useAppSelector((state) => state.contentful.contents);
   const error = useAppSelector((state) => state.contentful.error);
   const loading = useAppSelector((state) => state.contentful.loading);
 
-  useEffect(() => {
-    dispatch(fetchContentfulData());
-  }, []);
-
-  console.log(contents[0]);
-
-  const filteredContentsHero = contents.filter(
-    (items) => items.fields.title === "Hero Section ER"
-  );
+  const filteredContentsHero = useMemo(() => {
+    return contents.filter((items) => items.fields.title === "Hero Section ER");
+  }, [contents]);
 
   if (loading) {
     return <span> loading... </span>;
