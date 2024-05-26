@@ -22,7 +22,11 @@ $secondary-black: #0000009e;
     font-size: 1.1rem;
     background-color: transparent;
 }
-
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 * {
     margin: 0;
     padding: 0;
