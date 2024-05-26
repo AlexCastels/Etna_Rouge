@@ -18,9 +18,17 @@ const CentralProductSection = () => {
   return (
     <div className={`central-product-sec-cont ${mode}`}>
       <h1 className={mode}>
-        <FormattedMessage id="centralProductSecTitle"  defaultMessage="The future belongs to women with style"/>
+        <FormattedMessage
+          id="centralProductSecTitle"
+          defaultMessage="The future belongs to women with style"
+        />
       </h1>
-      <h3>       <FormattedMessage id="centralProductSecSubTitle"  defaultMessage="Discover the new women's collection"/></h3>
+      <h3>
+        <FormattedMessage
+          id="centralProductSecSubTitle"
+          defaultMessage="Discover the new women's collection"
+        />
+      </h3>
       <div className="central-product-subcont">
         <div
           className="first-product-sec"
@@ -30,14 +38,18 @@ const CentralProductSection = () => {
           <p>Shirts</p>
         </div>
 
-        <div className="second-product-sec" onClick={() => goToCategory("pants")}>
-       
-            <h2>Pants</h2>
-            <p>Pants</p>
-          
+        <div
+          className="second-product-sec"
+          onClick={() => goToCategory("pants")}
+        >
+          <h2>Pants</h2>
+          <p>Pants</p>
         </div>
 
-        <div onClick={() => goToCategory("shoes")}  className="third-product-sec">
+        <div
+          onClick={() => goToCategory("shoes")}
+          className="third-product-sec"
+        >
           <h2>Shoes</h2>
           <p>Shoes</p>
         </div>

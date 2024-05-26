@@ -4,26 +4,30 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import Cart from "../cart/Cart";
-import NavBarBottom from "../navbar/NavbarBottom"
+import NavBarBottom from "../navbar/NavbarBottom";
 import Button from "../UI/button/Button";
 import "../plp/plp.scss";
 import NavBarTop from "../navbar/NavbarTop";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
 
+  //darkmode
+  const { mode } = useDarkMode();
+
   //logica categorie
   const location = useLocation();
   const gender = location.state?.gender;
   const category = location.state?.category;
-  
+
   //logica load more
   const imagePerRow = 8;
   const [next, setNext] = useState(imagePerRow);
   function handleMoreImage() {
     setNext(next + imagePerRow);
-    console.log(next)
+    console.log(next);
   }
 
   //filtro delle categorie
@@ -64,7 +68,7 @@ export const Plp: React.FC<any> = () => {
 
   return (
     <>
-      <NavBarTop/>
+      <NavBarTop />
       <Cart />
       <div className="cards-container">
         {element.slice(0, next).map((el: any) => (
@@ -82,14 +86,13 @@ export const Plp: React.FC<any> = () => {
                 />
               </Button>
             </div> */}
-            <Link to={`/pdp/${el.id}`} style={{textDecoration:'none',color:'black'}}>
-              <div className="card-name">
-              {el.name}
-            </div>
+            <Link
+              to={`/pdp/${el.id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className={`card-name ${mode}`}>{el.name}</div>
             </Link>
-            <div className="card-price">
-              € {Math.round(el.price)}
-            </div>
+            <div className="card-price">€ {Math.round(el.price)}</div>
           </div>
         ))}
       </div>

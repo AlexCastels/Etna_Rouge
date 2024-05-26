@@ -29,12 +29,12 @@ const LandingPage = () => {
       <NavBarTop />
       <Cart />
       <HeroContent />
-      <CentralProductSection/>
+      <CentralProductSection/> 
       <FeaturesContent />
       <LandingCarousel />
-      {/* <NewsLetterForm /> */}
+      {/* <NewsLetterForm /> 
       {/* <NavBarBottom /> */}
-      <Footer/>
+     <Footer/> 
     </>
   );
 };
