@@ -33,13 +33,13 @@ body {
     block-size: 400px;
   }
 
-//il tag interferisce con altre immagini
 
-/*   img {
+//questo tag interferisce con l'img in creditCardForm.scss - Eleonora -
+img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-  } */
+  } 
 
   .card-button {
     display: flex;
