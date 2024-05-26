@@ -7,10 +7,15 @@ import HamburgerMenu from "../hamburger/HamburgerMenu";
 import Logo from "../logo/Logo";
 import "./NavbarTop.scss";
 import "./Overlay.scss";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
 
 const NavBarTop: React.FC = () => {
+
+  const { mode } = useDarkMode();
+
     const [toggle, setToggle] = useState(false);
     const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
+
 
     const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
     const navigate = useNavigate();
@@ -59,7 +64,7 @@ const NavBarTop: React.FC = () => {
 
     return (
         <>
-            <nav className="navbar_top">
+                <nav className={`navbar_top ${mode}`} >
                 <div
                     onClick={() => {
                         setToggleSidebarGender(!toggleSidebarGender);
@@ -77,7 +82,7 @@ const NavBarTop: React.FC = () => {
                     <div onClick={() => {setToggle(!toggle), genderWoman()}}className="navbar_categories">
                         <FormattedMessage id="navbarTop.women" defaultMessage="Women"/>
                     </div>
-                    <div className="navbar_categories">
+                    <div className={`navbar_categories ${mode}`}>
                         <Link to="/aboutUs" style={{ textDecoration: "none", color: "black" }}>
                             <FormattedMessage id="navbarTop.aboutUs" defaultMessage="About Us"/>
                         </Link>
@@ -146,7 +151,7 @@ const NavBarTop: React.FC = () => {
                         }}
                         className="navbar_button_item"
                     >
-                        <svg
+                        <svg className={mode}
                             xmlns="http://www.w3.org/2000/svg"
                             fill="#000000"
                             width="75%"

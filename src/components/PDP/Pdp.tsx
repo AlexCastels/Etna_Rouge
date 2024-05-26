@@ -10,6 +10,7 @@ import { Carousel } from "../carousel/Carousel";
 import "./Pdp.scss"
 
 
+
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();
     const dispatch = useAppDispatch();
@@ -28,7 +29,9 @@ const Pdp: React.FC<any> = () => {
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize , setElementSize] = useState<any | null>(null)
+    const [elementSize, setElementSize] = useState<any | null>(null)
+    
+  
 
     //usato per aggiungere size in element
     function handleSize(e:any) {

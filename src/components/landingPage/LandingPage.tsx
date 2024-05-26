@@ -9,6 +9,7 @@ import HeroContent from "./heroSection/HeroContent";
 import LandingCarousel from "./landingCarousel/LandingCarousel";
 import Footer from "../footer/Footer";
 import NavBarTop from "../navbar/NavbarTop";
+import CentralProductSection from "./CentralProductSection/CentralProductSection";
 /* import NavBarBottom from "../navbar/NavbarBottom";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm"; */
 
@@ -28,11 +29,12 @@ const LandingPage = () => {
       <NavBarTop />
       <Cart />
       <HeroContent />
+      <CentralProductSection/> 
       <FeaturesContent />
       <LandingCarousel />
-      {/* <NewsLetterForm /> */}
+      {/* <NewsLetterForm /> 
       {/* <NavBarBottom /> */}
-      <Footer/>
+     <Footer/> 
     </>
   );
 };

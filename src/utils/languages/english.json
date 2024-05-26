@@ -58,5 +58,9 @@
   "cart.empty": "The cart is empty",
   "cart.remove": "Remove",
   "cart.quantity": "Quantity",
-  "cart.price": "Total price"
+  "cart.price": "Total price",
+
+  "centralProductSecTitle": "The future belongs to women with style",
+  "centralProductSecSubTitle": "Discover the new women's collection"
+
 }
