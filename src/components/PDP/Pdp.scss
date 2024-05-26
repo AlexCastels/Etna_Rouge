@@ -47,7 +47,7 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        // align-items: center;
+        align-items: center;
 
         .pdp-detail-header {
             gap: 1rem;
@@ -98,6 +98,7 @@
             flex-direction: column;
             align-items: center;
             gap: 10px;
+            width: 30rem;
 
             .pdp-size {
                 font-family: $font-family;
@@ -106,7 +107,7 @@
             .pdp-btn {
                 // width: 100%;
                 display: flex;
-                justify-content: start;
+                // justify-content: start;
                 align-items: center;
                 // flex-direction: row;
                 // flex-wrap: wrap;
@@ -138,7 +139,6 @@
 
         .pdp-btn-cart {
             margin-bottom: 3rem;
-            width: 100%;
             .btn-cart-component {
                 display: flex;
                 align-items: center;
