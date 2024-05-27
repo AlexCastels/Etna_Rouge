@@ -21,6 +21,7 @@ import AboutUs from "./components/aboutUs/aboutUs.tsx";
 import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 import Switcher from "./components/darkmode/Switcher.tsx";
 import LanguageSelector from "./components/languageSelector/LanguageSelector.tsx";
+import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 
 interface Messages {
   [key: string]: any;
@@ -45,12 +46,14 @@ function App() {
 
   return (
     <>
-  {/*     <Switcher /> */}
+      {/*     <Switcher /> */}
       <IntlProvider locale={locale} messages={messages}>
         {/* <LanguageSelector locale={locale} changeLanguage={changeLanguage} /> */}
         <BrowserRouter>
           {/* <NavBarTop /> */}
           <Routes>
+            <Route path="/error" element={<ErrorPage/>} />
+            <Route path="*" element={<ErrorPage/>} />
             <Route path="/" element={<LandingPage />} />
             {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
             <Route path="/discover" element={<DiscoverMore />} />
@@ -67,7 +70,7 @@ function App() {
               element={<ThankYouPageDelivery />}
             />
           </Routes>
-    {/*       <NavBarBottom /> */}
+          {/*       <NavBarBottom /> */}
         </BrowserRouter>
       </IntlProvider>
     </>
