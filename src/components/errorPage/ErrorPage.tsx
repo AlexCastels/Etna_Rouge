@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../errorPage/errorPage.scss"
+import "../errorPage/ErrorPage.scss"
 import Button from "../UI/button/Button";
 
 
