@@ -10,12 +10,10 @@ import { Profiler } from "react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
- 
     <Provider store={store}>
       <DarkModeProvider>
         <App />
       </DarkModeProvider>
-      </Provider>
-  
+      </Provider> 
   </>
 );

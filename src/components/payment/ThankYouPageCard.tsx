@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import "./thankYouPage.scss";
-import { removeFormData } from "../../redux/slices/payformSlice";
-
 import { FormattedMessage, FormattedNumber } from "react-intl";
-
+import { removeFormData } from "../../redux/slices/payformSlice";
 import { clearCart } from "../../redux/slices/cartSlice";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
+import "./thankYouPage.scss";
 
 export function ThankYouPageCard() {
     const total = useAppSelector((state) => state.cart.total);
     const formData = useAppSelector((state) => state.payformData);
     const dispatch = useAppDispatch();
+    const { mode } = useDarkMode();
     console.log(formData);
     // const location = useLocation()
     // let deliveryTotal = 0
@@ -32,9 +32,9 @@ export function ThankYouPageCard() {
     }
 
     return (
-        <div className="thankyou-container">
-            <div className="thankyou-line"></div>
-            <h2>
+        <div className={`thankyou-container ${mode}`}>
+            <div className={`thankyou-line ${mode}`}></div>
+            <h2 className={mode}>
                 <FormattedMessage
                     id="thankYou.title"
                     defaultMessage="Thank you!"
@@ -73,8 +73,8 @@ export function ThankYouPageCard() {
                     }}
                 />}
             </p>
-            <div className="thankyou-line"></div>
-            <button className="thankyou-btn" onClick={handleBtn}>
+            <div className={`thankyou-line ${mode}`}></div>
+            <button className={`thankyou-btn ${mode}`} onClick={handleBtn}>
                 <FormattedMessage
                     id="thankYou.button.home"
                     defaultMessage="HOME"
