@@ -8,7 +8,7 @@ import FeaturesContent from "./featuresSection/FeaturesContent";
 import HeroContent from "./heroSection/HeroContent";
 import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NavBarTop from "../navbar/NavbarTop";
-import CentralProductSection from "./CentralProductSection/CentralProductSection";
+import CentralProductSection from "./centralProductSection/CentralProductSection";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
 import Footer from "../footer/Footer";
 /* import NavBarBottom from "../navbar/NavbarBottom";
