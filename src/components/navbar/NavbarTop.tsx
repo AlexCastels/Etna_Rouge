@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import { toggleCart } from "../../redux/slices/cartSlice";
 import HamburgerMenu from "../hamburger/HamburgerMenu";
 import Logo from "../logo/Logo";
-import "./NavbarTop.scss";
+import "./navbarTop.scss";
 import "./Overlay.scss";
 import { useDarkMode } from "../darkmode/DarkmodeContext";
 
