@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import PromoBanner from "./PromoBanner.tsx";
@@ -10,9 +10,9 @@ const PromoContent = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const filteredContents = contents.filter(
-    (items) => items.sys.contentType.sys.id === "erBanner"
-  );
+  const filteredContents = useMemo(() => {
+   return contents.filter((items) => items.sys.contentType.sys.id === "erBanner");
+  }, [contents]);
 
   const newArr = filteredContents.map((items) => items.fields.infoText);
 

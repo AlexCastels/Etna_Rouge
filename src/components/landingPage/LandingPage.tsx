@@ -26,15 +26,15 @@ const LandingPage = () => {
   return (
     <>
       <PromoContent />
-      <NavBarTop />
+     <NavBarTop />
       <Cart />
       <HeroContent />
       <CentralProductSection/> 
       <FeaturesContent />
-      <LandingCarousel />
+      <LandingCarousel /> 
       {/* <NewsLetterForm /> 
       {/* <NavBarBottom /> */}
-     <Footer/> 
+{/*      <Footer/>  */}
     </>
   );
 };
