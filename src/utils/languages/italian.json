@@ -50,6 +50,7 @@
   "pdp.color": "Colore:",
   "pdp.selectSize": "Seleziona la tua taglia",
   "pdp.addToCart": "Aggiungi al carrello",
+  "pdp.goBack": "Indietro",
 
   "plp.button.addToCart": "AGGIUNGI AL CARRELLO",
 
@@ -61,7 +62,7 @@
   "centralProductSecTitle": "Il futuro appartiene alle donne con stile",
   "centralProductSecSubTitle": "Discover new women collection",
 
-   "footer.followUse": "Seguici:",
+  "footer.followUse": "Seguici:",
   "footer.ourProducts": "I nostri prodotti",
   "footer.menClothes": "Abbigliamento uomo",
   "footer.womenClothes": "Abbigliamento donna",
@@ -74,5 +75,4 @@
   "footer.ourService": "Il nostro servizio: ",
   "footer.studentDiscount": "Sconto studenti",
   "footer.inviteAFriend": "Invita un amico"
-
 }
