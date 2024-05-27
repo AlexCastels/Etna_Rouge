@@ -47,7 +47,7 @@ const Pdp: React.FC<any> = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setNumItems(window.innerWidth <= 768 ? 3 : 5);
+            setNumItems(window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 3 : 5);
         };
 
         window.addEventListener("resize", handleResize);
