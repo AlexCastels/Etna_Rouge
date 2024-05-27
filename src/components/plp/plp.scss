@@ -31,15 +31,14 @@ body {
   .card-img {
     inline-size: 300px;
     block-size: 400px;
-  }
-
-
-//questo tag interferisce con l'img in creditCardForm.scss - Eleonora -
-img {
+    img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-  } 
+    }
+  }
+
+  
 
   .card-button {
     display: flex;
