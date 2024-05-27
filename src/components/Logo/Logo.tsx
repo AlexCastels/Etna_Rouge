@@ -1,17 +1,29 @@
-import React from "react"
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
+import logoDark from "../../assets/logo-Light.png";
+import logoLight from "../../assets/logo-Dark.png";
 
-const Logo : React.FC = () => {
-    return(
-        <>
-            <div>
-                <Link to='/'>
-                        <img className="logo" src={'../src/assets/EtnaRougeLogo.webp'} alt="website Logo" />
-                </Link>
-            
-            </div>
-        </>
-    )
-}
+
+
+const Logo: React.FC = () => {
+  const { mode } = useDarkMode();
+  const [url, seturl] = useState<string>("");
+
+  useEffect(() => {
+    if (mode === "dark") {
+      seturl(logoLight);
+    } else if (mode === "light") {
+      seturl(logoDark);
+    }
+  }, [mode]);
+
+  return (
+    <>
+      <div>
+        <img className="logo" src={url} alt="website Logo" />
+      </div>
+    </>
+  );
+};
 
 export default Logo;

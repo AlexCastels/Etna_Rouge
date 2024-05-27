@@ -4,6 +4,7 @@ export interface Card {
     price: number;
     quantity: number;
     description: string;
+    gender : string
     category: string;
     img: string;
 }

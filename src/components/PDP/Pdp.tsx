@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { useEffect, useState } from "react";
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
@@ -6,9 +6,7 @@ import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NavbarTop";
 import { Carousel } from "../carousel/Carousel";
-// import { useHistory } from "react-router-dom";
 import "./Pdp.scss"
-
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();
@@ -16,7 +14,6 @@ const Pdp: React.FC<any> = () => {
     const product = useAppSelector((state) => state.product.products);
     const element = product.find((el: any) => el.id == id);
     const navigate = useNavigate()
-    // const history = useHistory()
 
     //logica go back
     // const location = useLocation()
@@ -28,7 +25,7 @@ const Pdp: React.FC<any> = () => {
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize , setElementSize] = useState<any | null>(null)
+    const [elementSize, setElementSize] = useState<any | null>(null)
 
     //usato per aggiungere size in element
     function handleSize(e:any) {
@@ -43,7 +40,8 @@ const Pdp: React.FC<any> = () => {
     function handleBtn(){
         if('size' in elementSize){
             dispatch(addToCart(elementSize))
-            dispatch(toggleCart());          
+            dispatch(toggleCart());    
+            console.log(elementSize);
         }
     }
 
@@ -110,11 +108,17 @@ const Pdp: React.FC<any> = () => {
                             />
                         </p>
                         <div className="pdp-btn">
-                            <button onClick={handleSize} value='XS'>XS</button>
-                            <button onClick={handleSize} value='S'>S</button>
-                            <button onClick={handleSize} value='M'>M</button>
-                            <button onClick={handleSize} value='L'>L</button>
-                            <button onClick={handleSize} value='XL'>XL</button>
+                            {element?.category === 'shoes' && element?.gender === 'woman' && <button onClick={handleSize} value='36'>36</button>} 
+                            {element?.category === 'shoes' ? null : <button onClick={handleSize} value='XS'>XS</button>}
+                            {element?.category === 'shoes' ? <button onClick={handleSize} value='37'>37</button> : <button onClick={handleSize} value='S'>S</button>}                            
+                            {element?.category === 'shoes' ? <button onClick={handleSize} value='38'>38</button> : <button onClick={handleSize} value='M'>M</button>}
+                            {element?.category === 'shoes' ? <button onClick={handleSize} value='39'>39</button> : <button onClick={handleSize} value='L'>L</button>}
+                            {element?.category === 'shoes' ? <button onClick={handleSize} value='40'>40</button> : <button onClick={handleSize} value='XL'>XL</button>}
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='41'>41</button>}                            
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='42'>42</button>}                            
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='43'>43</button>}
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='44'>44</button>}                            
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='45'>45</button>}                                                        
                         </div>
                     </div>
                     <div className="pdp-btn-cart">

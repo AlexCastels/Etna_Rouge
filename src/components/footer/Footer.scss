@@ -2,9 +2,15 @@
 
 footer {
   background-color: white;
-  color: $main-black ;
+  color: $main-black;
   padding: 2rem 0;
   width: 100%;
+  &.light {
+    background-color: $main-white;
+  }
+  &.dark {
+    background-color: $main-black;
+  }
 
   .footer-top {
     display: flex;
@@ -12,14 +18,30 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     padding: 2rem 0;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    &.light {
+      background-color: $main-white;
+      border-bottom: 1px solid $main-black;
+      border-top: 1px solid $main-black;
+    }
 
+    &.dark {
+      background-color: $main-black;
+      border-bottom: 1px solid $main-white;
+      border-top: 1px solid $main-white;
+    }
     .footer-logo {
-      background-color: white;
       width: 100%;
       display: flex;
       justify-content: center;
+      &.light {
+        background-color: $main-white;
+        color: $main-black;
+      }
+
+      &.dark {
+        background-color: $main-black;
+        color: $main-white;
+      }
 
       .footer-newsletter {
         display: flex;
@@ -43,6 +65,14 @@ footer {
     width: 100%;
     padding: 2rem 0;
     margin-bottom: 5em;
+    &.light {
+      background-color: $main-white;
+      color: $main-black;
+    }
+    &.dark {
+      background-color: $main-black;
+      color: $main-white;
+    }
 
     .footer-section {
       display: flex;
@@ -59,12 +89,21 @@ footer {
       list-style: none;
       padding: 0;
 
+      
+
       li {
         margin-bottom: 10px;
 
         a {
           color: $main-black;
           text-decoration: none;
+
+          &.light{
+            color: $main-black;
+          }
+          &.dark{
+            color: $main-white;
+          }
         }
         a:hover {
           text-decoration: underline;
@@ -73,9 +112,6 @@ footer {
     }
   }
 }
-
-
-
 
 /* 
 .footer-tp {
