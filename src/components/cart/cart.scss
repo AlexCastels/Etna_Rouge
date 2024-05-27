@@ -75,7 +75,14 @@
       gap: 10px;
   
       .container-right {
+        .container-top{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        
         .container-bottom {
+         
           display: flex;
           flex-direction: column;
           gap: 100px;

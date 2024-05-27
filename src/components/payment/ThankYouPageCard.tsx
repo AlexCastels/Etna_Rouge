@@ -10,6 +10,7 @@ import { clearCart } from "../../redux/slices/cartSlice";
 
 export function ThankYouPageCard(){
     const total = useAppSelector((state) => state.cart.total)
+    const totalPromo = useAppSelector((state) => state.cart.totalPromo)
     const formData = useAppSelector(state => state.payformData)
     const dispatch = useAppDispatch()
     console.log(formData);
@@ -49,7 +50,7 @@ export function ThankYouPageCard(){
       <FormattedMessage
         id="thankYou.orderTotal"
         defaultMessage="Your order: {total} {currency}"
-        values={{ total: <FormattedNumber value={total} style="currency" currency="EUR" />, currency: <FormattedMessage id="currency" defaultMessage="USD" /> }}
+        values={{ total: <FormattedNumber value={totalPromo ? totalPromo + 10 : total + 10} style="currency" currency="EUR" />, currency: <FormattedMessage id="currency" defaultMessage="USD" /> }}
       />
     </p>
     <div className="thankyou-line"></div>

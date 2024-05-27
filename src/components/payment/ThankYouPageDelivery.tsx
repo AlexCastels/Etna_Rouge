@@ -10,6 +10,7 @@ import "./thankYouPage.scss";
 
 export function ThankYouPageDelivery() {
   const total = useAppSelector((state) => state.cart.total);
+  const totalPromo = useAppSelector((state) => state.cart.totalPromo)
   const formData = useAppSelector((state) => state.payformData);
   const dispatch = useAppDispatch();
   console.log(formData);
@@ -51,7 +52,7 @@ export function ThankYouPageDelivery() {
           id="thankYou.orderTotal"
           defaultMessage="Your order: {total} {currency}"
           values={{
-            total: <FormattedNumber value={total + 10} />,
+            total: <FormattedNumber value={totalPromo ? totalPromo + 10 : totalPromo + 10} />,
             currency: <FormattedMessage id="currency" defaultMessage="$" />,
           }}
         />
