@@ -5,7 +5,7 @@ import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
 import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NavbarTop";
-import { Carousel } from "../carousel/Carousel";
+import { Carousel } from "../Carousel/Carousel";
 import "./Pdp.scss"
 
 const Pdp: React.FC<any> = () => {

@@ -52,7 +52,7 @@ export default function Paypal() {
           // const order = await actions.order.capture();
           dispatch(clearCart())
           setTimeout(()=>{
-            navigate('/')
+            navigate('/ThankYouCard')
           },2500)
         },
         onError: (err) => {

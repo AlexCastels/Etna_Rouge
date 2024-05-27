@@ -10,6 +10,7 @@ import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NavBarTop from "../navbar/NavbarTop";
 import CentralProductSection from "./centralProductSection/CentralProductSection";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
+import NavBarBottom from "../navbar/NavbarBottom";
 import Footer from "../footer/Footer";
 /* import NavBarBottom from "../navbar/NavbarBottom";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm"; */
@@ -33,6 +34,7 @@ const LandingPage = () => {
       <CentralProductSection />
       <FeaturesContent />
       <LandingCarousel />
+      <NavBarBottom />
       <Footer />
     </>
   );

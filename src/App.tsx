@@ -30,11 +30,8 @@ function App() {
 
   const messages: Messages = {
     en: enText,
-
     it: itText,
-
     es: esText,
-
     fr: frText,
   }[locale];
 
@@ -61,10 +58,7 @@ function App() {
             <Route path="/SelectPayment" element={<SelectPayment />} />
             <Route path="/CreditCardForm" element={<CreditCardForm />} />
             <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
-            <Route
-              path="/ThankYouDelivery"
-              element={<ThankYouPageDelivery />}
-            />
+            <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />}/>
           </Routes>
           {/*       <NavBarBottom /> */}
         </BrowserRouter>
