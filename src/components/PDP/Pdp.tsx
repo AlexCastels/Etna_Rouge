@@ -1,26 +1,15 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { useParams } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
-import { addToCart } from "../../redux/slices/cartSlice";
-import Button from "../UI/button/Button";
-import "../pdp/pdp.scss";
-import { Carousel } from "../Carousel/Carousel";
-=======
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { addToCart, toggleCart } from '../../redux/slices/cartSlice';
-import { Carousel } from '../carousel/Carousel';
+import { Carousel } from '../carousel/Carousel.tsx';
 import Button from '../UI/button/Button';
 import Cart from '../cart/Cart';
 
 import '../pdp/Pdp.scss'
-import NavBarTop from '../navbar/NabarTop';
+import NavBarTop from '../navbar/NavbarTop.tsx';
 import { ButtonComponent } from '../atomic/ButtonComponent';
->>>>>>> develope
 
 const Pdp: React.FC<any> = () => {
   const { id } = useParams();

@@ -31,7 +31,6 @@ const LandingPage = () => {
       <FeaturesContent />
       <LandingCarousel />
       {/* <NewsLetterForm /> */}
-      {/* <NavBarBottom /> */}
       <Footer/>
     </>
   );

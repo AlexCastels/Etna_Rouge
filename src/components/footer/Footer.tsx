@@ -1,6 +1,7 @@
 
 import "../footer/Footer.scss"
 import NewsLetterForm from "../landingPage/newsLetter/form/NewsLetterForm"
+import Logo from "../logo/Logo"
 
 const Footer = () => {
     return(
@@ -8,7 +9,7 @@ const Footer = () => {
         <footer>
     <div className="footer-top">
         <div className="footer-logo">
-            <img src="../src/assets/EtnaRougeLogo.webp" alt="Logo" />
+            <Logo/>
         </div>
         <div className="footer-newsletter">
             <NewsLetterForm/>
@@ -51,15 +52,6 @@ const Footer = () => {
                 <li><a href="#">Sconto Studenti</a></li>
             </ul>
         </div>
-        {/* <div className="footer-section">
-            <h3>Legal Area:</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-                <li><a href="#">Credits</a></li>
-            </ul>
-        </div> */}
     </div>
 </footer>
         </>
