@@ -68,7 +68,7 @@ const Pdp: React.FC<any> = () => {
             <div className="pdp-wrapper">
                 <div onClick={handleBack} className="pdp-icon-back">
                     <img src="\public\assets\back.png" alt="arrow back" />
-                    <p>Go back</p>
+                    <p><FormattedMessage id="pdp.goBack" defaultMessage="Go Back" /></p>
                 </div>
                 <div className="pdp-card">
                     <img
@@ -125,7 +125,7 @@ const Pdp: React.FC<any> = () => {
                         <button className="btn-cart-component" onClick={handleBtn}>
                             <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart"/>
                         </button>
-                        {!elementSize && <p>Selezionare una taglia per favore</p>}
+                        {!elementSize && <p><FormattedMessage id="pdp.selectSize" defaultMessage="Please, select your size" /> </p>}
                     </div>
                 </div>
             </div>

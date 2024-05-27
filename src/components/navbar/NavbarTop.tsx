@@ -92,10 +92,11 @@ const NavBarTop: React.FC = () => {
           >
             <FormattedMessage id="navbarTop.women" defaultMessage="Women" />
           </div>
-          <div className={`navbar_categories ${mode}`}>
+          <div className="navbar_categories">
             <Link
+              className={mode}
               to="/aboutUs"
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none" }}
             >
               <FormattedMessage
                 id="navbarTop.aboutUs"
