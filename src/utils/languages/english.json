@@ -48,8 +48,9 @@
 
   "paypalRedirect" : "Thanks for the order!",
 
+  "pdp.goBack": "Go Back",
   "pdp.color": "Color:",
-  "pdp.selectSize": "Select your size",
+  "pdp.selectSize": "Please, select your size",
   "pdp.addToCart": "Add to cart",
 
   "plp.button.addToCart": "ADD TO CART",

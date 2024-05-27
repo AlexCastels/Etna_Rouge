@@ -82,16 +82,17 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+   
   a{
-   &.dark{
-    color: $main-white;
-   }
-   &.light{
-    color: $main-black;
-   }
+    &.dark{
+       color: $main-white;
+    }
+    &.light{
+       color: $main-black;
+    }
+   
   }
  
-
 }
 
 .navbar_right {
@@ -168,6 +169,7 @@ svg {
   .navbar_center {
     align-items: center;
     display: none;
+   
   }
 
   .navbar_right {
