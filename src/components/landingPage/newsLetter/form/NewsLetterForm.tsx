@@ -1,11 +1,10 @@
 import { useState } from "react";
-
-import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
-import "./newsLetterForm.scss";
+import { useDarkMode } from "../../../darkmode/DarkmodeContext.js";
 import { FormattedMessage } from "react-intl";
 import { internalMemory } from "../../../../utils/internalMemory.js";
+import DialogNewsLetter from "../dialog/DialogNewsLetter.js";
 import Button from "../../../UI/button/Button.js";
-import { useDarkMode } from "../../../darkmode/DarkmodeContext.js";
+import "./newsLetterForm.scss";
 
 const NewsLetterForm: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import React from "react";
-import "./heroSections.scss";
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
+import "./heroSections.scss";
 
 const HeroSection:React.FC<any> = ({ content }) => {
   const { mode } = useDarkMode();

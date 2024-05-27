@@ -96,9 +96,11 @@
         border: none;
 
         &.light {
+          color: $main-black;
           border-bottom: 0.1rem solid $main-black;
         }
         &.dark {
+          color: $main-white;
           border-bottom: 0.1rem solid $main-white;
         }
 
