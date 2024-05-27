@@ -42,7 +42,8 @@
                 height: 250px;
             }
             .name-carousel{
-                margin-block: 1rem
+                margin-block: 1rem;
+                text-align: center;
             }
         }
     }
@@ -51,5 +52,6 @@
 @media only screen and (max-width: 768px){
     .carousel{
         margin-block-end: 3.8rem ;
+        
     }
 }
