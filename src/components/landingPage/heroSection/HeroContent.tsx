@@ -1,6 +1,7 @@
 import { useMemo } from "react";
-import HeroSection from "./HeroSection";
 import { useAppSelector } from "../../../redux/hook";
+import HeroSection from "./HeroSection";
+
 
 const Content = () => {
   const contents = useAppSelector((state) => state.contentful.contents);

@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { FormattedMessage } from "react-intl";
 import { useAppSelector } from "../../../redux/hook";
-import "./landingCarousel.scss";
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
+import { FormattedMessage } from "react-intl";
+import "./landingCarousel.scss";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);

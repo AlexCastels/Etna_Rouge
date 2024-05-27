@@ -45,14 +45,14 @@ function App() {
 
   return (
     <>
-  {/*     <Switcher /> */}
+      <Switcher /> 
       <IntlProvider locale={locale} messages={messages}>
-        {/* <LanguageSelector locale={locale} changeLanguage={changeLanguage} /> */}
+      <LanguageSelector locale={locale} changeLanguage={changeLanguage} /> 
         <BrowserRouter>
           {/* <NavBarTop /> */}
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
+             <Route path="/aboutUs" element={<AboutUs />} /> 
             <Route path="/discover" element={<DiscoverMore />} />
             <Route path="/plp/:gender" element={<Plp />} />
             <Route path="/plp/:gender/:category" element={<Plp />} />

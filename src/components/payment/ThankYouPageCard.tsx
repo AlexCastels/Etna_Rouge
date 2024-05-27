@@ -12,6 +12,7 @@ export function ThankYouPageCard(){
     const total = useAppSelector((state) => state.cart.total)
     const formData = useAppSelector(state => state.payformData)
     const dispatch = useAppDispatch()
+    
     console.log(formData);
     // const location = useLocation()
     // let deliveryTotal = 0

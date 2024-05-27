@@ -1,8 +1,7 @@
-// DialogNewsLetter.tsx
 import React from "react";
+import Button from "../../../UI/button/Button";
 import heart from "../../../../../public/assets/heart.png";
 import "./dialogNewsLetter.scss";
-import Button from "../../../UI/button/Button";
 
 interface DialogProps {
   message: string;
@@ -24,7 +23,9 @@ const DialogNewsLetter: React.FC<DialogProps> = ({
         <div className="dialog-message-cont">
           <span className="dialog-message-subcont">
             <h3 className="dialog-message-title">{message}</h3>
-            {submitted && <img className="dialog-message-img" src={heart} alt="Heart" />}
+            {submitted && (
+              <img className="dialog-message-img" src={heart} alt="Heart" />
+            )}
           </span>
         </div>
       </dialog>

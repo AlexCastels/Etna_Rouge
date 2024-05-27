@@ -1,6 +1,6 @@
 import React from "react";
-import "./featuresSection.scss";
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
+import "./featuresSection.scss";
 
 const FeaturesSection: React.FC<any> = ({ content }) => {
   const img = content?.image?.fields?.file?.url || "";

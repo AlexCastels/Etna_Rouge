@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDarkMode } from "./DarkmodeContext";
+import Dialog from "./Dialog";
 import accessibilityLight from "../../assets/accessibilityLight.png";
 import accessibilityDark from "../../assets/accessibilityDark.png";
-import Dialog from "./Dialog";
 import "./switcher.scss";
 
 
