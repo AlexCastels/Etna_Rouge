@@ -27,6 +27,7 @@
     .thankyou-line{
         height: 1px;
         width: 80%;
+        transition: 1.5s ease-in-out;
         &.light{
             background-color: $main-black; 
         }
