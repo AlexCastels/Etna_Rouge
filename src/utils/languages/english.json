@@ -48,8 +48,9 @@
 
   "paypalRedirect" : "Thanks for the order!",
 
+  "pdp.goBack": "Go Back",
   "pdp.color": "Color:",
-  "pdp.selectSize": "Select your size",
+  "pdp.selectSize": "Please, select your size",
   "pdp.addToCart": "Add to cart",
 
   "plp.button.addToCart": "ADD TO CART",
@@ -58,5 +59,26 @@
   "cart.empty": "The cart is empty",
   "cart.remove": "Remove",
   "cart.quantity": "Quantity",
-  "cart.price": "Total price"
+  "cart.price": "Total price",
+
+  "centralProductSecTitle": "The future belongs to women with style",
+  "centralProductSecSubTitle": "Discover the new women's collection",
+
+  "footer.followUse": "Follow Us:",
+  "footer.ourProducts" : "Our Products",
+  "footer.menClothes" : "Men Clothes",
+  "footer.womenClothes" : "Women Clothes",
+  "footer.accessories" : "Men Clothes",
+  "footer.clientService" : "Client Service: ",
+  "footer.returnsAndRefunds" : "Returns and Refunds",
+  "footer.promoAndPayment" : "Promo and Payment",
+  "footer.trackYourOrder" : "Track your order",
+  "footer.contactUs": "Contact Us",
+  "footer.ourService":"Our Service: ",
+  "footer.studentDiscount" : "Student Discount",
+  "footer.inviteAFriend": "Invite a friend"
+
+
+
+  
 }

@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./selectPayment.scss";
 import { FormattedMessage } from "react-intl";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
 import Button from "../UI/button/Button";
+import "./selectPayment.scss";
 
 export function SelectPayment() {
     const navigate = useNavigate();
     const [spia, setSpia] = useState<string>("");
     const [notSelect, setNotSelect] = useState<boolean>(false);
+    const { mode } = useDarkMode();
 
     function handleRadio(e: React.ChangeEvent<HTMLInputElement>) {
         setSpia(e.target.value);
@@ -35,14 +37,14 @@ export function SelectPayment() {
     }
 
     return (
-        <form onSubmit={handleSubmint} className="selectPayment-container">
-            <p className="selectPayment-title">
+        <form onSubmit={handleSubmint} className={`selectPayment-container ${mode}`}>
+            <p className={`selectPayment-title ${mode}`}>
                 <FormattedMessage
                     id="selectPayment.title"
                     defaultMessage="Payment Methods"
                 />
             </p>
-            <div className="select-payform-line"></div>
+            <div className={`select-payform-line ${mode}`}></div>
             <div className="selectForm-general-container">
                 <div className="selectPayform-creditCard-container">
                     <div>
@@ -96,8 +98,8 @@ export function SelectPayment() {
                     />
                 </p>
             )}
-            <div className="select-payform-line"></div>
-            <Button onClick={() => handleBtn(spia)}>
+            <div className={`select-payform-line ${mode}`}></div>
+            <Button onClick={() => handleBtn(spia)} disabled className={`${mode}`}>
                 <FormattedMessage
                     id="selectPayment.button.checkout"
                     defaultMessage="CHECKOUT"

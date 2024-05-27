@@ -1,0 +1,12 @@
+@import "../../style.scss";
+
+.error-wrapper{
+    margin-block-start: 5rem;
+    .error-container{
+        width: 100%;
+        gap: 3rem;
+        @include flex-center;
+        flex-direction: column;
+        letter-spacing: 0.2cap;
+    }
+}

@@ -3,7 +3,7 @@
 .newsletter-container {
   width: auto;
   z-index: 10;
-  background-color: white;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -12,11 +12,23 @@
 
   overflow-inline: hidden;
   padding-block: 2rem;
+  &.light {
+    background-color: $main-white;
+  }
+  &.dark {
+    background-color: $main-black;
+  }
 
   .newsletter-title {
     font-weight: 0.8rem;
     font-size: 0.7rem;
-    color: $main-black;
+
+    &.light {
+      color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
+    }
 
     @media only screen and (min-width: 798px) {
       font-size: 1.5rem;
@@ -33,9 +45,15 @@
       gap: 2rem;
     }
 
-    #newsletter-email {
+    .newsletter-email {
       color: $main-black;
       font-size: 0.6rem;
+      &.light {
+        color: $main-black;
+      }
+      &.dark {
+        color: $main-white;
+      }
 
       @media only screen and (min-width: 798px) {
         font-size: 0.8rem;
@@ -46,15 +64,21 @@
       display: flex;
       flex-direction: row;
       align-items: baseline;
-   
+
       .newsletter-submit-button {
         background-color: transparent;
         display: block;
         block-size: min-content;
-        color: $main-black;
+
         font-size: 0.8rem;
         width: 0.5rem;
         align-self: center;
+        &.light {
+          color: $main-black;
+        }
+        &.dark {
+          color: $main-white;
+        }
 
         &:hover {
           @include hoverButton;
@@ -70,7 +94,15 @@
         background-color: transparent;
         color: $main-black;
         border: none;
-        border-bottom: 0.1rem solid $main-black;
+
+        &.light {
+          color: $main-black;
+          border-bottom: 0.1rem solid $main-black;
+        }
+        &.dark {
+          color: $main-white;
+          border-bottom: 0.1rem solid $main-white;
+        }
 
         @media only screen and (min-width: 798px) {
           padding-block: 0.3rem;

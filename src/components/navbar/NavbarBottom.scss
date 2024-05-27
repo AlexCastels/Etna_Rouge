@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    width: 100%;
+    height: 100%;
+}
+
+//Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
+@media screen and (max-width: 768px) {
+
+    .navbar_bottom {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        z-index: 99;
+
+    }
+
+    .navbar_bottom_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .navbar_bottom{
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 import  { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { fetchData } from '../redux/slices/productSlice';
-import Plp from './plp/Plp';
+import { Plp } from './plp/Plp';
 
 const ProductCard = () => {
     const dispatch = useAppDispatch();
@@ -15,7 +15,7 @@ const ProductCard = () => {
 
   return (
     <>
-     <Plp product = {product} dispatch = {dispatch}/>
+      <Plp product = {product} dispatch = {dispatch}/>
     </>
   )
 }

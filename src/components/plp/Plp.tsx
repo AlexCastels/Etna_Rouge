@@ -1,30 +1,42 @@
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
-
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
-import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
-import NavBarTop from "../navbar/NavbarTop";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Button from "../UI/button/Button";
 import "../plp/plp.scss";
+import NavBarTop from "../navbar/NavbarTop";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.product.products);
-  const imagePerRow = 8;
-  const [next, setNext] = useState(imagePerRow);
-  const location = useLocation();
 
+
+  //darkmode
+  const { mode } = useDarkMode();
+
+
+  // const [params , setParams] = useState<any>({})
+  
+
+  //logica categorie
+  const location = useLocation();
   const gender = location.state?.gender;
   const category = location.state?.category;
+  // console.log(gender , category);
+  
+  //logica load more
+  const imagePerRow = 8;
+  const [next, setNext] = useState(imagePerRow);
   function handleMoreImage() {
     setNext(next + imagePerRow);
-    console.log(next)
+    console.log(next);
   }
-
+  const navigate = useNavigate()
+  //filtro delle categorie
   const element = product.filter((el: any) => {
     if (gender == "men" && category == "shirt") {
       return el.gender === gender && el.category === category;
@@ -54,7 +66,21 @@ export const Plp: React.FC<any> = () => {
 
   useEffect(() => {
     dispatch(fetchData());
+    // setParams({
+    //   gender : gender ,
+    //   category : category
+    // })  
   }, []);
+
+  //logica per passare dati in pdp per go back
+  // function handleNavigate(id:any){
+  //   navigate(`/pdp/${id}` , {state : { gender : params.gender , category : params.category}})
+  // }
+
+  // if(params){
+  //   console.log(params);  
+  // }
+
   const handleAddToCart = (el: any) => {
     dispatch(addToCart(el));
     dispatch(toggleCart());
@@ -80,11 +106,17 @@ export const Plp: React.FC<any> = () => {
                 />
               </Button>
             </div> */}
-            <Link to={`/pdp/${el.id}`} style={{textDecoration:'none',color:'black'}}>
+            <Link
+              to={`/pdp/${el.id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className={`card-name ${mode}`}>{el.name}</div>
+            </Link>
+            {/* <div onClick={() => handleNavigate(el.id)} style={{textDecoration:'none',color:'black'}}>
               <div className="card-name">
               {el.name}
             </div>
-            </Link>
+            </div> */}
             <div className="card-price">
               € {Math.round(el.price)}
             </div>
@@ -92,7 +124,7 @@ export const Plp: React.FC<any> = () => {
         ))}
       </div>
       <div className="container-butto">
-        {next < product.length ? (
+        {next < element.length ? (
           <Button onClick={handleMoreImage}>LOAD MORE</Button>
         ) : (
           <p className="cards-continer-nothingToSee">Nothing to see</p>

@@ -1,55 +1,56 @@
 
+import { FormattedMessage } from "react-intl";
+import { useDarkMode } from "../darkmode/DarkmodeContext"
 import "../footer/Footer.scss"
 import NewsLetterForm from "../landingPage/newsLetter/form/NewsLetterForm"
 import Logo from "../logo/Logo"
 
 const Footer = () => {
+    const { mode } = useDarkMode();
     return(
         <>
-        <footer>
-    <div className="footer-top">
-        <div className="footer-logo">
-            <Logo/>
+        <footer className={mode}>
+    <div className={`footer-top ${mode}`}>
+        <div  className={`footer-logo ${mode}`}>
+            <Logo />
         </div>
-        <div className="footer-newsletter">
+        <div  className="footer-newsletter">
             <NewsLetterForm/>
         </div>
     </div>
-    <div className="footer-bottom">
+    <div className={`footer-bottom ${mode}`}>
         <div className="footer-section">
-            <h3>Follow Us:</h3>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">LinkedIn</a></li>
+            <h3><FormattedMessage id="footer.followUse" defaultMessage="Follow Us: " /></h3>
+            <ul className={mode}>
+                <li><a className={mode} href="#">Facebook</a></li>
+                <li><a className={mode} href="#">Twitter</a></li>
+                <li><a className={mode} href="#">Instagram</a></li>
+                <li><a className={mode} href="#">LinkedIn</a></li>
             </ul>
         </div>
         <div className="footer-section">
-            <h3>Our Proucts:</h3>
+            <h3><FormattedMessage id="footer.ourProducts" defaultMessage="Our Products" /></h3>
             <ul>
-                <li><a href="#">Abbigliamento Uomo</a></li>
-                <li><a href="#">Abbigliamento Donna</a></li>
-                <li><a href="#">Accessori</a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.menClothes" defaultMessage="Men Clothes" /></a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.womenClothes" defaultMessage="Women Clothes" /></a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.accessories" defaultMessage="Accessories" /> </a></li>
             </ul>
         </div>
         <div className="footer-section">
-            <h3>Client Service:</h3>
+            <h3 className={mode}><FormattedMessage id="footer.clientService" defaultMessage="Client Service"/></h3>
             <ul>
-                <li><a href="#">Resi e Rimborsi</a></li>
-                <li><a href="#">Spedizioni e Spese</a></li>
-                <li><a href="#">Pagamenti e Promozioni</a></li>
-                <li><a href="#">Traccia il tuo ordine</a></li>
-                <li><a href="#">Contattaci</a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.returnsAndRefunds" defaultMessage="Returns and Refunds"/></a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.promoAndPayment" defaultMessage="Promo and Payment"/></a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.trackYourOrder" defaultMessage="Track your order"/></a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.contactUs" defaultMessage="Contact Us" /></a></li>
             </ul>
         </div>
         <div className="footer-section">
-            <h3>Our Service:</h3>
+            <h3 className={mode}><FormattedMessage id="footer.ourService" defaultMessage="Our Service" /></h3>
             <ul>
-                <li><a href="#">Sconto Studenti</a></li>
-                <li><a href="#">Invita un amico</a></li>
-                <li><a href="#">Doma</a></li>
-                <li><a href="#">Sconto Studenti</a></li>
+                <li><a className={mode} href="#"> <FormattedMessage id="footer.studentDiscount" defaultMessage="Student Discount" /> </a></li>
+                <li><a className={mode} href="#"><FormattedMessage id="footer.inviteAFriend" defaultMessage="Invite a friend" /> </a></li>
+              
             </ul>
         </div>
     </div>
