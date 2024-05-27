@@ -48,8 +48,6 @@ function App() {
         <BrowserRouter>
           {/* <NavBarTop /> */}
           <Routes>
-            <Route path="/error" element={<ErrorPage/>} />
-            <Route path="*" element={<ErrorPage/>} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/discover" element={<DiscoverMore />} />
@@ -62,6 +60,7 @@ function App() {
             <Route path="/CreditCardForm" element={<CreditCardForm />} />
             <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
             <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />}/>
+            <Route path="*" element={<ErrorPage/>} />
           </Routes>
           {/*       <NavBarBottom /> */}
         </BrowserRouter>

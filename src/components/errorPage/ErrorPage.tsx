@@ -11,7 +11,7 @@ const ErrorPage = () => {
             <div className="error-wrapper">
                 <div className="error-container">
                     <h1>Something went wrong</h1>
-                    <Button onClick={() => navigate(-1)}>Go Back</Button>
+                    <Button onClick={() => navigate("/")}>Go Back</Button>
                 </div>
             </div>
             
