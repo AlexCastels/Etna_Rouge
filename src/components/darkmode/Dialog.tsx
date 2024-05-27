@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDarkMode } from "./DarkmodeContext";
- import moon from "../../assets/moon.png";
-import sun from "../../assets/sun.png"; 
+import moon from "../../assets/moon.png";
+import sun from "../../assets/sun.png";
 import "./dialog.scss";
 
 interface DialogProps {
@@ -36,7 +36,6 @@ const Dialog: React.FC<DialogProps> = ({ active, setActive }) => {
 
   useEffect(() => {
     document.body.classList.add(mode);
-
   }, [mode]);
 
   if (!active && !closing) {
