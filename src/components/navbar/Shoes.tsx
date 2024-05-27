@@ -1,19 +1,19 @@
 import { useLocation } from "react-router-dom"
-import NavBarTop from "./NavbarTop";
+// import NavBarTop from "./NavbarTop";
 
-const Pants = () => {
+const Shoes = () => {
 
     const location = useLocation();
 
     return (
         <>
-        <NavBarTop/>
+        {/* <NavBarTop/> */}
         <div className="nav_section">
-            <p>- Pants -
-                {location.state.pants}
+            <p>- Shoes -
+                {location.state.shoes}
             </p>
         </div>
         </>
     )
 }
-export default Pants;
+export default Shoes;

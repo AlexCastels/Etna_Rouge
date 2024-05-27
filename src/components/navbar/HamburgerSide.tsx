@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 import NavBarTop from "./NavbarTop";
 
-const All = () => {
+const HamburgerSide = () => {
 
     const location = useLocation();
 
@@ -9,11 +9,11 @@ const All = () => {
         <>
         <NavBarTop/>
         <div className="nav_section">
-            <p>- All -
+            <p>- Hamburger -
                 {location.state.all}
             </p>
         </div>
         </>
     )
 }
-export default All;
+export default HamburgerSide;

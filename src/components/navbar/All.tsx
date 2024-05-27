@@ -1,8 +1,7 @@
 import { useLocation } from "react-router-dom"
 import NavBarTop from "./NavbarTop";
-import "./NavbarTop.scss"
 
-const Shirts = () => {
+const All = () => {
 
     const location = useLocation();
 
@@ -10,11 +9,11 @@ const Shirts = () => {
         <>
         <NavBarTop/>
         <div className="nav_section">
-            <p>- Shirts -
-                {location.state.shirts}
+            <p>- All -
+                {location.state.all}
             </p>
         </div>
         </>
     )
 }
-export default Shirts;
+export default All;

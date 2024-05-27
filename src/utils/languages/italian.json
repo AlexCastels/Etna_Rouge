@@ -59,5 +59,20 @@
   "cart.price": "Prezzo totale",
 
   "centralProductSecTitle": "Il futuro appartiene alle donne con stile",
-  "centralProductSecSubTitle": "Discover new women collection"
+  "centralProductSecSubTitle": "Discover new women collection",
+
+   "footer.followUse": "Seguici:",
+  "footer.ourProducts": "I nostri prodotti",
+  "footer.menClothes": "Abbigliamento uomo",
+  "footer.womenClothes": "Abbigliamento donna",
+  "footer.accessories": "Abbigliamento uomo",
+  "footer.clientService": "Servizio clienti: ",
+  "footer.returnsAndRefunds": "Resi e rimborsi",
+  "footer.promoAndPayment": "Promozioni e pagamenti",
+  "footer.trackYourOrder": "Traccia il tuo ordine",
+  "footer.contactUs": "Contattaci",
+  "footer.ourService": "Il nostro servizio: ",
+  "footer.studentDiscount": "Sconto studenti",
+  "footer.inviteAFriend": "Invita un amico"
+
 }

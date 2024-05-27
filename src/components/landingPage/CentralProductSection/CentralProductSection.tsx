@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
-import "./centralProductSection.scss";
 import { FormattedMessage } from "react-intl";
+import "./centralProductSection.scss";
 
 const CentralProductSection = () => {
   const navigate = useNavigate();
