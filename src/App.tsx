@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
@@ -21,6 +20,7 @@ import frText from "./utils/languages/french.json";
 import "./style.scss";
 import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
+import LandingPage from "./components/landingPage/LandingPage.tsx";
 
 interface Messages {
   [key: string]: any;

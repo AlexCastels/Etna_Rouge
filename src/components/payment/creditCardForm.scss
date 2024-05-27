@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 *{
     padding: 0px;
     margin: 0px;
@@ -11,6 +13,14 @@
     justify-content: space-around;
     height: 100vh;
     width: 100vw;
+    &.dark{
+        background-color: $main-black;
+        color: $main-white; 
+    }
+    &.light{
+        background-color: $main-white;
+        color: $main-black;
+    }
 
     .creditForm-title{
         // width: 80%;
@@ -19,6 +29,12 @@
         letter-spacing: 0.1rem;
         height: 1px;
         padding: 5px;
+        &.dark{
+            color: $main-black; 
+        }
+        &.light{
+            color: $main-white;
+        }
     } 
 
     .credit-card-img{
@@ -28,12 +44,25 @@
     .creditCard-select{
         display: flex;
         align-items: center;
-
         div{
             margin-left: -90px; 
             .creditCard-select-style{
                 border: none;
                 letter-spacing: 1px;
+                &.dark{
+                    background-color: $main-black;
+                    color: $main-white; 
+                }
+                &.light{
+                    background-color: $main-white;
+                    color: $main-black;
+                }
+                &.dark::placeholder{
+                    background-color: $main-white;
+                }
+                &.light::placeholder{
+                    background-color: $main-black;
+                } 
                 &:focus{
                     outline: none;
                 }
@@ -50,7 +79,14 @@
         transition: all ease-in-out 0.5s;
         cursor: pointer;
         letter-spacing: 0.5rem;
-
+        &.dark{
+            background-color: $main-white;
+            color: $main-black; 
+        }
+        &.light{
+            background-color: $main-black;
+            color: $main-white;
+        }
         &:hover{
             opacity: 0.3;
         }
@@ -74,9 +110,24 @@
         height: 30px;
         padding: 5px;
         border: none;
-        border-bottom: 1px solid rgb(31, 31, 31);
         letter-spacing: 1px;
         padding-left: 0px;
+        &.dark{
+            background-color: $main-black;
+            color: $main-white; 
+            border-bottom: 1px solid rgb(255, 255, 255);;
+        }
+        &.light{
+            background-color: $main-white;
+            color: $main-black;
+            border-bottom: 1px solid rgb(31, 31, 31);
+        }
+        &.dark::placeholder{
+            background-color: $main-white;
+        }
+        &.light::placeholder{
+            background-color: $main-black;
+        } 
     }
     
     
@@ -90,6 +141,7 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: 1px;
+        
     }
 }
 

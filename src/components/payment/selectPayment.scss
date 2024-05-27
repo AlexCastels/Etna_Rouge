@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 .selectPayment-container{
     display: flex;
     flex-direction: column;
@@ -5,18 +7,38 @@
     justify-content: space-evenly;
     // width: 300px;
     height: 100vh;
+    &.light{
+        background-color: $main-white; 
+        color: $main-black;
+    }
+    &.dark{
+        background-color: $main-black;
+        color: $main-white;
+    }
 
     .selectPayment-title{
         width: 80%;
         font-size: 2rem;
         font-weight: bold;
         letter-spacing: 0.1rem;
+        &.light{
+            color: $main-black;
+        }
+        &.dark{
+            color: $main-white;
+        }
     }
     
     .select-payform-line{
         height: 1px;
         width: 80%;
-        background-color: black;
+        transition: 1.5s ease-in-out;
+        &.light{
+            background-color: $main-black; 
+        }
+        &.dark{
+            background-color: $main-white;
+        }
     }
 
     .selectForm-general-container{
@@ -66,10 +88,17 @@
         padding: 5px;
         width: 300px;
         color: white;
-        background-color: black;
         transition: all ease-in-out 0.5s;
         cursor: pointer;
         letter-spacing: 0.5rem;
+        &.dark{
+            background-color: $main-white;
+            color: $main-black; 
+        }
+        &.light{
+            background-color: $main-black;
+            color: $main-white;
+        }
     }
 
     .selectPayform-notSelect{
