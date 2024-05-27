@@ -53,7 +53,7 @@ function App() {
              {/* <NavBarTop /> */} 
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
+              <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/discover" element={<DiscoverMore />} />
               <Route path="/plp/:gender" element={<Plp />} />
               <Route path="/plp/:gender/:category" element={<Plp />} />

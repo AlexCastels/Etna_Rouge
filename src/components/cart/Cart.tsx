@@ -12,8 +12,10 @@ const Cart = () => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
   const total = useAppSelector((state) => state.cart.total);
+  const totalPromo = useAppSelector((state) => state.cart.totalPromo)
   const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
   const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
+  const activePromo = useAppSelector((state) => state.cart.activePromo)
   
   const navigate = useNavigate()
   const handleCheckout = () => {
@@ -49,7 +51,7 @@ const Cart = () => {
           <div className="list-product">
             {cart.length === 0 ? (
               <div className="message-cart">
-                <h2><FormattedMessage id="cart.empty" defaultMessage="The cart is empty" /></h2>
+                <p><FormattedMessage id="cart.empty" defaultMessage="The cart is empty" /></p>
               </div>
             ) : (
               cart.map((el) => (
@@ -105,8 +107,14 @@ const Cart = () => {
           </div>
 
           <div className="totals" style={totalQuantity === 0 ? {display:'none'} : {display:'flex'}}>
+            <div className="promo">
+              <div style={activePromo ? {display:'block'} : {display:'none'}}>Promo Attiva!</div>
+             <div style={activePromo ? {display:'block'} && {textDecoration:'line-through'} : {display:'none'}}>€ {total}</div>
+            </div>
+             
             <div className="total">
-              <div>TOTAL</div> € {total}
+              <div>TOTAL</div> € {totalPromo ?  totalPromo  :  total }
+             
             </div>
             <div className="quantity">
               <div><FormattedMessage id="cart.quantity" defaultMessage="Quantity" /></div> {totalQuantity}

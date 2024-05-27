@@ -81,10 +81,10 @@ export const Plp: React.FC<any> = () => {
   //   console.log(params);  
   // }
 
-  const handleAddToCart = (el: any) => {
+  /* const handleAddToCart = (el: any) => {
     dispatch(addToCart(el));
     dispatch(toggleCart());
-  };
+  }; */
 
   return (
     <>
@@ -118,7 +118,7 @@ export const Plp: React.FC<any> = () => {
             </div>
             </div> */}
             <div className="card-price">
-              € {Math.round(el.price)}
+              € {el.price}
             </div>
           </div>
         ))}
