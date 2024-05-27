@@ -19,7 +19,13 @@ import itText from "./utils/languages/italian.json";
 import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
-
+import { Plp } from "./components/plp/Plp.tsx";
+import Pdp from "./components/pdp/Pdp.tsx";
+import AboutUs from "./components/aboutUs/aboutUs.tsx";
+import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
+import Switcher from "./components/darkmode/Switcher.tsx";
+import LanguageSelector from "./components/languageSelector/LanguageSelector.tsx";
+import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 
 interface Messages {
   [key: string]: any;
@@ -47,6 +53,8 @@ function App() {
         <BrowserRouter>
           {/* <NavBarTop /> */}
           <Routes>
+            <Route path="/error" element={<ErrorPage/>} />
+            <Route path="*" element={<ErrorPage/>} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/discover" element={<DiscoverMore />} />
