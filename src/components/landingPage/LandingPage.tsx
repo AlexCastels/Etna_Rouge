@@ -10,6 +10,8 @@ import LandingCarousel from "./landingCarousel/LandingCarousel";
 import Footer from "../footer/Footer";
 import NavBarTop from "../navbar/NavbarTop";
 import CentralProductSection from "./CentralProductSection/CentralProductSection";
+import NewsLetterForm from "./newsLetter/form/NewsLetterForm";
+import NavBarBottom from "../navbar/NavbarBottom";
 /* import NavBarBottom from "../navbar/NavbarBottom";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm"; */
 
@@ -26,15 +28,15 @@ const LandingPage = () => {
   return (
     <>
       <PromoContent />
-     <NavBarTop />
+      <NavBarTop />
       <Cart />
       <HeroContent />
       <CentralProductSection/> 
       <FeaturesContent />
       <LandingCarousel /> 
-      {/* <NewsLetterForm /> 
-      {/* <NavBarBottom /> */}
-{/*      <Footer/>  */}
+      <NewsLetterForm /> 
+      <NavBarBottom />
+      <Footer/> 
     </>
   );
 };
