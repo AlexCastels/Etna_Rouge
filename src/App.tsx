@@ -45,9 +45,9 @@ function App() {
 
   return (
     <>
-      <Switcher />
+  {/*     <Switcher /> */}
       <IntlProvider locale={locale} messages={messages}>
-        <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
+        {/* <LanguageSelector locale={locale} changeLanguage={changeLanguage} /> */}
         <BrowserRouter>
           {/* <NavBarTop /> */}
           <Routes>
@@ -67,7 +67,7 @@ function App() {
               element={<ThankYouPageDelivery />}
             />
           </Routes>
-          <NavBarBottom />
+    {/*       <NavBarBottom /> */}
         </BrowserRouter>
       </IntlProvider>
     </>
