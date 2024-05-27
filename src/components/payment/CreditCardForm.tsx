@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import Button from "../UI/button/Button";
 import Paypal from "./Paypal";
+import { useDarkMode } from "../darkmode/DarkmodeContext";
 import "./creditCardForm.scss";
 
 export function CreditCardForm() {
@@ -18,6 +18,7 @@ export function CreditCardForm() {
     }
 
     const navigate = useNavigate();
+    const { mode } = useDarkMode();
     const [creditName, setCreditName] = useState<string | null>("");
     const [creditNumber, setCreditNumber] = useState<string | null>("");
     const [creditDate, setCreditDate] = useState<CreditDate>({
@@ -81,11 +82,11 @@ export function CreditCardForm() {
     }
 
     function handleForm(e: React.FormEvent) {
-        console.log(creditObj);
+        // console.log(creditObj);
     }
 
     return (
-        <form onSubmit={handleForm} className="creditform-container">
+        <form onSubmit={handleForm} className={`creditform-container ${mode}`}>
             <div className="creditForm-title">
                 <p>
                     <FormattedMessage
@@ -102,7 +103,7 @@ export function CreditCardForm() {
                 />
                 <div className="creditForm-input-img">
                     <input
-                        className="input-creditCard"
+                        className={`input-creditCard ${mode}`}
                         required
                         type="text"
                         placeholder="Credit Number *"
@@ -116,7 +117,7 @@ export function CreditCardForm() {
                     ></img>
                 </div>
                 <input
-                    className="input-creditCard"
+                    className={`input-creditCard ${mode}`}
                     required
                     type="text"
                     name="creditName"
@@ -125,7 +126,7 @@ export function CreditCardForm() {
                 />
                 <div className="creditCard-select">
                     <input
-                        className="input-creditCard"
+                        className={`input-creditCard ${mode}`}
                         disabled
                         required
                         type="text"
@@ -136,7 +137,7 @@ export function CreditCardForm() {
                         <select
                             name="month"
                             onChange={handleCreditDate}
-                            className="creditCard-select-style"
+                            className={`creditCard-select-style ${mode}`}
                             required
                         >
                             <option value="MM">MM</option>
@@ -155,7 +156,7 @@ export function CreditCardForm() {
                         </select>
                         <select
                             name="year"
-                            className="creditCard-select-style"
+                            className={`creditCard-select-style ${mode}`}
                             onChange={handleCreditDate}
                             required
                         >
@@ -173,7 +174,7 @@ export function CreditCardForm() {
                     </div>
                 </div>
                 <input
-                    className="input-creditCard"
+                    className={`input-creditCard ${mode}`}
                     required
                     type="number"
                     placeholder="CVV *"
@@ -182,7 +183,7 @@ export function CreditCardForm() {
                     onChange={handleCvv}
                 />
             </div>
-            <button className="creditForm-btn" disabled={!creditDate || !creditName || !cvv || !creditNumber} onClick={handleBtn}>
+            <button className={`creditForm-btn ${mode}`} disabled={!creditDate || !creditName || !cvv || !creditNumber} onClick={handleBtn}>
                 <FormattedMessage id="creditPayment.checkout" defaultMessage="Checkout"/>
             </button>
             <p>

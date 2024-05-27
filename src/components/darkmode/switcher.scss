@@ -4,6 +4,7 @@
   left: 2vw;
   bottom: 7vh; // One third from the bottom of the viewport
   padding: 3rem;
+  
 
   .switcher-btn {
     background-color: transparent;
@@ -11,6 +12,7 @@
 
     .access-img {
       width: 30px;
+      cursor: pointer;
       &:hover {
         width: 50px;
       }
