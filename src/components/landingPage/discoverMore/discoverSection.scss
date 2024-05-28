@@ -23,15 +23,23 @@
     position: relative;
     justify-content: center;
 
-    span {
+   span {
       display: flex;
       position: absolute;
+      top: 1.5rem;
       left: 20rem;
       gap: 1rem;
       width: 100%;
 
       svg {
         width: 30px;
+
+        &.light{
+          fill: $main-black;
+        }
+        &.dark{
+          fill: $main-white;
+        }
       }
 
       h2 {
