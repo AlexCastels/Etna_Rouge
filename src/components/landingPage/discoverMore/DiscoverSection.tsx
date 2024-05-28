@@ -4,9 +4,17 @@ import { useDarkMode } from "../../darkmode/DarkmodeContext";
 
 
 import "./discoverSection.scss";
+import { useEffect } from "react";
+import Footer from "../../footer/Footer";
 
 const DiscoverSection: React.FC = ({ content, images, error }) => {
   const { mode } = useDarkMode();
+
+
+  useEffect(() => {
+    // Scrolla verso l'alto quando il componente viene montato
+    window.scrollTo(0, 0);
+  }, []);
 
   const video = content?.video?.fields?.file?.url || "";
   const img2 = content?.image?.fields?.file?.url || "";
@@ -18,10 +26,10 @@ const DiscoverSection: React.FC = ({ content, images, error }) => {
   const img1 = images[4]?.fields?.image.fields.file.url || "";
   /*   const img2 = images[0]?.fields?.image.fields.file.url || ""; */
   const img3 = images[2]?.fields?.image.fields.file.url || "";
-  const img4 = images[3]?.fields?.image.fields.file.url || "";
+  const img4 = images[0]?.fields?.image.fields.file.url || "";
   const img5 = images[1]?.fields?.image.fields.file.url || "";
 
-  console.log(content);
+  
 
   return (
     <div className={`discover-cont ${mode}`}>
@@ -65,17 +73,17 @@ const DiscoverSection: React.FC = ({ content, images, error }) => {
           <p className="second-paragraph">{p2}</p>
         </div>
         <div>
-          <img src={img4} alt="models" />
+          <img src={img5} alt="models" />
           <p className="third-paragraph">{p3}</p>
           <img src={img3} alt="models" />
         </div>
 
         <div className="sustainability">
-          <img src={img5} alt="sustainability" />
+          <img src={img4} alt="sustainability" />
           <p className="fourth-paragraph">{p4}</p>
         </div>
       </div>
-      {/*       <Footer /> */}
+             <Footer /> 
     </div>
   );
 };
