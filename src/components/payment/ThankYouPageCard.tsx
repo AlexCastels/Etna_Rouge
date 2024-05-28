@@ -12,17 +12,6 @@ export function ThankYouPageCard() {
     const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
     console.log(formData);
-    // const location = useLocation()
-    // let deliveryTotal = 0
-    // if(location){
-    //     deliveryTotal = location.state.total
-    // }
-    // console.log(deliveryTotal);
-
-    // const [deliveryTotal , setDeliverytotal] = useState(10)
-    // if(location.state.total){
-    //     setDeliverytotal((p) => p + location.state.total)
-    // }
 
     const navigate = useNavigate();
     function handleBtn() {

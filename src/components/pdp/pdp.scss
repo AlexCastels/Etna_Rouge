@@ -35,7 +35,7 @@
         p {
             padding-left: 2.1rem;
             padding-right: 2.1rem;
-            color: rgb(84, 82, 82)
+            color: rgb(0, 0, 0)
         }
     }
     .pdp-info {
@@ -140,10 +140,16 @@
 
         .pdp-btn-cart {
             margin-bottom: 3rem;
+            height: 3rem;
             width: 100%;
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
+
+            .pdp-btn-size{
+                color: red;
+                height: 1rem;
+            }
 
             .btn-cart-component {
                 display: flex;

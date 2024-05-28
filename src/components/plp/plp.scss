@@ -18,13 +18,10 @@ body {
 
   .card-container {
     margin-block-end: 30px;
-
     .card-price {
       color: white;
       
-    }
-
- 
+    } 
     }
   }
 
@@ -98,9 +95,11 @@ body {
   display: flex;
   width: 100vw;
   justify-content: center;
-
-
-  
+  margin-block-start: 3rem;
+  margin-block-end: 3rem; 
+  p{
+    font-size: 1.4rem;
+  } 
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {

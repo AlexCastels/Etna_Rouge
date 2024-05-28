@@ -1,14 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    width: 100%;
-    height: 100%;
-}
-
 //Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
 @media screen and (max-width: 768px) {
 
@@ -23,7 +12,6 @@ a {
         position: fixed;
         bottom: 0;
         z-index: 99;
-
     }
 
     .navbar_bottom_item {

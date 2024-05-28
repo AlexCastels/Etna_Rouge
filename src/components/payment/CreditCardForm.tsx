@@ -34,10 +34,12 @@ export function CreditCardForm() {
         cvv: cvv,
     };
 
+    //gestione nome
     function handleCreditName(e: React.FormEvent<HTMLInputElement>) {
         setCreditName(e.currentTarget.value);
     }
 
+    //gestione di Credit Number
     function handleCreditNumber(e: React.ChangeEvent<HTMLInputElement>) {
         //rimuove eventuali spazi digitati
         const inputVal = e.target.value.replace(/ /g, "");
@@ -58,6 +60,7 @@ export function CreditCardForm() {
         setCreditNumber(spacedNumber);
     }
 
+    //gestione della data
     function handleCreditDate(e:React.FormEvent<HTMLInputElement>| React.ChangeEvent<HTMLSelectElement>){
         const value = e.currentTarget.value;
         const name = e.currentTarget.name;
@@ -69,6 +72,7 @@ export function CreditCardForm() {
         });
     }
 
+    //gestione del CVV
     function handleCvv(e: React.ChangeEvent<HTMLInputElement>) {
         const value = e.target.value.length;
         if (value <= 3) {
