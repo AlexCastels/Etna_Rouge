@@ -15,9 +15,12 @@ const LandingCarousel = () => {
 
   const filteredContentsLC = useMemo(() => {
     return contents.filter(
-      (items: any) => items.sys.contentType.sys.id === "erLpCarousel"
+      (items: any) => items.sys.contentType.sys.id === "erLpCarousel" 
     );
   }, [contents]);
+
+console.log(filteredContentsLC);
+
 
   const arr = useMemo(() => {
     return filteredContentsLC.map((item) => ({
@@ -25,6 +28,8 @@ const LandingCarousel = () => {
       description: item?.fields.description,
     }));
   }, [filteredContentsLC]);
+
+  console.log(filteredContentsLC);
 
   useEffect(() => {
     if (arr.length > 0) {
