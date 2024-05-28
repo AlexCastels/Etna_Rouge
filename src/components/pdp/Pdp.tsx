@@ -26,12 +26,6 @@ const Pdp: React.FC<any> = () => {
     const element = product.find((el: any) => el.id == id);
     const navigate = useNavigate()
 
-    //logica go back
-    // const location = useLocation()
-    // const gender = location.state?.gender;
-    // const category = location.state?.category;
-    // console.log(gender , category);
-
     //carosello dinamico
     const [numItems, setNumItems] = useState(5);
 
@@ -39,17 +33,17 @@ const Pdp: React.FC<any> = () => {
     const [elementSize, setElementSize] = useState<any | null>([])
 
     //usato per aggiungere size in element
-    function handleSize(e: any) {
-        const elementSize = {
-            ...element,
-            size: e.target.value
-        }
-        setElementSize(elementSize)
+    function handleSize(e:React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        const elementSize = { 
+            ...element ,
+            size : e.currentTarget.value
+        } 
+        setElementSize(elementSize)   
     }
 
-    //per pushare nello slice il nuovo obj con la size
-    function handleBtn() {
-        if ('size' in elementSize) {
+    //per pushare tramite 'Add to cart' nello slice il nuovo obj con la size
+    function handleBtn(){
+        if('size' in elementSize){
             dispatch(addToCart(elementSize))
             dispatch(toggleCart());    
             console.log(elementSize);           
@@ -60,7 +54,6 @@ const Pdp: React.FC<any> = () => {
         const handleResize = () => {
             setNumItems(window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 3 : 5);
         };
-
         window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -112,12 +105,6 @@ const Pdp: React.FC<any> = () => {
                         </div>
                     </div>
                     <div className="pdp-container-size">
-                        <p className="pdp-size">
-                            <FormattedMessage
-                                id="pdp.selectSize"
-                                defaultMessage="Select your size"
-                            />
-                        </p>
                         <div className="pdp-btn">
                             {element?.category === 'shoes' && element?.gender === 'woman' && <button onClick={handleSize} value='36'>36</button>}
                             {element?.category === 'shoes' ? null : <button onClick={handleSize} value='XS'>XS</button>}
@@ -136,7 +123,7 @@ const Pdp: React.FC<any> = () => {
                         <button className="btn-cart-component" onClick={handleBtn}>
                             <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart" />
                         </button>
-                        {!elementSize && <p><FormattedMessage id="pdp.selectSize" defaultMessage="Please, select your size" /> </p>}
+                        {!elementSize && <p className="pdp-btn-size"><FormattedMessage id="pdp.selectSize" defaultMessage="Please, select your size" /> </p>}
                     </div>
                 </div>
             </div>

@@ -34,30 +34,26 @@ export function CreditCardForm() {
         cvv: cvv,
     };
 
+    //gestione nome
     function handleCreditName(e: React.FormEvent<HTMLInputElement>) {
         setCreditName(e.currentTarget.value);
     }
-
+    
+    //gestione di CreditNumber
+    function formatterCreditCard (input: string): string{
+        //Rimuovo eventuali spazi e caratteri non numerici
+        const sanitizedInput = input.replace(/\D/g, "").slice(0, 16);
+        //Divide i caratteri in gruppi di 4 e li unisce con un trattino
+        //l'operatore || è utilizzato per evitare che la funzione ritorni null
+        return sanitizedInput.match(/.{1,4}/g)?.join("-") || "";
+    }
+    
     function handleCreditNumber(e: React.ChangeEvent<HTMLInputElement>) {
-        //rimuove eventuali spazi digitati
-        const inputVal = e.target.value.replace(/ /g, "");
-        //recupera solo caratteri digitati
-        let inputNumbersOnly = inputVal.replace(/\D/g, "");
-        if (inputNumbersOnly.length > 16) {
-            //utilizzo substr per poter prendere solamente i primi 16 caratteri digitati
-            //nel caso in cui ci fossero più di 16 caratteri digitati
-            inputNumbersOnly = inputNumbersOnly.substr(0, 16);
-        }
-        //con slip viene creato un 'array' composto da soli 4 caratteri
-        const splits = inputNumbersOnly.match(/.{1,4}/g);
-        let spacedNumber = "";
-        if (splits) {
-            //con join uniamo i 4 arr unendoli con un -
-            spacedNumber = splits.join("-");
-        }
-        setCreditNumber(spacedNumber);
+        const formattedNumber = formatterCreditCard(e.target.value)
+        setCreditNumber(formattedNumber)
     }
 
+    //gestione della data
     function handleCreditDate(e:React.FormEvent<HTMLInputElement>| React.ChangeEvent<HTMLSelectElement>){
         const value = e.currentTarget.value;
         const name = e.currentTarget.name;
@@ -69,6 +65,7 @@ export function CreditCardForm() {
         });
     }
 
+    //gestione del CVV
     function handleCvv(e: React.ChangeEvent<HTMLInputElement>) {
         const value = e.target.value.length;
         if (value <= 3) {

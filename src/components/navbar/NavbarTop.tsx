@@ -198,7 +198,7 @@ const NavBarTop: React.FC = () => {
         >
           <div className="category_border"></div>
           {/* Categoria Uomo*/}
-          <div className="single_category" onClick={toggleMenSubItems}>
+          <div className="single_category" onClick={() => {toggleMenSubItems() , genderMen()}}>
             Men
           </div>
           {showMenSubItems && (
