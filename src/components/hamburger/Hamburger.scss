@@ -1,17 +1,33 @@
-//Quando la viewport è maggiore di 768 pixel si applicherà questa seguente logica: 
+@import "../../style.scss";
+
+//Quando la viewport è maggiore di 768 pixel si applicherà questa seguente logica:
 @media screen and (min-width: 768px) {
-    .hamburger_menu{
-        display: none;
-    }
+  .hamburger_menu {
+    display: none;
+  }
 }
 
-//Quando la viewport è minore di 768 pixel si applicherà questa seguente logica: 
+//Quando la viewport è minore di 768 pixel si applicherà questa seguente logica:
 @media screen and (max-width: 768px) {
   .hamburger_menu {
     display: block;
     cursor: pointer;
     display: flex;
     justify-content: center;
-  }
 
+    &.light {
+      svg {
+        path {
+          stroke: $main-black;
+        }
+      }
+    }
+    &.dark {
+      svg {
+        path {
+          stroke: $main-white;
+        }
+      }
+    }
+  }
 }

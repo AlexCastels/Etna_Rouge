@@ -35,21 +35,21 @@
 .cart-container {
   block-size: 100vh;
   inline-size: 400px;
-  background-color: #ffffff;
+  background-color: $main-white;
   position: fixed;
   transition: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-  z-index: 99;
+  z-index: 999;
   top: 0;
   .close {
     display: flex;
     justify-content: right;
     align-items: center;
-    height: 50px;
+    height: 84px;
     box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.2);
     
     
     img {
-      margin-inline-end: 20px;
+      margin-inline-end: 30px;
       width: 20px;
       height: 20px;
       
