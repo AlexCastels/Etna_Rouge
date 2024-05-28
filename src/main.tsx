@@ -4,6 +4,9 @@ import { store } from "./redux/store.tsx";
 import { Provider } from "react-redux";
 
 import { DarkModeProvider } from "./components/darkmode/DarkmodeContext.tsx";
+import { Profiler } from "react";
+
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
@@ -11,6 +14,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <DarkModeProvider>
         <App />
       </DarkModeProvider>
-    </Provider>
+      </Provider> 
   </>
 );

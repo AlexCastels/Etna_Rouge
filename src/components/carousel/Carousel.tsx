@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import "./Carousel.scss";
 import { useCarousel } from "../hooks/useCarousel";
 
-
-
 interface CarouselProps {
   items: any;
   numItems: number;

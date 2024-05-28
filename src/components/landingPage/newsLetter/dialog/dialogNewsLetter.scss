@@ -1,73 +1,66 @@
 @import "../../../../style.scss";
 
 .dialog-cont {
-  position: relative;
+  position: fixed; 
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #151414b2;
+  padding: 2rem;
+  z-index: 1000; 
+  
 
   .dialog-closing-btn {
     position: absolute;
+    top: 0rem;
+    left: 12rem;
+    right: 0rem;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1001;
+
+    &:hover {
+      color: rgb(57, 57, 57);
+    }
+  }
+
+  .dialog-message-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.5rem;
-    background-color: white;
-    top: 1rem;
-    left: 1rem;
+    align-items: center;
+    gap: 1rem;
 
-    z-index: 1000;
-    /* Aggiunto z-index per assicurare che il dialog appaia sopra altri elementi */
+    .dialog-message-subcont {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
 
-    @media only screen and (min-width: 768px) {
-      left: 28rem;
-      padding: 2rem 2rem;
-      top: -5rem;
-      border: 1px solid white;
-      width: 10rem;
-      letter-spacing: 0.1rem;
-    }
-
-    .news-closing-btn {
-      align-self: flex-end;
-      color: $main-black;
-      display: block;
-      width: min-content;
-      font-size: 1rem;
-      background-color: transparent;
-      padding: 0;
-
-      &:hover {
-        background-color: transparent;
-        padding: 0;
-        color: gray;
+      .dialog-message-title {
+        color: $main-black;
+        font-size: 1.5rem;
+        text-align: center;
       }
 
-      @media only screen and (min-width: 768px) {
-        top: 0;
-        background-color: transparent;
-        right: 0;
-        left: 5rem;
-        bottom: 40rem;
-        font-size: 1rem;
+      .dialog-message-img {
+        width: 3rem;
+        height: auto;
       }
     }
+  }
+}
 
-    .dialog-message-cont {
-      .dialog-message-subcont {
-        display: flex;
-        gap: 2rem;
-
-        .dialog-message-title {
-          color: $main-black;
-          font-size: 1rem;
-
-          @media only screen and (min-width: 768px) {
-            font-size: 1rem;
-          }
-        }
-
-        .dialog-message-img {
-          width: 1rem;
-        }
-      }
-    }
+/* Media query per tablet */
+@media only screen and (min-width: 768px) {
+  .dialog-cont {
+    padding: 4rem 3rem;
   }
 }

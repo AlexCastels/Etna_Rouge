@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useAppSelector } from "../../../redux/hook";
 import FeaturesSection from "./FeaturesSection";
 
@@ -7,6 +7,10 @@ const FeaturesContent: React.FC = () => {
   const error = useAppSelector((state) => state.contentful.error);
   const contents = useAppSelector((state) => state.contentful.contents);
 
+  const filterFeaturesContent = useMemo(() => {
+    return contents.filter((item) => item.fields.title === "Feature Section");
+  }, [contents]);
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -14,10 +18,6 @@ const FeaturesContent: React.FC = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-
-  const filterFeaturesContent = contents.filter(
-    (item) => item.fields.title === "Feature Section"
-  );
 
   return (
     <div className="dark">

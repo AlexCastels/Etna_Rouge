@@ -1,19 +1,20 @@
 import { useLocation } from "react-router-dom"
-// import NavBarTop from "./NavbarTop";
+import NavBarTop from "./NavbarTop";
+import "./NavbarTop.scss"
 
-const Shoes = () => {
+const Shirts = () => {
 
     const location = useLocation();
 
     return (
         <>
-        {/* <NavBarTop/> */}
+        <NavBarTop/>
         <div className="nav_section">
-            <p>- Shoes -
-                {location.state.shoes}
+            <p>- Shirts -
+                {location.state.shirts}
             </p>
         </div>
         </>
     )
 }
-export default Shoes;
+export default Shirts;

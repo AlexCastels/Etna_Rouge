@@ -1,30 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
+import { useAppSelector } from "../../../redux/hook";
 import HeroSection from "./HeroSection";
-import { useAppDispatch, useAppSelector } from "../../../redux/hook";
-import { fetchContentfulData } from "../../../redux/slices/contentfulSlice";
+
+import { useNavigate } from "react-router-dom";
+
 
 const Content = () => {
-  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const contents = useAppSelector((state) => state.contentful.contents);
   const error = useAppSelector((state) => state.contentful.error);
   const loading = useAppSelector((state) => state.contentful.loading);
 
+  const filteredContentsHero = useMemo(() => {
+    return contents.filter((items) => items.fields.title === "Hero Section ER");
+  }, [contents]);
+
   useEffect(() => {
-    dispatch(fetchContentfulData());
-  }, []);
-
-  console.log(contents[0]);
-
-  const filteredContentsHero = contents.filter(
-    (items) => items.fields.title === "Hero Section ER"
-  );
+    if (error) {
+      navigate('*');
+    }
+  }, [error, navigate]);
 
   if (loading) {
     return <span> loading... </span>;
   }
 
   if (error) {
-    return <span> {error.message} </span>;
+    return <span>Something went wrong</span>;
   }
 
   return (

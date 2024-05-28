@@ -50,6 +50,7 @@
   "pdp.color": "Color:",
   "pdp.selectSize": "Seleccione su talla",
   "pdp.addToCart": "Añadir al carrito",
+  "pdp.goBack": "Regresa",
 
   "plp.button.addToCart": "AÑADIR AL CARRITO",
 
@@ -59,5 +60,19 @@
   "cart.price": "Precio total",
 
   "centralProductSecTitle": "El futuro pertenece a las mujeres con estilo.",
-  "centralProductSecSubTitle": "Descubre la nueva colección de mujer"
+  "centralProductSecSubTitle": "Descubre la nueva colección de mujer",
+
+  "footer.followUse": "Síguenos:",
+  "footer.ourProducts": "Nuestros productos",
+  "footer.menClothes": "Ropa de hombre",
+  "footer.womenClothes": "Ropa de mujer",
+  "footer.accessories": "Ropa de hombre",
+  "footer.clientService": "Servicio al cliente: ",
+  "footer.returnsAndRefunds": "Devoluciones y reembolsos",
+  "footer.promoAndPayment": "Promociones y pagos",
+  "footer.trackYourOrder": "Rastrea tu pedido",
+  "footer.contactUs": "Contáctenos",
+  "footer.ourService": "Nuestro servicio: ",
+  "footer.studentDiscount": "Descuento para estudiantes",
+  "footer.inviteAFriend": "Invita a un amigo"
 }
