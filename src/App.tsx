@@ -18,7 +18,6 @@ import itText from "./utils/languages/italian.json";
 import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import "./style.scss";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 
@@ -46,7 +45,6 @@ function App() {
       <IntlProvider locale={locale} messages={messages}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
         <BrowserRouter>
-          {/* <NavBarTop /> */}
           <Routes>
             <Route path="/error" element={<ErrorPage/>} />
             <Route path="*" element={<ErrorPage/>} />
@@ -63,7 +61,6 @@ function App() {
             <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
             <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />}/>
           </Routes>
-          {/*       <NavBarBottom /> */}
         </BrowserRouter>
       </IntlProvider>
     </>
