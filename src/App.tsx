@@ -62,7 +62,7 @@ function App() {
             <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />}/>
             <Route path="*" element={<ErrorPage/>} />
           </Routes>
-          {/*       <NavBarBottom /> */}
+                <NavBarBottom />
         </BrowserRouter>
       </IntlProvider>
     </>

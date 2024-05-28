@@ -36,7 +36,7 @@ const Pdp: React.FC<any> = () => {
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize, setElementSize] = useState<any | null>(null)
+    const [elementSize, setElementSize] = useState<any | null>([])
 
     //usato per aggiungere size in element
     function handleSize(e: any) {
@@ -51,8 +51,8 @@ const Pdp: React.FC<any> = () => {
     function handleBtn() {
         if ('size' in elementSize) {
             dispatch(addToCart(elementSize))
-            dispatch(toggleCart());
-            console.log(elementSize);
+            dispatch(toggleCart());    
+            console.log(elementSize);           
         }
     }
 

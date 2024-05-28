@@ -1,4 +1,3 @@
-import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
@@ -6,9 +5,9 @@ import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import Cart from "../cart/Cart";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Button from "../UI/button/Button";
-import "../plp/plp.scss";
 import NavBarTop from "../navbar/NavbarTop";
 import { useDarkMode } from "../darkmode/DarkmodeContext";
+import "../plp/plp.scss";
 
 export const Plp: React.FC<any> = () => {
   const dispatch = useAppDispatch();
@@ -17,10 +16,6 @@ export const Plp: React.FC<any> = () => {
 
   //darkmode
   const { mode } = useDarkMode();
-
-
-  // const [params , setParams] = useState<any>({})
-  
 
   //logica categorie
   const location = useLocation();
@@ -66,25 +61,10 @@ export const Plp: React.FC<any> = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-    // setParams({
-    //   gender : gender ,
-    //   category : category
-    // })  
+     
   }, []);
 
-  //logica per passare dati in pdp per go back
-  // function handleNavigate(id:any){
-  //   navigate(`/pdp/${id}` , {state : { gender : params.gender , category : params.category}})
-  // }
-
-  // if(params){
-  //   console.log(params);  
-  // }
-
-  const handleAddToCart = (el: any) => {
-    dispatch(addToCart(el));
-    dispatch(toggleCart());
-  };
+  
 
   return (
     <>
@@ -98,27 +78,16 @@ export const Plp: React.FC<any> = () => {
                 <img src={el.img} alt="" />
               </div>
             </Link>
-            {/* <div className="card-button">
-              <Button onClick={() => handleAddToCart(el)}>
-                <FormattedMessage
-                  id="plp.button.addToCart"
-                  defaultMessage="ADD TO CART"
-                />
-              </Button>
-            </div> */}
+            
             <Link
               to={`/pdp/${el.id}`}
               style={{ textDecoration: "none", color: "black" }}
             >
               <div className={`card-name ${mode}`}>{el.name}</div>
             </Link>
-            {/* <div onClick={() => handleNavigate(el.id)} style={{textDecoration:'none',color:'black'}}>
-              <div className="card-name">
-              {el.name}
-            </div>
-            </div> */}
+           
             <div className="card-price">
-              € {Math.round(el.price)}
+              € {el.price}
             </div>
           </div>
         ))}
