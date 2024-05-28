@@ -1,0 +1,101 @@
+@import "../../../style.scss";
+
+.discover-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  &.light {
+    background-color: $main-white;
+    color: $main-black;
+  }
+  &.dark {
+    background-color: $main-black;
+    color: $main-white;
+  }
+
+  .discover-title {
+    padding-block: 0.3rem;
+    display: flex;
+    justify-content: center;
+
+    h2{
+      font-size: 1.5rem;
+      width: 100%;
+      align-self: center;
+    }
+
+    //animation for sliding the text
+    .scroll-text-cont {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+  }
+
+  .scroll-text-cont p {
+    display: inline-block;
+    padding-right: 100%;
+    animation: scroll-text 10s linear infinite;
+  }
+
+  @keyframes scroll-text {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+
+  .discover-subCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem;
+
+    gap: 5rem;
+
+    width: 100%;
+    div {
+      display: flex;
+      gap: 1rem;
+
+      img {
+        width: 400px;
+        height: 400px;
+      }
+      p {
+        width: 300px;
+        font-size: 1rem;
+      }
+    }
+
+    .discover-extended-cont {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        width: 100%;
+        padding-inline: 2.7rem;
+      }
+    }
+  }
+}
