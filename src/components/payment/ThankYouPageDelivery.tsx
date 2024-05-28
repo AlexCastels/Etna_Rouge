@@ -52,7 +52,7 @@ export function ThankYouPageDelivery() {
           id="thankYou.orderTotal"
           defaultMessage="Your order: {total} {currency}"
           values={{
-            total: <FormattedNumber value={totalPromo ? totalPromo + 10 : totalPromo + 10} />,
+            total: <FormattedNumber value={totalPromo ? totalPromo + 10 : total + 10} style="currency" currency="EUR" />,
             currency: <FormattedMessage id="currency" defaultMessage="$" />,
           }}
         />

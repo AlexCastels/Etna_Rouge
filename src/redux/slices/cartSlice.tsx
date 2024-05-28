@@ -87,7 +87,8 @@ const cartSlice = createSlice({
       console.log(activePromo);
     },
     remove: (state, action) => {
-      state.cart = state.cart.filter((el) => el.id !== action.payload.id);
+      state.cart = state.cart.filter((el) => el.id !== action.payload.id || el.size !== action.payload.size);
+
       const { total, activePromo, totalPromo } = totale(
         state.cart,
         state.activePromo
@@ -102,7 +103,7 @@ const cartSlice = createSlice({
       const element = state.cart.find((el) => el.id == action.payload.id);
       element && element?.quantity > 1
         ? (element.quantity -= 1)
-        : (state.cart = state.cart.filter((el) => el.id !== action.payload.id));
+        :  state.cart = state.cart.filter((el) => el.id !== action.payload.id || el.size !== action.payload.size);;
       const { total, activePromo, totalPromo } = totale(
         state.cart,
         state.activePromo
