@@ -1,6 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
+
+
 import "./discoverSection.scss";
 
 const DiscoverSection: React.FC = ({ content, images, error }) => {
@@ -16,8 +18,8 @@ const DiscoverSection: React.FC = ({ content, images, error }) => {
   const img1 = images[4]?.fields?.image.fields.file.url || "";
   /*   const img2 = images[0]?.fields?.image.fields.file.url || ""; */
   const img3 = images[2]?.fields?.image.fields.file.url || "";
-  const img4 = images[1]?.fields?.image.fields.file.url || "";
-  const img5 = images[0]?.fields?.image.fields.file.url || "";
+  const img4 = images[3]?.fields?.image.fields.file.url || "";
+  const img5 = images[1]?.fields?.image.fields.file.url || "";
 
   console.log(content);
 
