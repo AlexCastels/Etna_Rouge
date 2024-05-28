@@ -39,7 +39,7 @@ function App() {
 
   const changeLanguage = (language: string) => {
     setLocale(language);
-  };
+  };.0
 
   return (
     <>
