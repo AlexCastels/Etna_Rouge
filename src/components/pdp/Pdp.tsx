@@ -30,7 +30,7 @@ const Pdp: React.FC<any> = () => {
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize, setElementSize] = useState<any | null>([])
+    const [elementSize, setElementSize] = useState<any | null>('')
 
     //usato per aggiungere size in element
     function handleSize(e:React.MouseEvent<HTMLButtonElement, MouseEvent>) {
