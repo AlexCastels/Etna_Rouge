@@ -11,6 +11,8 @@ const FeaturesContent: React.FC = () => {
     return contents.filter((item) => item.fields.title === "Feature Section");
   }, [contents]);
 
+  
+
   if (error) {
     return <div>Error: {error}</div>;
   }

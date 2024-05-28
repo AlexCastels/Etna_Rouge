@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import DiscoverMore from "./components/discoverMore/DiscoverMore.tsx";
+
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
@@ -17,10 +17,11 @@ import enText from "./utils/languages/english.json";
 import itText from "./utils/languages/italian.json";
 import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
-import "./style.scss";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
+import DiscoverContent from "./components/landingPage/discoverMore/DiscoverContent.tsx";
+import "./style.scss";
+import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
 
 interface Messages {
   [key: string]: any;
@@ -49,8 +50,8 @@ function App() {
           {/* <NavBarTop /> */}
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/discover" element={<DiscoverContent />} />
             <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/discover" element={<DiscoverMore />} />
             <Route path="/plp/:gender" element={<Plp />} />
             <Route path="/plp/:gender/:category" element={<Plp />} />
             <Route path="/pdp/:id" element={<Pdp />} />
@@ -59,10 +60,13 @@ function App() {
             <Route path="/SelectPayment" element={<SelectPayment />} />
             <Route path="/CreditCardForm" element={<CreditCardForm />} />
             <Route path="/ThankYouCard" element={<ThankYouPageCard />} />
-            <Route path="/ThankYouDelivery" element={<ThankYouPageDelivery />}/>
-            <Route path="*" element={<ErrorPage/>} />
+            <Route
+              path="/ThankYouDelivery"
+              element={<ThankYouPageDelivery />}
+            />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
-                <NavBarBottom />
+          <NavBarBottom />
         </BrowserRouter>
       </IntlProvider>
     </>
