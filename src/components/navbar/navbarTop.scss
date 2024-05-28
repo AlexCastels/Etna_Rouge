@@ -13,21 +13,24 @@
   width: 100vw;
   position: fixed;
   top: 80px;
-}
+  .categories_hidden {
+    width: 100vw;
+    height: 70px;
+    z-index: 99;
+    top: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-.categories_hidden {
-  width: 100vw;
-  height: 70px;
-  z-index: 99;
-  top: 2px;
-  background-color: white;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
-  color: white;
+    &.light {
+      background-color: $main-white;
+    }
+    &.dark {
+      background-color: $main-black;
+    }
+  }
 }
 
 .single_category {
@@ -37,8 +40,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   letter-spacing: 0.2em;
+  font-size: small;
 }
 
 .nav_section {
@@ -55,7 +58,7 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 99;
   letter-spacing: 0.2em;
   position: sticky;
   top: 0;
@@ -81,24 +84,26 @@
   text-decoration: none;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
+  font-size: smaller;
   cursor: pointer;
-   
-  a{
-    &.dark{
-       color: $main-white;
+
+  a {
+    &.dark {
+      color: $main-white;
     }
-    &.light{
-       color: $main-black;
+    &.light {
+      color: $main-black;
     }
-   
   }
- 
 }
 
 .navbar_right {
   display: flex;
-  width: 18em;
+  width: 15em;
   align-items: center;
+  padding-bottom: 5px;
+
 }
 
 .navbar_button_item {
@@ -108,30 +113,31 @@
 
   .quantity-number {
     position: absolute;
-    inline-size: 20px;
-    block-size: 20px;
+    inline-size: 17px;
+    block-size: 17px;
     background-color: black;
-    inset-block-start: 10px;
-    inset-inline-start: 10px;
+    inset-block-start: 26px;
+    inset-inline-start: 1px;
     border-radius: 10px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-}
 
-svg {
-  width: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  &.light {
-    fill: $main-black;
-  }
-  &.dark {
-    fill: $main-white;
+  svg {
+    width: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &.dark {
+      stroke: $main-white;
+    }
+    &.light {
+      stroke: $main-black;
+    }
   }
 }
 
@@ -146,9 +152,15 @@ svg {
 }
 
 .category_border {
-  background: black;
   width: 1px;
   height: 1.7em;
+
+  &.light {
+    background-color: $main-black;
+  }
+  &.dark {
+    background-color: $main-white;
+  }
 }
 
 //Quando la viewport è minore di 768 pixel si applicherà questa seguente logica:
@@ -161,11 +173,10 @@ svg {
     width: 100%;
     height: auto;
   }
-  
+
   .navbar_center {
     align-items: center;
     display: none;
-   
   }
 
   .navbar_right {
@@ -185,16 +196,26 @@ svg {
 
   .sidebar_hidden2 {
     width: 30%;
-    height: 100vh;
+    height: 87vh;
+    top: 70px;
     z-index: 9;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    
     font-size: x-large;
-    scroll-behavior: none;
+    transition: 0.6s cubic-bezier(0.5, 1, 0.5, 1);
+
+    &.light {
+      color: $main-black;
+      background-color: $main-white;
+    }
+    &.dark {
+      color: $main-white;
+      background-color: $main-black;
+    }
   }
 
   .navbar_hidden {

@@ -125,14 +125,12 @@ const NavBarTop: React.FC = () => {
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M5.50035 9.3C5.487 8.31988 6.27024 7.51426 7.25035 7.5H17.7503C18.7305 7.51426 19.5137 8.31988 19.5004 9.3V17.4C19.5276 19.3605 17.9608 20.972 16.0004 21H9.00035C7.03989 20.972 5.4731 19.3605 5.50035 17.4V9.3Z"
-                stroke="#000000"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M16.0004 10.2V6.6C16.0276 4.63953 14.4608 3.02797 12.5004 3C10.5399 3.02797 8.9731 4.63953 9.00035 6.6V10.2"
-                stroke="#000000"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -149,8 +147,8 @@ const NavBarTop: React.FC = () => {
         <div className="navbar_hidden">
           {/*  Al click della sezione centrale navbar si aprirà la sezione categoria(maglietta,scarpe,pantaloni,tutto) della navbar */}
           {toggle && (
-            <div className="categories_hidden">
-              <div className="category_border"></div>
+            <div className={`categories_hidden ${mode}`}>
+              <div className={`category_border ${mode}`}></div>
               <div
                 className="single_category"
                 onClick={() => {
@@ -159,7 +157,7 @@ const NavBarTop: React.FC = () => {
               >
                 All
               </div>
-              <div className="category_border"></div>
+              <div className={`category_border ${mode}`}></div>
               <div
                 className="single_category"
                 onClick={() => {
@@ -168,7 +166,7 @@ const NavBarTop: React.FC = () => {
               >
                 Shirt
               </div>
-              <div className="category_border"></div>
+              <div className={`category_border ${mode}`}></div>
               <div
                 className="single_category"
                 onClick={() => {
@@ -177,7 +175,7 @@ const NavBarTop: React.FC = () => {
               >
                 Pants
               </div>
-              <div className="category_border"></div>
+              <div className={`category_border ${mode}`}></div>
               <div
                 className="single_category"
                 onClick={() => {
@@ -186,19 +184,24 @@ const NavBarTop: React.FC = () => {
               >
                 Shoes
               </div>
-              <div className="category_border"></div>
+              <div className={`category_border ${mode}`}></div>
             </div>
           )}
         </div>
       </nav>
       {
         <div
-          className="sidebar_hidden2"
+          className={`sidebar_hidden2 ${mode}`}
           style={toggleSidebarGender ? { left: "0" } : { left: "-30%" }}
         >
-          <div className="category_border"></div>
+          <div className={`category_border ${mode}`}></div>
           {/* Categoria Uomo*/}
-          <div className="single_category" onClick={() => {toggleMenSubItems() , genderMen()}}>
+          <div
+            className="navbar_categories"
+            onClick={() => {
+              toggleMenSubItems(), genderMen();
+            }}
+          >
             Men
           </div>
           {showMenSubItems && (
@@ -247,7 +250,7 @@ const NavBarTop: React.FC = () => {
           )}
 
           {/* Categoria Donna*/}
-          <div className="category_border"></div>
+          <div className={`category_border ${mode}`}></div>
           <div
             className="navbar_categories"
             onClick={() => {
@@ -302,12 +305,7 @@ const NavBarTop: React.FC = () => {
               </div>
             </>
           )}
-          <div className="category_border"></div>
-          <div className="single_category" onClick={linkPants}>
-            About Us
-          </div>
-          <div className="category_border"></div>
-          <div className="single_category"></div>
+          <div className={`category_border ${mode}`}></div>
         </div>
       }
     </>
