@@ -7,11 +7,12 @@ import { useDarkMode } from "../darkmode/DarkmodeContext";
 import "./thankYouPage.scss";
 
 export function ThankYouPageDelivery() {
-    const total = useAppSelector((state) => state.cart.total);
-    const formData = useAppSelector((state) => state.payformData);
-    const dispatch = useAppDispatch();
+
+  const total = useAppSelector((state) => state.cart.total);
+  const totalPromo = useAppSelector((state) => state.cart.totalPromo)
+  const formData = useAppSelector((state) => state.payformData);
+  const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
-    console.log(formData);
 
     // const location = useLocation()
     // let deliveryTotal = location.state.total
@@ -53,7 +54,7 @@ export function ThankYouPageDelivery() {
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
-                        total: <FormattedNumber value={total + 10} />,
+                        total: <FormattedNumber value={total + 10}style="currency" currency="EUR" />,
                         currency: (
                             <FormattedMessage
                                 id="currency"

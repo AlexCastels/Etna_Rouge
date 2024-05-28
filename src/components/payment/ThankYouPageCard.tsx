@@ -6,12 +6,15 @@ import { clearCart } from "../../redux/slices/cartSlice";
 import { useDarkMode } from "../darkmode/DarkmodeContext";
 import "./thankYouPage.scss";
 
-export function ThankYouPageCard() {
-    const total = useAppSelector((state) => state.cart.total);
-    const formData = useAppSelector((state) => state.payformData);
-    const dispatch = useAppDispatch();
+
+export function ThankYouPageCard(){
+    const total = useAppSelector((state) => state.cart.total)
+    const totalPromo = useAppSelector((state) => state.cart.totalPromo)
+    const formData = useAppSelector(state => state.payformData)
+    const dispatch = useAppDispatch()
     const { mode } = useDarkMode();
-    console.log(formData);
+
+    
     // const location = useLocation()
     // let deliveryTotal = 0
     // if(location){
@@ -59,7 +62,7 @@ export function ThankYouPageCard() {
                     values={{
                         total: (
                             <FormattedNumber
-                                value={total}
+                                value={totalPromo ? totalPromo + 10 : total + 10}
                                 style="currency"
                                 currency="EUR"
                             />

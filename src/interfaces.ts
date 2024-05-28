@@ -7,6 +7,7 @@ export interface Card {
     gender : string
     category: string;
     img: string;
+    size : string
 }
 
 

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Pink shirt",
-        "price": 599.00,
+        "price": 600,
         "gender": "men",
         "category": "shirt",
         "img": "https://img.freepik.com/foto-gratuito/ritratto-dell-uomo-bello-felice-sorridente-in-casuals-isolato-sulla-parete-bianca_186202-8115.jpg?t=st=1716371356~exp=1716374956~hmac=a8f4074860ff76839ef2e51d56da31a3a73baef825ca7af33d7aa0673b3dd4e9&w=740",
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "name": "Basic casual shirt",
-        "price": 589.00,
+        "price": 700,
         "gender": "men",
         "category": "shirt",
         "img":  "https://img.freepik.com/foto-gratuito/ritratto-dell-uomo-bello-felice-sorridente-in-camicia-casual-blu-isolato-sulla-parete-bianca_186202-8113.jpg?t=st=1716371380~exp=1716374980~hmac=7c0a1e2f33592509d3d10d5c90572b448ba9b8534c2c0c789483be88e697ed99&w=360",
@@ -22,7 +22,7 @@
     {
         "id": 3,
         "name": "Denim jacket",
-        "price": 579.00,
+        "price": 850,
         "gender": "men",
         "category": "shirt",
         "img": "https://img.freepik.com/foto-gratuito/il-ritratto-di-giovane-uomo-di-modello-bello-si-e-vestito-nella-posa-dei-vestiti-dei-jeans-isolato_158538-9094.jpg?t=st=1716196787~exp=1716200387~hmac=1d1e649ce3e5408524e8554f7b4e99faa4c752a366ebc54e2e19c8a4a6f2166d&w=900",
@@ -32,7 +32,7 @@
     {
         "id": 4,
         "name": "Black jacket",
-        "price": 584.00,
+        "price": 250,
         "gender": "men",
         "category": "shirt",
         "img": "https://img.freepik.com/foto-gratuito/guarda-la-testa-fredda-del-modello-ispanico_1368-2399.jpg?t=st=1716371520~exp=1716375120~hmac=9f087c19bcc2c7d2cc9303ec547647fd1b3a78e9ec5956b6906f43b6324bd37c&w=360",
@@ -42,7 +42,7 @@
     {
         "id": 5,
         "name": "White classic shirt",
-        "price": 609.00,
+        "price": 570,
         "gender": "men",
         "category": "shirt",
         "img": "https://img.freepik.com/foto-gratuito/ritratto-di-un-bel-giovane_158595-242.jpg?t=st=1716371618~exp=1716375218~hmac=78fa12badc240694275dbfee388cc039fbcf236192fb586688c60c0f7525c2d1&w=360",
@@ -52,7 +52,7 @@
     {
         "id": 6,
         "name": "White Basic T-shirt",
-        "price": 599.00,
+        "price": 600,
         "gender": "men",
         "category": "shirt",
         "img": "https://img.freepik.com/foto-gratuito/ritratto-di-bel-modello-fiducioso-uomo-alla-moda-sexy-moda-maschio-hipster-in-posa-vicino-al-muro-in-studio_158538-23755.jpg?t=st=1716196951~exp=1716200551~hmac=c4a75bba2a1f3ea8528069efc6a75ecc533b384a184217cabf705a24af6f3af4&w=900",
@@ -62,7 +62,7 @@
     {
         "id": 7,
         "name": "Men's cargo shirt",
-        "price": 569.00,
+        "price": 430,
         "gender": "men",
         "category": "shirt",
         "img": "https://img.freepik.com/foto-gratuito/uomo-che-indossa-una-maglietta-bianca-sotto-una-maglietta-grigia_53876-128789.jpg?t=st=1716371716~exp=1716375316~hmac=00ef4f31682a79d8ab99ac5061d63367c64a636b8ee7b2d5de525891cea6d0ee&w=360",
@@ -72,7 +72,7 @@
     {
         "id": 8,
         "name": "White Pants",
-        "price": 599.00,
+        "price": 600,
         "gender": "men",
         "category": "pants",
         "img":  "https://img.freepik.com/foto-gratuito/immagine-ritagliata-verticale-dell-uomo-africano_171337-9826.jpg?t=st=1716197065~exp=1716200665~hmac=88dd668d1c1b6fc750219505a3fd8010f0d05046941b33c95c8215961f91414e&w=360",
@@ -82,7 +82,7 @@
     {
         "id": 9,
         "name": "Beige Pants",
-        "price": 589.00,
+        "price": 700,
         "gender": "men",
         "category": "pants",
         "img": "https://img.freepik.com/foto-gratuito/uomo-in-camicia-beige-e-pantaloni-abbigliamento-casual-moda-corpo-completo_53876-129940.jpg?t=st=1716197110~exp=1716200710~hmac=a1f3f75c6320d515c77ae6bbf6880071971ea9d6114a08791b6292ae2e7a2866&w=360",
@@ -92,7 +92,7 @@
     {
         "id": 10,
         "name":  "Black Jeans",
-        "price": 579.00,
+        "price": 850,
         "gender": "men",
         "category": "pants",
         "img": "https://img.freepik.com/foto-gratuito/immagine-integrale-dell-uomo-d-affari-castana-in-rivestimento-che-posa-con-confidenza-con-le-mani-in-tasche-e-che-osserva-da-parte-isolato-sopra-la-parete-bianca_171337-1269.jpg?t=st=1716197185~exp=1716200785~hmac=d031d57630a065b99b3bbde8cf181d95c3293641f5554be18243964b95cb9a4e&w=360",
@@ -102,7 +102,7 @@
     {
         "id": 11,
         "name": "Grey Jogger Pants",
-        "price": 584.00,
+        "price": 250,
         "gender": "men",
         "category": "pants",
         "img": "https://img.freepik.com/foto-gratuito/comodi-pantaloni-jogger-in-abbigliamento-da-studio-grigio_53876-102269.jpg?t=st=1716197140~exp=1716200740~hmac=9719289bb2db19092175a52ac8dcb3af517c6e36e4353572385e1dcd3b9a42c4&w=360",
@@ -112,7 +112,7 @@
     {
         "id": 12,
         "name": "Beige Shorts",
-        "price": 594.00,
+        "price": 200,
         "gender": "men",
         "category": "pants",
         "img": "https://img.freepik.com/foto-gratuito/uomo-in-giacca-beige-e-pantaloncini-streetwear-full-body_53876-125232.jpg?t=st=1716197226~exp=1716200826~hmac=f1f2a96a6d87f361b72e5054520f0e4112476c781c604457f8bd93e641a74dfe&w=360",
@@ -122,7 +122,7 @@
     {
         "id": 13,
         "name": "Beige Shorts",
-        "price": 574,
+        "price": 500,
         "gender": "men",
         "category": "pants",
         "img": "https://img.freepik.com/foto-gratuito/uomo-in-giacca-beige-e-pantaloncini-streetwear-full-body_53876-125232.jpg?t=st=1716197226~exp=1716200826~hmac=f1f2a96a6d87f361b72e5054520f0e4112476c781c604457f8bd93e641a74dfe&w=360",
@@ -132,7 +132,7 @@
     {
         "id": 14,
         "name": "White Shorts",
-        "price": 619,
+        "price": 720,
         "gender": "men",
         "category": "pants",
         "img": "https://images.pexels.com/photos/19838417/pexels-photo-19838417/free-photo-of-uomo-abito-completo-barba.png?auto=compress&cs=tinysrgb&w=600",
@@ -142,7 +142,7 @@
     {
         "id": 15,
         "name": "Blue Jeans",
-        "price": 609,
+        "price": 570,
         "gender": "men",
         "category": "pants",
         "img": "https://img.freepik.com/foto-gratuito/uomo-in-giacca-blu-e-jeans-streetwear_53876-108579.jpg?t=st=1716197331~exp=1716200931~hmac=d7e609e3ea68f599b7bc60f8114551234a6c49477f1d7e5ef1829a3ff313dfe5&w=360",
@@ -152,7 +152,7 @@
     {
         "id": 16,
         "name": "Later Loafers",
-        "price": 579,
+        "price": 850,
         "gender": "men",
         "category": "shoes",
         "img": "https://img.freepik.com/foto-gratuito/i-bei-pattini-di-lusso-e-di-cuoio-casuali_1203-7704.jpg?t=st=1716371794~exp=1716375394~hmac=0e833bb184eba6b62b58fa554fc0c9c816ce0f41894eca550f9f5fc57da22df3&w=360",
@@ -162,7 +162,7 @@
     {
         "id": 17,
         "name": "Suede shoes",
-        "price": 589,
+        "price": 700,
         "gender": "men",
         "category": "shoes",
         "img": "https://img.freepik.com/foto-gratuito/classico-pizzo-bianco-moda-vicino_1203-6449.jpg?t=st=1716371856~exp=1716375456~hmac=ed514afa1fdc258aa5d2e57335f787aa5170023d7e4fe408e0fa597a7e8b0a66&w=360",
@@ -172,7 +172,7 @@
     {
         "id": 18,
         "name":  "Later boots",
-        "price": 584,
+        "price": 250,
         "gender": "men",
         "category": "shoes",
         "img": "https://img.freepik.com/foto-gratuito/stivali-di-pelle_1203-8132.jpg?t=st=1716371899~exp=1716375499~hmac=337001bfe93218da1796873e14afec4f3a1fed9c5c06bfc60d0be2bf7bda95e2&w=360",
@@ -182,7 +182,7 @@
     {
         "id": 19,
         "name": "Brown sandals",
-        "price": 569,
+        "price": 430,
         "gender": "men",
         "category": "shoes",
         "img": "https://img.freepik.com/foto-gratuito/scarpe-in-pelle-e-sandali-in-cuoio_1203-7698.jpg?t=st=1716371963~exp=1716375563~hmac=1c6d8f4e5cefb412d4a23d3ce9d44ea88f38d2cab34773144059ae92d0e5f0e4&w=360",
@@ -192,7 +192,7 @@
     {
         "id": 20,
         "name": "Brown Classic Shoes",
-        "price": 579,
+        "price": 850,
         "gender": "men",
         "category": "shoes",
         "img": "https://img.freepik.com/foto-gratuito/scarpe-da-uomo_1203-7419.jpg?t=st=1716197564~exp=1716201164~hmac=a2ffad900c8cf6d8617c53a54f4a575c4f9b2740fced10c82f8689ed039dcbff&w=360",
@@ -202,7 +202,7 @@
     {
         "id": 21,
         "name": "Wool Sweater",
-        "price": 599,
+        "price": 600,
         "gender": "woman",
         "category": "shirt",
         "img": "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TWFnbGlvbmV8ZW58MHx8MHx8fDA%3D",
@@ -212,7 +212,7 @@
     {
         "id": 22,
         "name": "Skinny Jeans",
-        "price": 589,
+        "price": 700,
         "gender": "woman",
         "category": "pants",
         "img": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8amVhbnN8ZW58MHx8MHx8fDA%3D",
@@ -222,7 +222,7 @@
     {
         "id": 23,
         "name": "Striped Shirt",
-        "price": 579,
+        "price": 850,
         "gender": "woman",
         "category": "shirt",
         "img": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1470097_alternate10?$rl_df_pdp_5_7_a10$",
@@ -232,7 +232,7 @@
     {
         "id": 24,
         "name": "Pleated Skirt",
-        "price": 584,
+        "price": 250,
         "gender": "woman",
         "category": "pants",
         "img": "https://www.alcott.eu/dw/image/v2/BDJZ_PRD/on/demandware.static/-/Sites-catalog-alcott-master/default/dw3354ed99/hi-res/GO1100DO_LC2_001.jpg?sw=1000&sh=1350&q=90&strip=false",
@@ -242,7 +242,7 @@
     {
         "id": 25,
         "name": "Leather Ankle Boots",
-        "price": 609,
+        "price": 570,
         "gender": "woman",
         "category": "shoes",
         "img": "https://data.mecshopping.it/imgprodotto/stivaletti-in-pelle-donna-con-tacco-e-plateau_577708.jpg",
@@ -252,7 +252,7 @@
     {
         "id": 26,
         "name": "Crossbody Bag",
-        "price": 594,
+        "price": 200,
         "gender": "woman",
         "category": "shirt",
         "img": "https://data.mecshopping.it/imgprodotto/borsa-a-tracolla-con-stampe_594088.jpg",
@@ -262,7 +262,7 @@
     {
         "id": 27,
         "name": "Drop Earrings",
-        "price": 569,
+        "price": 430,
         "gender": "woman",
         "category": "shirt",
         "img": "https://www.madigioielli.it/26495-large_default/orecchini-perle-naturali-unoaerre-donna.jpg",
@@ -272,7 +272,7 @@
     {
         "id": 28,
         "name": "Hoodie",
-        "price": 599,
+        "price": 240,
         "gender": "woman",
         "category": "shirt",
         "img": "https://images.unsplash.com/photo-1599265866618-44bf5b03def6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmVscGElMjBjb24lMjBjYXBwdWNjaW8lMjBkb25uYXxlbnwwfHwwfHx8MA%3D%3D",
@@ -282,7 +282,7 @@
     {
         "id": 29,
         "name": "Culottes Pants",
-        "price": 586,
+        "price": 670,
         "gender": "woman",
         "category": "pants",
         "img": "https://static.reserved.com/media/catalog/product/cache/1200/a4e40ebdc3e371adff845072e1c73f37/7/3/737AB-99X-001-1-746471_1.jpg",
@@ -292,7 +292,7 @@
     {
         "id": 30,
         "name": "Floral Summer Dress",
-        "price": 604,
+        "price": 150,
         "gender": "woman",
         "category": "shirt",
         "img": "https://duntery.it/cdn/shop/files/HW1020133-1_713x.jpg?v=1712913981",
@@ -302,7 +302,7 @@
     {
         "id": 31,
         "name": "Wedge Sandals",
-        "price": 614,
+        "price": 800,
         "gender": "woman",
         "category": "shoes",
         "img": "https://img01.ztat.net/article/spp-media-p1/63b8215ab12d4185914b018e56cad39c/01cd0afd6bb64a4b963d11beb54a1391.jpg?imwidth=1800",
@@ -312,7 +312,7 @@
     {
         "id": 32,
         "name": "Wool Coat",
-        "price": 639,
+        "price": 330,
         "gender": "woman",
         "category": "shirt",
         "img": "https://b2c-media.maxandco.com/sys-master/m0/MC/2024/1/6021034302/007/s3master/6021034302007-z-milong_thumbnail.webp#thumbnail",
@@ -322,7 +322,7 @@
     {
         "id": 33,
         "name": "Pendant Necklace",
-        "price": 574,
+        "price": 500,
         "gender": "woman",
         "category": "shirt",
         "img": "https://www.gioielleriazambon.it/cdn/shop/files/bubbles11575.jpg?v=1688052117&width=1445",
@@ -332,7 +332,7 @@
     {
         "id": 34,
         "name": "Light Puffer Jacket",
-        "price": 629,
+        "price": 560,
         "gender": "woman",
         "category": "shirt",
         "img": "https://m.media-amazon.com/images/I/61scs-GRXvL._AC_UY1000_.jpg",
@@ -342,7 +342,7 @@
     {
         "id": 35,
         "name": "Faux Leather Backpack",
-        "price": 599,
+        "price": 600,
         "gender": "woman",
         "category": "shirt",
         "img": "https://static.stileo.it/img/800x800bt/346413870-b-cavalli-zainetto-donna-in-ecopelle-zaini-donna-nero.jpg",
