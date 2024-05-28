@@ -1,24 +1,21 @@
-import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import Cart from "../cart/Cart";
 import NavBarBottom from "../navbar/NavbarBottom";
-import Button from "../UI/button/Button";
-import "../plp/plp.scss";
 import NavBarTop from "../navbar/NavbarTop";
 import { useDarkMode } from "../darkmode/DarkmodeContext";
 import Footer from "../footer/Footer";
 import { ButtonComponent } from "../atomic/ButtonComponent";
+import "./plp.scss"
 
 export const Plp: React.FC<any> = () => {
     const dispatch = useAppDispatch();
     const product = useAppSelector((state) => state.product.products);
-    const navigate = useNavigate();
+    
     //darkmode
     const { mode } = useDarkMode();
-    // const [params , setParams] = useState<any>({})
 
     //logica categorie
     const location = useLocation();
@@ -63,10 +60,6 @@ export const Plp: React.FC<any> = () => {
 
     useEffect(() => {
         dispatch(fetchData());
-        // setParams({
-        //   gender : gender ,
-        //   category : category
-        // })
     }, []);
 
     return (
