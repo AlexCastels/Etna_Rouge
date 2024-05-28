@@ -53,7 +53,7 @@ export default function Paypal() {
           dispatch(clearCart())
           setTimeout(()=>{
             navigate('/ThankYouCard')
-          },2500)
+          },1500)
         },
         onError: (err) => {
           console.log(err);

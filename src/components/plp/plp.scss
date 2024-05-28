@@ -1,3 +1,4 @@
+@import '../../style.scss';
 @mixin transition-effect($property, $duration, $timing-function) {
   transition: $property $duration $timing-function;
 }
@@ -8,7 +9,7 @@ body {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   justify-items: center;
   position: relative;
   padding: 20px;
@@ -18,13 +19,10 @@ body {
 
   .card-container {
     margin-block-end: 30px;
-
     .card-price {
-      color: white;
+      color:$main-black ;
       
-    }
-
- 
+    } 
     }
   }
 
@@ -98,24 +96,22 @@ body {
   display: flex;
   width: 100vw;
   justify-content: center;
-
-
-  
+  margin-block-start: 3rem;
+  margin-block-end: 3rem; 
+  p{
+    font-size: 1.4rem;
+  } 
 }
 
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1401px) {
   .cards-container {
     grid-template-columns: repeat(4, 1fr);
   }

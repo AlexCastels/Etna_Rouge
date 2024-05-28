@@ -61,6 +61,7 @@
   "cart.quantity": "Quantity",
   "cart.price": "Total price",
 
+
   "centralProductSecTitle": "The future belongs to women with style",
   "centralProductSecSubTitle": "Discover the new women's collection",
 
@@ -77,8 +78,5 @@
   "footer.ourService":"Our Service: ",
   "footer.studentDiscount" : "Student Discount",
   "footer.inviteAFriend": "Invite a friend"
-
-
-
   
 }

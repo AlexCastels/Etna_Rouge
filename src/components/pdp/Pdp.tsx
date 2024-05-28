@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { useEffect, useState } from "react";
 import { addToCart, toggleCart } from "../../redux/slices/cartSlice";
@@ -7,41 +7,46 @@ import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NavbarTop";
 import { Carousel } from "../carousel/Carousel";
 import "./pdp.scss"
+import isValid from "../../utils/validationFunction"
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();
+
+    //Funzione di validazione per controllare se l'id corrisponde ai parametri altrimenti viene mandato in error
+    useEffect(() => {
+        if (!isValid(id)) {
+            navigate("*");
+        } else {
+            return console.log(id + "valid");
+        }
+    }, [id]);
+
     const dispatch = useAppDispatch();
     const product = useAppSelector((state) => state.product.products);
     const element = product.find((el: any) => el.id == id);
     const navigate = useNavigate()
 
-    //logica go back
-    // const location = useLocation()
-    // const gender = location.state?.gender;
-    // const category = location.state?.category;
-    // console.log(gender , category);
-    
     //carosello dinamico
     const [numItems, setNumItems] = useState(5);
 
     //handleSize
-    const [elementSize, setElementSize] = useState<any | null>(null)
+    const [elementSize, setElementSize] = useState<any | null>('')
 
     //usato per aggiungere size in element
-    function handleSize(e:any) {
+    function handleSize(e:React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         const elementSize = { 
             ...element ,
-            size : e.target.value
+            size : e.currentTarget.value
         } 
         setElementSize(elementSize)   
     }
 
-    //per pushare nello slice il nuovo obj con la size
+    //per pushare tramite 'Add to cart' nello slice il nuovo obj con la size
     function handleBtn(){
         if('size' in elementSize){
             dispatch(addToCart(elementSize))
             dispatch(toggleCart());    
-            console.log(elementSize);
+            console.log(elementSize);           
         }
     }
 
@@ -49,7 +54,6 @@ const Pdp: React.FC<any> = () => {
         const handleResize = () => {
             setNumItems(window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 3 : 5);
         };
-
         window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -57,14 +61,14 @@ const Pdp: React.FC<any> = () => {
     }, []);
 
     //funzione go back
-    function handleBack(){
+    function handleBack() {
         navigate(-1)
     }
 
     return (
         <>
-            <Cart/>
-            <NavBarTop/>
+            <Cart />
+            <NavBarTop />
             <div className="pdp-wrapper">
                 <div onClick={handleBack} className="pdp-icon-back">
                     <img src="\public\assets\back.png" alt="arrow back" />
@@ -101,31 +105,25 @@ const Pdp: React.FC<any> = () => {
                         </div>
                     </div>
                     <div className="pdp-container-size">
-                        <p className="pdp-size">
-                            <FormattedMessage
-                                id="pdp.selectSize"
-                                defaultMessage="Select your size"
-                            />
-                        </p>
                         <div className="pdp-btn">
-                            {element?.category === 'shoes' && element?.gender === 'woman' && <button onClick={handleSize} value='36'>36</button>} 
+                            {element?.category === 'shoes' && element?.gender === 'woman' && <button onClick={handleSize} value='36'>36</button>}
                             {element?.category === 'shoes' ? null : <button onClick={handleSize} value='XS'>XS</button>}
-                            {element?.category === 'shoes' ? <button onClick={handleSize} value='37'>37</button> : <button onClick={handleSize} value='S'>S</button>}                            
+                            {element?.category === 'shoes' ? <button onClick={handleSize} value='37'>37</button> : <button onClick={handleSize} value='S'>S</button>}
                             {element?.category === 'shoes' ? <button onClick={handleSize} value='38'>38</button> : <button onClick={handleSize} value='M'>M</button>}
                             {element?.category === 'shoes' ? <button onClick={handleSize} value='39'>39</button> : <button onClick={handleSize} value='L'>L</button>}
                             {element?.category === 'shoes' ? <button onClick={handleSize} value='40'>40</button> : <button onClick={handleSize} value='XL'>XL</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='41'>41</button>}                            
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='42'>42</button>}                            
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='41'>41</button>}
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='42'>42</button>}
                             {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='43'>43</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='44'>44</button>}                            
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='45'>45</button>}                                                        
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='44'>44</button>}
+                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='45'>45</button>}
                         </div>
                     </div>
                     <div className="pdp-btn-cart">
                         <button className="btn-cart-component" onClick={handleBtn}>
-                            <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart"/>
+                            <FormattedMessage id="pdp.addToCart" defaultMessage="Add to Cart" />
                         </button>
-                        {!elementSize && <p><FormattedMessage id="pdp.selectSize" defaultMessage="Please, select your size" /> </p>}
+                        {!elementSize && <p className="pdp-btn-size"><FormattedMessage id="pdp.selectSize" defaultMessage="Please, select your size" /> </p>}
                     </div>
                 </div>
             </div>

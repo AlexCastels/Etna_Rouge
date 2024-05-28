@@ -9,9 +9,11 @@
   flex-direction: column;
   align-items: center;
   padding: 0.5rem 1rem;
+
   &.light {
     background-color: $main-white;
   }
+
   &.dark {
     background-color: $main-black;
   }
@@ -60,18 +62,18 @@
     @media only screen and (min-width: 798px) {
       height: 38rem;
       width: auto;
-    } 
+    }
 
-     .lp-carousel-description {
-        margin-block-start: 0.5rem;
+    .lp-carousel-description {
+      margin-block-start: 0.5rem;
 
-        &.light {
-          color: $main-black;
-        }
-        &.dark {
-          color: $main-white;
-        }
+      &.light {
+        color: $main-black;
       }
+      &.dark {
+        color: $main-white;
+      }
+    }
 
     .lp-carousel-img {
       width: 100%;
@@ -82,15 +84,18 @@
         height: 38vw;
         width: 45vw;
       }
-
-     
     }
   }
 
   .lp-carousel-link {
     margin-block-end: 2rem;
     text-decoration: none;
-    color: $main-black;
+    &.dark {
+      color: $main-white;
+    }
+    &.light {
+      color: $main-black;
+    }
 
     &:hover {
       @include hoverButton;
