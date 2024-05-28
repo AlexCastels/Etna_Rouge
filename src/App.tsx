@@ -47,7 +47,6 @@ function App() {
       <IntlProvider locale={locale} messages={messages}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
         <BrowserRouter>
-          {/* <NavBarTop /> */}
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/discover" element={<DiscoverContent />} />
@@ -66,7 +65,6 @@ function App() {
             />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          <NavBarBottom />
         </BrowserRouter>
       </IntlProvider>
     </>
