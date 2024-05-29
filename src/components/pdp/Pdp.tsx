@@ -45,8 +45,7 @@ const Pdp: React.FC<any> = () => {
     function handleBtn(){
         if('size' in elementSize){
             dispatch(addToCart(elementSize))
-            dispatch(toggleCart());    
-            console.log(elementSize);           
+            dispatch(toggleCart());              
         }
     }
 
