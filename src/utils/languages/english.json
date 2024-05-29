@@ -77,6 +77,9 @@
   "footer.contactUs": "Contact Us",
   "footer.ourService":"Our Service: ",
   "footer.studentDiscount" : "Student Discount",
-  "footer.inviteAFriend": "Invite a friend"
+  "footer.inviteAFriend": "Invite a friend",
+
+  "discoverSection.title" : "Etna Rouge Gallery 2024",
+  "discoverSection.news" : "Etnasphere News"
   
 }

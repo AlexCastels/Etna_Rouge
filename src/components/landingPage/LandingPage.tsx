@@ -10,10 +10,8 @@ import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NavBarTop from "../navbar/NavbarTop";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Footer from "../footer/Footer";
-import CentralProductSection from "./CentralProductSection/CentralProductSection";
+import CentralProductSection from "./centralProductSection/CentralProductSection";
 
-/* import NavBarBottom from "../navbar/NavbarBottom";
-import NewsLetterForm from "./newsLetter/form/NewsLetterForm"; */
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -21,7 +19,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     if (contents.length === 0) {
-      dispatch(fetchContentfulData());
+      dispatch(fetchContentfulData()); //dispatching the action of fetch data from Contentful to allow the access to the Landing Page's components
     }
   }, [dispatch, contents.length]);
 
@@ -35,7 +33,6 @@ const LandingPage = () => {
       <FeaturesContent />
       <LandingCarousel />
       <NavBarBottom />
-
       <Footer />
     </>
   );

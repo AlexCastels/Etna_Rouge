@@ -25,7 +25,6 @@ export const Plp: React.FC<any> = () => {
   const [next, setNext] = useState(imagePerRow);
   function handleMoreImage() {
     setNext(next + imagePerRow);
-    console.log(next);
   }
 
   //filtro delle categorie

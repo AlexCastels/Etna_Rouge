@@ -22,11 +22,8 @@ const initialState: CartState = {
 };
 
 const totale = (cart: Card[], activePromo: boolean): any => {
-    //creo un array generale dove verranno contenuti i prezzi
     let generalArray: number[] = [];
-    //ciclo il carrello, all'interno del ciclo vado a controllare che per ogni
-    //quantità del prodotto mi dovrà andare ad aggiungere il singolo prezzo
-    //all'array generale
+    //ciclo il carrello per poter pushare il singolo prezzo in base alla quantità del singolo prodotto
     cart.forEach((elemento) => {
         for (let i = 0; i < elemento.quantity; i++) {
             generalArray.push(elemento.price);
@@ -48,7 +45,7 @@ const totale = (cart: Card[], activePromo: boolean): any => {
         return { total, activePromo };
     }
 };
-
+//quantità totale del carrello
 const totalQuantity = (cart: Card[]) => {
     return cart.reduce((totalQuantity, item) => totalQuantity + item.quantity,0);
 };
@@ -62,22 +59,15 @@ const cartSlice = createSlice({
             const size = state.cart.find((el) => el.size == action.payload.size);
             const temp = { ...action.payload, quantity: 1 };
             element && size ? (element.quantity += 1) : state.cart.push(temp);
-            const { total, activePromo, totalPromo } = totale(
-                state.cart,
-                state.activePromo
-            );
+            const { total, activePromo, totalPromo } = totale( state.cart,state.activePromo);
             state.totalQuantity = totalQuantity(state.cart);
             state.total = total;
             state.totalPromo = totalPromo;
             state.activePromo = activePromo;
-            console.log(activePromo);
         },
         remove: (state, action) => {
             state.cart = state.cart.filter((el) =>el.id !== action.payload.id || el.size !== action.payload.size);
-            const { total, activePromo, totalPromo } = totale(
-                state.cart,
-                state.activePromo
-            );
+            const { total, activePromo, totalPromo } = totale( state.cart,state.activePromo);
             state.totalQuantity = totalQuantity(state.cart);
             state.total = total;
             state.totalPromo = totalPromo;
@@ -86,12 +76,8 @@ const cartSlice = createSlice({
 
         decrement: (state, action) => {
             const element = state.cart.filter((el) => el.id == action.payload.id).find((el) => el.size == action.payload.size);
-            element && element?.quantity > 1 ? (element.quantity -= 1) : (state.cart = state.cart
-                .filter((el) => el.id !== action.payload.id || el.size !== action.payload.size));
-            const { total, activePromo, totalPromo } = totale(
-                state.cart,
-                state.activePromo
-            );
+            element && element?.quantity > 1 ? (element.quantity -= 1) : (state.cart = state.cart.filter((el) => el.id !== action.payload.id || el.size !== action.payload.size));
+            const { total, activePromo, totalPromo } = totale(state.cart,state.activePromo);
             state.totalQuantity = totalQuantity(state.cart);
             state.total = total;
             state.totalPromo = totalPromo;
@@ -99,19 +85,13 @@ const cartSlice = createSlice({
             console.log(activePromo);
         },
         increment: (state, action) => {
-            const element = state.cart
-                .filter((el) => el.id == action.payload.id)
-                .find((el) => el.size == action.payload.size);
+            const element = state.cart.filter((el) => el.id == action.payload.id).find((el) => el.size == action.payload.size);
             element && element?.quantity >= 1 ? (element.quantity += 1): state.cart;
-            const { totalPromo, total, activePromo } = totale(
-                state.cart,
-                state.activePromo
-            );
+            const { totalPromo, total, activePromo } = totale(state.cart,state.activePromo);
             state.totalQuantity = totalQuantity(state.cart);
             state.total = total;
             state.totalPromo = totalPromo;
             state.activePromo = activePromo;
-            console.log(state.activePromo);
         },
         clearCart: (state) => {
             state.cart = [];

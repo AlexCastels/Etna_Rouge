@@ -17,7 +17,7 @@
 .main-cart-container {
   .overlay {
     position: fixed;
-    width: 100%;
+    inline-size: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.622);
     transition: opacity 0.6s ease, visibility 0.5s ease;
@@ -52,12 +52,10 @@
       height: 84px;
       box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.2);
 
-
       img {
         margin-inline-end: 30px;
-        width: 20px;
-        height: 20px;
-
+        inline-size: 20px;
+        block-size: 20px;
       }
     }
 
@@ -66,12 +64,12 @@
       overflow-x: hidden;
       block-size: 65vh;
 
-
       .message-cart {
         height: 100%;
-        @include flex-center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-
       .cart-body {
         padding: 20px;
         inline-size: 400px;
@@ -89,29 +87,24 @@
             display: flex;
             flex-direction: column;
             gap: 100px;
-
             .remove-button {
               display: flex;
               justify-content: center;
-
               .remove {
-                width: 100px;
+                inline-size: 100px;
               }
             }
           }
-
           block-size: 200px;
-          width: 500px;
+          inline-size: 500px;
           display: flex;
           flex-direction: column;
           justify-content: space-around;
           align-items: center;
         }
-
         .cart-img {
           inline-size: 150px;
           block-size: 200px;
-
           img {
             inline-size: 100%;
             block-size: 100%;
@@ -119,6 +112,13 @@
           }
         }
       }
+
+      .quantity {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
     }
 
     .card-button {
@@ -132,46 +132,36 @@
         transition: all ease-in-out 0.3s;
       }
     }
-
     .totals {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
+      inline-size: 100%;
       text-align: center;
       padding: 10px;
       gap: 20px;
       padding: 20px;
-
       .promo {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        inline-size: 100%;
       }
 
       .total {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        inline-size: 100%;
       }
-
       .quantity {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        inline-size: 100%;
       }
-
     }
-
   }
 }
 
-
-
-
-
-
-@media screen and (max-width: 768px) {
+@media screen and (max-inline-size: 768px) {
   .cart-container {
     .body-container {
       .totals {
