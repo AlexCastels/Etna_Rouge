@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { useAppSelector } from "../../../redux/hook";
 import FeaturesSection from "./FeaturesSection";
+import Loading from "../../loading/Loading";
+import ErrorPage from "../../errorPage/ErrorPage";
 
 const FeaturesContent: React.FC = () => {
   const loading = useAppSelector((state) => state.contentful.loading);
@@ -12,15 +14,15 @@ const FeaturesContent: React.FC = () => {
   }, [contents]);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <ErrorPage />;
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
-    <div className="dark">
+    <div>
       {filterFeaturesContent.map((item) => (
         <FeaturesSection key={item.sys.id} content={item.fields} />
       ))}
