@@ -1,178 +1,175 @@
 @import "../../style.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 .no-scroll {
   overflow-y: hidden;
 }
-.pointer{
+
+.pointer {
   cursor: pointer;
 }
-.main-cart-container{
+
+.main-cart-container {
   .overlay {
     position: fixed;
-    width: 100%;
+    inline-size: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.622); 
+    background-color: rgba(0, 0, 0, 0.622);
     transition: opacity 0.6s ease, visibility 0.5s ease;
     opacity: 0;
     visibility: hidden;
     z-index: 2;
-  
+
     &.show {
       opacity: 1;
       visibility: visible;
     }
-  
+
     &.hide {
       opacity: 0;
       visibility: hidden;
     }
   }
-  
-.cart-container {
-  block-size: 100vh;
-  inline-size: 400px;
-  background-color: $main-white;
-  position: fixed;
-  transition: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-  z-index: 999;
-  top: 0;
-  .close {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    height: 84px;
-    box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.2);
-    
-    
-    img {
-      margin-inline-end: 30px;
-      width: 20px;
-      height: 20px;
-      
-    }
-  }
-  
-  .list-product {
-    overflow-y: auto;
-    overflow-x: hidden ;
-    block-size: 65vh;
-    
-    
-    .message-cart {
-      height: 100%;
+
+  .cart-container {
+    block-size: 100vh;
+    inline-size: 400px;
+    background-color: $main-white;
+    position: fixed;
+    transition: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    z-index: 999;
+    top: 0;
+
+    .close {
       display: flex;
+      justify-content: right;
       align-items: center;
-      justify-content: center;
+      height: 84px;
+      box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.2);
+
+      img {
+        margin-inline-end: 30px;
+        inline-size: 20px;
+        block-size: 20px;
+      }
     }
-    .cart-body {
-      padding: 20px;
-      inline-size: 400px;
-      display: flex;
-      gap: 10px;
-  
-      .container-right {
-        .container-top{
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        }
-        
-        .container-bottom {
-         
-          display: flex;
-          flex-direction: column;
-          gap: 100px;
-          .remove-button{
+
+    .list-product {
+      overflow-y: auto;
+      overflow-x: hidden;
+      block-size: 65vh;
+
+      .message-cart {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cart-body {
+        padding: 20px;
+        inline-size: 400px;
+        display: flex;
+        gap: 10px;
+
+        .container-right {
+          .container-top {
             display: flex;
-            justify-content: center;
-            .remove{
-              width: 100px;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .container-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            .remove-button {
+              display: flex;
+              justify-content: center;
+              .remove {
+                inline-size: 100px;
+              }
             }
           }
+          block-size: 200px;
+          inline-size: 500px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
         }
-        block-size: 200px;
-        width: 500px;
+        .cart-img {
+          inline-size: 150px;
+          block-size: 200px;
+          img {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .quantity {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
+        width: 100%;
       }
-      .cart-img {
-        inline-size: 150px;
-        block-size: 200px;
-        img {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-  }
+
+    }
+
+    .card-button {
+      display: flex;
+      text-align: center;
+
+      div {
+        inline-size: 100%;
+        color: black;
+        margin: 10px;
+        transition: all ease-in-out 0.3s;
       }
     }
-    
-  }
-  
-  
-  
-
-  .card-button {
-    display: flex;
-    text-align: center;
-
-    div {
+    .totals {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       inline-size: 100%;
-      color: black;
-      margin: 10px;
-      transition: all ease-in-out 0.3s;
-      
-    }
-    
-  }
-  .totals {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 100%;
-   text-align: center;
-   padding: 10px;
-   gap: 20px;
-   padding: 20px;
-   .promo{
-    display: flex;
-    justify-content: space-between;
-      width: 100%;
-   }
+      text-align: center;
+      padding: 10px;
+      gap: 20px;
+      padding: 20px;
+      .promo {
+        display: flex;
+        justify-content: space-between;
+        inline-size: 100%;
+      }
 
-    .total{
-      display: flex;
-      justify-content: space-between;
-      width: 100%;     
+      .total {
+        display: flex;
+        justify-content: space-between;
+        inline-size: 100%;
+      }
+      .quantity {
+        display: flex;
+        justify-content: space-between;
+        inline-size: 100%;
+      }
     }
-    .quantity{
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-    
   }
-
-}
 }
 
-  
-
-
-
-
-@media screen and (max-width: 768px) {
+@media screen and (max-inline-size: 768px) {
   .cart-container {
     .body-container {
       .totals {
         inline-size: 400px;
       }
+
       inline-size: 400px;
+
       .cart-body {
         inline-size: 400px;
       }

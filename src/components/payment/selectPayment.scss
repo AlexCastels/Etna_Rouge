@@ -42,12 +42,10 @@
     }
 
     .selectForm-general-container{
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 50px;
-        @media(min-width:768px) {
+        @media(min-width:$media-tablet) {
             flex-direction: row;
         }
     }

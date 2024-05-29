@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
@@ -19,9 +18,8 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
+import Loading from "./components/loading/Loading.tsx";
 import DiscoverContent from "./components/landingPage/discoverMore/DiscoverContent.tsx";
-import "./style.scss";
-
 
 interface Messages {
   [key: string]: any;
@@ -39,13 +37,14 @@ function App() {
 
   const changeLanguage = (language: string) => {
     setLocale(language);
-  };.0
+  };
+  0.0;
 
   return (
     <>
-   {/*    <Switcher /> */}
+      <Switcher />
       <IntlProvider locale={locale} messages={messages}>
-      {/*   <LanguageSelector locale={locale} changeLanguage={changeLanguage} />  */}
+        <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
