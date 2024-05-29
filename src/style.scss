@@ -8,6 +8,10 @@ $main-white: #fdf4f4;
 $secondary-white: #f5ebe0;
 $main-black: #0e0e0e;
 $secondary-black: #0000009e;
+// Breakpoint
+$media-desktop: 1400px;
+$media-tablet: 768px;
+$media-mobile: 480px;
 
 //Mixin to reuse only for the hover of Buttons without any background
 @mixin hoverButton {

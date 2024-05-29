@@ -7,7 +7,7 @@
 }
 
 //Quando la viewport è minore di 768 pixel si applicherà questa seguente logica:
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $media-tablet) {
   .navbar_bottom {
     width: 100%;
     height: 75px;
@@ -29,9 +29,7 @@
     }
 
     .navbar_bottom_item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
 
       svg {
         path {
@@ -47,7 +45,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $media-tablet) {
   .navbar_bottom {
     display: none;
   }
