@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../redux/slices/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
@@ -18,9 +18,7 @@ export const Plp: React.FC<any> = () => {
   const { mode } = useDarkMode();
 
   //logica categorie
-  const location = useLocation();
-  const gender = location.state?.gender;
-  const category = location.state?.category;
+  const {gender, category} = useParams();
 
   //logica load more
   const imagePerRow = 8;
