@@ -20,6 +20,7 @@ import frText from "./utils/languages/french.json";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import Loading from "./components/loading/Loading.tsx";
+import DiscoverContent from "./components/landingPage/discoverMore/DiscoverContent.tsx";
 
 interface Messages {
   [key: string]: any;
