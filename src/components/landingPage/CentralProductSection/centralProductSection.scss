@@ -2,6 +2,8 @@
 
 .central-product-sec-cont {
   display: flex;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
   gap: 2rem;
   flex-direction: column;
   align-items: center;

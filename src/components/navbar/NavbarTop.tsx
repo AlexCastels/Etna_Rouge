@@ -15,7 +15,6 @@ const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
 
-  const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const quantity = useAppSelector((state) => state.cart.totalQuantity);

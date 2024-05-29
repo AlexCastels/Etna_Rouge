@@ -39,7 +39,7 @@
   @include flex-center;
   flex-direction: row;
   letter-spacing: 0.2em;
-  font-size: small;
+  font-size: smaller;
 }
 
 .nav_section {
@@ -77,8 +77,10 @@
   width: 100%;
   @include flex-center;
   text-decoration: none;
-  font-weight: 600;
-  font-size: smaller;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: medium;
   cursor: pointer;
 
   a {
@@ -93,7 +95,7 @@
 
 .navbar_right {
   display: flex;
-  width: 15em;
+  width: 10em;
   align-items: center;
   padding-block-end: 5px;
 
@@ -164,6 +166,21 @@
     height: auto;
   }
 
+  .navbar_categories {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: x-large;
+    cursor: pointer;
+  }
+
+  .single_category {
+    font-size: small;
+  }
+
+
   .navbar_center {
     align-items: center;
     display: none;
@@ -208,7 +225,6 @@
   }
 
   .navbar_hidden {
-    @include flex-center;
-    flex-direction: column;
+    display: none;
   }
 }

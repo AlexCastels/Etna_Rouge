@@ -19,9 +19,7 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
-import DiscoverContent from "./components/landingPage/discoverMore/DiscoverContent.tsx";
-import "./style.scss";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
+import Loading from "./components/loading/Loading.tsx";
 
 interface Messages {
   [key: string]: any;
@@ -43,6 +41,7 @@ function App() {
 
   return (
     <>
+      <Loading/>
       <Switcher />
       <IntlProvider locale={locale} messages={messages}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
