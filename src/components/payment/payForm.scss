@@ -61,20 +61,13 @@
 }
 
 .payform-top , .payform-bottom{
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap:20px;
 }
 
-// .payform-top{
-//     margin-bottom: -40px;
-// }
-
 .payform-message{
     font-size: 14px;
-    // width: 85%;
     padding: 15px;
 }
 

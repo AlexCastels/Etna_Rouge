@@ -3,13 +3,9 @@
 .newsletter-container {
   width: auto;
   z-index: 10;
-
-  display: flex;
-  justify-content: center;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
-
   overflow-inline: hidden;
   padding-block: 2rem;
   &.light {
@@ -18,7 +14,6 @@
   &.dark {
     background-color: $main-black;
   }
-
   .newsletter-title {
     font-weight: 0.8rem;
     font-size: 0.7rem;
@@ -69,7 +64,6 @@
         background: none;
         display: block;
         block-size: min-content;
-
         font-size: 0.8rem;
         width: 0.5rem;
         align-self: center;
