@@ -16,10 +16,6 @@
         letter-spacing: 0.1rem;
         font-weight: 400;
         cursor: pointer;
-
-        img {
-            rotate: 180deg;
-        }
     }
     .pdp-card {
         height: 25rem;
@@ -198,10 +194,6 @@
             letter-spacing: 0.1rem;
             font-weight: 400;
             cursor: pointer;
-
-            img {
-                rotate: 180deg;
-            }
         }
         .pdp-card {
             // width: 60%;
@@ -366,7 +358,7 @@
 @media screen and (max-width: 480px) {
     .pdp-wrapper {
         .pdp-icon-back {
-            left: 13rem;
+            left: 3rem;
         }
     }
 }
