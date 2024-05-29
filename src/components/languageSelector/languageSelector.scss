@@ -1,16 +1,17 @@
 @import "../../style.scss";
 
 .lang-select-container {
-  position: absolute;
-  bottom: 5.5rem;
+  position: fixed;
+  height: 25px;
+  bottom: 1.5rem;
   z-index: 999;
-  right: 1.7rem;
+  right: 0.8rem;
   border: none;
   color: $main-white;
 
   @media (max-width: 768px) {
-    top: 2.8rem;
-    right: 2.5rem;
+    top: 1.5rem;
+    right: 1.5rem;
     z-index: 999;
     position: fixed;
     display: flex;

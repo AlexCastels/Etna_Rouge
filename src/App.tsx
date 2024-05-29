@@ -20,6 +20,7 @@ import frText from "./utils/languages/french.json";
 import "./style.scss";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
+import Loading from "./components/loading/Loading.tsx";
 
 interface Messages {
   [key: string]: any;
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <>
+      <Loading/>
       <Switcher />
       <IntlProvider locale={locale} messages={messages}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />

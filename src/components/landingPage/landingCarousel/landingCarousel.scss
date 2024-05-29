@@ -39,7 +39,6 @@
 
   .lp-carousel-subcont {
     display: flex;
-
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -58,7 +57,7 @@
     height: 15rem;
 
     @media only screen and (min-width: 798px) {
-      height: 38rem;
+      height: 30rem;
       width: auto;
     } 
 
