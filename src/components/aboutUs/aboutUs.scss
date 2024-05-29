@@ -1,24 +1,16 @@
 @import '../../style.scss';
 
 .wrapper-aboutus {
-    position: absolute;
-    top: 3rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    @include flex-center;
     .container-aboutus {
         width: 100%;
         color: Black;
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
         .first-img-aboutus {
             width: 100%;
-            height: 30rem;
+            height: 26rem;
             position: relative;
             color: black;
             opacity: 0.8;
@@ -47,7 +39,9 @@
                 font-size: 2rem;
             }
         }
-
+        .header-text{
+            top: 2rem;
+        }
         .personal-card-section {
             width: 90%;
             h1 {
@@ -56,20 +50,49 @@
                 padding: 2rem;
                 letter-spacing: 0.2cap;
             }
+
             .personal-card-container {
                 width: 100%;
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 gap: 2rem;
+
                 .personal-card {
                     img {
                         width: 100%;
                         height: 300px;
                     }
-
                 }
             }
         }
     }
+}
 
+@media screen and (max-width: $media-tablet) {
+    .wrapper-aboutus {
+        .container-aboutus {
+            .personal-card-section {
+                .personal-card-container {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $media-mobile) {
+    .wrapper-aboutus {
+        .container-aboutus {
+            .first-img-aboutus{
+                height: 37rem;
+            }
+            .personal-card-section {
+                padding-block-end: 7rem;
+                .personal-card-container {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        }
+    }
 }

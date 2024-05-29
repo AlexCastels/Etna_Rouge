@@ -1,18 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState : any = []
-
-// export const payformSlice = createSlice({
-//     name : 'payform',
-//     initialState,
-//     reducers: {
-//         addFormData : (state , action) => {
-//             state.push(action.payload)
-//         },
-//         removeFormData : (state) => []
-//     }
-// })
-
 const initialState : any = {}
 
 export const payformSlice = createSlice({

@@ -9,9 +9,9 @@
   border: none;
   color: $main-white;
 
-  @media (max-width: 768px) {
-    top: 1.5rem;
-    right: 1.5rem;
+  @media (max-width: $media-tablet) {
+    top: 2.8rem;
+    right: 2.5rem;
     z-index: 999;
     position: fixed;
     display: flex;

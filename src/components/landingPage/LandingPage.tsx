@@ -11,6 +11,7 @@ import NavBarTop from "../navbar/NavbarTop";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Footer from "../footer/Footer";
 import CentralProductSection from "./CentralProductSection/CentralProductSection";
+
 /* import NavBarBottom from "../navbar/NavbarBottom";
 import NewsLetterForm from "./newsLetter/form/NewsLetterForm"; */
 
@@ -34,6 +35,7 @@ const LandingPage = () => {
       <FeaturesContent />
       <LandingCarousel />
       <NavBarBottom />
+
       <Footer />
     </>
   );

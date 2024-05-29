@@ -19,6 +19,19 @@ const NavBarTop: React.FC = () => {
   const dispatch = useAppDispatch();
   const quantity = useAppSelector((state) => state.cart.totalQuantity);
 
+  //sottomenù per aside mobile
+  const [showMenSubItems, setShowMenSubItems] = useState(false);
+  const [showWomenSubItems, setShowWomenSubItems] = useState(false);
+  
+  const toggleMenSubItems = () => {
+    setShowMenSubItems(!showMenSubItems);
+  };
+  
+  const toggleWomenSubItems = () => {
+    setShowWomenSubItems(!showWomenSubItems);
+  };
+
+  //passaggio delle categorie
   const [gender, setGender] = useState("");
   function genderMen() {
     setGender("men");
@@ -26,19 +39,7 @@ const NavBarTop: React.FC = () => {
   function genderWoman() {
     setGender("woman");
   }
-
-  //sottomenù per aside mobile
-  const [showMenSubItems, setShowMenSubItems] = useState(false);
-  const [showWomenSubItems, setShowWomenSubItems] = useState(false);
-
-  const toggleMenSubItems = () => {
-    setShowMenSubItems(!showMenSubItems);
-  };
-
-  const toggleWomenSubItems = () => {
-    setShowWomenSubItems(!showWomenSubItems);
-  };
-
+  
   function linkShirts() {
     navigate(`/plp/${gender}/shirt`, {
       state: { category: "shirt", gender: gender },
@@ -54,7 +55,6 @@ const NavBarTop: React.FC = () => {
       state: { category: "shoes", gender: gender },
     });
   }
-
   function linkAll() {
     navigate(`/plp/${gender}`, { state: { gender: gender } });
   }

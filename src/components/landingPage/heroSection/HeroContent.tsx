@@ -17,7 +17,7 @@ const Content = () => {
 
   useEffect(() => {
     if (error) {
-      navigate('/error');
+      navigate('*');
     }
   }, [error, navigate]);
 

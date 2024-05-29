@@ -22,10 +22,10 @@
   }
 
   h1 {
-    margin-bottom: 20px;
+    margin-block-end: 20px;
     font-size: 1rem;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $media-tablet) {
       font-size: 1.5rem;
     }
 
@@ -39,7 +39,7 @@
   h3 {
     font-size: 0.8rem;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $media-tablet) {
       font-size: 1rem;
     }
 
@@ -57,7 +57,7 @@
     width: 100%;
     height: 100%;
     justify-content: space-between;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $media-tablet) {
       flex-direction: row;
     }
 

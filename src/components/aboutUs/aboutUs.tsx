@@ -1,8 +1,12 @@
 import '../aboutUs/aboutUs.scss'
+import Footer from '../footer/Footer';
+import NavBarBottom from '../navbar/NavbarBottom';
+import NavBarTop from '../navbar/NavbarTop';
 const AboutUs = () => {
 
     return (
         <>
+            <NavBarTop/>
             <div className="wrapper-aboutus">
                 <div className="container-aboutus">
                     <img className='first-img-aboutus' src={'./src/assets/VulcanImgAboutUs.webp'} alt="Image of Vulcan" />
@@ -45,6 +49,8 @@ const AboutUs = () => {
                 </div>
 
             </div>
+            <Footer/>
+            <NavBarBottom/>
         </>
     )
 }
