@@ -6,8 +6,8 @@ import { FormattedMessage } from "react-intl";
 import Cart from "../cart/Cart";
 import NavBarTop from "../navbar/NavbarTop";
 import { Carousel } from "../carousel/Carousel";
-import "./pdp.scss"
 import isValid from "../../utils/validationFunction"
+import "./pdp.scss"
 
 const Pdp: React.FC<any> = () => {
     const { id } = useParams();
@@ -107,16 +107,26 @@ const Pdp: React.FC<any> = () => {
                     <div className="pdp-container-size">
                         <div className="pdp-btn">
                             {element?.category === 'shoes' && element?.gender === 'woman' && <button onClick={handleSize} value='36'>36</button>}
-                            {element?.category === 'shoes' ? null : <button onClick={handleSize} value='XS'>XS</button>}
-                            {element?.category === 'shoes' ? <button onClick={handleSize} value='37'>37</button> : <button onClick={handleSize} value='S'>S</button>}
-                            {element?.category === 'shoes' ? <button onClick={handleSize} value='38'>38</button> : <button onClick={handleSize} value='M'>M</button>}
-                            {element?.category === 'shoes' ? <button onClick={handleSize} value='39'>39</button> : <button onClick={handleSize} value='L'>L</button>}
-                            {element?.category === 'shoes' ? <button onClick={handleSize} value='40'>40</button> : <button onClick={handleSize} value='XL'>XL</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='41'>41</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='42'>42</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='43'>43</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='44'>44</button>}
-                            {element?.category === 'shoes' && element?.gender === 'men' && <button onClick={handleSize} value='45'>45</button>}
+                            {element?.category === 'shoes' ? <>
+                                <button onClick={handleSize} value='37'>37</button>
+                                <button onClick={handleSize} value='38'>38</button>
+                                <button onClick={handleSize} value='39'>39</button>
+                                <button onClick={handleSize} value='40'>40</button>
+                            </> : <> 
+                                <button onClick={handleSize} value='XS'>XS</button>
+                                <button onClick={handleSize} value='S'>S</button>
+                                <button onClick={handleSize} value='M'>M</button>
+                                <button onClick={handleSize} value='L'>L</button>
+                                <button onClick={handleSize} value='XL'>XL</button>
+                            </>
+                            }
+                            {element?.category === 'shoes' && element?.gender === 'men' && <>
+                                <button onClick={handleSize} value='41'>41</button>
+                                <button onClick={handleSize} value='42'>42</button>
+                                <button onClick={handleSize} value='43'>43</button>
+                                <button onClick={handleSize} value='44'>44</button>
+                                <button onClick={handleSize} value='45'>45</button>
+                            </>}
                         </div>
                     </div>
                     <div className="pdp-btn-cart">
