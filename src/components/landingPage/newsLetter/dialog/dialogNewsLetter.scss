@@ -31,17 +31,13 @@
   }
 
   .dialog-message-cont {
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
 
     .dialog-message-subcont {
-      display: flex;
+      @include flex-center;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 1rem;
 
       .dialog-message-title {
@@ -59,7 +55,7 @@
 }
 
 /* Media query per tablet */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $media-tablet) {
   .dialog-cont {
     padding: 4rem 3rem;
   }

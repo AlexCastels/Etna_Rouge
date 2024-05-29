@@ -1,5 +1,5 @@
 import React from "react";
-import "./navbarBottom.scss";
+import "./NavbarBottom.scss";
 import { toggleCart } from "../../redux/slices/cartSlice";
 import { useAppDispatch } from "../../redux/hook";
 import { useNavigate } from "react-router-dom";

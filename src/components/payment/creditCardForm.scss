@@ -33,13 +33,13 @@
 
     .credit-card-img{
         width: 50px;
-        margin-left: -50px;
+        margin-inline-start: -50px;
     }
     .creditCard-select{
         display: flex;
         align-items: center;
         div{
-            margin-left: -90px; 
+            margin-inline-start: -90px; 
             .creditCard-select-style{
                 border: none;
                 letter-spacing: 1px;

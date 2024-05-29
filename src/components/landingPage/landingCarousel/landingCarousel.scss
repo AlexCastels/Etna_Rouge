@@ -40,17 +40,14 @@
   }
 
   .lp-carousel-subcont {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     width: 100%;
     margin-inline-start: 1.6rem;
     padding: 2rem 1rem;
   }
 
   .lp-carousel-item {
-    margin-right: 1rem;
+    margin-inline-end: 1rem;
     flex: 1;
     display: flex;
     align-items: center;
