@@ -21,7 +21,7 @@ import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
 import DiscoverContent from "./components/landingPage/discoverMore/DiscoverContent.tsx";
 import "./style.scss";
-import NavBarBottom from "./components/navbar/NavbarBottom.tsx";
+
 
 interface Messages {
   [key: string]: any;
@@ -43,9 +43,9 @@ function App() {
 
   return (
     <>
-      <Switcher />
+   {/*    <Switcher /> */}
       <IntlProvider locale={locale} messages={messages}>
-        <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
+      {/*   <LanguageSelector locale={locale} changeLanguage={changeLanguage} />  */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
