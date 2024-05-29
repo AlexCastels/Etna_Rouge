@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-
 import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
@@ -38,11 +37,11 @@ function App() {
 
   const changeLanguage = (language: string) => {
     setLocale(language);
-  };.0
+  };
+  0.0;
 
   return (
     <>
-      
       <Switcher />
       <IntlProvider locale={locale} messages={messages}>
         <LanguageSelector locale={locale} changeLanguage={changeLanguage} />

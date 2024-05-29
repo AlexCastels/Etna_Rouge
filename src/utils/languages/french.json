@@ -74,6 +74,10 @@
   "footer.contactUs": "Contactez-nous",
   "footer.ourService": "Notre service : ",
   "footer.studentDiscount": "Remise étudiante",
-  "footer.inviteAFriend": "Invitez un ami"
+  "footer.inviteAFriend": "Invitez un ami",
+
+  
+  "discoverSection.title" :  "Galerie Etna Rouge 2024",
+  "discoverSection.news" : "Actualités Etnasphère"
 
 }

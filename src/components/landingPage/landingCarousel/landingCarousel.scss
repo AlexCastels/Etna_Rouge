@@ -1,22 +1,23 @@
 @import "../../../style.scss";
 
 .carousel-container {
-  background-color: white;
-  color: $main-black;
+  width: 100vw;
+  &.dark {
+    background: $main-black;
+    color: $main-white;
+
+  }
+  &.light {
+    background: $main-white;
+    color: $main-black;
+ 
+  }
   display: flex;
   width: 100%;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
   padding: 0.5rem 1rem;
-
-  &.light {
-    background-color: $main-white;
-  }
-
-  &.dark {
-    background-color: $main-black;
-  }
 
   @media only screen and (min-width: 798px) {
     padding: 3rem;
@@ -27,6 +28,7 @@
     width: 100%;
     font-size: 1rem;
     margin-inline-start: 1rem;
+
     &.light {
       color: $main-black;
     }
@@ -40,46 +42,39 @@
   }
 
   .lp-carousel-subcont {
-    @include flex-center;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin-inline-start: 1.6rem;
     padding: 2rem 1rem;
   }
 
   .lp-carousel-item {
-    margin-inline-end: 1rem;
+    margin-right: 1rem;
     flex: 1;
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-direction: column;
-    width: 200px;
-    height: 15rem;
-
-    @media only screen and (min-width: 798px) {
-      height: 30rem;
-      width: auto;
-    }
-
-    .lp-carousel-description {
-      margin-block-start: 0.5rem;
-
-      &.light {
-        color: $main-black;
-      }
-      &.dark {
-        color: $main-white;
-      }
-    }
 
     .lp-carousel-img {
-      width: 100%;
-      height: 35vb;
+      width: 100px;
+      height: 100px;
       display: block;
 
       @media only screen and (min-width: 798px) {
-        height: 38vw;
-        width: 45vw;
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    .lp-carousel-description {
+      font-size: 0.4rem;
+      margin-block-start: 0.8rem;
+      @media only screen and (min-width: 798px) {
+        font-size: 1rem;
       }
     }
   }
@@ -87,11 +82,12 @@
   .lp-carousel-link {
     margin-block-end: 2rem;
     text-decoration: none;
-    &.dark {
-      color: $main-white;
-    }
+
     &.light {
       color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
     }
 
     &:hover {

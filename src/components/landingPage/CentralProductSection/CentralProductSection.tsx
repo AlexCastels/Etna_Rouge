@@ -3,16 +3,20 @@ import { useDarkMode } from "../../darkmode/DarkmodeContext";
 import { FormattedMessage } from "react-intl";
 import "./centralProductSection.scss";
 
+
 const CentralProductSection = () => {
   const navigate = useNavigate();
   const { mode } = useDarkMode();
   const gender = "woman";
 
+  //navigating to the women categories on click
   const goToCategory = (category: string) => {
     navigate(`/plp/${gender}/${category}`, {
-      state: { category, gender: "woman" },
+      state: { category, gender },
     });
   };
+
+
 
   return (
     <div className={`central-product-sec-cont ${mode}`}>
@@ -31,7 +35,7 @@ const CentralProductSection = () => {
       <div className="central-product-subcont">
         <div
           className="first-product-sec"
-          onClick={() => goToCategory("shirt")}
+          onClick={() => goToCategory("shirt")} //passing the name of category to go to the correct route
         >
           <h2>Shirts</h2>
           <p>Shirts</p>
