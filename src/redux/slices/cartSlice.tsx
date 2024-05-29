@@ -22,11 +22,8 @@ const initialState: CartState = {
 };
 
 const totale = (cart: Card[], activePromo: boolean): any => {
-    //creo un array generale dove verranno contenuti i prezzi
     let generalArray: number[] = [];
-    //ciclo il carrello, all'interno del ciclo vado a controllare che per ogni
-    //quantità del prodotto mi dovrà andare ad aggiungere il singolo prezzo
-    //all'array generale
+    //ciclo il carrello per poter pushare il singolo prezzo in base alla quantità del singolo prodotto
     cart.forEach((elemento) => {
         for (let i = 0; i < elemento.quantity; i++) {
             generalArray.push(elemento.price);
