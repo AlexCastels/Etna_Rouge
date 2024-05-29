@@ -33,17 +33,11 @@ const totale = (cart: Card[], activePromo: boolean): any => {
     }
   });
   //estrapolo il valore globali delle quantità che avrò dentro il carrello (per la condizione)
-  const quantity = cart
-    .map((elemento) => elemento.quantity)
-    .reduce((a, b) => a + b, 0);
+  const quantity = cart .map((elemento) => elemento.quantity).reduce((a, b) => a + b, 0);
   //estrapolo il totale che avrò nel carrello (per la condizione)
   let total = Math.round(
     cart.reduce((total, item) => total + item.price * item.quantity, 0)
   );
-
-  // console.log('quantità totali in cart ' + quantity)
-  // console.log('totale globale cart ' + total);
-  // console.log('array con prezzi generali ' + generalArray);
 
   //imposto la condizione per poter accedere alla promo
 
