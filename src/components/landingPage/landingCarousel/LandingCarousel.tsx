@@ -4,6 +4,8 @@ import { useDarkMode } from "../../darkmode/DarkmodeContext";
 import { FormattedMessage } from "react-intl";
 import "./landingCarousel.scss";
 import { Link } from "react-router-dom";
+import Loading from "../../loading/Loading";
+import ErrorPage from "../../errorPage/ErrorPage";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
@@ -15,12 +17,11 @@ const LandingCarousel = () => {
 
   const filteredContentsLC = useMemo(() => {
     return contents.filter(
-      (items: any) => items.sys.contentType.sys.id === "erLpCarousel" 
+      (items: any) => items.sys.contentType.sys.id === "erLpCarousel"
     );
   }, [contents]);
 
-console.log(filteredContentsLC);
-
+  console.log(filteredContentsLC);
 
   const arr = useMemo(() => {
     return filteredContentsLC.map((item) => ({
@@ -44,11 +45,11 @@ console.log(filteredContentsLC);
   }, [arr]);
 
   if (loading) {
-    return <span>Loading...</span>;
+    return <Loading />;
   }
 
   if (error) {
-    return <span>{error}</span>;
+    return <ErrorPage />;
   }
 
   if (arr.length === 0) {
