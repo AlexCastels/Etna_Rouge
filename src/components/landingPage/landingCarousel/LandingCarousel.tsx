@@ -3,6 +3,7 @@ import { useAppSelector } from "../../../redux/hook";
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
 import { FormattedMessage } from "react-intl";
 import "./landingCarousel.scss";
+import { Link } from "react-router-dom";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
@@ -12,18 +13,23 @@ const LandingCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { mode } = useDarkMode();
 
-  const filteredContentsHero = useMemo(() => {
+  const filteredContentsLC = useMemo(() => {
     return contents.filter(
-      (items: any) => items.sys.contentType.sys.id === "erLpCarousel"
+      (items: any) => items.sys.contentType.sys.id === "erLpCarousel" 
     );
   }, [contents]);
 
+console.log(filteredContentsLC);
+
+
   const arr = useMemo(() => {
-    return filteredContentsHero.map((item) => ({
+    return filteredContentsLC.map((item) => ({
       img: item.fields.image?.fields?.file?.url,
       description: item?.fields.description,
     }));
-  }, [filteredContentsHero]);
+  }, [filteredContentsLC]);
+
+  console.log(filteredContentsLC);
 
   useEffect(() => {
     if (arr.length > 0) {
@@ -31,7 +37,7 @@ const LandingCarousel = () => {
         setCurrentIndex((prevIndex) =>
           prevIndex >= arr.length - 2 ? 0 : prevIndex + 2
         );
-      }, 5000); // Change images every 5 seconds
+      }, 5000);
 
       return () => clearInterval(interval);
     }
@@ -77,13 +83,12 @@ const LandingCarousel = () => {
           </div>
         ))}
       </div>
-      {/*  <Link className="lp-carousel-link" to="/discover">
-
+      <Link className={`lp-carousel-link ${mode}`} to="/discover">
         <FormattedMessage
           id="landing.carousel.discover"
           defaultMessage="Discover more "
         />
-      </Link> */}
+      </Link>
     </div>
   );
 };

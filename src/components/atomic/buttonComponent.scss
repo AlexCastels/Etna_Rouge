@@ -6,16 +6,8 @@
     transition: all ease-in-out 0.5s;
     cursor: pointer;
     letter-spacing: 0.5rem;
-    &.dark{
-        background-color: $main-white;
-        color: $main-black; 
-        border: none;
-    }
-    &.light{
-        background-color: $main-black;
-        color: $main-white;
-        border: 1px solid $secondary-white;
-    }
+    background-color: $main-black;
+    color: $main-white;
     &:hover{
         opacity: 0.3;
     }
