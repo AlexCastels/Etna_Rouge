@@ -6,7 +6,6 @@ import { toggleCart } from "../../redux/slices/cartSlice";
 import HamburgerMenu from "../hamburger/HamburgerMenu";
 import Logo from "../logo/Logo";
 import "./navbarTop.scss";
-import "./Overlay.scss";
 import { useDarkMode } from "../darkmode/DarkmodeContext";
 
 const NavBarTop: React.FC = () => {
@@ -15,7 +14,6 @@ const NavBarTop: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleSidebarGender, setToggleSidebarGender] = useState(false);
 
-  const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const quantity = useAppSelector((state) => state.cart.totalQuantity);

@@ -2,7 +2,7 @@
 
 .pdp-wrapper {
     padding-block-start: 80px;
-    margin-bottom: 6rem;
+    margin-block-end: 6rem;
     display: flex;
     justify-content: center;
     gap: 10rem;
@@ -42,9 +42,7 @@
         align-items: center;
         .pdp-detail-header {
             gap: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center;
             flex-direction: column;
             .pdp-color-container {
                 display: flex;
@@ -88,10 +86,8 @@
         }
 
         .pdp-container-size {
-            display: flex;
-            justify-content: center;
+            @include flex-center;
             flex-direction: column;
-            align-items: center;
             gap: 10px;
             width: 30rem;
 
@@ -100,17 +96,10 @@
             }
 
             .pdp-btn {
-                // width: 100%;
                 display: flex;
-                // justify-content: start;
                 align-items: center;
-                // flex-direction: row;
-                // flex-wrap: wrap;
-
                 button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include flex-center;
                     margin: 0.2rem;
                     border: 1px solid black;
                     padding: 0.5rem;
@@ -135,7 +124,7 @@
         }
 
         .pdp-btn-cart {
-            margin-bottom: 3rem;
+            margin-block-end: 3rem;
             height: 3rem;
             width: 100%;
             display: flex;
@@ -179,7 +168,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $media-tablet) {
     .pdp-wrapper {
         display: flex;
         flex-direction: column;
@@ -214,21 +203,13 @@
             }
         }
         .pdp-info {
-            // padding-left: 0.5rem;
-            // padding-right: 1rem;
-            // width: 40%;
             gap: 0.5rem;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
-            // align-items: center;
 
             .pdp-detail-header {
                 gap: 1rem;
-
-                // gap: 0.5rem;
-                // width: 100%;
-                // margin-top: 0.5rem;
                 .pdp-color-container {
                     display: flex;
                     gap: 5px;
@@ -271,10 +252,8 @@
             }
 
             .pdp-container-size {
-                display: flex;
-                justify-content: center;
+                @include flex-center;;
                 flex-direction: column;
-                align-items: center;
                 gap: 10px;
 
                 .pdp-size {
@@ -282,17 +261,12 @@
                 }
 
                 .pdp-btn {
-                    // width: 100%;
                     display: flex;
                     justify-content: start;
                     align-items: center;
-                    // flex-direction: row;
-                    // flex-wrap: wrap;
 
                     button {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include flex-center;;
                         margin: 0.2rem;
                         border: 1px solid black;
                         padding: 0.5rem;
@@ -325,9 +299,7 @@
                 align-items: center;
 
                 .btn-cart-component {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include flex-center;
                     margin: 0.2rem;
                     border: 1px solid black;
                     padding: 0.5rem;
@@ -355,7 +327,7 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $media-mobile) {
     .pdp-wrapper {
         .pdp-icon-back {
             left: 3rem;

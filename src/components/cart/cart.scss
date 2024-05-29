@@ -1,9 +1,11 @@
 @import "../../style.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 .no-scroll {
   overflow-y: hidden;
 }
@@ -53,7 +55,7 @@
       img {
         margin-inline-end: 30px;
         inline-size: 20px;
-        height: 20px;
+        block-size: 20px;
       }
     }
 
@@ -110,6 +112,13 @@
           }
         }
       }
+
+      .quantity {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
     }
 
     .card-button {
@@ -158,7 +167,9 @@
       .totals {
         inline-size: 400px;
       }
+
       inline-size: 400px;
+
       .cart-body {
         inline-size: 400px;
       }
