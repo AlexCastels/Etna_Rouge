@@ -3,6 +3,8 @@ import { useAppSelector } from "../../../redux/hook";
 import HeroSection from "./HeroSection";
 
 import { useNavigate } from "react-router-dom";
+import Loading from "../../loading/Loading";
+import ErrorPage from "../../errorPage/ErrorPage";
 
 
 const Content = () => {
@@ -11,6 +13,7 @@ const Content = () => {
   const error = useAppSelector((state) => state.contentful.error);
   const loading = useAppSelector((state) => state.contentful.loading);
 
+  //filter and memoizing the contents of the content type selected
   const filteredContentsHero = useMemo(() => {
     return contents.filter((items) => items.fields.title === "Hero Section ER");
   }, [contents]);
@@ -22,11 +25,11 @@ const Content = () => {
   }, [error, navigate]);
 
   if (loading) {
-    return <span> loading... </span>;
+    return <Loading/> ;
   }
 
   if (error) {
-    return <span>Something went wrong</span>;
+    return <ErrorPage />;
   }
 
   return (

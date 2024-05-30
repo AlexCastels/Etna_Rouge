@@ -17,7 +17,6 @@ interface PayForm {
 }
 
 export function PayForm(){
-    // const total = useAppSelector(state => state.cart.total)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const { mode } = useDarkMode();
@@ -50,7 +49,7 @@ export function PayForm(){
 
     function handleBtn(){
         if(input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country){
-            navigate('/SelectPayment')
+            navigate('/selectPayment')
             console.log(input);
             dispatch(addFormData(input))            
         }        

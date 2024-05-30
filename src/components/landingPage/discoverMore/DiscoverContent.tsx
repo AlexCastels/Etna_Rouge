@@ -1,8 +1,10 @@
 import { useEffect, useMemo } from "react";
 import { useAppSelector } from "../../../redux/hook";
-import DiscoverSection from "./DiscoverSection.js"
+import DiscoverSection from "./DiscoverSection.js";
 import { useDispatch } from "react-redux";
 import { fetchContentfulData } from "../../../redux/slices/contentfulSlice.js";
+import Loading from "../../loading/Loading.js";
+import ErrorPage from "../../errorPage/ErrorPage.js";
 
 const DiscoverContent: React.FC = () => {
   const loading = useAppSelector((state) => state.contentful.loading);
@@ -10,15 +12,13 @@ const DiscoverContent: React.FC = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
   const dispatch = useDispatch();
 
-  
-    useEffect(() => {
+  useEffect(() => {
     if (contents.length === 0) {
-      dispatch(fetchContentfulData()); //dispatching the action of fetch data from Contentful to allow the access to the Landing Page's components
+      dispatch(fetchContentfulData()); //dispatching the action of fetch data from Contentful to allow the access to the component
     }
   }, [dispatch, contents.length]);
 
-  
-//filter the contents for the news section and memoizing the given values
+  //filter the contents for the news section and memoizing the given values
   const filterFeaturesContent = useMemo(() => {
     return contents.filter(
       (item) => item.sys.contentType.sys.id === "newsErPage"
@@ -32,20 +32,23 @@ const DiscoverContent: React.FC = () => {
     );
   }, [contents]);
 
-
-
   if (error) {
-    return <div>Error: {error}</div>;
+    return <ErrorPage />;
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
     <div>
       {filterFeaturesContent.map((item) => (
-        <DiscoverSection key={item.sys.id} error={error} images={filteredContentsLC} content={item.fields} />
+        <DiscoverSection
+          key={item.sys.id}
+          error={error}
+          images={filteredContentsLC}
+          content={item.fields}
+        />
       ))}
     </div>
   );

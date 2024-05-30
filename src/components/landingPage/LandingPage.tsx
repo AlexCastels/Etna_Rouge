@@ -1,7 +1,6 @@
-import Cart from "../cart/Cart";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { useEffect } from "react";
 import { fetchContentfulData } from "../../redux/slices/contentfulSlice";
 import PromoContent from "../promoBanner/PromoContent";
 import FeaturesContent from "./featuresSection/FeaturesContent";
@@ -11,6 +10,7 @@ import NavBarTop from "../navbar/NavbarTop";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Footer from "../footer/Footer";
 import CentralProductSection from "./CentralProductSection/CentralProductSection";
+import Cart from "../cart/Cart";
 
 
 const LandingPage = () => {
