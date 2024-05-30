@@ -7,8 +7,8 @@ import ErrorPage from "../../errorPage/ErrorPage";
 const FeaturesContent: React.FC = () => {
   const loading = useAppSelector((state) => state.contentful.loading);
   const error = useAppSelector((state) => state.contentful.error);
-  const contents = useAppSelector((state) => state.contentful.contents);
-
+  const contents = useAppSelector((state) => state.contentful.contents); 
+//filtering and momoizing the paragraphs and the image from the content type 
   const filterFeaturesContent = useMemo(() => {
     return contents.filter((item) => item.fields.title === "Feature Section");
   }, [contents]);

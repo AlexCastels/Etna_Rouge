@@ -14,7 +14,7 @@ const DiscoverContent: React.FC = () => {
 
   useEffect(() => {
     if (contents.length === 0) {
-      dispatch(fetchContentfulData()); //dispatching the action of fetch data from Contentful to allow the access to the Landing Page's components
+      dispatch(fetchContentfulData()); //dispatching the action of fetch data from Contentful to allow the access to the component
     }
   }, [dispatch, contents.length]);
 

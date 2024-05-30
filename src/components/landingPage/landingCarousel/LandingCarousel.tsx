@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { useAppSelector } from "../../../redux/hook";
 import { useDarkMode } from "../../darkmode/DarkmodeContext";
+import { useAppSelector } from "../../../redux/hook";
 import { FormattedMessage } from "react-intl";
-import "./landingCarousel.scss";
 import { Link } from "react-router-dom";
 import Loading from "../../loading/Loading";
 import ErrorPage from "../../errorPage/ErrorPage";
+import "./landingCarousel.scss";
 
 const LandingCarousel = () => {
   const contents = useAppSelector((state) => state.contentful.contents);
@@ -14,15 +14,14 @@ const LandingCarousel = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const { mode } = useDarkMode();
-
+//filter and memoizing the contents of the correct content type
   const filteredContentsLC = useMemo(() => {
     return contents.filter(
       (items: any) => items.sys.contentType.sys.id === "erLpCarousel"
     );
   }, [contents]);
 
-  console.log(filteredContentsLC);
-
+// mapping and memoizing the result in a new object
   const arr = useMemo(() => {
     return filteredContentsLC.map((item) => ({
       img: item.fields.image?.fields?.file?.url,
@@ -30,8 +29,8 @@ const LandingCarousel = () => {
     }));
   }, [filteredContentsLC]);
 
-  console.log(filteredContentsLC);
 
+//setting the interval to slide two images each 5s
   useEffect(() => {
     if (arr.length > 0) {
       const interval = setInterval(() => {

@@ -18,33 +18,22 @@ import esText from "./utils/languages/espanol.json";
 import frText from "./utils/languages/french.json";
 import ErrorPage from "./components/errorPage/ErrorPage.tsx";
 import LandingPage from "./components/landingPage/LandingPage.tsx";
-import Loading from "./components/loading/Loading.tsx";
 import DiscoverContent from "./components/landingPage/discoverMore/DiscoverContent.tsx";
+import { useLanguageContext } from "./components/languageSelector/LanguageContext.tsx";
 
 interface Messages {
   [key: string]: any;
 }
 
 function App() {
-  const [locale, setLocale] = useState("en");
 
-  const messages: Messages = {
-    en: enText,
-    it: itText,
-    es: esText,
-    fr: frText,
-  }[locale];
-
-  const changeLanguage = (language: string) => {
-    setLocale(language);
-  };
-  0.0;
+  const {locale, messages} = useLanguageContext()
+  
 
   return (
     <>
       <Switcher />
       <IntlProvider locale={locale} messages={messages}>
-        <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
