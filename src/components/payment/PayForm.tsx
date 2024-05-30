@@ -85,7 +85,6 @@ export function PayForm(){
             <button className={`payform-btn ${mode}`} onClick={handleBtn}>
                 <FormattedMessage id="payForm.button.pay" defaultMessage="Go to pay"/>
             </button>
-            {/* {input.name && input.surname && input.email && input.phone && input.address && input.province && input.zipcode && input.country ? <p>Compilare campi richiesti</p> : null} */}
         </form>
     )
 }
