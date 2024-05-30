@@ -16,6 +16,7 @@ const NewsLetterForm: React.FC = () => {
   const [gender, setGender] = useState<string | null>(null);
   const { mode } = useDarkMode();
 
+  //handling each case of invalid subscribing
   const handleCloseDialog = () => {
     setOpenDialog(false);
     setInvalidEmail(false);
@@ -38,11 +39,13 @@ const NewsLetterForm: React.FC = () => {
       return;
     }
 
+    // verifing if the email is already in the Local Storage 
     if (internalMemory.get(email) === email) {
       setRegisteredYet(true);
       setOpenDialog(true);
       return;
     } else {
+      //if not registered, saving the e-mail in Local Storage
       internalMemory.set(email, email);
       setSubmitted(true);
       setOpenDialog(true);
@@ -58,6 +61,7 @@ const NewsLetterForm: React.FC = () => {
     setGender(selectedGender);
   };
 
+  
   const validateEmail = (email: string): boolean => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);

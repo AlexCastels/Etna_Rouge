@@ -13,6 +13,7 @@ const Content = () => {
   const error = useAppSelector((state) => state.contentful.error);
   const loading = useAppSelector((state) => state.contentful.loading);
 
+  //filter and memoizing the contents of the content type selected
   const filteredContentsHero = useMemo(() => {
     return contents.filter((items) => items.fields.title === "Hero Section ER");
   }, [contents]);

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDarkMode } from "./DarkmodeContext";
-import moon from "../../assets/moon.png";
-import sun from "../../assets/sun.png";
 import "./dialog.scss";
 
 interface DialogProps {
@@ -25,16 +23,16 @@ const Dialog: React.FC<DialogProps> = ({ active, setActive }) => {
     setClosing(true);
   };
 
-  useEffect(() => {
+  useEffect(() => {  //setting a Timeout for closing the Dialog
     if (closing) {
       setTimeout(() => {
         setClosing(false);
         setActive(false);
-      }, 300); // Time in milliseconds, adjust as needed
+      }, 300);
     }
   }, [closing, setActive]);
 
-  useEffect(() => {
+  useEffect(() => { // adding the class for light and dark theme to the body
     document.body.classList.add(mode);
   }, [mode]);
 
@@ -65,12 +63,10 @@ const Dialog: React.FC<DialogProps> = ({ active, setActive }) => {
               stroke-linejoin="round"
             />
           </svg>
-          {/* <img className="light-mode-img" src={moon} alt="dark mode" /> */}
         </button>
       </span>
 
       <button className="lightmode-btn" onClick={handleLightClick}>
-        {/*  <img className="light-mode-img" src={sun} alt="light mode" /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50px"
