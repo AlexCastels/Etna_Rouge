@@ -7,26 +7,15 @@ import { useDarkMode } from "../darkmode/DarkmodeContext";
 import "./thankYouPage.scss";
 
 export function ThankYouPageDelivery() {
-
-  const total = useAppSelector((state) => state.cart.total);
-  const totalPromo = useAppSelector((state) => state.cart.totalPromo)
-  const formData = useAppSelector((state) => state.payformData);
-  const dispatch = useAppDispatch();
+    
+    const total = useAppSelector((state) => state.cart.total);
+    const totalPromo = useAppSelector((state) => state.cart.totalPromo)
+    const formData = useAppSelector((state) => state.payformData);
+    const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
-
-    // const location = useLocation()
-    // let deliveryTotal = location.state.total
-    // if(location){
-    //     deliveryTotal =
-    // }
-    // console.log(deliveryTotal);
-
-    // const [deliveryTotal , setDeliverytotal] = useState(10)
-    // if(location.state.total){
-    //     setDeliverytotal((p) => p + location.state.total)
-    // }
-
     const navigate = useNavigate();
+
+    
     function handleBtn() {
         navigate("/");
         dispatch(removeFormData());
@@ -54,7 +43,7 @@ export function ThankYouPageDelivery() {
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
-                        total: <FormattedNumber value={total + 10}style="currency" currency="EUR" />,
+                        total: <FormattedNumber value={totalPromo ? totalPromo + 10 : total + 10}style="currency" currency="EUR" />,
                         currency: (
                             <FormattedMessage
                                 id="currency"
