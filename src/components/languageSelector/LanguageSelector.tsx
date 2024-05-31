@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent, useCallback } from "react";
+import React, { useState, MouseEvent } from "react";
 import language from "../../assets/languages.png";
 import "./languageSelector.scss";
 
@@ -11,21 +11,20 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   changeLanguage,
 }) => {
   const [openSelect, setOpenSelect] = useState<boolean>(false);
+  
+  
 
   const handleButtonClick = () => {
     setOpenSelect(!openSelect);
   };
 
-  const handleLanguageClick = useCallback(
-    (e: MouseEvent<HTMLLIElement>) => {
-      const selectedLanguage = e.currentTarget.getAttribute("value");
-      if (selectedLanguage) {
-        changeLanguage(selectedLanguage);
-        setOpenSelect(false);
-      }
-    },
-    [changeLanguage]
-  );
+  const handleLanguageClick = (e: MouseEvent<HTMLLIElement>) => {
+    const selectedLanguage = e.currentTarget.getAttribute("value");
+    if (selectedLanguage) {
+      changeLanguage(selectedLanguage);
+      setOpenSelect(false);
+    }
+  };
 
   return (
     <div className="lang-select-container">
