@@ -2,7 +2,7 @@ import enText from "../../utils/languages/english.json";
 import itText from "../../utils/languages/italian.json";
 import esText from "../../utils/languages/espanol.json";
 import frText from "../../utils/languages/french.json";
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useCallback, useContext, useState } from "react";
 
 
 interface LanguageContextType{
@@ -26,9 +26,9 @@ export const LanguageContextProvider: React.FC<{ children: ReactNode }> = ({ chi
     }[locale];
     
     
-  const changeLanguage = (language : string) => {
+  const changeLanguage = useCallback((language: string) => {
     setLocale(language);
-    };
+  }, []);
     
     return ( <LanguageContext.Provider value={{locale, setLocale, messages, changeLanguage}} >
         {children}
