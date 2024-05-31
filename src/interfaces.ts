@@ -34,7 +34,6 @@ export interface Products {
     gender: string;
     category: string;
     img: string;
-    quantity: number;
     description: string;
   }
 

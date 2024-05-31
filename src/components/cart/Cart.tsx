@@ -14,8 +14,8 @@ const Cart = () => {
   //Richiamo valori dello state da redux
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
-  const total = useAppSelector((state) => state.cart.total);
-  const totalPromo = useAppSelector((state) => state.cart.totalPromo);
+  const totalPrice = useAppSelector((state) => state.cart.totalPrice);
+  const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo);
   const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
   const toggleCartValue = useAppSelector((state) => state.cart.toggleCart);
   const activePromo = useAppSelector((state) => state.cart.activePromo);
@@ -74,7 +74,7 @@ const Cart = () => {
                   <div className="container-right">
                     <div className="container-top" style={{ textDecoration: "none", color: "black" }}>
                       <div className="card-name">{el.name}</div>
-                       <p>€ {Math.round(el.quantity * el.price)}</p>
+                       <p>€ {el.price * el.quantity}</p>
                       <div>{el.size}</div>
                     </div>
                     <div className="container-bottom">
@@ -96,7 +96,7 @@ const Cart = () => {
                 Promo Attiva!
               </div>
               <div style={activePromo ? { display: "block" } && { textDecoration: "line-through" } : { display: "none" }}>
-                € {total}
+                € {totalPrice}
               </div>
             </div>
 
@@ -104,7 +104,7 @@ const Cart = () => {
               <div>
                 <FormattedMessage id="cart.price" defaultMessage="Total price:"/>
               </div>
-              € {totalPromo ? totalPromo : total}
+              € {totalPricePromo ? totalPricePromo : totalPrice}
             </div>
             <div className="quantity">
               <div>

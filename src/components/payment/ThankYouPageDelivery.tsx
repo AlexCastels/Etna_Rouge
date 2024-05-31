@@ -8,8 +8,8 @@ import "./thankYouPage.scss";
 
 export function ThankYouPageDelivery() {
 
-  const total = useAppSelector((state) => state.cart.total);
-  const totalPromo = useAppSelector((state) => state.cart.totalPromo)
+  const totalPrice = useAppSelector((state) => state.cart.totalPrice);
+  const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
   const formData = useAppSelector((state) => state.payformData);
   const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
@@ -54,7 +54,7 @@ export function ThankYouPageDelivery() {
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
-                        total: <FormattedNumber value={total + 10}style="currency" currency="EUR" />,
+                        total: <FormattedNumber value={totalPricePromo ? totalPricePromo + 10 : totalPrice + 10} style="currency" currency="EUR" />,
                         currency: (
                             <FormattedMessage
                                 id="currency"
