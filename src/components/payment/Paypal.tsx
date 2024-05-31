@@ -58,8 +58,7 @@ export default function Paypal() {
           return actions.order.create(orderData);
         },
         onApprove: async (data, actions) => {
-          dispatch(clearCart())
-          navigate('/thankYouCard')
+          navigate('/thankYouDelivery' , {state : {delivery : false}})
         },
         onError: (err) => {
           console.log(err);
