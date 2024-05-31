@@ -8,9 +8,8 @@ import "./thankYouPage.scss";
 
 
 export function ThankYouPageCard(){
-    
-    const total = useAppSelector((state) => state.cart.total)
-    const totalPromo = useAppSelector((state) => state.cart.totalPromo)
+    const totalPrice = useAppSelector((state) => state.cart.totalPrice)
+    const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
     const formData = useAppSelector(state => state.payformData)
     const dispatch = useAppDispatch()
     const { mode } = useDarkMode();
@@ -44,13 +43,13 @@ export function ThankYouPageCard(){
                 />
             </p>
             <p>
-                {total === 0 ? null : <FormattedMessage
+                {totalPrice === 0 ? null : <FormattedMessage
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
                         total: (
                             <FormattedNumber
-                                value={totalPromo ? totalPromo : total}
+                                value={totalPricePromo ? totalPricePromo + 10 : totalPrice + 10}
                                 style="currency"
                                 currency="EUR"
                             />

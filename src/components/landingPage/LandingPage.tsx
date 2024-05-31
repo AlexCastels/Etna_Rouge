@@ -29,7 +29,7 @@ const LandingPage = () => {
       <NavBarTop />
       <Cart />
       <HeroContent />
-      <CentralProductSection />
+      <CentralProductSection/>
       <FeaturesContent />
       <LandingCarousel />
       <NavBarBottom />
