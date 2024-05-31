@@ -51,7 +51,7 @@ export default function Paypal() {
         onApprove: async (data, actions) => {
           // const order = await actions.order.capture();
           dispatch(clearCart())
-          navigate('/ThankYouCard')
+          navigate('/thankYouCard')
         },
         onError: (err) => {
           console.log(err);

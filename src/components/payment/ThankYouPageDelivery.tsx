@@ -13,20 +13,9 @@ export function ThankYouPageDelivery() {
   const formData = useAppSelector((state) => state.payformData);
   const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
-
-    // const location = useLocation()
-    // let deliveryTotal = location.state.total
-    // if(location){
-    //     deliveryTotal =
-    // }
-    // console.log(deliveryTotal);
-
-    // const [deliveryTotal , setDeliverytotal] = useState(10)
-    // if(location.state.total){
-    //     setDeliverytotal((p) => p + location.state.total)
-    // }
-
     const navigate = useNavigate();
+
+    
     function handleBtn() {
         navigate("/");
         dispatch(removeFormData());

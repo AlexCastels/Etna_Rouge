@@ -4,10 +4,14 @@ import "../footer/Footer.scss";
 import NewsLetterForm from "../landingPage/newsLetter/form/NewsLetterForm";
 import Logo from "../logo/Logo";
 import { Link } from "react-router-dom";
+import { useLanguageContext } from "../languageSelector/LanguageContext";
+import LanguageSelector from "../languageSelector/LanguageSelector";
 
 
 const Footer = () => {
   const { mode } = useDarkMode();
+  const { changeLanguage, locale } = useLanguageContext();
+  
 
   return (
     <>
@@ -155,8 +159,11 @@ const Footer = () => {
                   <FormattedMessage
                     id="footer.inviteAFriend"
                     defaultMessage="Invite a friend"
-                  />{" "}
+                  />
                 </a>
+              </li>
+              <li>
+                <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
               </li>
             </ul>
           </div>

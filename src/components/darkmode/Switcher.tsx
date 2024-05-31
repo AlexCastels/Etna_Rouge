@@ -7,15 +7,15 @@ import "./switcher.scss";
 
 
 const Switcher = () => {
-  const [active, setActive] = useState<boolean>(false);
-  const [url, setUrl] = useState<string>("");
+  const [active, setActive] = useState<boolean>(false); //the state controls the opening/closing of the Dialog 
+  const [url, setUrl] = useState<string>(""); // this state change the url of the accessibility img
   const { mode } = useDarkMode();
 
   const handleClick = () => {
     setActive((prev) => !prev);
   };
 
-  useEffect(() => {
+  useEffect(() => { //changing the url for show the white or dark accessibility img to make it visible
     if (mode === "light") {
       setUrl(accessibilityLight)
     } else if (mode === "dark") {
@@ -24,7 +24,7 @@ const Switcher = () => {
   }, [mode]);
 
   return (
-    <div className="switcher-cont">
+    <div className="switcher-cont"> 
       <button className="switcher-btn" onClick={handleClick}>
         <img className="access-img" src={url} alt="accessibility" />
       </button>

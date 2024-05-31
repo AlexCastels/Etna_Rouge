@@ -19,11 +19,11 @@ export function SelectPayment() {
     function handleBtn(spia: string) {
         if (spia === "spedizione") {
             console.log(spia);
-            navigate("/ThankYouDelivery");
+            navigate("/thankYouDelivery");
         }
         if (spia === "credit-card") {
             console.log(spia);
-            navigate("/CreditCardForm");
+            navigate("/creditCardForm");
         }
         setNotSelect(true);
     }

@@ -113,7 +113,7 @@ const DiscoverSection: React.FC = ({ content, images }) => {
           <p className="fourth-paragraph">{p4}</p>
         </div>
       </div>
-        {/*     <Footer />   */}
+          <Footer />   
     </div>
   );
 };
