@@ -4,7 +4,6 @@ import Cart from "./components/cart/Cart.tsx";
 import { PayForm } from "./components/payment/PayForm.tsx";
 import { CreditCardForm } from "./components/payment/CreditCardForm.tsx";
 import { SelectPayment } from "./components/payment/SelectPayment.tsx";
-import { ThankYouPageCard } from "./components/payment/ThankYouPageCard.tsx";
 import { ThankYouPageDelivery } from "./components/payment/ThankYouPageDelivery.tsx";
 import { Plp } from "./components/plp/Plp.tsx";
 import Pdp from "./components/pdp/Pdp.tsx";
@@ -39,7 +38,6 @@ function App() {
             <Route path="/deliveryForm" element={<PayForm />} />
             <Route path="/selectPayment" element={<SelectPayment />} />
             <Route path="/creditCardForm" element={<CreditCardForm />} />
-            <Route path="/thankYouCard" element={<ThankYouPageCard />} />
             <Route path="/thankYouDelivery" element={<ThankYouPageDelivery />}/>
             <Route path="*" element={<ErrorPage />} />
           </Routes>

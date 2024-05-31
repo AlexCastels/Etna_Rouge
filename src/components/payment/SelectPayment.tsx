@@ -9,9 +9,13 @@ export function SelectPayment() {
     const navigate = useNavigate();
     const [spia, setSpia] = useState<string>("");
     const [notSelect, setNotSelect] = useState<boolean>(false);
+    const [delivery , setDelivery] = useState<boolean>(false)
     const { mode } = useDarkMode();
 
     function handleRadio(e: React.ChangeEvent<HTMLInputElement>) {
+        if(e.target.value){
+            setDelivery(true)
+        }
         setSpia(e.target.value);
         setNotSelect(false);
     }
@@ -19,7 +23,7 @@ export function SelectPayment() {
     function handleBtn(spia: string) {
         if (spia === "spedizione") {
             console.log(spia);
-            navigate("/thankYouDelivery");
+            navigate("/thankYouDelivery" , { state : {delivery : delivery}});
         }
         if (spia === "credit-card") {
             console.log(spia);

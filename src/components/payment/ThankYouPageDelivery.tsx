@@ -12,6 +12,8 @@ export function ThankYouPageDelivery() {
     const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
     const activePromo = useAppSelector((state) => state.cart.activePromo);
     const formData = useAppSelector((state) => state.payformData);
+    const location = useLocation()
+    const delivery = location.state.delivery
     const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
     const navigate = useNavigate();
@@ -43,7 +45,7 @@ export function ThankYouPageDelivery() {
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
-                        total: <FormattedNumber value={activePromo ? totalPricePromo + 10 : totalPrice + 10} style="currency" currency="EUR" />,
+                        total: <FormattedNumber value={delivery ? (activePromo ? totalPricePromo + 10 : totalPrice + 10) : (activePromo ? totalPricePromo : totalPrice)} style="currency" currency="EUR" />,
                         currency: (
                             <FormattedMessage
                                 id="currency"
