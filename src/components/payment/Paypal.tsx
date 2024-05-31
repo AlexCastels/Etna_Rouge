@@ -21,7 +21,16 @@ interface PayPalPurchaseUnit {
 export default function Paypal() {
   const paypal = useRef<HTMLDivElement>(null);
   const navigate = useNavigate()
-  const totalPrice = useAppSelector((state: RootState)=> state.cart.total);
+  const totalPrice = useAppSelector((state : RootState) => state.cart.totalPrice);
+  const totalPricePromo = useAppSelector((state : RootState) => state.cart.totalPricePromo)
+  const activePromo = useAppSelector((state : RootState) => state.cart.activePromo);
+  let total: number
+  if(activePromo){
+    total=totalPricePromo
+  } else {
+    total=totalPrice
+  }
+
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -41,7 +50,7 @@ export default function Paypal() {
                 description: "Cool looking table",
                 amount: {
                   currency_code: "EUR",
-                  value: totalPrice,
+                  value: total,
                 },
               },
             ],
@@ -49,16 +58,15 @@ export default function Paypal() {
           return actions.order.create(orderData);
         },
         onApprove: async (data, actions) => {
-          // const order = await actions.order.capture();
           dispatch(clearCart())
-          navigate('/ThankYouCard')
+          navigate('/thankYouCard')
         },
         onError: (err) => {
           console.log(err);
         },
       })
       .render(paypal.current!);
-  }, [totalPrice]);
+  }, [total]);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { removeFormData } from "../../redux/slices/payformSlice";
 import { FormattedMessage, FormattedNumber } from "react-intl";
@@ -8,25 +8,16 @@ import "./thankYouPage.scss";
 
 export function ThankYouPageDelivery() {
 
-  const total = useAppSelector((state) => state.cart.total);
-  const totalPromo = useAppSelector((state) => state.cart.totalPromo)
-  const formData = useAppSelector((state) => state.payformData);
-  const dispatch = useAppDispatch();
+    const totalPrice = useAppSelector((state) => state.cart.totalPrice);
+    const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
+    const activePromo = useAppSelector((state) => state.cart.activePromo);
+    const formData = useAppSelector((state) => state.payformData);
+    const location = useLocation()
+    const delivery = location.state.delivery
+    const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
-
-    // const location = useLocation()
-    // let deliveryTotal = location.state.total
-    // if(location){
-    //     deliveryTotal =
-    // }
-    // console.log(deliveryTotal);
-
-    // const [deliveryTotal , setDeliverytotal] = useState(10)
-    // if(location.state.total){
-    //     setDeliverytotal((p) => p + location.state.total)
-    // }
-
     const navigate = useNavigate();
+ 
     function handleBtn() {
         navigate("/");
         dispatch(removeFormData());
@@ -54,7 +45,7 @@ export function ThankYouPageDelivery() {
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
-                        total: <FormattedNumber value={total + 10}style="currency" currency="EUR" />,
+                        total: <FormattedNumber value={delivery ? (activePromo ? totalPricePromo + 10 : totalPrice + 10) : (activePromo ? totalPricePromo : totalPrice)} style="currency" currency="EUR" />,
                         currency: (
                             <FormattedMessage
                                 id="currency"

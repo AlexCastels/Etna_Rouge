@@ -9,7 +9,7 @@ import LandingCarousel from "./landingCarousel/LandingCarousel";
 import NavBarTop from "../navbar/NavbarTop";
 import NavBarBottom from "../navbar/NavbarBottom";
 import Footer from "../footer/Footer";
-import CentralProductSection from "./centralProductSection/CentralProductSection";
+import CentralProductSection from "./CentralProductSection/CentralProductSection";
 import Cart from "../cart/Cart";
 
 
@@ -29,7 +29,7 @@ const LandingPage = () => {
       <NavBarTop />
       <Cart />
       <HeroContent />
-      <CentralProductSection />
+      <CentralProductSection/>
       <FeaturesContent />
       <LandingCarousel />
       <NavBarBottom />
