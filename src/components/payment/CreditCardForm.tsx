@@ -75,7 +75,7 @@ export function CreditCardForm() {
 
     function handleBtn() {
         console.log(creditObj);
-        navigate("/thankYouCard");
+        navigate("/thankYouDelivery" , {state : {delivery : false}});
     }
 
     function handleForm(e: React.FormEvent) {
