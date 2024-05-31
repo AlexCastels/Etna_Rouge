@@ -10,6 +10,7 @@ import "./thankYouPage.scss";
 export function ThankYouPageCard(){
     const totalPrice = useAppSelector((state) => state.cart.totalPrice)
     const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
+    const activePromo = useAppSelector((state) => state.cart.activePromo);
     const formData = useAppSelector(state => state.payformData)
     const dispatch = useAppDispatch()
     const { mode } = useDarkMode();
@@ -49,7 +50,7 @@ export function ThankYouPageCard(){
                     values={{
                         total: (
                             <FormattedNumber
-                                value={totalPricePromo ? totalPricePromo + 10 : totalPrice + 10}
+                                value={activePromo ? totalPricePromo : totalPrice}
                                 style="currency"
                                 currency="EUR"
                             />

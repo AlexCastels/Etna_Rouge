@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { removeFormData } from "../../redux/slices/payformSlice";
 import { FormattedMessage, FormattedNumber } from "react-intl";
@@ -8,14 +8,14 @@ import "./thankYouPage.scss";
 
 export function ThankYouPageDelivery() {
 
-  const totalPrice = useAppSelector((state) => state.cart.totalPrice);
-  const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
-  const formData = useAppSelector((state) => state.payformData);
-  const dispatch = useAppDispatch();
+    const totalPrice = useAppSelector((state) => state.cart.totalPrice);
+    const totalPricePromo = useAppSelector((state) => state.cart.totalPricePromo)
+    const activePromo = useAppSelector((state) => state.cart.activePromo);
+    const formData = useAppSelector((state) => state.payformData);
+    const dispatch = useAppDispatch();
     const { mode } = useDarkMode();
     const navigate = useNavigate();
-
-    
+ 
     function handleBtn() {
         navigate("/");
         dispatch(removeFormData());
@@ -43,7 +43,7 @@ export function ThankYouPageDelivery() {
                     id="thankYou.orderTotal"
                     defaultMessage="Your order: {total} {currency}"
                     values={{
-                        total: <FormattedNumber value={totalPricePromo ? totalPricePromo + 10 : totalPrice + 10} style="currency" currency="EUR" />,
+                        total: <FormattedNumber value={activePromo ? totalPricePromo + 10 : totalPrice + 10} style="currency" currency="EUR" />,
                         currency: (
                             <FormattedMessage
                                 id="currency"
