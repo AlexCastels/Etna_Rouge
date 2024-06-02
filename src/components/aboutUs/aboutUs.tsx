@@ -19,29 +19,24 @@ const AboutUs = () => {
                         <h1>WHO WE ARE</h1>
                         <div className='personal-card-container'>
                             <div className='personal-card'>
-                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 1" />
+                                <img src="../src/assets/alessandroCastelliPhoto.png" alt="person 1" />
                                 <h3>Alessandro Castelli</h3>
-                                <p>Descrizione 1</p>
                             </div>
                             <div className='personal-card'>
-                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 1" />
+                                <img src="../src/assets/eleonoraMelodiaPhoto.jpeg" alt="person 2" />
                                 <h3>Eleonora Melodia</h3>
-                                <p>Descrizione 2</p>
                             </div>
                             <div className='personal-card'>
-                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 1" />
+                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 3" />
                                 <h3>Paolo Baida</h3>
-                                <p>Descrizione 3</p>
                             </div>
                             <div className='personal-card'>
-                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 1" />
+                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 4" />
                                 <h3>Jacopo Sangregorio</h3>
-                                <p>Descrizione 4</p>
                             </div>
                             <div className='personal-card'>
-                                <img src="https://th.bing.com/th/id/R.fa274bcbaaaaa6296613c77708b739f7?rik=0RqgUJLImvJgiw&riu=http%3a%2f%2fdl9fvu4r30qs1.cloudfront.net%2fa2%2f25%2f9921c1ca4822aab89c4a83bc1658%2fthe-office-steve-carell.jpg&ehk=2zULbkNCNrjof9MQ%2bWww4gaqDfiCAqUDSH67f1gqBaw%3d&risl=&pid=ImgRaw&r=0" alt="person 1" />
+                                <img src="../src/assets/dennisGloriosoPhoto.jpg" alt="person 5" />
                                 <h3>Dennis Glorioso</h3>
-                                <p>Descrizione 5</p>
                             </div>
                         </div>
 
