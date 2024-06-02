@@ -4,17 +4,19 @@ import { FormattedMessage } from "react-intl";
 import "./centralProductSection.scss";
 
 
+
 const CentralProductSection = () => {
   const navigate = useNavigate();
   const { mode } = useDarkMode();
-  const gender = "woman";
+  
 
   //navigating to the women categories on click
   const goToCategory = (category: string) => {
-    navigate(`/plp/${gender}/${category}`, {
-      state: { category, gender },
+    navigate(`/plp/woman/${category}`, {
+      state: { category },
     });
   };
+
 
 
 
