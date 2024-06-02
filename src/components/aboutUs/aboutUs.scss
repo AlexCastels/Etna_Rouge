@@ -3,11 +3,13 @@
 .wrapper-aboutus {
     width: 100%;
     @include flex-center;
+
     .container-aboutus {
         width: 100%;
         color: $main-black;
         @include flex-center;
         flex-direction: column;
+
         .first-img-aboutus {
             width: 100%;
             height: 26rem;
@@ -27,6 +29,7 @@
             gap: 3rem;
             font-family: $font-family;
             top: 2.5rem;
+
             h1 {
                 border-top: 1px solid black;
                 font-size: 3rem;
@@ -38,9 +41,11 @@
                 font-size: 2rem;
             }
         }
+
         .personal-card-section {
             width: 90%;
             padding-block: 2rem 8rem;
+
             h1 {
                 display: flex;
                 justify-content: center;
@@ -53,32 +58,40 @@
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 gap: 2rem;
-
                 .personal-card {
                     img {
                         width: 100%;
-                        height: 280px;
+                        height: 300px;
+                        object-fit: cover;
+                    }
+
+                    h3 {
+                        display: flex;
+                        justify-content: center;
                     }
                 }
             }
         }
     }
 }
-@media screen and (min-width: 1200px){
-    .wrapper-aboutus{
-        .container-aboutus{
-            .header-text{
+
+@media screen and (min-width: 1000px) {
+    .wrapper-aboutus {
+        .container-aboutus {
+            .header-text {
                 height: 28.7rem;
             }
         }
     }
 }
-@media screen and (max-width: $media-tablet) {
+
+@media screen and (max-width: $media-tablet) and (min-width: 631px) {
     .wrapper-aboutus {
         .container-aboutus {
-            .header-text{
+            .header-text {
                 height: 28.7rem;
             }
+
             .personal-card-section {
                 .personal-card-container {
                     display: grid;
@@ -88,17 +101,69 @@
         }
     }
 }
+
+@media screen and (max-width: 631px) and (min-width: 481px) {
+    .wrapper-aboutus {
+        .container-aboutus {
+            .header-text {
+                padding: 2rem;
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+            }
+
+            .personal-card-section {
+                .personal-card-container {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        }
+
+    }
+}
+
 @media screen and (max-width: $media-mobile) {
     .wrapper-aboutus {
         .container-aboutus {
-            .first-img-aboutus{
-                height: 37rem;
+            .header-text {
+                height: 42.5rem;
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+
             }
+
+            .first-img-aboutus {
+                height: 39.7rem;
+            }
+
             .personal-card-section {
                 padding-block-end: 7rem;
+
                 .personal-card-container {
                     display: grid;
                     grid-template-columns: repeat(1, 1fr);
+
                     .personal-card {
                         img {
                             height: 450px;
