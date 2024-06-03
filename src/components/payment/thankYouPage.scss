@@ -1,0 +1,67 @@
+@import "../../style.scss";
+
+.thankyou-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    &.dark{
+        background-color: $main-black;
+        color: $main-white; 
+    }
+    &.light{
+        background-color: $main-white;
+        color: $main-black;
+    }
+    h2{
+        font-size: 4rem;
+        &.light{
+            color: $main-black; 
+        }
+        &.dark{
+            color: $main-white;
+        }
+    }
+    .thankyou-line{
+        height: 1px;
+        width: 80%;
+        transition: 1.5s ease-in-out;
+        &.light{
+            background-color: $main-black; 
+        }
+        &.dark{
+            background-color: $main-white;
+        }
+    }
+    p{
+        width: 50%;
+        text-align: center;
+        padding:5px;
+    }
+    @media(max-width:$media-tablet){
+        p{
+            width: 85%;
+        }
+    }
+    
+    .thankyou-btn{
+        width: 250px;
+        padding: 5px;
+        transition: all ease-in-out 0.5s;
+        cursor: pointer;
+        letter-spacing: 0.5rem;
+        &.dark{
+            background-color: $main-white;
+            color: $main-black; 
+        }
+        &.light{
+            background-color: $main-black;
+            color: $main-white;
+        }
+        &:hover{
+            opacity: 0.3;
+        }
+    }
+}

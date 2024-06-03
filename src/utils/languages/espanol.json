@@ -1,0 +1,83 @@
+{
+  "navbarTop.men": "Hombre",
+  "navbarTop.women": "Mujer",
+  "navbarTop.aboutUs": "Quiénes somos",
+  "navHidden.shirts": "Camisas",
+  "navHidden.pants": "Pantalones",
+  "navHidden.shoes": "Zapatos",
+  "navHidden.all": "Todo",
+
+  "news.title": "¡Suscríbete a nuestro Boletín y obtén un descuento del 15%!",
+  "news.button.gend.men": "Hombre",
+  "news.button.gend.women": "Mujer",
+  "news.button.confirm": "Confirmar",
+  "dialog.invalid.email": "Por favor, introduce una dirección de correo electrónico válida",
+  "dialog.invalid.gender": "Por favor, selecciona un género",
+  "dialog.email.yetRegistered": "Este correo electrónico ya está registrado",
+  "dialog.success": "¡Gracias por suscribirte!",
+
+  "landing.carousel.title": "El Mundo de Etna Rouge",
+  "landing.carousel.discover": "Descubre más",
+
+  "creditPayment.title": "Ingrese sus Credenciales de Pago",
+  "creditPayment.or": "o",
+  "creditPayment.checkout": "Ir a la Caja",
+
+  "payForm.title": "Inserte sus datos",
+  "payForm.country": "Seleccione su país",
+  "payForm.Italy": "Italia",
+  "payForm.France": "Francia",
+  "payForm.Spain": "España",
+  "payForm.Germany": "Alemania",
+  "payForm.supplement": "*El pago contra reembolso tiene un suplemento de €10 al total del pedido",
+  "payForm.button.pay": "Ir a Pagar",
+
+  "selectPayment.title": "Métodos de Pago",
+  "selectPayment.label.cash": "Pago contra reembolso",
+  "selectPayment.advise": " *Al elegir el pago contra reembolso, se aplicará un suplemento de €10 al total del pedido",
+  "selectPayment.noSelected": "Por favor, seleccione un método de pago",
+  "selectPayment.button.checkout": "IR A LA CAJA",
+
+  "thankYou.title": "¡Gracias!",
+  "thankYou.message": "Estimado/a {name}, gracias por su compra. Tan pronto como su pedido sea enviado, le enviaremos un correo electrónico a la dirección",
+  "thankYou.message2": "con la información de seguimiento.",
+  "thankYou.orderTotal": "Su pedido: {total}",
+  "currency": "EUR",
+  "thankYou.button.home": "INICIO",
+
+  "paypalRedirect": "¡Gracias por el pedido!",
+
+  "pdp.color": "Color:",
+  "pdp.selectSize": "Seleccione su talla",
+  "pdp.addToCart": "Añadir al carrito",
+  "pdp.goBack": "Regresa",
+
+  "plp.button.addToCart": "AÑADIR AL CARRITO",
+
+  "cart.empty": "El carrito está vacío",
+  "cart.remove": "Eliminar",
+  "cart.quantity": "Cantidad",
+  "cart.price": "Precio total",
+
+  "centralProductSecTitle": "El futuro pertenece a las mujeres con estilo.",
+  "centralProductSecSubTitle": "Descubre la nueva colección de mujer",
+
+  "footer.followUse": "Síguenos:",
+  "footer.ourProducts": "Nuestros productos",
+  "footer.menClothes": "Ropa de hombre",
+  "footer.womenClothes": "Ropa de mujer",
+  "footer.accessories": "Accessorios",
+  "footer.clientService": "Servicio al cliente: ",
+  "footer.returnsAndRefunds": "Devoluciones y reembolsos",
+  "footer.promoAndPayment": "Promociones y pagos",
+  "footer.trackYourOrder": "Rastrea tu pedido",
+  "footer.contactUs": "Contáctenos",
+  "footer.ourService": "Nuestro servicio: ",
+  "footer.studentDiscount": "Descuento para estudiantes",
+  "footer.inviteAFriend": "Invita a un amigo",
+
+  
+  "discoverSection.title" : "Galería Etna Rouge 2024",
+  "discoverSection.news" : "Noticias Etnasphere"
+
+}

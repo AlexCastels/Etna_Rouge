@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+/* Fonts */
+$font-family: "Roboto", serif;
+
+/* Colori */
+$main-white: #fdf4f4;
+$secondary-white: #f5ebe0;
+$main-black: #0e0e0e;
+$secondary-black: #0000009e;
+// Breakpoint
+$media-desktop: 1400px;
+$media-tablet: 768px;
+$media-mobile: 480px;
+
+//Mixin to reuse only for the hover of Buttons without any background
+@mixin hoverButton {
+    color: gray;
+    font-size: 1.1rem;
+    background-color: transparent;
+}
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+// positioning body relative for put the select at the bottom
+body {
+    position: relative;
+}

@@ -1,0 +1,151 @@
+@import "../../style.scss";
+
+.creditform-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    &.dark{
+        background-color: $main-black;
+        color: $main-white; 
+    }
+    &.light{
+        background-color: $main-white;
+        color: $main-black;
+    }
+
+    .creditForm-title{
+        // width: 80%;
+        font-size: 1.3rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        height: 1px;
+        padding: 5px;
+        &.dark{
+            color: $main-black; 
+        }
+        &.light{
+            color: $main-white;
+        }
+    } 
+
+    .credit-card-img{
+        width: 50px;
+        margin-inline-start: -50px;
+    }
+    .creditCard-select{
+        display: flex;
+        align-items: center;
+        div{
+            margin-inline-start: -90px; 
+            .creditCard-select-style{
+                border: none;
+                letter-spacing: 1px;
+                &.dark{
+                    background-color: $main-black;
+                    color: $main-white; 
+                }
+                &.light{
+                    background-color: $main-white;
+                    color: $main-black;
+                }
+                &.dark::placeholder{
+                    background-color: $main-white;
+                }
+                &.light::placeholder{
+                    background-color: $main-black;
+                } 
+                &:focus{
+                    outline: none;
+                }
+            } 
+            
+        }    
+    }
+
+    .creditForm-btn{
+        width: 250px;
+        padding: 5px;
+        color: white;
+        background-color: black;
+        transition: all ease-in-out 0.5s;
+        cursor: pointer;
+        letter-spacing: 0.5rem;
+        &.dark{
+            background-color: $main-white;
+            color: $main-black; 
+        }
+        &.light{
+            background-color: $main-black;
+            color: $main-white;
+        }
+        &:hover{
+            opacity: 0.3;
+        }
+    }
+
+
+}
+
+.creditForm-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .creditForm-input-img{
+        display: flex;
+        align-items: center;
+    }
+
+    .input-creditCard{
+        width: 250px;
+        height: 30px;
+        padding: 5px;
+        border: none;
+        letter-spacing: 1px;
+        padding-left: 0px;
+        &.dark{
+            background-color: $main-black;
+            color: $main-white; 
+            border-bottom: 1px solid rgb(255, 255, 255);;
+        }
+        &.light{
+            background-color: $main-white;
+            color: $main-black;
+            border-bottom: 1px solid rgb(31, 31, 31);
+        }
+        &.dark::placeholder{
+            background-color: $main-white;
+        }
+        &.light::placeholder{
+            background-color: $main-black;
+        } 
+    }
+    
+    
+    .input-creditCard:focus {
+        outline: none;
+    }
+    
+    .input-creditCard::placeholder{
+        background: rgb(0, 0, 0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+        
+    }
+}
+
+.paypal-comp{
+    width: 80vw;
+    height: 100px;
+}
+
+@media(min-width:1200px) {
+    .paypal-comp{
+        width:30vw;
+    }
+}

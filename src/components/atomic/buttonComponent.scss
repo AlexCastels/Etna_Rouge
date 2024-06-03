@@ -1,0 +1,14 @@
+@import "../../style.scss";
+.button-component{
+    height: 2.5rem;
+    width: 250px;
+    padding: 5px;
+    transition: all ease-in-out 0.5s;
+    cursor: pointer;
+    letter-spacing: 0.5rem;
+    background-color: $main-black;
+    color: $main-white;
+    &:hover{
+        opacity: 0.3;
+    }
+}

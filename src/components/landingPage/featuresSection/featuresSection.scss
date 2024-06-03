@@ -1,0 +1,47 @@
+@import "../../../style.scss";
+
+.feature-cont {
+  width: 100%;
+  height: 100%;
+  display: none;
+
+      @media screen and (min-width: $media-tablet) {
+      display: block;}
+
+  &.light {
+    background-color: $main-white;
+  }
+  &.dark {
+    background-color: $main-black;
+  }
+
+  .feature-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature-text-cont {
+    padding-block: 0.2rem 1.5rem;
+    padding-inline: 0.5rem;
+    line-height: 0.3rem;
+    gap: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.3rem;
+
+    &.light {
+      color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
+    }
+
+    @media screen and (min-width: $media-tablet) {
+      line-height: 2rem;
+      font-size: 0.7rem;
+      padding-block: 1rem 4rem;
+      padding-inline: 2rem;
+      gap: 1.5rem;
+    }
+  }
+}

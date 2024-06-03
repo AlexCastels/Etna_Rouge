@@ -1,0 +1,97 @@
+@import "../../../style.scss";
+
+.carousel-container {
+  width: 100vw;
+  &.dark {
+    background: $main-black;
+    color: $main-white;
+
+  }
+  &.light {
+    background: $main-white;
+    color: $main-black;
+ 
+  }
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+
+  @media only screen and (min-width: 798px) {
+    padding: 3rem;
+    justify-content: center;
+  }
+
+  .landing-carousel-title {
+    width: 100%;
+    font-size: 1rem;
+    margin-inline-start: 1rem;
+
+    &.light {
+      color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
+    }
+
+    @media only screen and (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .lp-carousel-subcont {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-inline-start: 1.6rem;
+    padding: 2rem 1rem;
+  }
+
+  .lp-carousel-item {
+    margin-right: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+
+    .lp-carousel-img {
+      width: 100px;
+      height: 100px;
+      display: block;
+
+      @media only screen and (min-width: 798px) {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    .lp-carousel-description {
+      font-size: 0.8rem;
+      margin-block-start: 0.8rem;
+      @media only screen and (min-width: 798px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .lp-carousel-link {
+    margin-block-end: 2rem;
+    text-decoration: none;
+
+    &.light {
+      color: $main-black;
+    }
+    &.dark {
+      color: $main-white;
+    }
+
+    &:hover {
+      @include hoverButton;
+    }
+  }
+}
