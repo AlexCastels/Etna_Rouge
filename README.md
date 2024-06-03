@@ -25,15 +25,14 @@
    ```sh
    node index.js
    ```
-5. Adesso sarà possibile visionare il progetto:
+5. Aprire adesso un nuovo terminale, e sarà possibile visionare il progetto:
    ```sh
-   cd ..
    npm run dev
    ```
    
 ## The Project
 
-- <p>Etna Rouge è un e-commerce fittizzio dove sarà possibile navigare tra diverse sezioni, e scegliere tra diverse categorie di prodotti navigabili tramite la navbar.</p>
+- <p>Etna Rouge è un e-commerce fittizio dove sarà possibile navigare tra diverse sezioni, e scegliere tra diverse categorie di prodotti navigabili tramite la navbar.</p>
 - <p>Sarà possibile poter aggiungere al carrello quanti prodotti si desiderano , selezionando una taglia ed utilizzando l'apposito btn, il carrello sarà mostrato tramite un aside, è possibile aprire il carrello in qualsiasi momento tramite l'apposita icona posta in alto a destra</p>
 - <p>Nel momento in cui si aggiungeranno almeno 3 elementi nel carrello, raggiungendo un importo superiore a 1000€, si attiverà la promo per cui i primi due prodotti meno cari saranno esclusi dal totale</p>
 </br>
