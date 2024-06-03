@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="src/assets/logo-Dark.png" alt="Logo" width="600" height="150">
+    <img src="src/assets/ProjectLogo.webp" alt="Logo" width="600" height="150">
 </div>
 
 <!-- GETTING STARTED -->
